@@ -9,11 +9,15 @@ import SignUp_Phone from './screen/SignUp-Phone';
 import SignUp_Verify from './screen/SignUp-Verify';
 import SignUp_Password from './screen/SignUp-Password';
 import Login from './screen/Login';
+import ForgotPassword from './screen/ForgotPassword';
 
 const Navigation = StackNavigator({
   Intro: {
     screen: Intro,
-    header:null
+    navigationOptions:
+    {
+      header:null
+    }
   },
   SignUp: {
     screen: SignUp
@@ -32,6 +36,9 @@ const Navigation = StackNavigator({
   },
   Login: {
     screen: Login
+  },
+  ForgotPassword: {
+    screen: ForgotPassword
   }
 });
 export default Navigation;
