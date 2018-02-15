@@ -10,6 +10,9 @@ import SignUp_Verify from './screen/SignUp-Verify';
 import SignUp_Password from './screen/SignUp-Password';
 import Login from './screen/Login';
 import ForgotPassword from './screen/ForgotPassword';
+import ReviewID from './screen/ReviewID';
+import YourInformation from './screen/YourInformation';
+import YourAddress from './screen/YourAddress';
 
 const Navigation = StackNavigator({
   Intro: {
@@ -39,6 +42,15 @@ const Navigation = StackNavigator({
   },
   ForgotPassword: {
     screen: ForgotPassword
+  },
+  ReviewID: {
+    screen: ReviewID
+  },
+  YourInformation: {
+    screen: YourInformation
+  },
+  YourAddress: {
+    screen: YourAddress
   }
 });
 export default Navigation;

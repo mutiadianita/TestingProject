@@ -22,7 +22,7 @@ export default class SignUp extends Component {
             <Button
                 title= "Continue with Facebook"
                 color="#3b5998"
-                onPress = {() => navigate('Facebook')}
+                onPress = {() => navigate("ReviewID")}
                 >
             </Button>
         </View>
