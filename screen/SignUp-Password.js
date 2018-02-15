@@ -8,33 +8,34 @@ import {
   StyleSheet
 }  from 'react-native';
 
-export default class SignUp_Phone extends Component {
+const util = require('util');
+export default class SignUp_Password extends Component {
   render() {
     var { navigate } = this.props.navigation;
     return (
       <View style={styles.container}>
 
         <Text style={styles.title}>
-          Enter mobile phone number.
+          Create a password.
         </Text>
-        <Text style={styles.phone}>
-        MOBILE PHONE NO.
+        <Text style={styles.textpassword}>
+        Password must be 8 characters long
+        </Text>
+        <Text style={styles.password}>
+        PASSWORD
         </Text>
         <TextInput
-        style={{width: 300, color:"black"}}
+        style={{width: 300, fontSize: 20, color:"black"}}
         placeholderTextColor="black"
         underlineColorAndroid="black"
         autoFocus={true}
-        keyboardType="numeric"
+        secureTextEntry={true}
         />
-        <Text style={styles.details}>
-        We&rsquo;re gonna need your mobile phone number for veriﬁcation purpose.
-        </Text>
         <View style={{width: 300, marginTop: 20}}>
             <Button
                 title= "Next"
                 color="#3498db"
-                onPress = {() => navigate("SignUp_Verify")}
+                onPress = {() => navigate('SignUp_Password')}
                 >
             </Button>
         </View>
@@ -55,19 +56,21 @@ const styles = StyleSheet.create({
     fontSize: 20,
     textAlign: 'left',
     marginTop: 5,
-    marginBottom: 30,
+    marginBottom: 5,
+    marginLeft: 5,
     color: 'black'
   },
-  phone: {
+  textpassword: {
     textAlign: 'left',
     color: 'black',
     marginTop: 5,
     marginLeft: 5,
+    marginBottom:30
   },
-  details: {
+  password: {
     textAlign: 'left',
-    color: 'grey',
+    color: 'black',
     marginTop: 5,
-    marginLeft: 5,
+    marginLeft: 5
   },
 });

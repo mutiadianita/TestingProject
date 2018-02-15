@@ -8,36 +8,50 @@ import {
   StyleSheet
 }  from 'react-native';
 
-export default class SignUp_Phone extends Component {
+const util = require('util');
+export default class Login extends Component {
   render() {
     var { navigate } = this.props.navigation;
     return (
       <View style={styles.container}>
 
         <Text style={styles.title}>
-          Enter mobile phone number.
+          Welcome back.
         </Text>
-        <Text style={styles.phone}>
-        MOBILE PHONE NO.
+        <Text style={styles.email}>
+        EMAIL ADDRESS
         </Text>
         <TextInput
         style={{width: 300, color:"black"}}
         placeholderTextColor="black"
         underlineColorAndroid="black"
         autoFocus={true}
-        keyboardType="numeric"
+        keyboardType="email-address"
         />
-        <Text style={styles.details}>
-        We&rsquo;re gonna need your mobile phone number for veriﬁcation purpose.
+        <Text style={styles.email}>
+        PASSWORD
+        </Text>
+        <TextInput
+        style={{width: 300, color:"black"}}
+        secureTextEntry={true}
+        placeholderTextColor="black"
+        underlineColorAndroid="black"
+        secureTextEntry={true}
+        />
+        <Text style={styles.forgot}>
+        Forgot password?
         </Text>
         <View style={{width: 300, marginTop: 20}}>
             <Button
                 title= "Next"
                 color="#3498db"
-                onPress = {() => navigate("SignUp_Verify")}
+                onPress = {() => navigate("Home")}
                 >
             </Button>
         </View>
+        {/* <Text style={styles.instructions}>
+          {instructions}
+        </Text> */}
       </View>
     );
   }
@@ -54,19 +68,19 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 20,
     textAlign: 'left',
-    marginTop: 5,
     marginBottom: 30,
+    marginLeft: 5,
     color: 'black'
   },
-  phone: {
+  email: {
     textAlign: 'left',
     color: 'black',
     marginTop: 5,
     marginLeft: 5,
   },
-  details: {
-    textAlign: 'left',
-    color: 'grey',
+  forgot: {
+    textAlign: 'right',
+    color: 'black',
     marginTop: 5,
     marginLeft: 5,
   },

@@ -7,9 +7,10 @@ import {
   Button,
   StyleSheet
 }  from 'react-native';
-
-export default class SignUp_Email extends Component {
+const util = require('util');
+export default class SignUp extends Component {
   render() {
+    var {navigate} = this.props.navigation;
     return (
       <View style={styles.container}>
 
@@ -40,7 +41,7 @@ export default class SignUp_Email extends Component {
             <Button
                 title= "Continue with Email"
                 color="#3498db"
-                onPress = {() => navigate('SignUp_Email')}
+                onPress = {() => navigate("SignUp_Email")}
                 >
             </Button>
         </View>
@@ -65,7 +66,6 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 20,
     textAlign: 'left',
-    marginTop: 50,
     marginBottom: 30,
     color: 'black'
   },

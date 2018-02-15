@@ -8,8 +8,10 @@ import {
   StyleSheet
 }  from 'react-native';
 
+const util = require('util');
 export default class SignUp_Email extends Component {
   render() {
+    var { navigate } = this.props.navigation;
     return (
       <View style={styles.container}>
 
@@ -39,7 +41,7 @@ export default class SignUp_Email extends Component {
             <Button
                 title= "Next"
                 color="#3498db"
-                onPress = {() => navigate('SignUp_Phone')}
+                onPress = {() => navigate("SignUp_Phone")}
                 >
             </Button>
         </View>
@@ -55,15 +57,13 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'flex-start',
-    backgroundColor: '#EEEEEE',
-    marginTop: 30,
+    marginTop: 10,
     marginLeft: 30,
     marginRight:30,
   },
   title: {
     fontSize: 20,
     textAlign: 'left',
-    marginTop: 5,
     marginBottom: 30,
     color: 'black'
   },
