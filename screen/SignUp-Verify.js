@@ -31,7 +31,7 @@ export default class SignUp_Verify extends Component {
         <View style={{width: 300, marginTop: 20}}>
             <Button
                 title= "Verify"
-                color="#3498db"
+                color="#086BB3"
                 onPress = {() => navigate("SignUp_Password")}
                 >
             </Button>
@@ -45,9 +45,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'flex-start',
-    marginTop: 10,
-    marginLeft: 30,
-    marginRight:30,
+    paddingTop: 10,
+    paddingLeft: 30,
+    paddingRight:30,
+    backgroundColor:'white'
   },
   title: {
     fontSize: 20,

@@ -5,38 +5,41 @@ import {
   TextInput,
   View,
   Button,
+  Image,
   StyleSheet
 }  from 'react-native';
 
 const util = require('util');
-export default class SignUp_Password extends Component {
+export default class ReviewSelfie extends Component {
   render() {
     var { navigate } = this.props.navigation;
     return (
       <View style={styles.container}>
 
         <Text style={styles.title}>
-          Create a password.
+          Review your selﬁe with your ID.
         </Text>
         <Text style={styles.textpassword}>
-        Password must be 8 characters long
+        Please check whether your face & ID is clearly visible.
         </Text>
-        <Text style={styles.password}>
-        PASSWORD
-        </Text>
-        <TextInput
-        style={{width: 300, fontSize: 20, color:"black"}}
-        placeholderTextColor="black"
-        underlineColorAndroid="black"
-        secureTextEntry={true}
-        />
-        <View style={{width: 300, marginTop: 20}}>
+        <Image source={require('./images/idcard.png')} />
+        <View style={{flexDirection: 'row'}}>
+        <View style={{width: 150, padding:10}}>
             <Button
-                title= "Next"
-                color="#086BB3"
-                onPress = {() => navigate('Step1')}
+                title= "Retake"
+                color= "#086BB3"
+                onPress = {() => navigate("PicKTP")}
                 >
             </Button>
+        </View>
+        <View style={{width: 150, padding:10}}>
+            <Button
+                title= "Confirm"
+                color= "#086BB3"
+                onPress = {() => navigate("Step3")}
+                >
+            </Button>
+        </View>
         </View>
       </View>
     );
@@ -50,7 +53,7 @@ const styles = StyleSheet.create({
     paddingTop: 10,
     paddingLeft: 30,
     paddingRight:30,
-    backgroundColor:'white'
+    backgroundColor: 'white'
   },
   title: {
     fontSize: 20,
@@ -73,4 +76,10 @@ const styles = StyleSheet.create({
     marginTop: 5,
     marginLeft: 5
   },
+  confirm: {
+    textAlign: 'center',
+    color: 'black',
+    marginTop: 25,
+    fontSize:13
+  }
 });

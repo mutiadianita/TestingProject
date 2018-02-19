@@ -11,14 +11,13 @@ import {
 }  from 'react-native';
 
 const util = require('util');
-export default class YourAddress extends Component {
+export default class YourMailingAddress extends Component {
   render() {
     var { navigate } = this.props.navigation;
     return (
       <View style={styles.container}>
-
         <Text style={styles.title}>
-          Where do you live? based on KTP
+          Where is your mailing address?
         </Text>
         <ScrollView>
         <Text style={styles.label}>
@@ -77,16 +76,12 @@ export default class YourAddress extends Component {
         keyboardType="numeric"
         maxLength={5}
         />
-        <View style={{ flexDirection: 'row', height: 30,}}>
-        <CheckBox title='Click Here'/>
-        <Text style={styles.check}>My Mailing address is diﬀerent from KTP</Text>
-      </View>
     </ScrollView>
       <View style={{width: 300, marginTop: 20, marginBottom:20}}>
         <Button
             title= "Next"
             color="#086BB3"
-            onPress = {() => navigate("YourMailingAddress")} >
+            onPress = {() => navigate("ConfirmData")} >
         </Button>
       </View>
     </View>
@@ -106,6 +101,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     textAlign: 'left',
     marginBottom: 30,
+    marginRight: 30,
     color: 'black'
   },
   label: {

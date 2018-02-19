@@ -22,7 +22,7 @@ export default class SignUp extends Component {
             <Button
                 title= "Continue with Facebook"
                 color="#3b5998"
-                onPress = {() => navigate("ReviewID")}
+                onPress = {() => navigate("Question1")}
                 >
             </Button>
         </View>
@@ -59,9 +59,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'flex-start',
-    marginTop: 30,
-    marginLeft: 30,
-    marginRight:30,
+    paddingTop: 10,
+    paddingLeft: 30,
+    paddingRight:30,
+    backgroundColor:'white'
   },
   title: {
     fontSize: 20,

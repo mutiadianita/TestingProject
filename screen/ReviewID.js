@@ -6,6 +6,7 @@ import {
   View,
   Button,
   Image,
+  ScrollView,
   StyleSheet
 }  from 'react-native';
 
@@ -19,11 +20,12 @@ export default class ReviewID extends Component {
         <Text style={styles.title}>
           Review your ID Card number.
         </Text>
-        <Text style={styles.textpassword}>
+        <ScrollView>
+        <Text style={styles.subtitle}>
         Please check your ID Card and conﬁrm your ID Card number.
         </Text>
         <Image source={require('./images/idcard.png')} />
-        <Text style={styles.password}>
+        <Text style={styles.label}>
         ID CARD NUMBER
         </Text>
         <TextInput
@@ -33,9 +35,10 @@ export default class ReviewID extends Component {
         autoFocus={true}
         secureTextEntry={true}
         />
-        <Text style={styles.confirm}>
+        <Text style={styles.label}>
         By clicking conﬁrm, I agree the information above is correct.
         </Text>
+        </ScrollView>
         <View style={{flexDirection: 'row'}}>
         <View style={{width: 150, padding:10}}>
             <Button
@@ -63,9 +66,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'flex-start',
-    marginTop: 10,
-    marginLeft: 30,
-    marginRight:30,
+    paddingTop: 10,
+    paddingLeft: 30,
+    backgroundColor:'white'
   },
   title: {
     fontSize: 20,
@@ -75,14 +78,15 @@ const styles = StyleSheet.create({
     marginLeft: 5,
     color: 'black'
   },
-  textpassword: {
+  subtitle: {
     textAlign: 'left',
     color: 'black',
     marginTop: 5,
     marginLeft: 5,
-    marginBottom:30
+    marginBottom:30,
+    marginRight:30
   },
-  password: {
+  label: {
     textAlign: 'left',
     color: 'black',
     marginTop: 5,

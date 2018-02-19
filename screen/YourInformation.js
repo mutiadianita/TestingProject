@@ -5,6 +5,7 @@ import {
   TextInput,
   View,
   Button,
+  ScrollView,
   StyleSheet
 }  from 'react-native';
 
@@ -18,6 +19,7 @@ export default class YourInformation extends Component {
         <Text style={styles.title}>
           Hello. Please tell us about you?
         </Text>
+        <ScrollView>
         <Text style={styles.email}>
         FULL NAME
         </Text>
@@ -25,7 +27,6 @@ export default class YourInformation extends Component {
         style={{width: 300, color:"black"}}
         placeholderTextColor="black"
         underlineColorAndroid="black"
-        autoFocus={true}
         />
         <Text style={styles.email}>
         PLACE OF BIRTH
@@ -54,17 +55,15 @@ export default class YourInformation extends Component {
         placeholderTextColor="black"
         underlineColorAndroid="black"
         />
-        <View style={{width: 300, marginTop: 20}}>
+        </ScrollView>
+        <View style={{width: 300, marginTop: 20, marginBottom:20}}>
             <Button
                 title= "Next"
-                color="#3498db"
+                color="#086BB3"
                 onPress = {() => navigate("YourAddress")}
                 >
             </Button>
         </View>
-        {/* <Text style={styles.instructions}>
-          {instructions}
-        </Text> */}
       </View>
     );
   }
@@ -74,14 +73,15 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'flex-start',
-    marginTop: 10,
-    marginLeft: 30,
-    marginRight:30,
+    paddingTop: 10,
+    paddingLeft: 30,
+    backgroundColor:'white'
   },
   title: {
     fontSize: 20,
     textAlign: 'left',
     marginBottom: 30,
+    marginRight:30,
     color: 'black'
   },
   email: {

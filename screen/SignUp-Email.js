@@ -25,7 +25,6 @@ export default class SignUp_Email extends Component {
         style={{width: 300, color:"black"}}
         placeholderTextColor="black"
         underlineColorAndroid="black"
-        autoFocus={true}
         />
         <Text style={styles.email}>
         EMAIL ADDRESS
@@ -40,14 +39,11 @@ export default class SignUp_Email extends Component {
         <View style={{width: 300, marginTop: 20}}>
             <Button
                 title= "Next"
-                color="#3498db"
+                color="#086BB3"
                 onPress = {() => navigate("SignUp_Phone")}
                 >
             </Button>
         </View>
-        {/* <Text style={styles.instructions}>
-          {instructions}
-        </Text> */}
       </View>
     );
   }
@@ -57,9 +53,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'flex-start',
-    marginTop: 10,
-    marginLeft: 30,
-    marginRight:30,
+    paddingTop: 10,
+    paddingLeft: 30,
+    paddingRight:30,
+    backgroundColor:'white'
   },
   title: {
     fontSize: 20,
