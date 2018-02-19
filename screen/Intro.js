@@ -16,6 +16,11 @@ export default class Intro extends Component {
 
     return (
     <View style={{flex:1}}>
+    <View style={{justifyContent: 'flex-end', height:50, backgroundColor:'white'}}>
+    <View style={styles.Contact}>
+    <Text onPress = {() => navigate("ForgotPassword")} style={{ fontSize:20, textAlign:"center", color: "white"}}> C </Text>
+    </View>
+    </View>
       <ViewPagerAndroid style={styles.Pager} initialPage={0}>
         <View style={styles.Pager}>
           <Image source={require('./images/icon.png')} />
@@ -62,4 +67,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center'
   },
+  Contact:{
+    paddingTop:5,
+    width: 40,
+    height: 40,
+    marginLeft: 300,
+    borderRadius: 40/2,
+    backgroundColor: '#086BB3'
+  }
 })

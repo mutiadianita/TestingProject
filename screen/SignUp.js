@@ -46,9 +46,14 @@ export default class SignUp extends Component {
             </Button>
         </View>
         <View style={styles.containerlogin}>
-          <Text style={styles.login}>
-            Already have an account? Login
+        <View style={{flexDirection: 'row', alignItems:"center", justifyContent: "center"}}>
+          <Text style={styles.logintext}>
+            Already have an account?
           </Text>
+          <Text style={styles.login} onPress = {() => navigate("Login")}>
+            Login
+          </Text>
+        </View>
         </View>
       </View>
     );
@@ -78,12 +83,19 @@ const styles = StyleSheet.create({
   containerlogin: {
     flex:2,
     justifyContent:'flex-end',
-    marginBottom: 30,
+    marginBottom: 30
+  },
+  logintext: {
+    textAlign: 'center',
+    color: 'black',
+    marginTop: 5,
+    marginLeft: 5
   },
   login: {
     textAlign: 'center',
     color: 'black',
     marginTop: 5,
     marginLeft: 5,
-  },
+    textDecorationLine:"underline"
+  }
 });

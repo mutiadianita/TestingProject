@@ -38,7 +38,8 @@ export default class Login extends Component {
         underlineColorAndroid="black"
         secureTextEntry={true}
         />
-        <Text style={styles.forgot}>
+        <Text style={styles.forgot}
+        onPress={() => navigate("ForgotPassword")}>
         Forgot password?
         </Text>
         <View style={{width: 300, marginTop: 20}}>
@@ -85,5 +86,6 @@ const styles = StyleSheet.create({
     color: 'black',
     marginTop: 5,
     marginLeft: 5,
+    textDecorationLine:"underline"
   },
 });
