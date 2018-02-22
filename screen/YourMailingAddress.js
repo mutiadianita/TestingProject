@@ -7,83 +7,74 @@ import {
   Button,
   StyleSheet,
   ScrollView,
-  CheckBox
+  TouchableOpacity,
+  Picker,
+  Image
 }  from 'react-native';
 
 const util = require('util');
 export default class YourMailingAddress extends Component {
+  state = {province: ''}
+   updateProvince = (province) => {
+      this.setState({ province: province })
+    }
+  state = {kabupaten: ''}
+   updateKabupaten = (kabupaten) => {
+      this.setState({ kabupaten: kabupaten })
+    }
+  state = {kelurahan: ''}
+   updateKelurahan = (kelurahan) => {
+      this.setState({ kelurahan: kelurahan })
+    }
   render() {
     var { navigate } = this.props.navigation;
     return (
       <View style={styles.container}>
-        <Text style={styles.title}>
-          Where is your mailing address?
-        </Text>
+        <Text style={styles.title}>Please enter your current mailing address</Text>
         <ScrollView>
-        <Text style={styles.label}>
-        ADDRESS
-        </Text>
+        <View style={{flexDirection:"row"}}>
+        <Image source={require('./asset/ic_loc_blue.png')} style={{width: 30, height: 30}}/>
+        <Text style={{fontSize:16, fontWeight:"bold", color:"#3393D0", marginTop: 5, marginLeft: 5, marginBottom:20}}>Mailing Address</Text>
+        </View>
+        <Text style={styles.label}>Address</Text>
         <TextInput
-        style={{width: 300, color:"black"}}
-        placeholderTextColor="black"
-        underlineColorAndroid="black"
-        autoFocus={true}
-        />
-        <Text style={styles.label}>
-        PROVINCE
-        </Text>
-        <TextInput
-        style={{width: 300, color:"black"}}
-        secureTextEntry={true}
+        style={{marginLeft:30,width: 280, color:"black"}}
         placeholderTextColor="black"
         underlineColorAndroid="black"
         />
-        <Text style={styles.label}>
-        KOTA/KABUPATEN
-        </Text>
+        <Text style={styles.label}>Province</Text>
+        <Picker style={{marginLeft:27, width:280}} selectedValue = {this.state.province} onValueChange = {this.updateProvince} mode='dropdown' >
+           <Picker.Item label = "Banten" value = "1" />
+           <Picker.Item label = "DKI Jakarta" value = "2" />
+           <Picker.Item label = "Jawa Barat" value = "3" />
+           <Picker.Item label = "Jawa Tengah" value = "4" />
+        </Picker>
+        <Text style={styles.label}>Kabupaten</Text>
+        <Picker style={{marginLeft:27, width:280}} selectedValue = {this.state.kabupaten} onValueChange = {this.updateKabupaten} mode='dropdown'>
+           <Picker.Item label = "Jakarta Barat" value = "1" />
+           <Picker.Item label = "Jakarta Pusat" value = "2" />
+           <Picker.Item label = "Jakarta Selatan" value = "3" />
+           <Picker.Item label = "Jakarta Timur" value = "4" />
+           <Picker.Item label = "Jakarta Utara" value = "5" />
+        </Picker>
+        <Text style={styles.label}>Kelurahan</Text>
+        <Picker style={{marginLeft:27, width:280}} selectedValue = {this.state.kelurahan} onValueChange = {this.updateKelurahan} mode='dropdown'>
+           <Picker.Item label = "Kebayoran" value = "1" />
+           <Picker.Item label = "Kebon Jeruk" value = "2" />
+        </Picker>
+        <Text style={styles.label}>Kode Pos</Text>
         <TextInput
-        style={{width: 300, color:"black"}}
+        style={{marginLeft:30,width: 280, color:"black"}}
         secureTextEntry={true}
         placeholderTextColor="black"
         underlineColorAndroid="black"
-        />
-        <Text style={styles.label}>
-        KECAMATAN
-        </Text>
-        <TextInput
-        style={{width: 300, color:"black"}}
-        secureTextEntry={true}
-        placeholderTextColor="black"
-        underlineColorAndroid="black"
-        />
-        <Text style={styles.label}>
-        KELURAHAN
-        </Text>
-        <TextInput
-        style={{width: 300, color:"black"}}
-        secureTextEntry={true}
-        placeholderTextColor="black"
-        underlineColorAndroid="black"
-        />
-        <Text style={styles.label}>
-        POSTAL CODE
-        </Text>
-        <TextInput
-        style={{width: 300, color:"black"}}
-        secureTextEntry={true}
-        placeholderTextColor="black"
-        underlineColorAndroid="black"
-        keyboardType="numeric"
-        maxLength={5}
         />
     </ScrollView>
-      <View style={{width: 300, marginTop: 20, marginBottom:20}}>
-        <Button
-            title= "Next"
-            color="#086BB3"
-            onPress = {() => navigate("ConfirmData")} >
-        </Button>
-      </View>
+    <TouchableOpacity
+    style={{width: 60, height: 60, borderRadius:30, marginBottom: 30, marginLeft:250, backgroundColor:"#3393D0"}}
+      onPress = {() => navigate("AddInfo")}>
+      <Text style={{color:"white", fontSize:24, fontWeight:"bold", marginTop:10, marginLeft:25}}>></Text>
+    </TouchableOpacity>
     </View>
     );
   }
@@ -98,17 +89,19 @@ const styles = StyleSheet.create({
     backgroundColor:'white'
   },
   title: {
-    fontSize: 20,
+    fontSize: 16,
     textAlign: 'left',
-    marginBottom: 30,
+    marginBottom: 15,
+    marginTop:15,
     marginRight: 30,
-    color: 'black'
+    color: '#58595B'
   },
   label: {
     textAlign: 'left',
-    color: 'black',
+    color: '#58595B',
     marginTop: 5,
-    marginLeft: 5,
+    marginLeft: 35,
+    fontSize:14
   },
   check: {
     textAlign: 'left',

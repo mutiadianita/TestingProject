@@ -5,9 +5,10 @@ import {
   TextInput,
   View,
   Button,
+  TouchableOpacity,
   StyleSheet
 }  from 'react-native';
-
+import CodeInput from 'react-native-confirmation-code-input';
 const util = require('util');
 export default class SignUp_Verify extends Component {
   render() {
@@ -16,25 +17,39 @@ export default class SignUp_Verify extends Component {
       <View style={styles.container}>
 
         <Text style={styles.title}>
-          Verify your mobile number.
+          Please enter the 4 digits code that has been sent to your phone.
         </Text>
-        <Text style={styles.verify}>
-        A code has been sent to your mobile number 0811123123. Please enter the code below to verify
-        </Text>
-        <TextInput
-        style={{width: 300, color:"black", fontSize:28, textAlign:"center"}}
-        placeholderTextColor="black"
-        underlineColorAndroid="black"
-        autoFocus={true}
-        maxLength={8}
-        />
-        <View style={{width: 300, marginTop: 20}}>
-            <Button
-                title= "Verify"
-                color="#086BB3"
-                onPress = {() => navigate("SignUp_Password")}
-                >
-            </Button>
+        <View style={{flex:1, flexDirection: 'column'}}>
+          <View>
+            <CodeInput
+              ref="codeInputRef"
+              secureTextEntry
+              activeColor="#3393D0"
+              inactiveColor="#3393D0"
+              autoFocus={true}
+              ignoreCase={true}
+              inputPosition='left'
+              size={50}
+              space={10}
+              codeLength={4}
+              keyboardType="numeric"
+              onFulfill={() => navigate("SignUp_Password")}
+              containerStyle={{ marginTop: 30, marginBottom:30 }}
+              codeInputStyle={{ borderWidth: 1.5, fontSize: 32 }}
+            />
+          </View>
+          <View>
+            <Text style={styles.details}>
+              Resend code in 00:25
+            </Text>
+          </View>
+          <View style={{flex:1}}>
+            <TouchableOpacity
+            style={{width: 60, height: 60, borderRadius:30, marginTop: 70, marginLeft:250, backgroundColor:"#3393D0"}}
+              onPress = {() => navigate("SignUp_Password")}>
+              <Text style={{color:"white", fontSize:24, fontWeight:"bold", marginTop:10, marginLeft:25}}>></Text>
+            </TouchableOpacity>
+          </View>
         </View>
       </View>
     );
@@ -51,23 +66,16 @@ const styles = StyleSheet.create({
     backgroundColor:'white'
   },
   title: {
-    fontSize: 20,
+    fontSize: 16,
     textAlign: 'left',
     marginTop: 5,
     marginBottom: 5,
-    color: 'black'
-  },
-  verify: {
-    textAlign: 'left',
-    color: 'black',
-    marginTop: 5,
-    marginLeft: 5,
-    marginBottom:30
+    color: '#58595B'
   },
   details: {
     textAlign: 'left',
-    color: 'grey',
-    marginTop: 5,
-    marginLeft: 5,
+    color: '#58595B',
+    marginTop: 30,
+    marginLeft: 5
   },
 });

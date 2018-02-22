@@ -6,40 +6,40 @@ import {
   View,
   Button,
   Image,
+  ScrollView,
+  TouchableOpacity,
   StyleSheet
 }  from 'react-native';
 
 const util = require('util');
-export default class ReviewSelfie extends Component {
+export default class ReviewID extends Component {
   render() {
     var { navigate } = this.props.navigation;
     return (
       <View style={styles.container}>
 
-        <Text style={styles.title}>
-          Review your selﬁe with your ID.
-        </Text>
-        <Text style={styles.textpassword}>
-        Please check whether your face & ID is clearly visible.
-        </Text>
-        <Image source={require('./images/idcard.png')} />
-        <View style={{flexDirection: 'row'}}>
-        <View style={{width: 150, padding:10}}>
+        <Text style={styles.title}>Please Confirm the image you’ve taken</Text>
+        <ScrollView>
+        <View style={{marginTop:20, alignItems:'center', justifyContent:'center'}}>
+        <Image style={{width:300, height:350}} source={require('./images/bapak.png')} />
+        </View>
+        </ScrollView>
+        <View style={{width: 300, padding:10}}>
             <Button
-                title= "Retake"
+                title= "Retake Image"
                 color= "#086BB3"
-                onPress = {() => navigate("PicKTP")}
+                height={200}
+                onPress = {() => navigate("Step2")}
                 >
             </Button>
         </View>
-        <View style={{width: 150, padding:10}}>
+        <View style={{width: 300, padding:10,marginBottom: 30}}>
             <Button
                 title= "Confirm"
                 color= "#086BB3"
                 onPress = {() => navigate("Step3")}
                 >
             </Button>
-        </View>
         </View>
       </View>
     );
@@ -52,34 +52,29 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     paddingTop: 10,
     paddingLeft: 30,
-    paddingRight:30,
-    backgroundColor: 'white'
+    paddingRight: 30,
+    backgroundColor:'white'
   },
   title: {
-    fontSize: 20,
+    fontSize: 16,
     textAlign: 'left',
     marginTop: 5,
     marginBottom: 5,
     marginLeft: 5,
-    color: 'black'
+    color: '#58595B'
   },
-  textpassword: {
+  label: {
     textAlign: 'left',
-    color: 'black',
+    color: '#333333',
+    marginTop: 30,
+    marginLeft: 5,
+    fontSize: 14
+  },
+  details: {
+    textAlign: 'left',
+    color: '#58595B',
     marginTop: 5,
     marginLeft: 5,
-    marginBottom:30
-  },
-  password: {
-    textAlign: 'left',
-    color: 'black',
-    marginTop: 5,
-    marginLeft: 5
-  },
-  confirm: {
-    textAlign: 'center',
-    color: 'black',
-    marginTop: 25,
-    fontSize:13
+    fontSize:10
   }
 });

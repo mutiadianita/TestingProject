@@ -6,41 +6,30 @@ import {
   Image,
   View,
   Button,
+  TouchableOpacity,
   ViewPagerAndroid
 }  from 'react-native';
 const util = require('util');
-export default class Intro extends Component {
+export default class Step3 extends Component {
   render() {
     console.log("this.props.navigation =" + util.inspect(this.props.navigation, false, null));
     var {navigate} = this.props.navigation;
 
     return (
   <View style={{flex:1}}>
-    <View style={{flexDirection: 'row', backgroundColor: "white", paddingTop:50}}>
-      <View style={styles.Circle}>
-      <Text style={{justifyContent: "center", fontSize:20, textAlign:"center", color: "#086BB3"}}> 1 </Text>
-      </View>
-      <View style={styles.Circle}>
-      <Text style={{justifyContent: "center", fontSize:20, textAlign:"center", color: "#086BB3"}}> 2 </Text>
-      </View>
-      <View style={styles.CircleSelected}>
-      <Text style={{justifyContent: "center", fontSize:20, textAlign:"center", color: "white"}}> 3 </Text>
-      </View>
 
-    </View>
     <View style={styles.container}>
-      <Text style={{fontSize: 20, color: "#086BB3"}}> More About You </Text>
-      <Text style={{fontSize: 16, color: "#086BB3", marginLeft:20, marginRight:20, textAlign:"center"}}> Please answer some questions so we can help you invest the best way for you. </Text>
+      <Text style={{fontSize: 36, color: "#3393D0", fontWeight:"bold"}}>Last step</Text>
+      <Text style={{fontSize: 16, color: "#58595B", marginLeft:20, marginRight:20, textAlign:"center"}}>Last, we also need to ask you a few questions to best guide you in reaching your dream.</Text>
     </View>
     <View style={{flexDirection: 'row', backgroundColor: "white", paddingBottom: 30}}>
-      <View style={{width: 300, padding:10, marginLeft:30}}>
-        <Button
-            title= "OK"
-            color= "#086BB3"
-            onPress = {() => navigate("Question1")}
-            >
-        </Button>
-      </View>
+    <View style={{flex:1}}>
+      <TouchableOpacity
+      style={{width: 60, height: 60, borderRadius:30, marginTop: 20, marginBottom:30, marginLeft:250, backgroundColor:"#3393D0"}}
+        onPress = {() => navigate("Question1")}>
+        <Text style={{color:"white", fontSize:24, fontWeight:"bold", marginTop:10, marginLeft:25}}>></Text>
+      </TouchableOpacity>
+    </View>
     </View>
   </View>
     );

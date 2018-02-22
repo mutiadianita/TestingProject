@@ -5,7 +5,8 @@ import {
   TextInput,
   View,
   Button,
-  StyleSheet
+  StyleSheet,
+  TouchableOpacity
 }  from 'react-native';
 
 const util = require('util');
@@ -16,43 +17,33 @@ export default class Login extends Component {
       <View style={styles.container}>
 
         <Text style={styles.title}>
-          Welcome back.
+          Please fill in the data below to Login to your Xdana account.
         </Text>
-        <Text style={styles.email}>
-        EMAIL ADDRESS
+        <Text style={{fontSize:16, fontWeight:"bold", color:"#3393D0", marginLeft: 30, marginBottom:20}}>Account info
         </Text>
-        <TextInput
-        style={{width: 300, color:"black"}}
-        placeholderTextColor="black"
-        underlineColorAndroid="black"
-        autoFocus={true}
-        keyboardType="email-address"
-        />
-        <Text style={styles.email}>
-        PASSWORD
+        <Text style={styles.label}>Name
         </Text>
         <TextInput
-        style={{width: 300, color:"black"}}
-        secureTextEntry={true}
-        placeholderTextColor="black"
-        underlineColorAndroid="black"
-        secureTextEntry={true}
+        style={{width: 280, marginLeft:25, color:"#58595B", fontWeight:"bold", fontSize:16}}
+        placeholderTextColor="#58595B"
+        underlineColorAndroid="#58595B"
         />
-        <Text style={styles.forgot}
-        onPress={() => navigate("ForgotPassword")}>
-        Forgot password?
+        <Text style={styles.label}>Password
         </Text>
-        <View style={{width: 300, marginTop: 20}}>
-            <Button
-                title= "Login"
-                color="#086BB3"
-                onPress = {() => navigate("ForgotPassword")}
-                >
-            </Button>
+        <TextInput
+        style={{width: 280, marginLeft:25, color:"#58595B", fontWeight:"bold", fontSize:16}}
+        secureTextEntry={true}
+        secureTextEntry
+        placeholderTextColor="#58595B"
+        underlineColorAndroid="#58595B"
+        />
+        <View style={{flex:1}}>
+          <TouchableOpacity
+          style={{width: 60, height: 60, borderRadius:30, marginTop: 20, marginLeft:250, backgroundColor:"#3393D0"}}
+            onPress = {() => navigate("Home")}>
+            <Text style={{color:"white", fontSize:24, fontWeight:"bold", marginTop:10, marginLeft:25}}>></Text>
+          </TouchableOpacity>
         </View>
-        {/* <Text style={styles.instructions}>
-          {instructions}
-        </Text> */}
       </View>
     );
   }
@@ -62,30 +53,22 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'flex-start',
-    paddingTop: 10,
+    paddingTop: 30,
     paddingLeft: 30,
     paddingRight:30,
     backgroundColor:'white'
   },
   title: {
-    fontSize: 20,
+    fontSize: 16,
     textAlign: 'left',
-    marginBottom: 30,
-    marginLeft: 5,
-    marginTop:10,
-    color: 'black'
+    marginBottom: 20,
+    color: '#58595B'
   },
-  email: {
+  label: {
     textAlign: 'left',
-    color: 'black',
-    marginTop: 5,
-    marginLeft: 5,
-  },
-  forgot: {
-    textAlign: 'right',
-    color: 'black',
-    marginTop: 5,
-    marginLeft: 5,
-    textDecorationLine:"underline"
+    color: '#58595B',
+    marginTop: 10,
+    marginLeft: 30,
+    fontSize:14
   },
 });

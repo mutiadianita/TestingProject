@@ -8,6 +8,7 @@ import {
   Button,
   ViewPagerAndroid
 }  from 'react-native';
+
 const util = require('util');
 export default class Intro extends Component {
   render() {
@@ -15,64 +16,54 @@ export default class Intro extends Component {
     var {navigate} = this.props.navigation;
 
     return (
-    <View style={{flex:1}}>
-    <View style={{justifyContent: 'flex-end', height:50, backgroundColor:'white'}}>
-    <View style={styles.Contact}>
-    <Text onPress = {() => navigate("ForgotPassword")} style={{ fontSize:20, textAlign:"center", color: "white"}}> C </Text>
-    </View>
-    </View>
+    <View style={{flex:1, backgroundColor:"#3393D0"}}>
       <ViewPagerAndroid style={styles.Pager} initialPage={0}>
         <View style={styles.Pager}>
-          <Image source={require('./images/icon.png')} />
-          <Text style={{fontSize: 24, fontWeight: "bold", color: "#086BB3"}}> XDANA </Text>
-          <Text style={{fontSize: 20, color: "#086BB3"}}> Invest Now, Invest The Future </Text>
+          <Text style={{fontSize: 36, fontWeight: "bold", color: "white"}}>Welcome to XDANA </Text>
+          <Image source={require('./asset/ic_retirement.png')} style={{marginTop:120, width: 50, height: 50}}/>
+          <Text style={{fontSize: 22, color: "white", marginTop: 20, fontWeight:"bold"}}>Retirement </Text>
+          <Text style={{fontSize: 16, color: "white", marginTop: 20}}>In order to finish your goal creation, you need to connect to your bank to set up auto saving every month. </Text>
         </View>
         <View style={styles.Pager}>
-          <Image source={require('./images/icon.png')} />
-          <Text style={{fontSize: 24, fontWeight: "bold", color: "#086BB3"}}> XDANA </Text>
-          <Text style={{fontSize: 20, color: "#086BB3"}}> Invest Now, Invest The Future </Text>
+        <Text style={{fontSize: 36, fontWeight: "bold", color: "white"}}>Welcome to XDANA </Text>
+        <Image source={require('./asset/Ic_asset.png')} style={{marginTop:120, width: 50, height: 50}}/>
+        <Text style={{fontSize: 22, color: "white", marginTop: 20, fontWeight:"bold"}}>Life Improvement</Text>
+        <Text style={{fontSize: 16, color: "white", marginTop: 20}}>In order to finish your goal creation, you need to connect to your bank to set up auto saving every month. </Text>
         </View>
         <View style={styles.Pager}>
-          <Image source={require('./images/icon.png')} />
-          <Text style={{fontSize: 24, fontWeight: "bold", color: "#086BB3"}}> XDANA </Text>
-          <Text style={{fontSize: 20, color: "#086BB3"}}> Invest Now, Invest The Future </Text>
+        <Text style={{fontSize: 36, fontWeight: "bold", color: "white"}}>Welcome to XDANA </Text>
+        <Image source={require('./asset/Ic_asset.png')} style={{marginTop:120, width: 50, height: 50}}/>
+        <Text style={{fontSize: 22, color: "white", marginTop: 20, fontWeight:"bold"}}>Asset investment </Text>
+        <Text style={{fontSize: 16, color: "white", marginTop: 20}}>In order to finish your goal creation, you need to connect to your bank to set up auto saving every month. </Text>
         </View>
       </ViewPagerAndroid>
-      <View style={{flexDirection: 'row', backgroundColor: "white", paddingBottom: 30}}>
-      <View style={{width: 150, padding:10, marginLeft:30}}>
+      <View style={{width: 320, padding:10, marginLeft:20}}>
           <Button
               title= "Login"
               color= "#086BB3"
-              onPress = {() => navigate("Login")}
+              height={200}
+              onPress = {() => navigate("Question1")}
               >
           </Button>
       </View>
-      <View style={{width: 150, padding:10}}>
+      <View style={{width: 320, padding:10, marginLeft:20, marginBottom: 30}}>
           <Button
-              title= "Sign Up"
+              title= "Register"
               color= "#086BB3"
-              onPress = {() => navigate("SignUp")}
+              onPress = {() => navigate("SignUp_Email")}
               >
           </Button>
-      </View>
       </View>
     </View>
+
     );
   }
 }
 const styles = StyleSheet.create({
   Pager:{
-    backgroundColor: 'white',
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
-  Contact:{
-    paddingTop:5,
-    width: 40,
-    height: 40,
-    marginLeft: 300,
-    borderRadius: 40/2,
-    backgroundColor: '#086BB3'
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
+    padding:30
   }
 })

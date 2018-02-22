@@ -6,41 +6,30 @@ import {
   Image,
   View,
   Button,
+  TouchableOpacity,
   ViewPagerAndroid
 }  from 'react-native';
 const util = require('util');
-export default class Intro extends Component {
+export default class Step1 extends Component {
   render() {
     console.log("this.props.navigation =" + util.inspect(this.props.navigation, false, null));
     var {navigate} = this.props.navigation;
 
     return (
   <View style={{flex:1}}>
-    <View style={{flexDirection: 'row', backgroundColor: "white", paddingTop:50}}>
-      <View style={styles.CircleSelected}>
-      <Text style={{justifyContent: "center", fontSize:20, textAlign:"center", color: "white"}}> 1 </Text>
-      </View>
-      <View style={styles.Circle}>
-      <Text style={{justifyContent: "center", fontSize:20, textAlign:"center", color: "#086BB3"}}> 2 </Text>
-      </View>
-      <View style={styles.Circle}>
-      <Text style={{justifyContent: "center", fontSize:20, textAlign:"center", color: "#086BB3"}}> 3 </Text>
-      </View>
 
-    </View>
     <View style={styles.container}>
-      <Text style={{fontSize: 20, color: "#086BB3"}}> About You </Text>
-      <Text style={{fontSize: 16, color: "#086BB3", marginLeft:20, marginRight:20, textAlign:"center"}}> Please tell us about you by taking a picture of your KTP, so we will know you better. </Text>
+      <Text style={{fontSize: 36, color: "#3393D0", fontWeight:"bold"}}>Who Are You?</Text>
+      <Text style={{fontSize: 16, color: "#58595B", marginLeft:20, marginRight:20, textAlign:"center"}}>In order to create an account, you need to scan your KTP and confirm your personal information.</Text>
     </View>
     <View style={{flexDirection: 'row', backgroundColor: "white", paddingBottom: 30}}>
-      <View style={{width: 300, padding:10, marginLeft:30}}>
-        <Button
-            title= "OK"
-            color= "#086BB3"
-            onPress = {() => navigate("ReviewID")}
-            >
-        </Button>
-      </View>
+    <View style={{flex:1}}>
+      <TouchableOpacity
+      style={{width: 60, height: 60, borderRadius:30, marginTop: 20, marginBottom:30, marginLeft:250, backgroundColor:"#3393D0"}}
+        onPress = {() => navigate("ReviewID")}>
+        <Text style={{color:"white", fontSize:24, fontWeight:"bold", marginTop:10, marginLeft:25}}>></Text>
+      </TouchableOpacity>
+    </View>
     </View>
   </View>
     );

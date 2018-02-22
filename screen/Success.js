@@ -7,6 +7,7 @@ import {
   View,
   Button,
   StyleSheet,
+  TouchableOpacity
 }  from 'react-native';
 
 const util = require('util');
@@ -19,15 +20,16 @@ export default class Question2 extends Component {
     var { navigate } = this.props.navigation;
     return (
       <View style={styles.container}>
-
-        <Text style={styles.title}>Congrats! You have successfully created an account!
+        <Text style={styles.title}>You’re Done !
         </Text>
-        <View style={{justifyContent:"flex-end",width: 300, marginTop: 50, marginBottom:20}}>
-          <Button
-              title= "Start using XDANA"
-              color="#086BB3"
-              onPress = {() => navigate("Home")} >
-          </Button>
+        <Text style={styles.label}>Congratulation! You have successfully completed your initial set up. Now you can start using XDANA.
+        </Text>
+        <View style={{flex:1}}>
+          <TouchableOpacity
+          style={{width: 60, height: 60, borderRadius:30, marginTop: 20, marginBottom:30, marginLeft:250, backgroundColor:"white"}}
+            onPress = {() => navigate("Home")}>
+            <Text style={{color:"#3393D0", fontSize:24, fontWeight:"bold", marginTop:10, marginLeft:25}}>></Text>
+          </TouchableOpacity>
         </View>
       </View>
     );
@@ -37,35 +39,27 @@ export default class Question2 extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: 'flex-end',
     paddingTop: 10,
     paddingLeft: 30,
     paddingRight:30,
-    backgroundColor:'white'
+    backgroundColor:'#3393D0'
   },
   title: {
-    fontSize: 20,
+    fontSize: 36,
+    fontWeight:'bold',
     textAlign: 'left',
-    marginTop: 20,
+    marginTop: 300,
     marginBottom: 5,
     marginLeft: 5,
-    color: 'black'
+    color: 'white'
   },
   label: {
     textAlign: 'left',
-    color: 'black',
-    marginTop: 5,
+    fontSize:16,
+    color: 'white',
+    marginTop: 30,
     marginLeft: 5,
     marginBottom:30
-  },
-  Type: {
-    marginTop: 20,
-    fontSize:20,
-    fontWeight:'bold',
-    color: 'black'
-  },
-  Details: {
-    fontSize:14,
-    color:'black'
   }
 });

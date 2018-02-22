@@ -5,7 +5,8 @@ import {
   TextInput,
   View,
   Button,
-  StyleSheet
+  StyleSheet,
+  TouchableOpacity
 }  from 'react-native';
 
 export default class SignUp_Phone extends Component {
@@ -15,28 +16,26 @@ export default class SignUp_Phone extends Component {
       <View style={styles.container}>
 
         <Text style={styles.title}>
-          Enter mobile phone number.
+          Enter your Mobile number.
         </Text>
-        <Text style={styles.phone}>
-        MOBILE PHONE NO.
-        </Text>
+        <View style={{flexDirection: 'row'}}>
+        <View style={{width:30, paddingTop:13}}>
+        <Text style={{color:"#3393D0", fontWeight:"bold", fontSize:16}}>+62</Text>
+        </View>
         <TextInput
-        style={{width: 300, color:"black"}}
-        placeholderTextColor="black"
-        underlineColorAndroid="black"
+        style={{width: 275, color:"#58595B", fontWeight:"bold", fontSize:16}}
+        placeholderTextColor="#58595B"
+        underlineColorAndroid="#58595B"
         autoFocus={true}
         keyboardType="numeric"
         />
-        <Text style={styles.details}>
-        We&rsquo;re gonna need your mobile phone number for veriﬁcation purpose.
-        </Text>
-        <View style={{width: 300, marginTop: 20}}>
-            <Button
-                title= "Next"
-                color="#086BB3"
-                onPress = {() => navigate("SignUp_Verify")}
-                >
-            </Button>
+        </View>
+        <View style={{flex:1}}>
+          <TouchableOpacity
+          style={{width: 60, height: 60, borderRadius:30, marginTop: 100, marginLeft:250, backgroundColor:"#3393D0"}}
+            onPress = {() => navigate("SignUp_Verify")}>
+            <Text style={{color:"white", fontSize:24, fontWeight:"bold", marginTop:10, marginLeft:25}}>></Text>
+          </TouchableOpacity>
         </View>
       </View>
     );
@@ -47,28 +46,15 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'flex-start',
-    paddingTop: 10,
+    paddingTop: 30,
     paddingLeft: 30,
     paddingRight:30,
     backgroundColor:'white'
   },
   title: {
-    fontSize: 20,
+    fontSize: 16,
     textAlign: 'left',
-    marginTop: 5,
     marginBottom: 30,
-    color: 'black'
-  },
-  phone: {
-    textAlign: 'left',
-    color: 'black',
-    marginTop: 5,
-    marginLeft: 5,
-  },
-  details: {
-    textAlign: 'left',
-    color: 'grey',
-    marginTop: 5,
-    marginLeft: 5,
-  },
+    color: '#58595B'
+  }
 });

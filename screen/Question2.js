@@ -7,36 +7,48 @@ import {
   View,
   Button,
   StyleSheet,
-  Picker
+  Picker,
+  TouchableOpacity
 }  from 'react-native';
-
+import RadioForm, {RadioButton, RadioButtonInput, RadioButtonLabel} from 'react-native-simple-radio-button';
 const util = require('util');
 export default class Question2 extends Component {
-  state = {answer: ''}
-   updateAnswer = (answer) => {
-      this.setState({ answer: answer })
-    }
+
   render() {
+
     var { navigate } = this.props.navigation;
     return (
       <View style={styles.container}>
 
         <Text style={styles.title}>
-        How much do you know about unit trust?
+        How long is your invesment period ?
         </Text>
-        <Picker selectedValue = {this.state.answer} onValueChange = {this.updateAnswer} >
-               <Picker.Item label = "None" value = "1" />
-               <Picker.Item label = "A little bit" value = "2" />
-               <Picker.Item label = "Understand unit trust" value = "3" />
-               <Picker.Item label = "I’m a PRO" value = "4" />
-            </Picker>
-            <View style={{width: 300, marginTop: 20, marginBottom:20}}>
-              <Button
-                  title= "Next"
-                  color="#086BB3"
-                  onPress = {() => navigate("Question3")} >
-              </Button>
-            </View>
+        <View style={{alignItems:'flex-start', justifyContent:"flex-start"}}>
+        <RadioForm
+          radio_props={ [
+          {label: '< 1 years   ', value: 1 },
+          {label: '1 - 2 years', value: 2 },
+          {label: '2 - 3 years', value: 3 },
+          {label: '3 - 5 years', value: 4 },
+          {label: '> 5 years   ', value: 5 }
+          ]}
+          buttonSize={8}
+          buttonOuterSize={20}
+          initial={0}
+          radioStyle={{paddingTop: 30}}
+          labelStyle={{fontSize:16}}
+          buttonInnerColor={'#3393D0'}
+          buttonOuterColor={'#3393D0'}
+          onPress={(value) => {this.setState({value:value})}}
+        />
+        </View>
+        <View style={{flex:1}}>
+          <TouchableOpacity
+          style={{width: 60, height: 60, borderRadius:30, marginTop: 100, marginBottom:30, marginLeft:250, backgroundColor:"#3393D0"}}
+            onPress = {() => navigate("Question3")}>
+            <Text style={{color:"white", fontSize:24, fontWeight:"bold", marginTop:10, marginLeft:25}}>></Text>
+          </TouchableOpacity>
+        </View>
       </View>
     );
   }
@@ -46,18 +58,19 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'flex-start',
-    paddingTop: 10,
+    paddingTop: 20,
     paddingLeft: 30,
     paddingRight:30,
     backgroundColor:'white'
   },
   title: {
-    fontSize: 20,
+    fontSize: 16,
     textAlign: 'left',
     marginTop: 5,
     marginBottom: 5,
     marginLeft: 5,
-    color: 'black'
+    fontWeight:'bold',
+    color: '#58595B'
   },
   textpassword: {
     textAlign: 'left',

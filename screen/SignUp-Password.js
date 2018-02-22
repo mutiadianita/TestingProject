@@ -5,7 +5,9 @@ import {
   TextInput,
   View,
   Button,
-  StyleSheet
+  StyleSheet,
+  TouchableOpacity,
+  Image
 }  from 'react-native';
 
 const util = require('util');
@@ -16,27 +18,36 @@ export default class SignUp_Password extends Component {
       <View style={styles.container}>
 
         <Text style={styles.title}>
-          Create a password.
+          Please fill in the data below to create an Xdana account.
         </Text>
-        <Text style={styles.textpassword}>
-        Password must be 8 characters long
+        <View style={{flexDirection:"row"}}>
+        <Image source={require('./asset/ic_newprofile_blue.png')} style={{width: 30, height: 30}}/>
+        <Text style={{fontSize:16, fontWeight:"bold", color:"#3393D0", marginTop: 5, marginLeft: 5, marginBottom:20}}>Your password
         </Text>
-        <Text style={styles.password}>
-        PASSWORD
+        </View>
+        <Text style={styles.label}>Password
         </Text>
         <TextInput
-        style={{width: 300, fontSize: 20, color:"black"}}
-        placeholderTextColor="black"
-        underlineColorAndroid="black"
-        secureTextEntry={true}
+        style={{width: 280, marginLeft:30, color:"#58595B", fontWeight:"bold", fontSize:16}}
+        placeholderTextColor="#58595B"
+        underlineColorAndroid="#58595B"
+        secureTextEntry
         />
-        <View style={{width: 300, marginTop: 20}}>
-            <Button
-                title= "Next"
-                color="#086BB3"
-                onPress = {() => navigate('Step1')}
-                >
-            </Button>
+        <Text style={styles.label}>Re-type Password
+        </Text>
+        <TextInput
+        style={{width: 280, marginLeft:30, color:"#58595B", fontWeight:"bold", fontSize:16}}
+        secureTextEntry={true}
+        secureTextEntry
+        placeholderTextColor="#58595B"
+        underlineColorAndroid="#58595B"
+        />
+        <View style={{flex:1}}>
+          <TouchableOpacity
+          style={{width: 60, height: 60, borderRadius:30, marginTop: 20, marginLeft:250, backgroundColor:"#3393D0"}}
+            onPress = {() => navigate("Step1")}>
+            <Text style={{color:"white", fontSize:24, fontWeight:"bold", marginTop:10, marginLeft:25}}>></Text>
+          </TouchableOpacity>
         </View>
       </View>
     );
@@ -47,30 +58,22 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'flex-start',
-    paddingTop: 10,
-    paddingLeft: 30,
+    paddingTop: 30,
+    paddingLeft: 25,
     paddingRight:30,
     backgroundColor:'white'
   },
   title: {
-    fontSize: 20,
+    fontSize: 16,
     textAlign: 'left',
-    marginTop: 5,
-    marginBottom: 5,
-    marginLeft: 5,
-    color: 'black'
+    marginBottom: 20,
+    color: '#58595B'
   },
-  textpassword: {
+  label: {
     textAlign: 'left',
-    color: 'black',
-    marginTop: 5,
-    marginLeft: 5,
-    marginBottom:30
-  },
-  password: {
-    textAlign: 'left',
-    color: 'black',
-    marginTop: 5,
-    marginLeft: 5
-  },
+    color: '#58595B',
+    marginTop: 10,
+    marginLeft: 35,
+    fontSize:14
+  }
 });

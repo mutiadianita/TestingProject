@@ -7,6 +7,7 @@ import {
   Button,
   Image,
   ScrollView,
+  TouchableOpacity,
   StyleSheet
 }  from 'react-native';
 
@@ -17,17 +18,10 @@ export default class ReviewID extends Component {
     return (
       <View style={styles.container}>
 
-        <Text style={styles.title}>
-          Review your ID Card number.
-        </Text>
+        <Text style={styles.title}>Please confirm your card and the ID Card number below.</Text>
         <ScrollView>
-        <Text style={styles.subtitle}>
-        Please check your ID Card and conﬁrm your ID Card number.
-        </Text>
         <Image source={require('./images/idcard.png')} />
-        <Text style={styles.label}>
-        ID CARD NUMBER
-        </Text>
+        <Text style={styles.label}>Your ID Card Number</Text>
         <TextInput
         style={{width: 300, fontSize: 20, color:"black"}}
         placeholderTextColor="black"
@@ -35,27 +29,16 @@ export default class ReviewID extends Component {
         autoFocus={true}
         secureTextEntry={true}
         />
-        <Text style={styles.label}>
-        By clicking conﬁrm, I agree the information above is correct.
+        <Text style={styles.details}>
+        * You can correct your ID Card number
         </Text>
         </ScrollView>
-        <View style={{flexDirection: 'row'}}>
-        <View style={{width: 150, padding:10}}>
-            <Button
-                title= "Retake"
-                color= "#086BB3"
-                onPress = {() => navigate("PicKTP")}
-                >
-            </Button>
-        </View>
-        <View style={{width: 150, padding:10}}>
-            <Button
-                title= "Confirm"
-                color= "#086BB3"
-                onPress = {() => navigate("YourInformation")}
-                >
-            </Button>
-        </View>
+        <View style={{flex:1}}>
+          <TouchableOpacity
+          style={{width: 60, height: 60, borderRadius:30,marginLeft:250, backgroundColor:"#3393D0"}}
+            onPress = {() => navigate("YourInformation")}>
+            <Text style={{color:"white", fontSize:24, fontWeight:"bold", marginTop:10, marginLeft:25}}>></Text>
+          </TouchableOpacity>
         </View>
       </View>
     );
@@ -71,31 +54,25 @@ const styles = StyleSheet.create({
     backgroundColor:'white'
   },
   title: {
-    fontSize: 20,
+    fontSize: 16,
     textAlign: 'left',
     marginTop: 5,
     marginBottom: 5,
     marginLeft: 5,
-    color: 'black'
-  },
-  subtitle: {
-    textAlign: 'left',
-    color: 'black',
-    marginTop: 5,
-    marginLeft: 5,
-    marginBottom:30,
-    marginRight:30
+    color: '#58595B'
   },
   label: {
     textAlign: 'left',
-    color: 'black',
-    marginTop: 5,
-    marginLeft: 5
+    color: '#333333',
+    marginTop: 30,
+    marginLeft: 5,
+    fontSize: 14
   },
-  confirm: {
-    textAlign: 'center',
-    color: 'black',
-    marginTop: 25,
-    fontSize:13
+  details: {
+    textAlign: 'left',
+    color: '#58595B',
+    marginTop: 5,
+    marginLeft: 5,
+    fontSize:10
   }
 });
