@@ -1,16 +1,3 @@
 rootProject.name = 'TestingProject'
-include ':react-native-mp-android-chart'
-project(':react-native-mp-android-chart').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-mp-android-chart/android')
-include ':react-native-linear-gradient'
-project(':react-native-linear-gradient').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-linear-gradient/android')
-include ':react-native-camera'
-project(':react-native-camera').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-camera/android')
-include ':react-native-camera'
-project(':react-native-camera').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-camera/android')
-include ':react-native-full-screen'
-project(':react-native-full-screen').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-full-screen/android')
-include ':react-native-splash-screen'
-project(':react-native-splash-screen').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-splash-screen/android')
-include ':reactNativeMPAndroidChart'
-project(':reactNativeMPAndroidChart').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-mp-android-chart/android')
+
 include ':app'

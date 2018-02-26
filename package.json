@@ -1,5 +1,5 @@
 {
-  "name": "TestingProject",
+  "name": "Xdana",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -10,7 +10,7 @@
     "i": "^0.3.6",
     "react": "16.2.0",
     "react-native": "0.53.0",
-    "react-native-camera": "^1.0.1",
+    "react-native-camera": "git+https://git@github.com/react-native-community/react-native-camera",
     "react-native-confirmation-code-input": "^1.0.4",
     "react-native-full-screen": "0.0.2",
     "react-native-linear-gradient": "^2.4.0",
@@ -19,7 +19,7 @@
     "react-native-simple-radio-button": "^2.7.1",
     "react-native-splash-screen": "^3.0.6",
     "react-native-viewpager": "^0.2.13",
-    "react-navigation": "^1.0.3",
+    "react-navigation": "^1.2.0",
     "rn-viewpager": "^1.2.9",
     "util": "*"
   },
