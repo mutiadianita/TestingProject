@@ -13,14 +13,12 @@ import {
 import RadioForm, {RadioButton, RadioButtonInput, RadioButtonLabel} from 'react-native-simple-radio-button';
 const util = require('util');
 export default class Question5 extends Component {
-
   render() {
-
     var { navigate } = this.props.navigation;
     return (
-      <View style={styles.container}>
+      <View style={styles.Container}>
 
-        <Text style={styles.title}>
+        <Text style={styles.Title}>
         How much do you know about mutual fund?
         </Text>
         <View style={{alignItems:'flex-start', justifyContent:"flex-start"}}>
@@ -55,7 +53,7 @@ export default class Question5 extends Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
+  Container: {
     flex: 1,
     justifyContent: 'flex-start',
     paddingTop: 20,
@@ -63,30 +61,12 @@ const styles = StyleSheet.create({
     paddingRight:30,
     backgroundColor:'white'
   },
-  title: {
+  Title: {
     fontSize: 16,
     textAlign: 'left',
     marginTop: 5,
     marginBottom: 5,
     fontWeight:'bold',
     color: '#58595B'
-  },
-  textpassword: {
-    textAlign: 'left',
-    color: 'black',
-    marginTop: 5,
-    marginLeft: 5,
-    marginBottom:30
-  },
-  password: {
-    textAlign: 'left',
-    color: 'black',
-    marginTop: 5,
-    marginLeft: 5
-  },
-  text: {
-      fontSize: 30,
-      alignSelf: 'center',
-      color: 'red'
-   }
+  }
 });

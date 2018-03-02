@@ -12,13 +12,13 @@ import {
 }  from 'react-native';
 
 const util = require('util');
-export default class ReviewID extends Component {
+export default class ReviewSelfie extends Component {
   render() {
     var { navigate } = this.props.navigation;
     return (
-      <View style={styles.container}>
+      <View style={stylesContainer}>
 
-        <Text style={styles.title}>Please Confirm the image you’ve taken</Text>
+        <Text style={styles.Title}>Please Confirm the image you’ve taken</Text>
         <ScrollView>
         <View style={{marginTop:20, alignItems:'center', justifyContent:'center'}}>
         <Image style={{width:300, height:350}} source={require('./images/bapak.png')} />
@@ -47,7 +47,7 @@ export default class ReviewID extends Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
+  Container: {
     flex: 1,
     justifyContent: 'flex-start',
     paddingTop: 10,
@@ -55,26 +55,12 @@ const styles = StyleSheet.create({
     paddingRight: 30,
     backgroundColor:'white'
   },
-  title: {
+  Title: {
     fontSize: 16,
     textAlign: 'left',
     marginTop: 5,
     marginBottom: 5,
     marginLeft: 5,
     color: '#58595B'
-  },
-  label: {
-    textAlign: 'left',
-    color: '#333333',
-    marginTop: 30,
-    marginLeft: 5,
-    fontSize: 14
-  },
-  details: {
-    textAlign: 'left',
-    color: '#58595B',
-    marginTop: 5,
-    marginLeft: 5,
-    fontSize:10
   }
 });

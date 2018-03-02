@@ -15,13 +15,12 @@ export default class YourAddress extends Component {
   render() {
     var { navigate } = this.props.navigation;
     return (
-      <View style={styles.container}>
-
-        <Text style={styles.title}>
-          Where do you live? based on KTP
-        </Text>
-        <ScrollView>
-        <Text style={styles.label}>
+    <View style={styles.Container}>
+      <Text style={styles.Title}>
+        Where do you live? based on KTP
+      </Text>
+      <ScrollView>
+        <Text style={styles.Label}>
         ADDRESS
         </Text>
         <TextInput
@@ -30,7 +29,7 @@ export default class YourAddress extends Component {
         underlineColorAndroid="black"
         autoFocus={true}
         />
-        <Text style={styles.label}>
+        <Text style={styles.Label}>
         PROVINCE
         </Text>
         <TextInput
@@ -39,7 +38,7 @@ export default class YourAddress extends Component {
         placeholderTextColor="black"
         underlineColorAndroid="black"
         />
-        <Text style={styles.label}>
+        <Text style={styles.Label}>
         KOTA/KABUPATEN
         </Text>
         <TextInput
@@ -48,7 +47,7 @@ export default class YourAddress extends Component {
         placeholderTextColor="black"
         underlineColorAndroid="black"
         />
-        <Text style={styles.label}>
+        <Text style={styles.Label}>
         KECAMATAN
         </Text>
         <TextInput
@@ -57,7 +56,7 @@ export default class YourAddress extends Component {
         placeholderTextColor="black"
         underlineColorAndroid="black"
         />
-        <Text style={styles.label}>
+        <Text style={styles.Label}>
         KELURAHAN
         </Text>
         <TextInput
@@ -66,7 +65,7 @@ export default class YourAddress extends Component {
         placeholderTextColor="black"
         underlineColorAndroid="black"
         />
-        <Text style={styles.label}>
+        <Text style={styles.Label}>
         POSTAL CODE
         </Text>
         <TextInput
@@ -78,10 +77,10 @@ export default class YourAddress extends Component {
         maxLength={5}
         />
         <View style={{ flexDirection: 'row', height: 30,}}>
-        <CheckBox title='Click Here'/>
-        <Text style={styles.check}>My Mailing address is diﬀerent from KTP</Text>
-      </View>
-    </ScrollView>
+          <CheckBox title='Click Here'/>
+          <Text style={styles.Check}>My Mailing address is diﬀerent from KTP</Text>
+        </View>
+      </ScrollView>
       <View style={{width: 300, marginTop: 20, marginBottom:20}}>
         <Button
             title= "Next"
@@ -95,26 +94,26 @@ export default class YourAddress extends Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
+  Container: {
     flex: 1,
     justifyContent: 'flex-start',
     paddingTop: 10,
     paddingLeft: 30,
     backgroundColor:'white'
   },
-  title: {
+  Title: {
     fontSize: 20,
     textAlign: 'left',
     marginBottom: 30,
     color: 'black'
   },
-  label: {
+  Label: {
     textAlign: 'left',
     color: 'black',
     marginTop: 5,
     marginLeft: 5,
   },
-  check: {
+  Check: {
     textAlign: 'left',
     color: 'black',
     marginTop: 5,

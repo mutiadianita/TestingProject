@@ -30,28 +30,28 @@ export default class YourInformation extends Component {
   render() {
     var { navigate } = this.props.navigation;
     return (
-      <View style={styles.container}>
+      <View style={styles.Container}>
 
-        <Text style={styles.title}>Please confirm the data below as it is on your KTP</Text>
+        <Text style={styles.Title}>Please confirm the data below as it is on your KTP</Text>
         <ScrollView>
         <View style={{flexDirection:"row"}}>
         <Image source={require('./asset/ic_profile_blue.png')} style={{width: 30, height: 30}}/>
         <Text style={{fontSize:16, fontWeight:"bold", color:"#3393D0", marginTop: 5, marginLeft: 5, marginBottom:20}}>Profile
         </Text>
         </View>
-        <Text style={styles.label}>Full Name as on KTP</Text>
+        <Text style={styles.Label}>Full Name as on KTP</Text>
         <TextInput
         style={{marginLeft:30,width: 280, color:"black"}}
         placeholderTextColor="black"
         underlineColorAndroid="black"
         />
-        <Text style={styles.label}>Place of birth</Text>
+        <Text style={styles.Label}>Place of birth</Text>
         <TextInput
         style={{marginLeft:30,width: 280, color:"black"}}
         placeholderTextColor="black"
         underlineColorAndroid="black"
         />
-        <Text style={styles.label}>Date of Birth</Text>
+        <Text style={styles.Label}>Date of Birth</Text>
         <TextInput
         style={{marginLeft:30,width: 280, color:"black"}}
         placeholderTextColor="black"
@@ -61,20 +61,20 @@ export default class YourInformation extends Component {
         <Image source={require('./asset/ic_loc_blue.png')} style={{width: 30, height: 30}}/>
         <Text style={{fontSize:16, fontWeight:"bold", color:"#3393D0", marginTop: 5, marginLeft: 5, marginBottom:20}}>Mailing Address</Text>
         </View>
-        <Text style={styles.label}>Address</Text>
+        <Text style={styles.Label}>Address</Text>
         <TextInput
         style={{marginLeft:30,width: 280, color:"black"}}
         placeholderTextColor="black"
         underlineColorAndroid="black"
         />
-        <Text style={styles.label}>Province</Text>
+        <Text style={styles.Label}>Province</Text>
         <Picker style={{marginLeft:30, width:280}} selectedValue = {this.state.province} onValueChange = {this.updateProvince} mode='dropdown' >
            <Picker.Item label = "Banten" value = "1" />
            <Picker.Item label = "DKI Jakarta" value = "2" />
            <Picker.Item label = "Jawa Barat" value = "3" />
            <Picker.Item label = "Jawa Tengah" value = "4" />
         </Picker>
-        <Text style={styles.label}>Kabupaten/Kota</Text>
+        <Text style={styles.Label}>Kabupaten/Kota</Text>
         <Picker style={{marginLeft:30, width:280}} selectedValue = {this.state.kabupaten} onValueChange = {this.updateKabupaten} mode='dropdown' >
            <Picker.Item label = "Jakarta Barat" value = "1" />
            <Picker.Item label = "Jakarta Pusat" value = "2" />
@@ -82,7 +82,7 @@ export default class YourInformation extends Component {
            <Picker.Item label = "Jakarta Timur" value = "4" />
            <Picker.Item label = "Jakarta Utara" value = "5" />
         </Picker>
-        <Text style={styles.label}>Kelurahan</Text>
+        <Text style={styles.Label}>Kelurahan</Text>
         <Picker style={{marginLeft:30, width:280}} selectedValue = {this.state.kelurahan} onValueChange = {this.updateKelurahan} mode='dropdown' >
            <Picker.Item label = "Jakarta Barat" value = "1" />
            <Picker.Item label = "Jakarta Pusat" value = "2" />
@@ -90,7 +90,7 @@ export default class YourInformation extends Component {
            <Picker.Item label = "Jakarta Timur" value = "4" />
            <Picker.Item label = "Jakarta Utara" value = "5" />
         </Picker>
-        <Text style={styles.label}>Kode Pos</Text>
+        <Text style={styles.Label}>Kode Pos</Text>
         <TextInput
         style={{marginLeft:30,width: 280, color:"black"}}
         placeholderTextColor="black"
@@ -112,28 +112,28 @@ export default class YourInformation extends Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
+  Container: {
     flex: 1,
     justifyContent: 'flex-start',
     paddingTop: 30,
     paddingLeft: 30,
     backgroundColor:'white'
   },
-  title: {
+  Title: {
     fontSize: 16,
     textAlign: 'left',
     marginBottom: 30,
     marginRight:30,
     color: '#58595B'
   },
-  label: {
+  Label: {
     textAlign: 'left',
     color: '#58595B',
     marginTop: 10,
     marginLeft: 35,
     fontSize:14
   },
-  check: {
+  Check: {
     textAlign: 'left',
     color: '#58595B',
     marginLeft: 5,

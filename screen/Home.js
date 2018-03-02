@@ -19,6 +19,7 @@ export default class Home extends Component {
     }
   render() {
     var { navigate } = this.props.navigation;
+    var LoL=50;
     return (
       <View style={styles.Container}>
         <View style={styles.Box}>
@@ -46,7 +47,7 @@ export default class Home extends Component {
             <Text style={{fontSize:16, color:"#FEFEFE", marginBottom:30, marginTop:10}}>Start investing now and reaching your dream.</Text>
           </View>
         </View>
-        <View style={{zIndex:2, height:500, backgroundColor:"white", zIndex:2, paddingTop:30, paddingLeft:20}}>
+        <View style={{zIndex:2, height:500, backgroundColor:"white", paddingTop:LoL, paddingLeft:20}}>
           <Text style={{fontSize:18, color:"#4D4D4C"}}>Knowledge Center</Text>
           <View style={{flexDirection:'row', flex:1}}>
           <ScrollView horizontal={true}>
@@ -82,7 +83,7 @@ const styles = StyleSheet.create({
   Box: {
     flexDirection:'row',
     position: 'absolute',
-    marginTop:200,
+    marginTop:210,
     zIndex:3,
     height: 70,
     width:320,

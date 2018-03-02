@@ -18,9 +18,9 @@ export default class Question4 extends Component {
 
     var { navigate } = this.props.navigation;
     return (
-      <View style={styles.container}>
+      <View style={styles.Container}>
 
-        <Text style={styles.title}>
+        <Text style={styles.Title}>
         How ready are you in enduring the risk of loss?
         </Text>
         <View style={{alignItems:'flex-start', justifyContent:"flex-start"}}>
@@ -55,7 +55,7 @@ export default class Question4 extends Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
+  Container: {
     flex: 1,
     justifyContent: 'flex-start',
     paddingTop: 20,
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
     paddingRight:30,
     backgroundColor:'white'
   },
-  title: {
+  Title: {
     fontSize: 16,
     textAlign: 'left',
     marginTop: 5,
@@ -71,23 +71,5 @@ const styles = StyleSheet.create({
     marginLeft: 5,
     fontWeight:'bold',
     color: '#58595B'
-  },
-  textpassword: {
-    textAlign: 'left',
-    color: 'black',
-    marginTop: 5,
-    marginLeft: 5,
-    marginBottom:30
-  },
-  password: {
-    textAlign: 'left',
-    color: 'black',
-    marginTop: 5,
-    marginLeft: 5
-  },
-  text: {
-      fontSize: 30,
-      alignSelf: 'center',
-      color: 'red'
-   }
+  }
 });

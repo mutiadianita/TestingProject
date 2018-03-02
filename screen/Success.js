@@ -11,7 +11,7 @@ import {
 }  from 'react-native';
 
 const util = require('util');
-export default class Question2 extends Component {
+export default class Success extends Component {
   state = {answer: ''}
    updateAnswer = (answer) => {
       this.setState({ answer: answer })
@@ -19,10 +19,10 @@ export default class Question2 extends Component {
   render() {
     var { navigate } = this.props.navigation;
     return (
-      <View style={styles.container}>
-        <Text style={styles.title}>You’re Done !
+      <View style={styles.Container}>
+        <Text style={styles.Title}>You’re Done !
         </Text>
-        <Text style={styles.label}>Congratulation! You have successfully completed your initial set up. Now you can start using XDANA.
+        <Text style={styles.Label}>Congratulation! You have successfully completed your initial set up. Now you can start using XDANA.
         </Text>
         <View style={{flex:1}}>
           <TouchableOpacity
@@ -37,7 +37,7 @@ export default class Question2 extends Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
+  Container: {
     flex: 1,
     justifyContent: 'flex-end',
     paddingTop: 10,
@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
     paddingRight:30,
     backgroundColor:'#3393D0'
   },
-  title: {
+  Title: {
     fontSize: 36,
     fontWeight:'bold',
     textAlign: 'left',
@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
     marginLeft: 5,
     color: 'white'
   },
-  label: {
+  Label: {
     textAlign: 'left',
     fontSize:16,
     color: 'white',

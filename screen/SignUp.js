@@ -12,12 +12,10 @@ export default class SignUp extends Component {
   render() {
     var {navigate} = this.props.navigation;
     return (
-      <View style={styles.container}>
-
-        <Text style={styles.title}>
+      <View style={styles.Container}>
+        <Text style={styles.Title}>
           Sign Up
         </Text>
-
         <View style={{width: 300, marginTop: 20}}>
             <Button
                 title= "Continue with Facebook"
@@ -34,7 +32,7 @@ export default class SignUp extends Component {
                 >
             </Button>
         </View>
-        <Text style={styles.or}>
+        <Text style={styles.Or}>
           OR
         </Text>
         <View style={{width: 300, marginTop: 20}}>
@@ -45,12 +43,12 @@ export default class SignUp extends Component {
                 >
             </Button>
         </View>
-        <View style={styles.containerlogin}>
+        <View style={styles.Containerlogin}>
         <View style={{flexDirection: 'row', alignItems:"center", justifyContent: "center"}}>
-          <Text style={styles.logintext}>
+          <Text style={styles.LoginText}>
             Already have an account?
           </Text>
-          <Text style={styles.login} onPress = {() => navigate("Login")}>
+          <Text style={styles.Login} onPress = {() => navigate("Login")}>
             Login
           </Text>
         </View>
@@ -61,7 +59,7 @@ export default class SignUp extends Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
+  Container: {
     flex: 1,
     justifyContent: 'flex-start',
     paddingTop: 10,
@@ -69,29 +67,29 @@ const styles = StyleSheet.create({
     paddingRight:30,
     backgroundColor:'white'
   },
-  title: {
+  Title: {
     fontSize: 20,
     textAlign: 'left',
     marginBottom: 30,
     color: 'black'
   },
-  or: {
+  Or: {
     textAlign: 'center',
     color: 'grey',
     marginTop: 10,
   },
-  containerlogin: {
+  Containerlogin: {
     flex:2,
     justifyContent:'flex-end',
     marginBottom: 30
   },
-  logintext: {
+  LoginText: {
     textAlign: 'center',
     color: 'black',
     marginTop: 5,
     marginLeft: 5
   },
-  login: {
+  Login: {
     textAlign: 'center',
     color: 'black',
     marginTop: 5,

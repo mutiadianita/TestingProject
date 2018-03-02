@@ -10,15 +10,15 @@ import {
 } from 'react-native';
 import { RNCamera } from 'react-native-camera';
 
-class BadInstagramCloneApp extends Component {
+class ScanKTP extends Component {
   render() {
     return (
-      <View style={styles.container}>
+      <View style={styles.Container}>
         <RNCamera
             ref={ref => {
               this.camera = ref;
             }}
-            style = {styles.preview}
+            style = {styles.Preview}
             type={RNCamera.Constants.Type.back}
             flashMode={RNCamera.Constants.FlashMode.on}
             permissionDialogTitle={'Permission to use camera'}
@@ -27,7 +27,7 @@ class BadInstagramCloneApp extends Component {
         <View style={{flex: 0, flexDirection: 'row', justifyContent: 'center',}}>
         <TouchableOpacity
             onPress={this.takePicture.bind(this)}
-            style = {styles.capture}
+            style = {styles.Capture}
         >
             <Text style={{fontSize: 14}}> SNAP </Text>
         </TouchableOpacity>
@@ -46,17 +46,17 @@ class BadInstagramCloneApp extends Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
+  Container: {
     flex: 1,
     flexDirection: 'column',
     backgroundColor: 'black'
   },
-  preview: {
+  Preview: {
     flex: 1,
     justifyContent: 'flex-end',
     alignItems: 'center'
   },
-  capture: {
+  Capture: {
     flex: 0,
     backgroundColor: '#fff',
     borderRadius: 5,

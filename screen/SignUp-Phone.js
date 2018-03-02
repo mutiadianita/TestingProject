@@ -13,22 +13,21 @@ export default class SignUp_Phone extends Component {
   render() {
     var { navigate } = this.props.navigation;
     return (
-      <View style={styles.container}>
-
-        <Text style={styles.title}>
+      <View style={styles.Container}>
+        <Text style={styles.Title}>
           Enter your Mobile number.
         </Text>
         <View style={{flexDirection: 'row'}}>
-        <View style={{width:30, paddingTop:13}}>
-        <Text style={{color:"#3393D0", fontWeight:"bold", fontSize:16}}>+62</Text>
-        </View>
-        <TextInput
-        style={{width: 275, color:"#58595B", fontWeight:"bold", fontSize:16}}
-        placeholderTextColor="#58595B"
-        underlineColorAndroid="#58595B"
-        autoFocus={true}
-        keyboardType="numeric"
-        />
+          <View style={{width:30, paddingTop:13}}>
+            <Text style={{color:"#3393D0", fontWeight:"bold", fontSize:16}}>+62</Text>
+          </View>
+          <TextInput
+          style={{width: 275, color:"#58595B", fontWeight:"bold", fontSize:16}}
+          placeholderTextColor="#58595B"
+          underlineColorAndroid="#58595B"
+          autoFocus={true}
+          keyboardType="numeric"
+          />
         </View>
         <View style={{flex:1}}>
           <TouchableOpacity
@@ -43,7 +42,7 @@ export default class SignUp_Phone extends Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
+  Container: {
     flex: 1,
     justifyContent: 'flex-start',
     paddingTop: 30,
@@ -51,7 +50,7 @@ const styles = StyleSheet.create({
     paddingRight:30,
     backgroundColor:'white'
   },
-  title: {
+  Title: {
     fontSize: 16,
     textAlign: 'left',
     marginBottom: 30,

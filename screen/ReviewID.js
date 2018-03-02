@@ -16,12 +16,12 @@ export default class ReviewID extends Component {
   render() {
     var { navigate } = this.props.navigation;
     return (
-      <View style={styles.container}>
+      <View style={styles.Container}>
 
-        <Text style={styles.title}>Please confirm your card and the ID Card number below.</Text>
+        <Text style={styles.Title}>Please confirm your card and the ID Card number below.</Text>
         <ScrollView>
         <Image source={require('./images/idcard.png')} />
-        <Text style={styles.label}>Your ID Card Number</Text>
+        <Text style={styles.Label}>Your ID Card Number</Text>
         <TextInput
         style={{width: 300, fontSize: 20, color:"black"}}
         placeholderTextColor="black"
@@ -29,7 +29,7 @@ export default class ReviewID extends Component {
         autoFocus={true}
         secureTextEntry={true}
         />
-        <Text style={styles.details}>
+        <Text style={styles.Details}>
         * You can correct your ID Card number
         </Text>
         </ScrollView>
@@ -46,14 +46,14 @@ export default class ReviewID extends Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
+  Container: {
     flex: 1,
     justifyContent: 'flex-start',
     paddingTop: 10,
     paddingLeft: 30,
     backgroundColor:'white'
   },
-  title: {
+  Title: {
     fontSize: 16,
     textAlign: 'left',
     marginTop: 5,
@@ -61,14 +61,14 @@ const styles = StyleSheet.create({
     marginLeft: 5,
     color: '#58595B'
   },
-  label: {
+  Label: {
     textAlign: 'left',
     color: '#333333',
     marginTop: 30,
     marginLeft: 5,
     fontSize: 14
   },
-  details: {
+  Details: {
     textAlign: 'left',
     color: '#58595B',
     marginTop: 5,

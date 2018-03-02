@@ -6,8 +6,7 @@ import {
   Image,
   View,
   Button,
-  TouchableOpacity,
-  ViewPagerAndroid
+  TouchableOpacity
 }  from 'react-native';
 const util = require('util');
 export default class Step1 extends Component {
@@ -18,7 +17,7 @@ export default class Step1 extends Component {
     return (
   <View style={{flex:1}}>
 
-    <View style={styles.container}>
+    <View style={styles.Container}>
       <Text style={{fontSize: 36, color: "#3393D0", fontWeight:"bold"}}>Who Are You?</Text>
       <Text style={{fontSize: 16, color: "#58595B", marginLeft:20, marginRight:20, textAlign:"center"}}>In order to create an account, you need to scan your KTP and confirm your personal information.</Text>
     </View>
@@ -36,28 +35,10 @@ export default class Step1 extends Component {
   }
 }
 const styles = StyleSheet.create({
-  container:{
+  Container:{
     backgroundColor: 'white',
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center'
-  },
-  CircleSelected:{
-    paddingTop:5,
-    marginLeft: 40,
-    marginRight: 40,
-    width: 40,
-    height: 40,
-    borderRadius: 40/2,
-    backgroundColor: '#086BB3'
-  },
-  Circle:{
-    paddingTop:5,
-    marginLeft: 40,
-    marginRight: 40,
-    width: 40,
-    height: 40,
-    borderRadius: 40/2,
-    backgroundColor: '#EEEEEE'
   }
 })

@@ -9,11 +9,10 @@ import {
   ViewPagerAndroid
 }  from 'react-native';
 const util = require('util');
-export default class Intro extends Component {
+export default class RiskResult extends Component {
   render() {
     console.log("this.props.navigation =" + util.inspect(this.props.navigation, false, null));
     var {navigate} = this.props.navigation;
-
     return (
     <View style={{flex:1, backgroundColor:"#3393D0"}}>
       <ViewPagerAndroid style={{flex: 1, margin:30}} initialPage={0}>
@@ -112,8 +111,5 @@ const styles = StyleSheet.create({
     marginLeft:20,
     borderRadius:3,
     padding:20
-  },
-  chart: {
-    flex: 1
   }
 })

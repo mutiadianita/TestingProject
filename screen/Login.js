@@ -14,21 +14,21 @@ export default class Login extends Component {
   render() {
     var { navigate } = this.props.navigation;
     return (
-      <View style={styles.container}>
+      <View style={styles.Container}>
 
-        <Text style={styles.title}>
+        <Text style={styles.Title}>
           Please fill in the data below to Login to your Xdana account.
         </Text>
         <Text style={{fontSize:16, fontWeight:"bold", color:"#3393D0", marginLeft: 30, marginBottom:20}}>Account info
         </Text>
-        <Text style={styles.label}>Name
+        <Text style={styles.Label}>Name
         </Text>
         <TextInput
         style={{width: 280, marginLeft:25, color:"#58595B", fontWeight:"bold", fontSize:16}}
         placeholderTextColor="#58595B"
         underlineColorAndroid="#58595B"
         />
-        <Text style={styles.label}>Password
+        <Text style={styles.Label}>Password
         </Text>
         <TextInput
         style={{width: 280, marginLeft:25, color:"#58595B", fontWeight:"bold", fontSize:16}}
@@ -50,7 +50,7 @@ export default class Login extends Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
+  Container: {
     flex: 1,
     justifyContent: 'flex-start',
     paddingTop: 30,
@@ -58,13 +58,13 @@ const styles = StyleSheet.create({
     paddingRight:30,
     backgroundColor:'white'
   },
-  title: {
+  Title: {
     fontSize: 16,
     textAlign: 'left',
     marginBottom: 20,
     color: '#58595B'
   },
-  label: {
+  Label: {
     textAlign: 'left',
     color: '#58595B',
     marginTop: 10,

@@ -15,9 +15,9 @@ export default class SignUp_Email extends Component {
   render() {
     var { navigate } = this.props.navigation;
     return (
-      <View style={styles.container}>
+      <View style={styles.Container}>
 
-        <Text style={styles.title}>
+        <Text style={styles.Title}>
           Please fill in the data below to create an Xdana account.
         </Text>
         <View style={{flexDirection:"row"}}>
@@ -25,14 +25,14 @@ export default class SignUp_Email extends Component {
         <Text style={{fontSize:16, fontWeight:"bold", color:"#3393D0", marginTop: 5, marginLeft: 5, marginBottom:20}}>Account
         </Text>
         </View>
-        <Text style={styles.label}>Name
+        <Text style={styles.Label}>Name
         </Text>
         <TextInput
         style={{width: 280, marginLeft:30, color:"#58595B", fontWeight:"bold", fontSize:16}}
         placeholderTextColor="#58595B"
         underlineColorAndroid="#58595B"
         />
-        <Text style={styles.label}>Email
+        <Text style={styles.Label}>Email
         </Text>
         <TextInput
         style={{width: 280, marginLeft:30, color:"#58595B", fontWeight:"bold", fontSize:16}}
@@ -54,7 +54,7 @@ export default class SignUp_Email extends Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
+  Container: {
     flex: 1,
     justifyContent: 'flex-start',
     paddingTop: 30,
@@ -62,14 +62,14 @@ const styles = StyleSheet.create({
     paddingRight:30,
     backgroundColor:'white'
   },
-  title: {
+  Title: {
     fontSize: 16,
     textAlign: 'left',
     marginBottom: 20,
     marginLeft:5,
     color: '#58595B'
   },
-  label: {
+  Label: {
     textAlign: 'left',
     color: '#58595B',
     marginTop: 10,

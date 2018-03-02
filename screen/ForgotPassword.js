@@ -8,16 +8,16 @@ import {
   StyleSheet
 }  from 'react-native';
 
-export default class SignUp_Phone extends Component {
+export default class ForgotPassword extends Component {
   render() {
     var { navigate } = this.props.navigation;
     return (
-      <View style={styles.container}>
+      <View style={styles.Container}>
 
-        <Text style={styles.title}>
+        <Text style={styles.Title}>
           Forgot password.
         </Text>
-        <Text style={styles.phone}>
+        <Text style={styles.Phone}>
         EMAIL
         </Text>
         <TextInput
@@ -26,7 +26,7 @@ export default class SignUp_Phone extends Component {
         underlineColorAndroid="black"
         autoFocus={true}
         />
-        <Text style={styles.details}>
+        <Text style={styles.Details}>
         Enter your registered email address to get reset password link.
         </Text>
         <View style={{width: 300, marginTop: 20}}>
@@ -43,7 +43,7 @@ export default class SignUp_Phone extends Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
+  Container: {
     flex: 1,
     justifyContent: 'flex-start',
     paddingTop: 10,
@@ -51,20 +51,20 @@ const styles = StyleSheet.create({
     paddingRight:30,
     backgroundColor:'white'
   },
-  title: {
+  Title: {
     fontSize: 20,
     textAlign: 'left',
     marginTop: 5,
     marginBottom: 30,
     color: 'black'
   },
-  phone: {
+  Phone: {
     textAlign: 'left',
     color: 'black',
     marginTop: 5,
     marginLeft: 5,
   },
-  details: {
+  Details: {
     textAlign: 'left',
     color: 'grey',
     marginTop: 5,

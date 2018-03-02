@@ -24,15 +24,15 @@ export default class MainMenu extends Component {
         </View>
         <Text style={styles.ContentText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus a porta mi, ac </Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.ContentBox}>
+      <TouchableOpacity style={styles.ContentBox} onPress = {() => navigate("Option2")} >
         <View style={{flexDirection:"row",height:110, width: 320, backgroundColor: "#00A99E", padding: 20}}>
           <Text style={styles.ContentTitle}>Life Improvement</Text>
           <Image source={require('./asset/ic_retirement.png')} style={{flex:1,width: 40, height: 40}}/>
         </View>
         <Text style={styles.ContentText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus a porta mi, ac </Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.ContentBox}>
-        <View style={{flexDirection:"row",height:110, width: 320, backgroundColor: "#DE6157", padding: 20}}>
+      <TouchableOpacity style={styles.ContentBox} onPress = {() => navigate("Option3")} >
+        <View style={{flexDirection:"row",height:110, width: 320, backgroundColor: "#F5841F", padding: 20}}>
           <Text style={styles.ContentTitle}>Asset Improvement</Text>
           <Image source={require('./asset/ic_asset.png')} style={{flex:1,marginTop:20,width: 40, height: 40}}/>
         </View>

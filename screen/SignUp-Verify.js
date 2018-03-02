@@ -14,9 +14,9 @@ export default class SignUp_Verify extends Component {
   render() {
     var { navigate } = this.props.navigation;
     return (
-      <View style={styles.container}>
+      <View style={styles.Container}>
 
-        <Text style={styles.title}>
+        <Text style={styles.Title}>
           Please enter the 4 digits code that has been sent to your phone.
         </Text>
         <View style={{flex:1, flexDirection: 'column'}}>
@@ -39,7 +39,7 @@ export default class SignUp_Verify extends Component {
             />
           </View>
           <View>
-            <Text style={styles.details}>
+            <Text style={styles.Details}>
               Resend code in 00:25
             </Text>
           </View>
@@ -57,7 +57,7 @@ export default class SignUp_Verify extends Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
+  Container: {
     flex: 1,
     justifyContent: 'flex-start',
     paddingTop: 10,
@@ -65,14 +65,14 @@ const styles = StyleSheet.create({
     paddingRight:30,
     backgroundColor:'white'
   },
-  title: {
+  Title: {
     fontSize: 16,
     textAlign: 'left',
     marginTop: 5,
     marginBottom: 5,
     color: '#58595B'
   },
-  details: {
+  Details: {
     textAlign: 'left',
     color: '#58595B',
     marginTop: 30,

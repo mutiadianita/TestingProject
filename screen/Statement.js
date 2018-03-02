@@ -11,7 +11,7 @@ import {
   CheckBox
 }  from 'react-native';
 const util = require('util');
-export default class Step1 extends Component {
+export default class Statement extends Component {
   render() {
     console.log("this.props.navigation =" + util.inspect(this.props.navigation, false, null));
     var {navigate} = this.props.navigation;
@@ -19,13 +19,13 @@ export default class Step1 extends Component {
     return (
   <View style={{flex:1}}>
 
-    <View style={styles.container}>
+    <View style={styles.Container}>
       <Text style={{fontSize: 16, color: "#58595B"}}>1. I am fully aware and understand about my investment risk profile</Text>
       <Text style={{fontSize: 16, color: "#58595B", textAlign:"left", marginTop:20}}>2. The purchase of mutual fund i do solely is my own decision and desire without
            any coercion from other parties</Text>
            <View style={{ flexDirection: 'row', height: 40, width:270, marginTop:30}}>
              <CheckBox title='Click Here'/>
-             <Text style={styles.check}>I Agree</Text>
+             <Text style={styles.Check}>I Agree</Text>
            </View>
     </View>
 
@@ -43,14 +43,14 @@ export default class Step1 extends Component {
   }
 }
 const styles = StyleSheet.create({
-  container:{
+  Container:{
     backgroundColor: 'white',
     flex: 1,
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
     padding:40
   },
-  check: {
+  Check: {
     textAlign: 'left',
     color: '#58595B',
     marginLeft: 5,

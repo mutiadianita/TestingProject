@@ -15,9 +15,9 @@ export default class SignUp_Password extends Component {
   render() {
     var { navigate } = this.props.navigation;
     return (
-      <View style={styles.container}>
+      <View style={styles.Container}>
 
-        <Text style={styles.title}>
+        <Text style={styles.Title}>
           Please fill in the data below to create an Xdana account.
         </Text>
         <View style={{flexDirection:"row"}}>
@@ -25,7 +25,7 @@ export default class SignUp_Password extends Component {
         <Text style={{fontSize:16, fontWeight:"bold", color:"#3393D0", marginTop: 5, marginLeft: 5, marginBottom:20}}>Your password
         </Text>
         </View>
-        <Text style={styles.label}>Password
+        <Text style={styles.Label}>Password
         </Text>
         <TextInput
         style={{width: 280, marginLeft:30, color:"#58595B", fontWeight:"bold", fontSize:16}}
@@ -33,7 +33,7 @@ export default class SignUp_Password extends Component {
         underlineColorAndroid="#58595B"
         secureTextEntry
         />
-        <Text style={styles.label}>Re-type Password
+        <Text style={styles.Label}>Re-type Password
         </Text>
         <TextInput
         style={{width: 280, marginLeft:30, color:"#58595B", fontWeight:"bold", fontSize:16}}
@@ -55,7 +55,7 @@ export default class SignUp_Password extends Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
+  Container: {
     flex: 1,
     justifyContent: 'flex-start',
     paddingTop: 30,
@@ -63,13 +63,13 @@ const styles = StyleSheet.create({
     paddingRight:30,
     backgroundColor:'white'
   },
-  title: {
+  Title: {
     fontSize: 16,
     textAlign: 'left',
     marginBottom: 20,
     color: '#58595B'
   },
-  label: {
+  Label: {
     textAlign: 'left',
     color: '#58595B',
     marginTop: 10,
