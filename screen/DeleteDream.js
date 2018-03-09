@@ -12,16 +12,16 @@ import {
 const util = require('util');
 export default class DeleteDream extends Component {
   render() {
-    console.log("this.props.navigation =" + util.inspect(this.props.navigation, false, null));
+    console.log("This.props.navigation =" + util.inspect(this.props.navigation, false, null));
     var {navigate} = this.props.navigation;
 
     return (
     <View style={styles.Container}>
       <Image source={require('./asset/ic_close_blue.png')} style={{width: 30, height: 30}}/>
-      <Text style={{fontSize:24, fontWeight:"bold",textAlign:"left", color:"#58595B", marginTop:20}}>Delete Completed Dream</Text>
-      <Text style={{fontSize:16, textAlign:"left", color:"#333333", marginTop:150}}>Are you sure you want to delete the completed dream? This action cannot be undone.</Text>
-      <View style={{height:50, width:250, marginTop:30, backgroundColor:"#3393D0", borderRadius:2, elevation:2, justifyContent:"center", alignItems:"center"}}>
-      <Text style={{textAlign:"center", fontSize:18, color:"white"}}>Yes, Delete the dream</Text>
+      <Text style={{fontSize:24, fontFamily:'TitilliumWeb-Bold',textAlign:'left', color:'#58595B', marginTop:20}}>Delete Completed Dream</Text>
+      <Text style={{fontSize:16, fontFamily:'SourceSansPro-Regular', textAlign:'left', color:'#333333', marginTop:150}}>Are you sure you want to delete the completed dream? This action cannot be undone.</Text>
+      <View style={{height:50, width:250, marginTop:30, backgroundColor:'#3393D0', borderRadius:2, elevation:2, justifyContent:'center', alignItems:'center'}}>
+      <Text style={{textAlign:'center', fontFamily:'TitilliumWeb-SemiBold', fontSize:18, color:'white'}}>Yes, Delete the dream</Text>
       </View>
     </View>
     );

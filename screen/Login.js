@@ -19,29 +19,28 @@ export default class Login extends Component {
         <Text style={styles.Title}>
           Please fill in the data below to Login to your Xdana account.
         </Text>
-        <Text style={{fontSize:16, fontWeight:"bold", color:"#3393D0", marginLeft: 30, marginBottom:20}}>Account info
+        <Text style={{fontSize:16,  color:'#3393D0', marginLeft: 30, marginBottom:20, fontFamily:'TitilliumWeb-Bold'}}>Account info
         </Text>
         <Text style={styles.Label}>Name
         </Text>
-        <TextInput
-        style={{width: 280, marginLeft:25, color:"#58595B", fontWeight:"bold", fontSize:16}}
-        placeholderTextColor="#58595B"
-        underlineColorAndroid="#58595B"
+        <TextInput style={styles.TextInput}
+        placeholderTextColor='#58595B'
+        underlineColorAndroid='#58595B'
+        autoFocus={true}
         />
         <Text style={styles.Label}>Password
         </Text>
-        <TextInput
-        style={{width: 280, marginLeft:25, color:"#58595B", fontWeight:"bold", fontSize:16}}
+        <TextInput style={styles.TextInput}
         secureTextEntry={true}
         secureTextEntry
-        placeholderTextColor="#58595B"
-        underlineColorAndroid="#58595B"
+        placeholderTextColor='#58595B'
+        underlineColorAndroid='#58595B'
         />
-        <View style={{flex:1}}>
+        <View style={{flex:1, justifyContent:'flex-end', alignItems:'flex-end', marginBottom:30}}>
           <TouchableOpacity
-          style={{width: 60, height: 60, borderRadius:30, marginTop: 20, marginLeft:250, backgroundColor:"#3393D0"}}
-            onPress = {() => navigate("Home")}>
-            <Text style={{color:"white", fontSize:24, fontWeight:"bold", marginTop:10, marginLeft:25}}>></Text>
+          style={styles.RoundButton}
+            onPress = {() => navigate('HomeStatus')}>
+            <Text style={{color:'white', fontSize:24, fontWeight:'bold', marginTop:10, marginLeft:25}}>></Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -62,13 +61,30 @@ const styles = StyleSheet.create({
     fontSize: 16,
     textAlign: 'left',
     marginBottom: 20,
-    color: '#58595B'
+    color: '#58595B',
+    fontFamily: 'Roboto-Light'
   },
   Label: {
     textAlign: 'left',
     color: '#58595B',
     marginTop: 10,
     marginLeft: 30,
-    fontSize:14
+    fontSize:14,
+    fontFamily:'Roboto-Light'
   },
+  TextInput: {
+    width: 280,
+    marginLeft:25,
+    color:'#58595B',
+    fontSize:16,
+    fontFamily:'Roboto-Regular'
+  },
+  RoundButton: {
+    width: 60,
+    height: 60,
+    borderRadius:30,
+    marginTop: 20,
+    backgroundColor:'#3393D0',
+    elevation:5
+  }
 });

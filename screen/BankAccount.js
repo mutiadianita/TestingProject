@@ -20,30 +20,30 @@ export default class BankAccount extends Component {
       <View style={styles.Container}>
         <Text style={styles.Title}>Please enter your bank account information</Text>
         <ScrollView>
-        <View style={{flexDirection:"row"}}>
-        <Image source={require('./asset/ic_more_blue.png')} style={{width: 30, height: 30}}/>
-        <Text style={{fontSize:16, fontWeight:"bold", color:"#3393D0", marginTop: 5, marginLeft: 5, marginBottom:20}}>Your Bank Account</Text>
+          <View style={{flexDirection:'row'}}>
+          <Image source={require('./asset/ic_more_blue.png')} style={{width: 30, height: 30}}/>
+          <Text style={{fontSize:16,  color:'#3393D0', marginTop: 5, marginLeft: 5, marginBottom:20, fontFamily:'TitilliumWeb-Bold'}}>Your Bank Account</Text>
+          </View>
+          <Text style={styles.Label}>Account number</Text>
+          <TextInput
+          style={{marginLeft:30,width: 280, color:'rgba(0,0,0,0.60)', fontFamily:'Roboto-Regular'}}
+          placeholderTextColor='black'
+          underlineColorAndroid='black'
+          keyboardType={'numeric'}
+          />
+          <Text style={styles.Label}>Account Holder</Text>
+          <TextInput
+          style={{marginLeft:30,width: 280, color:'rgba(0,0,0,0.60)', fontFamily:'Roboto-Regular'}}
+          placeholderTextColor='black'
+          underlineColorAndroid='black'
+          />
+        </ScrollView>
+        <View style={{flex:1, justifyContent:'center', alignItems:'flex-end'}}>
+          <TouchableOpacity style={styles.Button} onPress = {() => navigate('Done')}>
+            <Text style={styles.ButtonText}>></Text>
+          </TouchableOpacity>
         </View>
-        <Text style={styles.Label}>Account number</Text>
-        <TextInput
-        style={{marginLeft:30,width: 280, color:"black"}}
-        placeholderTextColor="black"
-        underlineColorAndroid="black"
-        keyboardType={"numeric"}
-        />
-        <Text style={styles.Label}>Account Holder</Text>
-        <TextInput
-        style={{marginLeft:30,width: 280, color:"black"}}
-        placeholderTextColor="black"
-        underlineColorAndroid="black"
-        />
-    </ScrollView>
-    <TouchableOpacity
-    style={styles.Button}
-      onPress = {() => navigate("Done")}>
-      <Text style={styles.ButtonText}>></Text>
-    </TouchableOpacity>
-    </View>
+      </View>
     );
   }
 }
@@ -62,14 +62,16 @@ const styles = StyleSheet.create({
     marginBottom: 15,
     marginTop:15,
     marginRight: 30,
-    color: '#58595B'
+    color: '#58595B',
+    fontFamily:'Roboto-Light'
   },
   Label: {
     textAlign: 'left',
     color: '#58595B',
     marginTop: 5,
     marginLeft: 35,
-    fontSize:14
+    fontSize:14,
+    fontFamily:'Roboto-Light'
   },
   Picker: {
     marginLeft:27,
@@ -79,14 +81,15 @@ const styles = StyleSheet.create({
     width: 60,
     height: 60,
     borderRadius:30,
-    marginBottom: 20,
-    marginLeft:250,
-    backgroundColor:"#3393D0"
+    marginBottom: 40,
+    marginRight:30,
+    backgroundColor:'#3393D0',
+    elevation:5
   },
   ButtonText: {
-    color:"white",
+    color:'white',
     fontSize:24,
-    fontWeight:"bold",
+    fontWeight:'bold',
     marginTop:10,
     marginLeft:25
   }

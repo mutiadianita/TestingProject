@@ -23,9 +23,9 @@ export default class ReviewID extends Component {
         <Image source={require('./images/idcard.png')} />
         <Text style={styles.Label}>Your ID Card Number</Text>
         <TextInput
-        style={{width: 300, fontSize: 20, color:"black"}}
-        placeholderTextColor="black"
-        underlineColorAndroid="black"
+        style={{width: 300, fontSize: 20, color:'black', fontFamily:'Roboto-Medium'}}
+        placeholderTextColor='black'
+        underlineColorAndroid='black'
         autoFocus={true}
         secureTextEntry={true}
         />
@@ -33,11 +33,11 @@ export default class ReviewID extends Component {
         * You can correct your ID Card number
         </Text>
         </ScrollView>
-        <View style={{flex:1}}>
+        <View style={{flex:1, justifyContent:'flex-end', alignItems:'flex-end', marginBottom:40, marginRight:30}}>
           <TouchableOpacity
-          style={{width: 60, height: 60, borderRadius:30,marginLeft:250, backgroundColor:"#3393D0"}}
-            onPress = {() => navigate("YourInformation")}>
-            <Text style={{color:"white", fontSize:24, fontWeight:"bold", marginTop:10, marginLeft:25}}>></Text>
+          style={styles.RoundButton}
+            onPress = {() => navigate('YourInformation')}>
+            <Text style={{color:'white', fontSize:24, fontWeight:'bold', marginTop:10, marginLeft:25}}>></Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -59,20 +59,31 @@ const styles = StyleSheet.create({
     marginTop: 5,
     marginBottom: 5,
     marginLeft: 5,
-    color: '#58595B'
+    color: '#58595B',
+    fontFamily:'Roboto-Light'
   },
   Label: {
     textAlign: 'left',
     color: '#333333',
     marginTop: 30,
     marginLeft: 5,
-    fontSize: 14
+    fontSize: 14,
+    fontFamily:'Roboto-Regular'
   },
   Details: {
     textAlign: 'left',
     color: '#58595B',
     marginTop: 5,
     marginLeft: 5,
-    fontSize:10
+    fontSize:10,
+    fontFamily:'Roboto-Italic'
+  },
+  RoundButton: {
+    width: 60,
+    height: 60,
+    borderRadius:30,
+    marginTop: 20,
+    backgroundColor:'#3393D0',
+    elevation:5
   }
 });

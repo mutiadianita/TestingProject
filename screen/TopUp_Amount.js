@@ -19,30 +19,27 @@ export default class TopUp_Amount extends Component {
     var { navigate } = this.props.navigation;
     return (
       <View style={styles.Container}>
-
-        <Text style={styles.Title}>Enter your one-time top up amount to reach your dream faster.</Text>
+        <Text style={styles.Detail}>Enter your one-time top up amount to reach your dream faster.</Text>
         <ScrollView>
-        <View style={{flexDirection:"row"}}>
+        <View style={{flexDirection:'row'}}>
         <Image source={require('./asset/ic_more_blue.png')} style={{marginLeft:30,width: 30, height: 30}}/>
-        <Text style={{fontSize:16, fontWeight:"bold", color:"#3393D0", marginTop: 5, marginLeft: 5, marginBottom:20}}>Top up detail
+        <Text style={styles.Title}>Top up detail
         </Text>
         </View>
         <Text style={styles.Label}>IDR amount</Text>
         <TextInput
-        style={{marginLeft:65,width: 250, color:"black", fontSize:28}}
-        placeholderTextColor="black"
-        underlineColorAndroid="black"
-        keyboardType={"numeric"}
+        style={{marginLeft:65,width: 250, color:'black', fontSize:28, fontFamily:'TitilliumWeb-SemiBold'}}
+        placeholderTextColor='black'
+        underlineColorAndroid='black'
+        keyboardType={'numeric'}
         />
         </ScrollView>
-        <View style={{marginBottom:40,marginTop:20,justifyContent:"center", alignItems:"center"}}>
-        <View style={{width:300}}>
+        <View style={{marginBottom:40,marginRight:30,justifyContent:'flex-end', alignItems:'flex-end'}}>
           <TouchableOpacity
-          style={{width: 60, height: 60, borderRadius:30, marginBottom:30, marginLeft:230, backgroundColor:"#3393D0"}}
-            onPress = {() => navigate("TopUp_Payment")}>
-            <Text style={{color:"white", fontSize:24, fontWeight:"bold", marginTop:10, marginLeft:25}}>></Text>
+          style={{width: 60, height: 60, borderRadius:30,backgroundColor:'#3393D0', elevation:5}}
+            onPress = {() => navigate('TopUp_Payment')}>
+            <Text style={{color:'white', fontSize:24, fontWeight:'bold', marginTop:10, marginLeft:25}}>></Text>
           </TouchableOpacity>
-        </View>
         </View>
       </View>
     );
@@ -56,19 +53,29 @@ const styles = StyleSheet.create({
     paddingTop: 30,
     backgroundColor:'white'
   },
-  Title: {
+  Detail: {
     fontSize: 16,
     textAlign: 'left',
     marginBottom: 30,
     marginRight:30,
     marginLeft:30,
-    color: '#58595B'
+    color: '#58595B',
+    fontFamily:'SourceSansPro-Light'
+  },
+  Title: {
+    fontSize:16,
+    fontFamily: 'TitilliumWeb-Bold',
+    color:'#3393D0',
+    marginTop: 5,
+    marginLeft: 5,
+    marginBottom:20
   },
   Label: {
     textAlign: 'left',
     color: '#58595B',
     marginTop: 10,
     marginLeft: 65,
-    fontSize:12
+    fontSize:12,
+    fontFamily:'Roboto-Light'
   }
 });

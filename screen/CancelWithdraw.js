@@ -19,18 +19,16 @@ export default class CancelWithdraw extends Component {
   <View style={{flex:1}}>
 
     <View style={styles.Container}>
-      <Text style={{fontSize: 36, color: "#3393D0", fontWeight:"bold"}}>Cancel & Withdraw</Text>
-      <Text style={{fontSize: 16, color: "#58595B", marginLeft:20, marginRight:20, textAlign:"center"}}>
+      <Text style={{fontSize: 36, color: '#3393D0', fontFamily:'TitilliumWeb-Bold'}}>Cancel & Withdraw</Text>
+      <Text style={{fontSize: 16, color: '#58595B', marginLeft:20, marginRight:20, textAlign:'center', fontFamily:'Roboto-Light'}}>
       Are you sure you want to cancel your dream and withdraw all your investment of Rp 145.000.000,00 that you have been investing in the past 17 month?</Text>
     </View>
-    <View style={{flexDirection: 'row', backgroundColor: "white", paddingBottom: 30}}>
-    <View style={{flex:1}}>
+    <View style={{justifyContent:'flex-end', alignItems:'flex-end', paddingBottom:30, paddingRight:30, backgroundColor:'#FFFFFF'}}>
       <TouchableOpacity
-      style={{width: 60, height: 60, borderRadius:30, marginTop: 20, marginBottom:30, marginLeft:250, backgroundColor:"#3393D0"}}
-        onPress = {() => navigate("CancelWithdrawForm")}>
-        <Text style={{color:"white", fontSize:24, fontWeight:"bold", marginTop:10, marginLeft:25}}>></Text>
+      style={styles.RoundButton}
+        onPress = {() => navigate('CancelWithdrawForm')}>
+        <Text style={{color:'white', fontSize:24, fontWeight:'bold', marginTop:10, marginLeft:25}}>></Text>
       </TouchableOpacity>
-    </View>
     </View>
   </View>
     );
@@ -42,5 +40,14 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center'
+  },
+
+  RoundButton: {
+    width: 60,
+    height: 60,
+    borderRadius:30,
+    marginTop: 20,
+    backgroundColor:'#3393D0',
+    elevation:5
   }
 })

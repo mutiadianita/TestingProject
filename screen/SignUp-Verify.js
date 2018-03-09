@@ -22,18 +22,18 @@ export default class SignUp_Verify extends Component {
         <View style={{flex:1, flexDirection: 'column'}}>
           <View>
             <CodeInput
-              ref="codeInputRef"
+              ref='codeInputRef'
               secureTextEntry
-              activeColor="#3393D0"
-              inactiveColor="#3393D0"
+              activeColor='#3393D0'
+              inactiveColor='rgba(88,89,91,0.40)'
               autoFocus={true}
               ignoreCase={true}
               inputPosition='left'
               size={50}
               space={10}
               codeLength={4}
-              keyboardType="numeric"
-              onFulfill={() => navigate("SignUp_Password")}
+              keyboardType='numeric'
+              onFulfill={() => navigate('SignUp_Password')}
               containerStyle={{ marginTop: 30, marginBottom:30 }}
               codeInputStyle={{ borderWidth: 1.5, fontSize: 32 }}
             />
@@ -43,11 +43,11 @@ export default class SignUp_Verify extends Component {
               Resend code in 00:25
             </Text>
           </View>
-          <View style={{flex:1}}>
+          <View style={{flex:1, justifyContent:'center', alignItems:'flex-end', marginBottom:30}}>
             <TouchableOpacity
-            style={{width: 60, height: 60, borderRadius:30, marginTop: 70, marginLeft:250, backgroundColor:"#3393D0"}}
-              onPress = {() => navigate("SignUp_Password")}>
-              <Text style={{color:"white", fontSize:24, fontWeight:"bold", marginTop:10, marginLeft:25}}>></Text>
+            style={styles.RoundButton}
+              onPress = {() => navigate('SignUp_Password')}>
+              <Text style={{color:'white', fontSize:24, fontWeight:'bold', marginTop:10, marginLeft:25}}>></Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -70,12 +70,22 @@ const styles = StyleSheet.create({
     textAlign: 'left',
     marginTop: 5,
     marginBottom: 5,
-    color: '#58595B'
+    color: '#58595B',
+    fontFamily: 'Roboto-Light'
   },
   Details: {
     textAlign: 'left',
     color: '#58595B',
     marginTop: 30,
-    marginLeft: 5
+    marginLeft: 5,
+    fontFamily: 'Roboto-Light'
   },
+  RoundButton: {
+    width: 60,
+    height: 60,
+    borderRadius:30,
+    marginTop: 20,
+    backgroundColor:'#3393D0',
+    elevation:5
+  }
 });

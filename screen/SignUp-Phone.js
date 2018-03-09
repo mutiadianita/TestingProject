@@ -19,21 +19,21 @@ export default class SignUp_Phone extends Component {
         </Text>
         <View style={{flexDirection: 'row'}}>
           <View style={{width:30, paddingTop:13}}>
-            <Text style={{color:"#3393D0", fontWeight:"bold", fontSize:16}}>+62</Text>
+            <Text style={styles.Label}>+62</Text>
           </View>
           <TextInput
-          style={{width: 275, color:"#58595B", fontWeight:"bold", fontSize:16}}
-          placeholderTextColor="#58595B"
-          underlineColorAndroid="#58595B"
+          style={{width: 275, color:'#58595B', fontFamily:'Roboto-Bold', fontSize:16}}
+          placeholderTextColor='#58595B'
+          underlineColorAndroid='#58595B'
           autoFocus={true}
-          keyboardType="numeric"
+          keyboardType='numeric'
           />
         </View>
-        <View style={{flex:1}}>
+        <View style={{flex:1, justifyContent:'center', alignItems:'flex-end', marginBottom:30}}>
           <TouchableOpacity
-          style={{width: 60, height: 60, borderRadius:30, marginTop: 100, marginLeft:250, backgroundColor:"#3393D0"}}
-            onPress = {() => navigate("SignUp_Verify")}>
-            <Text style={{color:"white", fontSize:24, fontWeight:"bold", marginTop:10, marginLeft:25}}>></Text>
+          style={styles.RoundButton}
+            onPress = {() => navigate('SignUp_Verify')}>
+            <Text style={{color:'white', fontSize:24, fontWeight:'bold', marginTop:10, marginLeft:25}}>></Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -54,6 +54,20 @@ const styles = StyleSheet.create({
     fontSize: 16,
     textAlign: 'left',
     marginBottom: 30,
-    color: '#58595B'
+    color: '#58595B',
+    fontFamily:'Roboto-Light'
+  },
+  RoundButton: {
+    width: 60,
+    height: 60,
+    borderRadius:30,
+    marginTop: 20,
+    backgroundColor:'#3393D0',
+    elevation:5
+  },
+  Label: {
+    color:'#3393D0',
+    fontSize:16,
+    fontFamily:'Roboto-Bold'
   }
 });

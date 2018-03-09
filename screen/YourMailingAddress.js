@@ -30,51 +30,53 @@ export default class YourMailingAddress extends Component {
     var { navigate } = this.props.navigation;
     return (
       <View style={styles.Container}>
-        <Text style={styles.Title}>Please enter your current mailing address</Text>
         <ScrollView>
-        <View style={{flexDirection:"row"}}>
+        <Text style={styles.Detail}>Please enter your current mailing address</Text>
+        <View style={{flexDirection:'row'}}>
         <Image source={require('./asset/ic_loc_blue.png')} style={{width: 30, height: 30}}/>
-        <Text style={{fontSize:16, fontWeight:"bold", color:"#3393D0", marginTop: 5, marginLeft: 5, marginBottom:20}}>Mailing Address</Text>
+        <Text style={styles.Title}>Mailing Address</Text>
         </View>
         <Text style={styles.Label}>Address</Text>
         <TextInput
-        style={{marginLeft:30,width: 280, color:"black"}}
-        placeholderTextColor="black"
-        underlineColorAndroid="black"
+        style={{marginLeft:30,width: 280, color:'black'}}
+        placeholderTextColor='black'
+        underlineColorAndroid='black'
         />
         <Text style={styles.Label}>Province</Text>
         <Picker style={{marginLeft:27, width:280}} selectedValue = {this.state.province} onValueChange = {this.updateProvince} mode='dropdown' >
-           <Picker.Item label = "Banten" value = "1" />
-           <Picker.Item label = "DKI Jakarta" value = "2" />
-           <Picker.Item label = "Jawa Barat" value = "3" />
-           <Picker.Item label = "Jawa Tengah" value = "4" />
+           <Picker.Item label = 'Banten' value = '1' />
+           <Picker.Item label = 'DKI Jakarta' value = '2' />
+           <Picker.Item label = 'Jawa Barat' value = '3' />
+           <Picker.Item label = 'Jawa Tengah' value = '4' />
         </Picker>
         <Text style={styles.Label}>Kabupaten</Text>
         <Picker style={{marginLeft:27, width:280}} selectedValue = {this.state.kabupaten} onValueChange = {this.updateKabupaten} mode='dropdown'>
-           <Picker.Item label = "Jakarta Barat" value = "1" />
-           <Picker.Item label = "Jakarta Pusat" value = "2" />
-           <Picker.Item label = "Jakarta Selatan" value = "3" />
-           <Picker.Item label = "Jakarta Timur" value = "4" />
-           <Picker.Item label = "Jakarta Utara" value = "5" />
+           <Picker.Item label = 'Jakarta Barat' value = '1' />
+           <Picker.Item label = 'Jakarta Pusat' value = '2' />
+           <Picker.Item label = 'Jakarta Selatan' value = '3' />
+           <Picker.Item label = 'Jakarta Timur' value = '4' />
+           <Picker.Item label = 'Jakarta Utara' value = '5' />
         </Picker>
         <Text style={styles.Label}>Kelurahan</Text>
         <Picker style={{marginLeft:27, width:280}} selectedValue = {this.state.kelurahan} onValueChange = {this.updateKelurahan} mode='dropdown'>
-           <Picker.Item label = "Kebayoran" value = "1" />
-           <Picker.Item label = "Kebon Jeruk" value = "2" />
+           <Picker.Item label = 'Kebayoran' value = '1' />
+           <Picker.Item label = 'Kebon Jeruk' value = '2' />
         </Picker>
         <Text style={styles.Label}>Kode Pos</Text>
         <TextInput
-        style={{marginLeft:30,width: 280, color:"black"}}
+        style={{marginLeft:30,width: 280, color:'black'}}
         secureTextEntry={true}
-        placeholderTextColor="black"
-        underlineColorAndroid="black"
+        placeholderTextColor='black'
+        underlineColorAndroid='black'
         />
       </ScrollView>
+      <View style={{alignItems:'flex-end'}}>
       <TouchableOpacity
-      style={{width: 60, height: 60, borderRadius:30, marginBottom: 30, marginLeft:250, backgroundColor:"#3393D0"}}
-        onPress = {() => navigate("AddInfo")}>
-        <Text style={{color:"white", fontSize:24, fontWeight:"bold", marginTop:10, marginLeft:25}}>></Text>
+      style={{width: 60, height: 60, borderRadius:30, marginTop: 5, marginBottom: 30, marginRight: 30, elevation:5, backgroundColor:'#3393D0'}}
+        onPress = {() => navigate('AddInfo')}>
+        <Text style={{color:'white', fontSize:24, fontWeight:'bold', marginTop:10, marginLeft:25}}>></Text>
       </TouchableOpacity>
+      </View>
     </View>
     );
   }
@@ -88,20 +90,30 @@ const styles = StyleSheet.create({
     paddingLeft: 30,
     backgroundColor:'white'
   },
-  Title: {
+  Detail: {
     fontSize: 16,
     textAlign: 'left',
     marginBottom: 15,
     marginTop:15,
     marginRight: 30,
-    color: '#58595B'
+    color: '#58595B',
+    fontFamily:'Roboto-Light'
+  },
+  Title : {
+    fontSize:16,
+    color:'#3393D0',
+    marginTop: 5,
+    marginLeft: 5,
+    marginBottom:20,
+    fontFamily:'TitilliumWeb-Bold'
   },
   Label: {
     textAlign: 'left',
     color: '#58595B',
     marginTop: 5,
     marginLeft: 35,
-    fontSize:14
+    fontSize:14,
+    fontFamily:'Roboto-Light'
   },
   Check: {
     textAlign: 'left',

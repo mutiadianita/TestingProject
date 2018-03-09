@@ -12,23 +12,19 @@ import {
 
 const util = require('util');
 export default class Success extends Component {
-  state = {answer: ''}
-   updateAnswer = (answer) => {
-      this.setState({ answer: answer })
-    }
   render() {
     var { navigate } = this.props.navigation;
     return (
       <View style={styles.Container}>
-        <Text style={styles.Title}>You’re Done !
-        </Text>
-        <Text style={styles.Label}>Congratulation! You have successfully completed your initial set up. Now you can start using XDANA.
-        </Text>
-        <View style={{flex:1}}>
+        <View style={styles.SubContainer1}>
+          <Text style={styles.Title}>Success ! </Text>
+          <Text style={styles.Label}>Congratulation! You have successfully made a one-time top up.</Text>
+        </View>
+        <View style={styles.SubContainer2}>
           <TouchableOpacity
-          style={{width: 60, height: 60, borderRadius:30, marginTop: 20, marginBottom:30, marginLeft:250, backgroundColor:"white"}}
-            onPress = {() => navigate("Home")}>
-            <Text style={{color:"#3393D0", fontSize:24, fontWeight:"bold", marginTop:10, marginLeft:25}}>></Text>
+          style={styles.Button}
+            onPress = {() => navigate('Home')}>
+            <Text style={styles.ButtonContent}>></Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -45,9 +41,19 @@ const styles = StyleSheet.create({
     paddingRight:30,
     backgroundColor:'#3393D0'
   },
+  SubContainer1: {
+    flex:1,
+    alignItems:'flex-start',
+    justifyContent:'center'
+  },
+  SubContainer2: {
+    flex:1,
+    alignItems:'flex-end',
+    justifyContent:'flex-end'
+  },
   Title: {
     fontSize: 36,
-    fontWeight:'bold',
+    fontFamily: 'TitilliumWeb-Bold',
     textAlign: 'left',
     marginTop: 300,
     marginBottom: 5,
@@ -60,6 +66,22 @@ const styles = StyleSheet.create({
     color: 'white',
     marginTop: 30,
     marginLeft: 5,
-    marginBottom:30
+    marginBottom:30,
+    fontFamily: 'Roboto-Light'
+  },
+  Button: {
+    width: 60,
+    height: 60,
+    borderRadius:30,
+    marginBottom:40,
+    backgroundColor:'white',
+    elevation:5
+  },
+  ButtonContent: {
+    color:'#3393D0',
+    fontSize:24,
+    fontWeight:'bold',
+    marginTop:10,
+    marginLeft:25
   }
 });

@@ -22,9 +22,9 @@ export default class TopUp_Done extends Component {
         </Text>
         <View style={{flex:1}}>
           <TouchableOpacity
-          style={{width: 60, height: 60, borderRadius:30, marginTop: 20, marginBottom:30, marginLeft:250, backgroundColor:"white"}}
-            onPress = {() => navigate("ChangeEmail")}>
-            <Text style={{color:"#3393D0", fontSize:24, fontWeight:"bold", marginTop:10, marginLeft:25}}>></Text>
+          style={{width: 60, height: 60, borderRadius:30, marginTop: 20, marginBottom:30, marginLeft:250, backgroundColor:'white'}}
+            onPress = {() => navigate('ChangeEmail')}>
+            <Text style={{color:'#3393D0', fontSize:24, fontWeight:'bold', marginTop:10, marginLeft:25}}>></Text>
           </TouchableOpacity>
         </View>
       </View>

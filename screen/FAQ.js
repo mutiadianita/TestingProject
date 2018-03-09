@@ -20,52 +20,52 @@ export default class Notification extends Component {
     return (
       <View style={styles.Container}>
         <ScrollView>
-        <View style={{flexDirection:"row"}}>
-          <View style={{width: 50, alignItems:"center"}}>
+        <View style={{flexDirection:'row'}}>
+          <View style={{width: 50, alignItems:'center'}}>
           <Image source={require('./asset/ic_faq_decrease.png')} style={{width: 24, height: 24}}/>
           </View>
           <View style={{width:310}}>
-              <Text style={{fontSize:14, color:"#000000"}}>Apa yang dimaksud dengan reksa dana?</Text>
-              <Text style={{fontSize:16, color:"#58595B", marginTop:16}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus a porta mi, ac gravida elit. Nam commodo nisi ex, vitae maximus nisl laoreet in.</Text>
+              <Text style={styles.Question}>Apa yang dimaksud dengan reksa dana?</Text>
+              <Text backfaceVisibility={'visible'} style={styles.Answer}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus a porta mi, ac gravida elit. Nam commodo nisi ex, vitae maximus nisl laoreet in.</Text>
           </View>
         </View>
-        <View style={{width: 290, height:1, marginLeft:50, backgroundColor:"rgba(216,216,216,0.60)", marginTop:20, marginBottom:20}}/>
-        <View style={{flexDirection:"row"}}>
-          <View style={{width: 50, alignItems:"center"}}>
+        <View style={styles.Line}/>
+        <View style={{flexDirection:'row'}}>
+          <View style={{width: 50, alignItems:'center'}}>
           <Image source={require('./asset/ic_faq_increase.png')} style={{width: 24, height: 24}}/>
           </View>
           <View style={{width:310}}>
-              <Text style={{fontSize:14, color:"#000000"}}>Siapa yang bisa berinvestasi di reksa dana?</Text>
+              <Text style={styles.Question}>Siapa yang bisa berinvestasi di reksa dana?</Text>
           </View>
         </View>
-        <View style={{width: 290, height:1, marginLeft:50, backgroundColor:"rgba(216,216,216,0.60)", marginTop:20, marginBottom:20}}/>
-        <View style={{flexDirection:"row"}}>
-          <View style={{width: 50, alignItems:"center"}}>
+        <View style={styles.Line}/>
+        <View style={{flexDirection:'row'}}>
+          <View style={{width: 50, alignItems:'center'}}>
           <Image source={require('./asset/ic_faq_increase.png')} style={{width: 24, height: 24}}/>
           </View>
           <View style={{width:310}}>
-              <Text style={{fontSize:14, color:"#000000"}}>Manfaat investasi di reksa dana?</Text>
+              <Text style={styles.Question}>Manfaat investasi di reksa dana?</Text>
           </View>
         </View>
-        <View style={{width: 290, height:1, marginLeft:50, backgroundColor:"rgba(216,216,216,0.60)", marginTop:20, marginBottom:20}}/>
-        <View style={{flexDirection:"row"}}>
-          <View style={{width: 50, alignItems:"center"}}>
+        <View style={styles.Line}/>
+        <View style={{flexDirection:'row'}}>
+          <View style={{width: 50, alignItems:'center'}}>
           <Image source={require('./asset/ic_faq_increase.png')} style={{width: 24, height: 24}}/>
           </View>
           <View style={{width:310}}>
-              <Text style={{fontSize:14, color:"#000000"}}>Apa saja jenis - jenis reksa dana?</Text>
+              <Text style={styles.Question}>Apa saja jenis - jenis reksa dana?</Text>
           </View>
         </View>
-        <View style={{width: 290, height:1, marginLeft:50, backgroundColor:"rgba(216,216,216,0.60)", marginTop:20, marginBottom:20}}/>
-        <View style={{flexDirection:"row"}}>
-          <View style={{width: 50, alignItems:"center"}}>
+        <View style={styles.Line}/>
+        <View style={{flexDirection:'row'}}>
+          <View style={{width: 50, alignItems:'center'}}>
           <Image source={require('./asset/ic_faq_increase.png')} style={{width: 24, height: 24}}/>
           </View>
           <View style={{width:310}}>
-              <Text style={{fontSize:14, color:"#000000"}}>Apa itu manajer investasi?</Text>
+              <Text style={styles.Question}>Apa itu manajer investasi?</Text>
           </View>
         </View>
-        <View style={{width: 290, height:1, marginLeft:50, backgroundColor:"rgba(216,216,216,0.60)", marginTop:20, marginBottom:20}}/>
+        <View style={styles.Line}/>
         </ScrollView>
       </View>
     );
@@ -79,47 +79,23 @@ const styles = StyleSheet.create({
     paddingTop: 30,
     backgroundColor:'white'
   },
-  Title: {
-    fontSize: 16,
-    textAlign: 'left',
-    marginBottom: 30,
-    marginRight:30,
-    marginLeft:30,
-    color: '#58595B'
-  },
-  Label: {
-    textAlign: 'left',
-    color: '#58595B',
-    marginTop: 10,
-    marginLeft: 30,
-    fontSize:12
-  },
-  Details: {
-    textAlign: 'left',
-    color: '#58595B',
-    marginLeft: 30,
-    fontSize:16
-  },
-  Check: {
-    textAlign: 'left',
-    color: 'rgba(88,89,91,0.60)',
+  Question: {
     fontSize:14,
-    marginLeft: 30,
-    width:230,
-    marginTop:20
+    color:'#000000',
+    fontFamily:'Roboto-Regular'
   },
-  Sublabel:{
-    textAlign: 'left',
-    color: 'rgba(0,0,0,0.60)',
-    marginTop: 10,
-    marginLeft: 30,
-    fontSize:28
+  Answer: {
+    fontSize:16,
+    color:'#58595B',
+    marginTop:16,
+    fontFamily:'SourceSansPro-Light'
   },
-  LabelBold:{
-    textAlign: 'left',
-    color: '#58595B',
-    marginTop: 20,
-    marginLeft: 30,
-    fontSize:14
+  Line: {
+    width: 290,
+    height:1,
+    marginLeft:50,
+    backgroundColor:'rgba(216,216,216,0.60)',
+    marginTop:20,
+    marginBottom:20
   }
 });

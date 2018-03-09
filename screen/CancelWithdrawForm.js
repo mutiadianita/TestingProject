@@ -20,11 +20,11 @@ export default class CancelWithdrawForm extends Component {
     return (
       <View style={styles.Container}>
 
-        <Text style={styles.Title}>Please confirm the following information based on the data you have entered</Text>
+        <Text style={styles.Detail}>Please confirm the following information based on the data you have entered</Text>
         <ScrollView>
-        <View style={{flexDirection:"row"}}>
+        <View style={{flexDirection:'row'}}>
         <Image source={require('./asset/ic_more_blue.png')} style={{marginLeft:30,width: 30, height: 30}}/>
-        <Text style={{fontSize:16, fontWeight:"bold", color:"#3393D0", marginTop: 5, marginLeft: 5, marginBottom:20}}>Your dream
+        <Text style={styles.Title}>Your dream
         </Text>
         </View>
         <Text style={styles.Label}>The following amount</Text>
@@ -33,18 +33,14 @@ export default class CancelWithdrawForm extends Component {
         <Image source={require('./asset/BCA.png')} style={{marginTop:10,marginBottom:10,marginLeft:60 ,width: 70, height: 25}}/>
         <Text style={styles.Details}>123-123-12345-1 </Text>
         <Text style={styles.Details}>a/n Stanley Santoso</Text>
-        <View style={{width: 300, height:1, marginLeft:60, backgroundColor:"rgba(216,216,216,0.60)", marginTop:20, marginBottom:20}}></View>
-
+        <View style={{width: 300, height:1, marginLeft:60, backgroundColor:'rgba(216,216,216,0.60)', marginTop:20, marginBottom:20}}></View>
         <Text style={styles.Check}>The process of returning your money may take up to 3 business days. we will notify you when transaction has been completed. </Text>
         </ScrollView>
-        <View style={{marginBottom:40,marginTop:20,justifyContent:"center", alignItems:"center"}}>
+        <View style={{marginBottom:40,marginTop:20,justifyContent:'center', alignItems:'center'}}>
           <View style={{width:300}}>
-          <Button style={{backgroundColor:"#2775C0", width:300}}
-            onPress = {() => navigate("Request")}
-            title="Continue"
-            color= "#086BB3"
-            >
-          </Button>
+          <TouchableOpacity style={styles.Button} onPress = {() => navigate('Request')}>
+            <Text style={styles.ButtonText}>Continue</Text>
+          </TouchableOpacity>
           </View>
         </View>
       </View>
@@ -59,26 +55,37 @@ const styles = StyleSheet.create({
     paddingTop: 30,
     backgroundColor:'white'
   },
-  Title: {
+  Detail: {
     fontSize: 16,
     textAlign: 'left',
     marginBottom: 30,
     marginRight:30,
     marginLeft:30,
-    color: '#58595B'
+    color: '#58595B',
+    fontFamily:'Roboto-Light'
+  },
+  Title: {
+    fontSize:16,
+    color:'#3393D0',
+    marginTop: 5,
+    marginLeft: 5,
+    marginBottom:20,
+    fontFamily:'TitilliumWeb-Bold'
   },
   Label: {
     textAlign: 'left',
     color: '#58595B',
     marginTop: 10,
     marginLeft: 65,
-    fontSize:12
+    fontSize:12,
+    fontFamily:'Roboto-Light'
   },
   Details: {
     textAlign: 'left',
     color: '#58595B',
     marginLeft: 65,
-    fontSize:16
+    fontSize:16,
+    fontFamily:'Roboto-Light'
   },
   Check: {
     textAlign: 'left',
@@ -92,14 +99,28 @@ const styles = StyleSheet.create({
     color: 'rgba(0,0,0,0.60)',
     marginTop: 10,
     marginLeft: 65,
-    fontSize:28
+    fontSize:28,
+    fontFamily:'TitilliumWeb-SemiBold'
   },
   LabelBold:{
     textAlign: 'left',
-    fontWeight:'bold',
     color: '#58595B',
     marginTop: 20,
     marginLeft: 65,
-    fontSize:12
+    fontSize:12,
+    fontFamily:'Roboto-Bold'
+  },
+  Button: {
+    backgroundColor:'#3393D0',
+    width:300,
+    height:48,
+    alignItems:'center',
+    justifyContent:'center',
+    borderRadius:2
+  },
+  ButtonText: {
+    fontSize:18,
+    fontFamily:'TitilliumWeb-SemiBold',
+    color:'#FFFFFF'
   }
 });

@@ -21,9 +21,9 @@ export default class ForgotPassword extends Component {
         EMAIL
         </Text>
         <TextInput
-        style={{width: 300, color:"black"}}
-        placeholderTextColor="black"
-        underlineColorAndroid="black"
+        style={{width: 300, color:'black'}}
+        placeholderTextColor='black'
+        underlineColorAndroid='black'
         autoFocus={true}
         />
         <Text style={styles.Details}>
@@ -31,9 +31,9 @@ export default class ForgotPassword extends Component {
         </Text>
         <View style={{width: 300, marginTop: 20}}>
             <Button
-                title= "Next"
-                color="#086BB3"
-                onPress = {() => navigate("-")}
+                title= 'Next'
+                color='#086BB3'
+                onPress = {() => navigate('-')}
                 >
             </Button>
         </View>

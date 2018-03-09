@@ -13,15 +13,14 @@ import {
 const util = require('util');
 export default class Statement extends Component {
   render() {
-    console.log("this.props.navigation =" + util.inspect(this.props.navigation, false, null));
     var {navigate} = this.props.navigation;
 
     return (
   <View style={{flex:1}}>
 
     <View style={styles.Container}>
-      <Text style={{fontSize: 16, color: "#58595B"}}>1. I am fully aware and understand about my investment risk profile</Text>
-      <Text style={{fontSize: 16, color: "#58595B", textAlign:"left", marginTop:20}}>2. The purchase of mutual fund i do solely is my own decision and desire without
+      <Text style={{fontSize: 16, color: '#58595B', fontFamily:'SourceSansPro-Regular'}}>1. I am fully aware and understand about my investment risk profile</Text>
+      <Text style={{fontSize: 16, color: '#58595B', textAlign:'left', marginTop:20, fontFamily:'SourceSansPro-Regular'}}>2. The purchase of mutual fund i do solely is my own decision and desire without
            any coercion from other parties</Text>
            <View style={{ flexDirection: 'row', height: 40, width:270, marginTop:30}}>
              <CheckBox title='Click Here'/>
@@ -29,12 +28,12 @@ export default class Statement extends Component {
            </View>
     </View>
 
-    <View style={{flexDirection: 'row', backgroundColor: "white", paddingBottom: 30}}>
-    <View style={{flex:1}}>
+    <View style={{flexDirection: 'row', backgroundColor: 'white', paddingBottom: 30}}>
+    <View style={{flex:1,alignItems:'flex-end', justifyContent:'flex-end',paddingRight:30, paddingBottom:40, backgroundColor:'#FFFFFF'}}>
       <TouchableOpacity
-      style={{width: 60, height: 60, borderRadius:30, marginBottom:60, marginLeft:280, backgroundColor:"#3393D0"}}
-        onPress = {() => navigate("RiskResult")}>
-        <Text style={{color:"white", fontSize:24, fontWeight:"bold", marginTop:10, marginLeft:25}}>></Text>
+      style={styles.RoundButton}
+        onPress = {() => navigate('RiskResult')}>
+        <Text style={{color:'white', fontSize:24, fontWeight:'bold', marginTop:10, marginLeft:25}}>></Text>
       </TouchableOpacity>
     </View>
     </View>
@@ -56,6 +55,14 @@ const styles = StyleSheet.create({
     marginLeft: 5,
     marginTop:7,
     fontSize:14,
-    width:230
+    width:230,
+    fontFamily:'Roboto-Regular'
+  },
+  RoundButton: {
+    width: 60,
+    height: 60,
+    borderRadius:30,
+    backgroundColor:'#3393D0',
+    elevation:5
   }
 })

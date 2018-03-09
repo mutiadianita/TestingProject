@@ -12,22 +12,19 @@ import {
 const util = require('util');
 export default class HowToPay extends Component {
   render() {
-    console.log("this.props.navigation =" + util.inspect(this.props.navigation, false, null));
     var {navigate} = this.props.navigation;
-
     return (
   <View style={{flex:1}}>
-
     <View style={styles.Container}>
-      <Text style={{fontSize: 36, color: "#3393D0", fontWeight:"bold", textAlign:"center"}}>Connect Your Bank Account</Text>
-      <Text style={{fontSize: 16, color: "#58595B", marginLeft:20, marginRight:20, textAlign:"center"}}>In order to finish your dream creation, you need to connect your bank first.</Text>
+      <Text style={{fontSize: 36, color: '#3393D0', textAlign:'center', fontFamily: 'TitilliumWeb-Bold'}}>Connect Your Bank Account</Text>
+      <Text style={{fontSize: 16, color: '#58595B', marginLeft:20, marginRight:20, textAlign:'center', fontFamily:'Roboto-Light'}}>In order to finish your dream creation, you need to connect your bank first.</Text>
     </View>
-    <View style={{flexDirection: 'row', backgroundColor: "white", paddingBottom: 30}}>
-    <View style={{flex:1}}>
+    <View style={{flexDirection: 'row', backgroundColor: 'white'}}>
+    <View style={{flex:1, justifyContent:'flex-end', alignItems:'flex-end'}}>
       <TouchableOpacity
-      style={{width: 60, height: 60, borderRadius:30, marginTop: 20, marginBottom:30, marginLeft:250, backgroundColor:"#3393D0"}}
-        onPress = {() => navigate("ChooseBank")}>
-        <Text style={{color:"white", fontSize:24, fontWeight:"bold", marginTop:10, marginLeft:25}}>></Text>
+      style={{width: 60, height: 60, borderRadius:30, marginTop: 20, marginBottom:40, marginRight:30, backgroundColor:'#3393D0', elevation:5}}
+        onPress = {() => navigate('ChooseBank')}>
+        <Text style={{color:'white', fontSize:24, fontWeight:'bold', marginTop:10, marginLeft:25}}>></Text>
       </TouchableOpacity>
     </View>
     </View>

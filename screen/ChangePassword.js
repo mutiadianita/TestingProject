@@ -18,11 +18,11 @@ export default class ChangePassword extends Component {
     return (
     <View style={styles.Container}>
       <Image source={require('./asset/ic_close_blue.png')} style={{width: 30, height: 30}}/>
-      <Text style={{fontSize:24, fontWeight:"bold",textAlign:"left", color:"#58595B", marginTop:20,marginBottom:120, width:250}}>Password Has Successfully Changed!</Text>
-      <TouchableOpacity onPress = {() => navigate("ChangeBankAccount")}>
-      <View style={{height:50, width:250, marginTop:30, backgroundColor:"#3393D0", borderRadius:2, elevation:2, justifyContent:"center", alignItems:"center"}}>
-      <Text style={{textAlign:"center", fontSize:18, color:"white"}}>OK</Text>
-      </View>
+      <Text style={{fontSize:24, textAlign:'left', color:'#58595B', marginTop:20, width:150, fontFamily:'TitilliumWeb-Bold'}}>Password Has Successfully Changed!</Text>
+      <TouchableOpacity onPress = {() => navigate('EditProfile')}>
+        <View style={{height:50, width:250, marginTop:150, backgroundColor:'#3393D0', borderRadius:2, elevation:2, justifyContent:'center', alignItems:'center'}}>
+          <Text style={{textAlign:'center', fontSize:18, color:'white', fontFamily:'TitilliumWeb-SemiBold'}}>OK</Text>
+        </View>
       </TouchableOpacity>
     </View>
     );

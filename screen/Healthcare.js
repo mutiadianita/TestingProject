@@ -24,8 +24,8 @@ export default class Success extends Component {
     return (
       <View style={styles.Container}>
       <View>
-      <ImageBackground source={require('./images/watch.jpg')} style={{alignItems:"flex-start",width: 360, height: 230}}>
-      <Image  source={require('./asset/ic_back_black.png')} style={{alignItems:"flex-start",marginTop:42, marginLeft:20, marginBottom:20, width: 40, height: 40}}/>
+      <ImageBackground source={require('./images/watch.jpg')} style={{alignItems:'flex-start',width: 360, height: 230}}>
+      <Image  source={require('./asset/ic_back_black.png')} style={{alignItems:'flex-start',marginTop:42, marginLeft:20, marginBottom:20, width: 40, height: 40}}/>
       </ImageBackground>
       </View>
       <ScrollView showsVerticalScrollIndicator={false}>
@@ -48,12 +48,12 @@ const styles = StyleSheet.create({
   },
   Title: {
     fontSize: 20,
-    fontWeight:'bold',
     textAlign: 'left',
     marginBottom: 5,
     color: '#58595B',
     marginLeft:24,
-    marginTop:27
+    marginTop:27,
+    fontFamily: 'TitilliumWeb-Bold'
   },
   Label: {
     textAlign: 'left',
@@ -62,6 +62,7 @@ const styles = StyleSheet.create({
     marginTop: 18,
     marginLeft: 24,
     marginRight:22,
-    marginBottom:30
+    marginBottom:30,
+    fontFamily: 'Roboto-Regular'
   }
 });
