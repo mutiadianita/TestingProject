@@ -9,6 +9,7 @@ import {
   TouchableOpacity,
   ViewPagerAndroid
 }  from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
 const util = require('util');
 export default class MainMenu extends Component {
   render() {
@@ -17,24 +18,24 @@ export default class MainMenu extends Component {
     return (
     <View style={styles.Container}>
       <TouchableOpacity style={styles.ContentBox} onPress = {() => navigate('Option1')} >
-        <View style={{borderTopLeftRadius: 10, borderTopRightRadius: 10,flexDirection:'row', height:110, width: 320, backgroundColor: '#3393D0', padding: 20}}>
+        <LinearGradient start={{x: 0.0, y: 0.025}} end={{x: 1.0, y: 1.0}} colors={['#5DC6C9', '#3393D0', '#135788']} style={styles.ContentHeader}>
           <Text style={styles.ContentTitle}>Retirement</Text>
           <Image source={require('./asset/ic_retirement.png')} style={{flex:1,width: 40, height: 40}}/>
-        </View>
+        </LinearGradient>
         <Text style={styles.ContentText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus a porta mi, ac </Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.ContentBox} onPress = {() => navigate('Option2')} >
-        <View style={{borderTopLeftRadius: 10, borderTopRightRadius: 10,flexDirection:'row',height:110, width: 320, backgroundColor: '#00A99E', padding: 20}}>
+        <LinearGradient start={{x: 0.0, y: 0.025}} end={{x: 1.0, y: 1.0}} colors={['#8FC196', '#00A99E']} style={styles.ContentHeader}>
           <Text style={styles.ContentTitle}>Life Improvement</Text>
           <Image source={require('./asset/ic_retirement.png')} style={{flex:1,width: 40, height: 40}}/>
-        </View>
+        </LinearGradient>
         <Text style={styles.ContentText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus a porta mi, ac </Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.ContentBox} onPress = {() => navigate('Option3')} >
-        <View style={{borderTopLeftRadius: 10, borderTopRightRadius: 10,flexDirection:'row',height:110, width: 320, backgroundColor: '#F5841F', padding: 20}}>
+        <LinearGradient start={{x: 0.0, y: 0.025}} end={{x: 1.0, y: 1.0}} colors={['#F5841F', '#DE6157']} style={styles.ContentHeader}>
           <Text style={styles.ContentTitle}>Asset Improvement</Text>
           <Image source={require('./asset/ic_asset.png')} style={{flex:1,marginTop:20,width: 40, height: 40}}/>
-        </View>
+        </LinearGradient>
         <Text style={styles.ContentText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus a porta mi, ac </Text>
       </TouchableOpacity>
     </View>
@@ -47,6 +48,13 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection:'column',
     padding:20
+  },
+  ContentHeader: {
+    borderTopLeftRadius: 10,
+    borderTopRightRadius: 10,
+    flexDirection:'row',
+    height:110, width: 320,
+    padding: 20
   },
   ContentBox:{
     height:160,

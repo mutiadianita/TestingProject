@@ -18,24 +18,21 @@ export default class TopUp_Payment extends Component {
     <View style={styles.Container}>
       <Text style={{color:'#58595B', fontSize:14, marginBottom:20, fontFamily:'SourceSansPro-Light'}}>Choose top up method to reach your dream faster. </Text>
       <TouchableOpacity style={styles.ContentBox} onPress = {() => navigate('TopUp_Process')} >
-        <View style={{height:80, width: 10, backgroundColor: '#58595B'}}>
-        </View>
+        <View style={styles.Flag}/>
         <View style={{flexDirection:'column', flex: 3}}>
           <Text style={styles.ContentTitle}>Bank transfer</Text>
         </View>
         <Image source={require('./asset/ic_next_black.png')} style={{alignItems:'center',marginTop:20, marginLeft:40, marginBottom:20, width: 40, height: 40}}/>
       </TouchableOpacity>
       <TouchableOpacity style={styles.ContentBox} onPress = {() => navigate('TopUp_Process')} >
-        <View style={{height:80, width: 10, backgroundColor: '#58595B'}}>
-        </View>
+        <View style={styles.Flag}/>
         <View style={{flexDirection:'column', flex: 3}}>
           <Text style={styles.ContentTitle}>BCA Klikpay</Text>
         </View>
         <Image source={require('./asset/ic_next_black.png')} style={{alignItems:'center',marginTop:20, marginLeft:40, marginBottom:20, width: 40, height: 40}}/>
       </TouchableOpacity>
       <TouchableOpacity style={styles.ContentBox} onPress = {() => navigate('TopUp_Process')} >
-        <View style={{height:80, width:10, backgroundColor: '#58595B'}}>
-        </View>
+        <View style={styles.Flag}/>
         <View style={{flexDirection:'column', flex: 3}}>
           <Text style={styles.ContentTitle}>Credit Card</Text>
         </View>
@@ -74,5 +71,12 @@ const styles = StyleSheet.create({
     fontFamily:'TitilliumWeb-Bold',
     marginLeft:20,
     marginTop:20
-  }
+  },
+  Flag: {
+    height:80,
+    width: 10,
+    backgroundColor: '#58595B',
+    borderTopLeftRadius:3,
+    borderBottomLeftRadius:3
+   }
 })

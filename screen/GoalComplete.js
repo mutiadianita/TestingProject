@@ -9,15 +9,15 @@ import {
   TouchableOpacity,
   ViewPagerAndroid
 }  from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
 const util = require('util');
 export default class GoalComplete extends Component {
   render() {
     console.log("this.props.navigation =" + util.inspect(this.props.navigation, false, null));
     var {navigate} = this.props.navigation;
-
     return (
     <View style={styles.Container}>
-      <View style={{flex:2, flexDirection:'column',backgroundColor:'#3393D0'}}>
+      <LinearGradient start={{x: 0.0, y: 0.025}} end={{x: 1.0, y: 1.0}} colors={['#5DC6C9', '#3393D0', '#135788']} style={{paddingTop:50, flex:2, flexDirection:'column'}}>
         <View style={{flex:7,justifyContent:'center', alignItems:'center'}}>
           <Text style={{fontSize:32,fontFamily:'TitilliumWeb-Bold',color:'#FFFFFF'}}>Congratulation!</Text>
           <Text style={{fontSize:14,fontFamily:'Roboto-Light',color:'#FFFFFF'}}>You have achieved your dream for:</Text>
@@ -29,7 +29,7 @@ export default class GoalComplete extends Component {
         <View style={{flex:1,justifyContent:'center', alignItems:'center',height:40, backgroundColor:'rgba(0, 0, 0, 0.2)'}}>
           <Text style={{color:'white',fontFamily:'TitilliumWeb-Bold', fontSize:14}}>View detail</Text>
         </View>
-      </View>
+      </LinearGradient>
       <View style={{flex:1, backgroundColor:'white', justifyContent:'center',alignItems:'center', elevation:3}}>
         <Text style={{fontFamily:'TitilliumWeb-Regular',textAlign:'center', width:200,fontSize:14,color:'#58595B'}}>I’m done viewing this dream. Delete this dream from my list.</Text>
         <View style={{borderWidth:3, borderColor:'#3393D0', height:40,width:150, marginTop:20}}>

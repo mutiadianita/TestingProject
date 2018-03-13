@@ -13,7 +13,7 @@ import {
   Slider,
   ImageBackground
 }  from 'react-native';
-
+import LinearGradient from 'react-native-linear-gradient';
 const util = require('util');
 export default class Home extends Component {
   heightmargin = 40;
@@ -21,6 +21,8 @@ export default class Home extends Component {
     var { navigate } = this.props.navigation;
     return (
       <View>
+      <ScrollView showsVerticalScrollIndicator={false}>
+      <LinearGradient start={{x: 0.0, y: 0.025}} end={{x: 1.0, y: 1.0}} colors={['#5DC6C9', '#3393D0', '#135788']} style={{flex:1}}>
       <View style={styles.Header}>
       <TouchableOpacity onPress = {() => navigate('Profile')}>
         <Image source={require('./asset/ic_account.png')} style={{width: 30, height: 30}}/>
@@ -29,9 +31,9 @@ export default class Home extends Component {
         <Image source={require('./asset/ic_notif_white.png')} style={{marginLeft:250,width: 30, height: 30}}/>
       </TouchableOpacity>
       </View>
-      <ScrollView showsVerticalScrollIndicator={false}>
         <View style={{flex: 1, zIndex:2}}>
-          <View style={{backgroundColor:'#3393D0', padding: 20, height: 475}}>
+
+          <View style={{padding: 20, height: 475}}>
           <Text style={{fontSize:30, color:'#FFFFFF', marginBottom:10}}>My Dreams </Text>
             <ViewPagerAndroid pageMargin={10} peekEnabled={true} style={{padding: 20, height: 348, elevation:10}}>
               <View key='1' style={{flex: 1,justifyContent: 'flex-start',alignItems: 'flex-start',backgroundColor:'#FFFFFF',marginLeft:20,  borderRadius:10}}>
@@ -143,10 +145,11 @@ export default class Home extends Component {
             </ViewPagerAndroid>
           </View>
         </View>
-        <View style={{zIndex:2, height:500, backgroundColor:'white', paddingTop:20, paddingLeft:20}}>
+        </LinearGradient>
+        <View style={{zIndex:2, backgroundColor:'white', paddingTop:20, paddingLeft:20}}>
           <Text style={{fontSize:18, color:'#4D4D4C', marginBottom:24}}>Knowledge Center</Text>
           <View style={{flexDirection:'row', flex:1}}>
-          <ScrollView horizontal={true}>
+          <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
             <TouchableOpacity onPress = {() => navigate('WhyInvest')}>
             <View style={styles.ContentBox}>
               <View style={styles.ImageBox}>
@@ -221,11 +224,11 @@ const styles = StyleSheet.create({
   Header: {
     padding:20,
     flexDirection:'row',
-    backgroundColor:'#3393D0',
     zIndex:2
   },
   ContentBox: {
     marginRight:20,
+    marginBottom:30,
     width:200,
     height:250,
     elevation:5,

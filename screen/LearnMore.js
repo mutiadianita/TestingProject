@@ -9,12 +9,14 @@ import {
   TouchableOpacity,
   ViewPagerAndroid
 }  from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
 const util = require('util');
 export default class LearnMore extends Component {
   render() {
     var {navigate} = this.props.navigation;
     return (
-    <View style={styles.Container}>
+    <View style={{flex:1}}>
+      <LinearGradient start={{x: 0.0, y: 0.025}} end={{x: 1.0, y: 1.0}} colors={['#5DC6C9', '#3393D0', '#135788']} style={styles.Container}>
       <View>
         <Text style={{textAlign:'center',color:'#FEFEFE', fontSize:32, marginTop:20, fontFamily:'Roboto-Bold'}}>Rp200.000,00</Text>
         <Text style={{textAlign:'center',color:'#FEFEFE', fontSize:16, marginBottom:20, fontFamily:'SourceSansPro-Regular'}}>Your monthly installment saving</Text>
@@ -39,16 +41,18 @@ export default class LearnMore extends Component {
         <Text style={{textAlign:'center',color:'#FEFEFE', fontSize:16, marginTop:20, fontFamily:'SourceSansPro-Regular'}}>By the end of the year, you will save</Text>
         <Text style={{textAlign:'center',color:'#FEFEFE', fontSize:28, marginBottom:20, fontFamily:'Roboto-Regular'}}>Rp1.000.000,00</Text>
       </View>
+      </LinearGradient>
     </View>
     );
   }
 }
 const styles = StyleSheet.create({
   Container:{
-    backgroundColor: '#3393D0',
     flex: 1,
     flexDirection:'column',
-    padding:20
+    paddingLeft:20,
+    paddingRight:20,
+    paddingTop:100,
   },
   ContentBox:{
     height:80,

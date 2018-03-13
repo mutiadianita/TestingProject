@@ -10,13 +10,15 @@ import {
   TouchableOpacity,
   ScrollView
 }  from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
 const util = require('util');
 export default class Strategy extends Component {
   render() {
     var {navigate} = this.props.navigation;
     return (
-    <View style={{flex:1, backgroundColor:'#3393D0'}}>
-      <ViewPagerAndroid style={{flex: 1, margin:20}} initialPage={0}>
+    <View style={{flex:1}}>
+      <LinearGradient start={{x: 0.0, y: 0.025}} end={{x: 1.0, y: 1.0}} colors={['#5DC6C9', '#3393D0', '#135788']} style={{flex:1, paddingTop:50}}>
+      <ViewPagerAndroid pageMargin={10} style={{flex: 1, margin:20}} initialPage={0}>
         <View style={styles.Pager}>
           <View style={{marginLeft:20,flexDirection:'row'}}>
           <Text style={styles.Risk}>Low risk</Text>
@@ -138,6 +140,7 @@ export default class Strategy extends Component {
       <View style={{justifyContent:'center', alignItems:'center', width: 320, height: 50,marginLeft:20, marginBottom: 10}}>
         <Text style={{color:'white'}}> Swipe to see other Investment Strategies</Text>
       </View>
+      </LinearGradient>
     </View>
 
     );

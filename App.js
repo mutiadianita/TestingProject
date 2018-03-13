@@ -68,6 +68,7 @@ import MyBank from './screen/MyBank';
 import ChangePasswordForm from './screen/ChangePasswordForm';
 import About from './screen/About';
 import FAQ from './screen/FAQ';
+import Feedback from './screen/Feedback';
 //09
 import WhyInvest from './screen/WhyInvest';
 import Healthcare from './screen/Healthcare';
@@ -99,7 +100,7 @@ const Navigation = StackNavigator({
         elevation:0
       },
       title:'Register',
-      headerTitleStyle: {fontFamily:'TitilliumWeb-Bold'}
+      headerTitleStyle: {fontWeight: "normal",fontFamily:'TitilliumWeb-Bold'}
     }
   },
   SignUp_Phone: {
@@ -110,7 +111,7 @@ const Navigation = StackNavigator({
         elevation:0
       },
       title:'Register',
-      headerTitleStyle: {fontFamily:'TitilliumWeb-Bold'}
+      headerTitleStyle: {fontWeight: "normal",fontFamily:'TitilliumWeb-Bold'}
     }
   },
   SignUp_Verify: {
@@ -121,7 +122,7 @@ const Navigation = StackNavigator({
         elevation:0
       },
       title:'Register',
-        headerTitleStyle: {fontFamily:'TitilliumWeb-Bold'}
+        headerTitleStyle: {fontWeight: "normal",fontFamily:'TitilliumWeb-Bold'}
     }
   },
   SignUp_Password: {
@@ -132,7 +133,7 @@ const Navigation = StackNavigator({
         elevation:0
       },
       title:'Password',
-      headerTitleStyle: {fontFamily:'TitilliumWeb-Bold'}
+      headerTitleStyle: {fontWeight: "normal",fontFamily:'TitilliumWeb-Bold'}
     }
   },
   Step1: {
@@ -161,7 +162,7 @@ const Navigation = StackNavigator({
         elevation:0
       },
       title:'Register',
-      headerTitleStyle: {fontFamily:'TitilliumWeb-Bold'}
+      headerTitleStyle: {fontWeight: "normal",fontFamily:'TitilliumWeb-Bold'}
     }
   },
   YourInformation: {
@@ -172,7 +173,7 @@ const Navigation = StackNavigator({
         elevation:0
       },
       title:'Register',
-      headerTitleStyle: {fontFamily:'TitilliumWeb-Bold'}
+      headerTitleStyle: {fontWeight: "normal",fontFamily:'TitilliumWeb-Bold'}
     }
   },
   YourMailingAddress: {
@@ -183,7 +184,7 @@ const Navigation = StackNavigator({
         elevation:0
       },
       title:'Register',
-      headerTitleStyle: {fontFamily:'TitilliumWeb-Bold'}
+      headerTitleStyle: {fontWeight: "normal",fontFamily:'TitilliumWeb-Bold'}
     }
   },
   AddInfo: {
@@ -194,7 +195,7 @@ const Navigation = StackNavigator({
         elevation:0
       },
       title:'Register',
-      headerTitleStyle: {fontFamily:'TitilliumWeb-Bold'}
+      headerTitleStyle: {fontWeight: "normal",fontFamily:'TitilliumWeb-Bold'}
     }
   },
   ReviewSelfie: {
@@ -205,7 +206,7 @@ const Navigation = StackNavigator({
         elevation:0
       },
       title:'Register',
-      headerTitleStyle: {fontFamily:'TitilliumWeb-Bold'}
+      headerTitleStyle: {fontWeight: "normal",fontFamily:'TitilliumWeb-Bold'}
     }
   },
   Step3: {
@@ -287,11 +288,16 @@ const Navigation = StackNavigator({
     {
       title:'Investment Strategy',
       headerStyle: {
-        backgroundColor: '#3393D0',
-        shadowColor:'transparent',
-        elevation:0
+        backgroundColor: 'rgba(0,0,0,0)',
+        position:'absolute',
+        zIndex:100,
+        elevation:0,
+        top:0,
+        left:0,
+        right:0
       },
-      headerTitleStyle: {color:'white', fontFamily:'TitilliumWeb-Bold'}
+      headerTintColor: 'white',
+      headerTitleStyle: {fontWeight: "normal",color:'white', fontFamily:'TitilliumWeb-Bold'}
     }
   },
   Strategy: {
@@ -300,11 +306,16 @@ const Navigation = StackNavigator({
     {
       title:'Investment Strategy',
       headerStyle: {
-        backgroundColor: '#3393D0',
-        shadowColor:'transparent',
-        elevation:0
+        backgroundColor: 'rgba(0,0,0,0)',
+        position:'absolute',
+        zIndex:100,
+        elevation:0,
+        top:0,
+        left:0,
+        right:0
       },
-      headerTitleStyle: {color:'white', fontFamily:'TitilliumWeb-Bold'}
+      headerTintColor: 'white',
+      headerTitleStyle: {fontWeight: "normal",color:'white', fontFamily:'TitilliumWeb-Bold'}
     }
   },
   Success: {
@@ -323,7 +334,7 @@ const Navigation = StackNavigator({
         elevation:0
       },
       title:'Login',
-      headerTitleStyle: {fontFamily:'TitilliumWeb-Bold'}
+      headerTitleStyle: {fontWeight: "normal",fontFamily:'TitilliumWeb-Bold'}
     }
   },
 //03
@@ -342,64 +353,28 @@ const Navigation = StackNavigator({
         elevation:0
       },
       title:'Choose Your Dream Category',
-      headerTitleStyle: {fontFamily:'TitilliumWeb-Bold'}
+      headerTitleStyle: {fontWeight: "normal",fontFamily:'TitilliumWeb-Bold'}
     }
   },
   Option1: {
     screen: Option1,
     navigationOptions:
     {
-      headerStyle: {
-        elevation:0,
-        height:100,
-        backgroundColor:'#3393D0'
-      },
-      title:'Retirement',
-      headerTitleStyle: {color:'white', fontFamily:'TitilliumWeb-Bold'},
-      headerRight: (
-        <Image source={require('./screen/asset/ic_retirement.png')} style={{width: 40, height: 40, marginRight:20}}/>
-        ),
-      headerLeft: (
-          <Image source={require('./screen/asset/ic_close_white.png')} style={{width: 20, height: 20, marginLeft:20}}/>
-      )
+      header:null
     }
   },
   Option2: {
     screen: Option2,
     navigationOptions:
     {
-      headerStyle: {
-        elevation:0,
-        height:100,
-        backgroundColor:'#00A99E'
-      },
-      title:'Life Improvement',
-      headerTitleStyle: {color:'white', fontFamily:'TitilliumWeb-Bold'},
-      headerRight: (
-        <Image source={require('./screen/asset/ic_retirement.png')} style={{width: 40, height: 40, marginRight:20}}/>
-        ),
-      headerLeft: (
-          <Image source={require('./screen/asset/ic_close_white.png')} style={{width: 20, height: 20, marginLeft:20}}/>
-      )
+      header:null
     }
   },
   Option3: {
     screen: Option3,
     navigationOptions:
     {
-      headerStyle: {
-        elevation:0,
-        height:100,
-        backgroundColor:'#F5841F'
-      },
-      title:'Asset Improvement',
-      headerTitleStyle: {color:'white', fontFamily:'TitilliumWeb-Bold'},
-      headerRight: (
-        <Image source={require('./screen/asset/ic_asset.png')} style={{width: 40, height: 40, marginRight:20}}/>
-        ),
-      headerLeft: (
-          <Image source={require('./screen/asset/ic_close_white.png')} style={{width: 20, height: 20, marginLeft:20}}/>
-      )
+      header:null
     }
   },
   GoalAmount: {
@@ -410,7 +385,7 @@ const Navigation = StackNavigator({
         elevation:0
       },
       title:'Dream Target',
-      headerTitleStyle: {fontFamily:'TitilliumWeb-Bold'}
+      headerTitleStyle: {fontWeight: "normal",fontFamily:'TitilliumWeb-Bold'}
     }
   },
   Confirm: {
@@ -421,7 +396,7 @@ const Navigation = StackNavigator({
         elevation:0
       },
       title:'Your Monthly Investment',
-      headerTitleStyle: {fontFamily:'TitilliumWeb-Bold'}
+      headerTitleStyle: {fontWeight: "normal",fontFamily:'TitilliumWeb-Bold'}
     }
   },
   ConfirmForm: {
@@ -432,7 +407,7 @@ const Navigation = StackNavigator({
         elevation:0
       },
       title:'Confirm your dream',
-      headerTitleStyle: {fontFamily:'TitilliumWeb-Bold'}
+      headerTitleStyle: {fontWeight: "normal",fontFamily:'TitilliumWeb-Bold'}
     }
   },
   LearnMore: {
@@ -440,13 +415,19 @@ const Navigation = StackNavigator({
     navigationOptions:
     {
       headerStyle: {
-        backgroundColor: '#3393D0',
-        elevation:0
+        backgroundColor: 'rgba(0,0,0,0)',
+        position:'absolute',
+        zIndex:100,
+        elevation:0,
+        top:0,
+        left:0,
+        right:0
       },
       headerLeft: (
           <Image source={require('./screen/asset/ic_close_white.png')} style={{width: 20, height: 20, marginLeft:20}}/>
       ),
-      headerTitleStyle: {color:'white',fontFamily:'TitilliumWeb-Bold'}
+      headerTintColor: 'white',
+      headerTitleStyle: {fontWeight: "normal",color:'white',fontFamily:'TitilliumWeb-Bold'}
     }
   },
   Bank: {
@@ -475,7 +456,7 @@ const Navigation = StackNavigator({
         elevation:0
       },
       title:'Bank Account',
-      headerTitleStyle: {fontFamily:'TitilliumWeb-Bold'}
+      headerTitleStyle: {fontWeight: "normal",fontFamily:'TitilliumWeb-Bold'}
     }
   },
   BankAccount: {
@@ -486,17 +467,14 @@ const Navigation = StackNavigator({
         elevation:0
       },
       title:'Bank Account',
-      headerTitleStyle: {fontFamily:'TitilliumWeb-Bold'}
+      headerTitleStyle: {fontWeight: "normal",fontFamily:'TitilliumWeb-Bold'}
     }
   },
   Done: {
     screen: Done,
     navigationOptions:
     {
-      headerStyle: {
-        elevation:0,
-        backgroundColor: '#3393D0'
-      }
+      header:null
     }
   },
 //04
@@ -513,12 +491,17 @@ const Navigation = StackNavigator({
     navigationOptions:
     {
       headerStyle: {
+        backgroundColor: 'rgba(0,0,0,0)',
+        position:'absolute',
+        zIndex:100,
         elevation:0,
-        backgroundColor: '#3393D0'
+        top:0,
+        left:0,
+        right:0
       },
       title:'Goal Detail',
-      headerTitleStyle: {color:'white'},
-      headerTitleStyle: {fontFamily:'TitilliumWeb-Bold'}
+      headerTintColor: 'white',
+      headerTitleStyle: {fontWeight: "normal",color:'white',fontFamily:'TitilliumWeb-Bold'}
     }
   },
   GoalComplete: {
@@ -526,9 +509,15 @@ const Navigation = StackNavigator({
     navigationOptions:
     {
       headerStyle: {
+        backgroundColor: 'rgba(0,0,0,0)',
+        position:'absolute',
+        zIndex:100,
         elevation:0,
-        backgroundColor: '#3393D0'
-      }
+        top:0,
+        left:0,
+        right:0
+      },
+      headerTintColor: 'white',
     }
   },
   DeleteDream: {
@@ -556,7 +545,7 @@ const Navigation = StackNavigator({
         elevation:0
       },
       title:'Cancel & Withdraw',
-      headerTitleStyle: {fontFamily:'TitilliumWeb-Bold'}
+      headerTitleStyle: {fontWeight: "normal",fontFamily:'TitilliumWeb-Bold'}
     }
   },
   Request: {
@@ -575,7 +564,7 @@ const Navigation = StackNavigator({
         elevation:0
       },
       title:'Top Up',
-      headerTitleStyle: {fontFamily:'TitilliumWeb-Bold'}
+      headerTitleStyle: {fontWeight: "normal",fontFamily:'TitilliumWeb-Bold'}
     }
   },
   TopUp_Payment: {
@@ -586,7 +575,7 @@ const Navigation = StackNavigator({
         elevation:0
       },
       title:'Top Up',
-      headerTitleStyle: {fontFamily:'TitilliumWeb-Bold'}
+      headerTitleStyle: {fontWeight: "normal",fontFamily:'TitilliumWeb-Bold'}
     }
   },
   TopUp_Process: {
@@ -597,7 +586,7 @@ const Navigation = StackNavigator({
         elevation:0
       },
       title:'Top Up',
-      headerTitleStyle: {fontFamily:'TitilliumWeb-Bold'}
+      headerTitleStyle: {fontWeight: "normal",fontFamily:'TitilliumWeb-Bold'}
     }
   },
   TopUp_Done: {
@@ -605,9 +594,15 @@ const Navigation = StackNavigator({
     navigationOptions:
     {
       headerStyle: {
+        backgroundColor: 'rgba(0,0,0,0)',
+        position:'absolute',
+        zIndex:100,
         elevation:0,
-        backgroundColor: '#3393D0'
-      }
+        top:0,
+        left:0,
+        right:0
+      },
+      headerTintColor: 'white',
     }
   },
 //08
@@ -617,11 +612,16 @@ const Navigation = StackNavigator({
     {
       title:'Profile',
       headerStyle: {
-        backgroundColor: '#3393D0',
-        shadowColor:'transparent',
-        elevation:0
+        backgroundColor: 'rgba(0,0,0,0)',
+        position:'absolute',
+        zIndex:100,
+        elevation:0,
+        top:0,
+        left:0,
+        right:0
       },
-      headerTitleStyle: {color:'white', fontFamily:'TitilliumWeb-Bold'}
+      headerTintColor: 'white',
+      headerTitleStyle: {fontWeight: "normal",color:'white', fontFamily:'TitilliumWeb-Bold'}
     }
   },
   EditProfile: {
@@ -662,7 +662,7 @@ const Navigation = StackNavigator({
         elevation:0
       },
       title:'Bank Account',
-      headerTitleStyle: {fontFamily:'TitilliumWeb-Bold'}
+      headerTitleStyle: {fontWeight: "normal",fontFamily:'TitilliumWeb-Bold'}
     }
   },
   About: {
@@ -670,11 +670,17 @@ const Navigation = StackNavigator({
     navigationOptions:
     {
       headerStyle: {
+        backgroundColor: 'rgba(0,0,0,0)',
+        position:'absolute',
+        zIndex:100,
         elevation:0,
-        backgroundColor: '#3393D0'
+        top:0,
+        left:0,
+        right:0
       },
       title:'About Us',
-        headerTitleStyle: {color:'white', fontFamily:'TitilliumWeb-Bold'}
+      headerTintColor: 'white',
+        headerTitleStyle: {fontWeight: "normal",color:'white', fontFamily:'TitilliumWeb-Bold'}
     }
   },
   ChangePasswordForm: {
@@ -685,7 +691,7 @@ const Navigation = StackNavigator({
         elevation:0
       },
       title:'Change Password',
-      headerTitleStyle: {fontFamily:'TitilliumWeb-Bold'}
+      headerTitleStyle: {fontWeight: "normal",fontFamily:'TitilliumWeb-Bold'}
     }
   },
   FAQ: {
@@ -696,7 +702,18 @@ const Navigation = StackNavigator({
         elevation:0
       },
       title:'FAQ',
-      headerTitleStyle: {fontFamily:'TitilliumWeb-Bold'}
+      headerTitleStyle: {fontWeight: 'normal',fontFamily:'TitilliumWeb-Bold'}
+    }
+  },
+  Feedback: {
+    screen: Feedback,
+    navigationOptions:
+    {
+      headerStyle: {
+        elevation:0
+      },
+      title:'Live Chat',
+      headerTitleStyle: {fontWeight:'normal', fontFamily:'TitilliumWeb-Bold'}
     }
   },
 //09
@@ -722,7 +739,7 @@ const Navigation = StackNavigator({
         elevation:0
       },
       title:'Notification',
-      headerTitleStyle: {fontFamily:'TitilliumWeb-Bold'}
+      headerTitleStyle: {fontWeight: "normal",fontFamily:'TitilliumWeb-Bold'}
     }
   }
 });

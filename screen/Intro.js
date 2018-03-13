@@ -11,7 +11,7 @@ import {
   ViewPagerAndroid,
   Image
 }  from 'react-native';
-
+import LinearGradient from 'react-native-linear-gradient';
 const util = require('util');
 export default class Intro extends Component {
   render() {
@@ -20,29 +20,35 @@ export default class Intro extends Component {
     return (
       <View style={styles.Container}>
         <ViewPagerAndroid style={styles.Pager} initialPage={0}>
-          <View style={styles.Pager1}>
+        <View>
+          <LinearGradient start={{x: 0.0, y: 0.025}} end={{x: 1.0, y: 1.0}} colors={['#5DC6C9', '#3393D0', '#135788']} style={styles.Pager}>
             <Text style={styles.Title}>Welcome to XDANA </Text>
             <Image source={require('./asset/ic_retirement.png')} style={{marginTop:120, width: 50, height: 50}}/>
             <Text style={styles.Subtitle}>Retirement </Text>
             <Text style={styles.Details}>In order to finish your goal creation, you need to connect to your bank to set up auto saving every month. </Text>
-          </View>
-          <View style={styles.Pager2}>
+          </LinearGradient>
+        </View>
+        <View>
+          <LinearGradient start={{x: 0.0, y: 0.025}} end={{x: 1.0, y: 1.0}} colors={['#8FC196', '#00A99E']} style={styles.Pager}>
             <Text style={styles.Title}>Welcome to XDANA </Text>
             <Image source={require('./asset/ic_asset.png')} style={{marginTop:120, width: 50, height: 50}}/>
             <Text style={styles.Subtitle}>Life Improvement</Text>
             <Text style={styles.Details}>In order to finish your goal creation, you need to connect to your bank to set up auto saving every month. </Text>
-          </View>
-          <View style={styles.Pager3}>
+          </LinearGradient>
+        </View>
+        <View>
+          <LinearGradient start={{x: 0.0, y: 0.025}} end={{x: 1.0, y: 1.0}} colors={['#F5841F', '#DE6157']} style={styles.Pager}>
             <Text style={styles.Title}>Welcome to XDANA </Text>
             <Image source={require('./asset/ic_asset.png')} style={{marginTop:120, width: 50, height: 50}}/>
             <Text style={styles.Subtitle}>Asset investment </Text>
             <Text style={styles.Details}>In order to finish your goal creation, you need to connect to your bank to set up auto saving every month. </Text>
-          </View>
+          </LinearGradient>
+        </View>
         </ViewPagerAndroid>
         <View style={{justifyContent:'center', alignItems:'center', zIndex:2, position:'absolute', marginBottom:20, marginLeft:30, marginRight:30, height:300}}>
         <TouchableOpacity
         style={{width: 300, height:50, backgroundColor:'white', alignItems:'center', justifyContent:'center', elevation:3 , borderRadius:2}}
-        onPress = {() => navigate('Login')}>
+        onPress = {() => navigate('GoalAhead')}>
           <Text style={{fontFamily:'TitilliumWeb-SemiBold',color:'#3393D0', fontSize:18, textAlign:'center'}}>Login</Text>
         </TouchableOpacity>
         <TouchableOpacity
@@ -72,33 +78,6 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',
     padding:30,
     height:700
-  },
-  Pager1:{
-    flex: 1,
-    zIndex:1,
-    justifyContent: 'flex-start',
-    alignItems: 'flex-start',
-    padding:30,
-    height:700,
-    backgroundColor:'#3393D0'
-  },
-  Pager2:{
-    flex: 1,
-    zIndex:1,
-    justifyContent: 'flex-start',
-    alignItems: 'flex-start',
-    padding:30,
-    height:700,
-    backgroundColor:'#00A99E'
-  },
-  Pager3:{
-    flex: 1,
-    zIndex:1,
-    justifyContent: 'flex-start',
-    alignItems: 'flex-start',
-    padding:30,
-    height:700,
-    backgroundColor:'#F5841F'
   },
   Title: {
     fontSize: 36,

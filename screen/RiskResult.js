@@ -9,12 +9,14 @@ import {
   ViewPagerAndroid,
   TouchableOpacity
 }  from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
 const util = require('util');
 export default class RiskResult extends Component {
   render() {
     var {navigate} = this.props.navigation;
     return (
-    <View style={{flex:1, backgroundColor:'#3393D0'}}>
+    <View style={{flex:1}}>
+    <LinearGradient start={{x: 0.0, y: 0.025}} end={{x: 1.0, y: 1.0}} colors={['#5DC6C9', '#3393D0', '#135788']} style={{flex:1, paddingTop:30}}>
       <ViewPagerAndroid pageMargin={10} style={{flex: 1, margin:30}} initialPage={0}>
         <View style={styles.Pager}>
           <View style={{flexDirection:'row'}}>
@@ -72,6 +74,7 @@ export default class RiskResult extends Component {
       <View style={{justifyContent:'center', alignItems:'center', width: 320, height: 50, padding:10, marginLeft:20, marginBottom: 30}}>
         <Text style={{color:'white', fontFamily:'Roboto-Regular'}}> Swipe to see other Investment Strategies</Text>
       </View>
+      </LinearGradient>
     </View>
 
     );

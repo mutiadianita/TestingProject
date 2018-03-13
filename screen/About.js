@@ -12,13 +12,14 @@ import {
   TouchableOpacity,
   Picker
 }  from 'react-native';
-
+import LinearGradient from 'react-native-linear-gradient';
 const util = require('util');
 export default class About extends Component {
   render() {
     var { navigate } = this.props.navigation;
     return (
-      <View style={styles.Container}>
+      <View style={{flex:1}}>
+        <LinearGradient start={{x: 0.0, y: 0.025}} end={{x: 1.0, y: 1.0}} colors={['#5DC6C9', '#3393D0', '#135788']} style={styles.Container}>
         <View style={{justifyContent:'center', alignItems:'center'}}>
           <Image source={require('./asset/ic_logo_white.png')} style={{marginBottom:20,width: 100, height: 100}}/>
         </View>
@@ -35,6 +36,7 @@ export default class About extends Component {
         <View style={styles.Line}/>
         <Text style={styles.Label}>Privacy policy</Text>
         <View style={styles.Line}/>
+        </LinearGradient>
       </View>
     );
   }
@@ -44,7 +46,9 @@ const styles = StyleSheet.create({
   Container: {
     flex: 1,
     justifyContent: 'flex-start',
-    padding: 40,
+    paddingLeft: 40,
+    paddingRight: 40,
+    paddingTop: 80,
     paddingRight:24,
     backgroundColor:'#3393D0'
   },

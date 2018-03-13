@@ -14,15 +14,17 @@ import {
   ImageBackground,
   Slider
 }  from 'react-native';
-
+import LinearGradient from 'react-native-linear-gradient';
 const util = require('util');
-export default class ConfirmForm extends Component {
+const data = [0.4, 0.6, 0.8];
+export default class GoalAhead extends Component {
   render() {
     var { navigate } = this.props.navigation;
     return (
       <View style={styles.Container}>
       <ScrollView>
-        <View style={{flex: 1,backgroundColor:'#3393D0'}}>
+        <View style={{flex: 1}}>
+          <LinearGradient start={{x: 0.0, y: 0.025}} end={{x: 1.0, y: 1.0}} colors={['#5DC6C9', '#3393D0', '#135788']} style={{paddingTop:50}}>
           <View style={{flexDirection:'row',padding:20}}>
             <Image source={require('./asset/ic_asset.png')} style={{width: 50, height: 50}}/>
           </View>
@@ -45,6 +47,7 @@ export default class ConfirmForm extends Component {
               <Text style={{color:'white', fontSize:16, fontFamily:'TitilliumWeb-Bold'}}>Confirm Payment</Text>
             </TouchableOpacity>
           </View>
+          </LinearGradient>
         </View>
         <View style={{flexDirection:'row', marginTop:20}}>
           <Image source={require('./asset/ic_strategy_blue.png')} style={{marginLeft:30,width: 30, height: 30}}/>
@@ -113,7 +116,7 @@ export default class ConfirmForm extends Component {
 const styles = StyleSheet.create({
   Container: {
     flex: 1,
-    backgroundColor:'white'
+    backgroundColor:'white',
   },
   Title: {
     fontSize:16,

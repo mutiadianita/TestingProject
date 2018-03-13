@@ -9,24 +9,26 @@ import {
   StyleSheet,
   TouchableOpacity
 }  from 'react-native';
-
+import LinearGradient from 'react-native-linear-gradient';
 const util = require('util');
 export default class Done extends Component {
   render() {
     var { navigate } = this.props.navigation;
     return (
-      <View style={styles.Container}>
-        <View style={styles.SubContainer1}>
-          <Text style={styles.Title}>You’re Done ! </Text>
-          <Text style={styles.Label}>Congratulation! You have successfully completed your initial set up. Now you can start using XDANA.</Text>
-        </View>
-        <View style={styles.SubContainer2}>
-          <TouchableOpacity
-          style={styles.Button}
-            onPress = {() => navigate('Home')}>
-            <Text style={styles.ButtonContent}>></Text>
-          </TouchableOpacity>
-        </View>
+      <View style={{flex:1}}>
+        <LinearGradient start={{x: 0.0, y: 0.025}} end={{x: 1.0, y: 1.0}} colors={['#5DC6C9', '#3393D0', '#135788']} style={styles.Container}>
+          <View style={styles.SubContainer1}>
+            <Text style={styles.Title}>You’re Done !</Text>
+            <Text style={styles.Label}>Congratulation! You have successfully Created a dream. Good job!</Text>
+          </View>
+          <View style={styles.SubContainer2}>
+            <TouchableOpacity
+            style={styles.Button}
+              onPress = {() => navigate('Home')}>
+              <Text style={styles.ButtonContent}>></Text>
+            </TouchableOpacity>
+          </View>
+        </LinearGradient>
       </View>
     );
   }
@@ -38,13 +40,12 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
     paddingTop: 10,
     paddingLeft: 30,
-    paddingRight:30,
-    backgroundColor:'#3393D0'
+    paddingRight:30
   },
   SubContainer1: {
-    flex:1,
+    flex:4,
     alignItems:'flex-start',
-    justifyContent:'center'
+    justifyContent:'flex-end'
   },
   SubContainer2: {
     flex:1,
@@ -64,7 +65,7 @@ const styles = StyleSheet.create({
     textAlign: 'left',
     fontSize:16,
     color: 'white',
-    marginTop: 30,
+    marginTop: 20,
     marginLeft: 5,
     marginBottom:30,
     fontFamily: 'Roboto-Light'

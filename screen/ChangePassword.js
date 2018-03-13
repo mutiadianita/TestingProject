@@ -14,7 +14,6 @@ export default class ChangePassword extends Component {
   render() {
     console.log("this.props.navigation =" + util.inspect(this.props.navigation, false, null));
     var {navigate} = this.props.navigation;
-
     return (
     <View style={styles.Container}>
       <Image source={require('./asset/ic_close_blue.png')} style={{width: 30, height: 30}}/>

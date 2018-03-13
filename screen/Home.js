@@ -10,7 +10,7 @@ import {
   TouchableOpacity,
   ScrollView
 }  from 'react-native';
-
+import LinearGradient from 'react-native-linear-gradient';
 const util = require('util');
 export default class Home extends Component {
   render() {
@@ -29,6 +29,7 @@ export default class Home extends Component {
           </TouchableOpacity>
         </View>
         <View style={{flex: 1, zIndex:2}}>
+        <LinearGradient start={{x: 0.0, y: 0.025}} end={{x: 1.0, y: 1.0}} colors={['#5DC6C9', '#3393D0', '#135788']}>
           <View style={styles.Header}>
             <TouchableOpacity onPress = {() => navigate('Profile')}>
               <Image source={require('./asset/ic_account.png')} style={{width: 30, height: 30}}/>
@@ -43,6 +44,7 @@ export default class Home extends Component {
             <Text style={{fontSize:16, color:'#FEFEFE', fontFamily:'Roboto-Light'}}>Welcome to XDANA.</Text>
             <Text style={{fontSize:16, color:'#FEFEFE', marginBottom:30, marginTop:10, fontFamily: 'Roboto-Light'}}>Start investing now and reaching your dream.</Text>
           </View>
+          </LinearGradient>
         </View>
         <View style={{zIndex:2, height:500, backgroundColor:'white', paddingTop:50, paddingLeft:20}}>
           <Text style={{fontSize:18, color:'#4D4D4C', fontFamily:'TitilliumWeb-SemiBold'}}>Knowledge Center</Text>

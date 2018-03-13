@@ -10,7 +10,7 @@ import {
   TouchableOpacity,
   ScrollView
 }  from 'react-native';
-
+import LinearGradient from 'react-native-linear-gradient';
 const util = require('util');
 export default class Home extends Component {
   render() {
@@ -27,7 +27,7 @@ export default class Home extends Component {
           </View>
         </TouchableOpacity>
         <View style={{flex: 1, zIndex:2}}>
-          <View style={{flexDirection:'row',backgroundColor:'#3393D0', height:120,padding: 20}}>
+          <LinearGradient start={{x: 0.0, y: 0.025}} end={{x: 1.0, y: 1.0}} colors={['#5DC6C9', '#3393D0', '#135788']} style={{paddingTop:80,flexDirection:'row',backgroundColor:'#3393D0', height:200,padding: 20}}>
             <View style={{height:40, width:40, borderRadius:20, backgroundColor:'grey'}}>
             </View>
             <View style={{marginLeft:16, width:240}}>
@@ -37,7 +37,7 @@ export default class Home extends Component {
             <TouchableOpacity onPress = {() => navigate('EditProfile')}>
             <Image source={require('./asset/ic_edit_white.png')} style={{width: 30, height: 30}}/>
             </TouchableOpacity>
-          </View>
+          </LinearGradient>
         </View>
         <View style={{zIndex:2, height:500, backgroundColor:'white', paddingTop:30, paddingLeft:20}}>
           <TouchableOpacity onPress = {() => navigate('MyBank')} style={styles.Button}>
@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
   Box: {
     flexDirection:'row',
     position: 'absolute',
-    marginTop:80,
+    marginTop:160,
     zIndex:3,
     height: 70,
     width:320,
