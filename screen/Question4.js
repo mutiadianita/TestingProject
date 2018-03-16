@@ -7,8 +7,8 @@ import {
   View,
   Button,
   StyleSheet,
-  Picker,
-  TouchableOpacity
+  TouchableOpacity,
+  Image
 }  from 'react-native';
 import RadioForm, {RadioButton, RadioButtonInput, RadioButtonLabel} from 'react-native-simple-radio-button';
 const util = require('util');
@@ -46,7 +46,7 @@ export default class Question4 extends Component {
           <TouchableOpacity
           style={styles.RoundButton}
             onPress = {() => navigate('Question5')}>
-            <Text style={{color:'white', fontSize:24, fontWeight:'bold', marginTop:10, marginLeft:25}}>></Text>
+            <Image source={require('./asset/ic_next_white.png')} style={{width: 46, height: 46}}/>
           </TouchableOpacity>
         </View>
       </View>
@@ -77,6 +77,8 @@ const styles = StyleSheet.create({
     height: 60,
     borderRadius:30,
     backgroundColor:'#3393D0',
-    elevation:5
+    elevation:5,
+    justifyContent:'center',
+    alignItems:'center'
   }
 });

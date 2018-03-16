@@ -7,7 +7,9 @@ import {
   View,
   Button,
   StyleSheet,
-  TouchableOpacity
+  TouchableOpacity,
+  ImageBackground,
+  Image
 }  from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 const util = require('util');
@@ -16,19 +18,19 @@ export default class Done extends Component {
     var { navigate } = this.props.navigation;
     return (
       <View style={{flex:1}}>
-        <LinearGradient start={{x: 0.0, y: 0.025}} end={{x: 1.0, y: 1.0}} colors={['#5DC6C9', '#3393D0', '#135788']} style={styles.Container}>
+        <ImageBackground source={require('./asset/bg_success.png')} style={styles.Container}>
           <View style={styles.SubContainer1}>
             <Text style={styles.Title}>You’re Done !</Text>
-            <Text style={styles.Label}>Congratulation! You have successfully Created a dream. Good job!</Text>
+            <Text style={styles.Label}>Congratulation! You have successfully Created a dream. </Text>
           </View>
           <View style={styles.SubContainer2}>
             <TouchableOpacity
             style={styles.Button}
               onPress = {() => navigate('Home')}>
-              <Text style={styles.ButtonContent}>></Text>
+              <Image source={require('./asset/ic_done.png')} style={{width: 46, height: 46}}/>
             </TouchableOpacity>
           </View>
-        </LinearGradient>
+        </ImageBackground>
       </View>
     );
   }
@@ -43,14 +45,15 @@ const styles = StyleSheet.create({
     paddingRight:30
   },
   SubContainer1: {
-    flex:4,
+    flex:8,
     alignItems:'flex-start',
     justifyContent:'flex-end'
   },
   SubContainer2: {
     flex:1,
     alignItems:'flex-end',
-    justifyContent:'flex-end'
+    justifyContent:'flex-end',
+    paddingBottom:40
   },
   Title: {
     fontSize: 36,
@@ -74,9 +77,10 @@ const styles = StyleSheet.create({
     width: 60,
     height: 60,
     borderRadius:30,
-    marginBottom:40,
     backgroundColor:'white',
-    elevation:5
+    elevation:5,
+    justifyContent:'center',
+    alignItems:'center'
   },
   ButtonContent: {
     color:'#3393D0',

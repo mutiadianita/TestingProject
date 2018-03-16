@@ -17,8 +17,9 @@ export default class GoalComplete extends Component {
     var {navigate} = this.props.navigation;
     return (
     <View style={styles.Container}>
-      <LinearGradient start={{x: 0.0, y: 0.025}} end={{x: 1.0, y: 1.0}} colors={['#5DC6C9', '#3393D0', '#135788']} style={{paddingTop:50, flex:2, flexDirection:'column'}}>
+      <LinearGradient start={{x: 0.0, y: 0.025}} end={{x: 1.0, y: 1.0}} colors={['#5DC6C9', '#3393D0', '#135788']} style={{paddingTop:50, flex:7, flexDirection:'column'}}>
         <View style={{flex:7,justifyContent:'center', alignItems:'center'}}>
+          <Image source={require('./asset/graphic_congratulate_white.png')} style={{ width: 120, height:120, marginBottom:20}}/>
           <Text style={{fontSize:32,fontFamily:'TitilliumWeb-Bold',color:'#FFFFFF'}}>Congratulation!</Text>
           <Text style={{fontSize:14,fontFamily:'Roboto-Light',color:'#FFFFFF'}}>You have achieved your dream for:</Text>
           <Text style={{fontSize:20,fontFamily:'Roboto-Bold',color:'#FFFFFF'}}>New House</Text>
@@ -30,7 +31,7 @@ export default class GoalComplete extends Component {
           <Text style={{color:'white',fontFamily:'TitilliumWeb-Bold', fontSize:14}}>View detail</Text>
         </View>
       </LinearGradient>
-      <View style={{flex:1, backgroundColor:'white', justifyContent:'center',alignItems:'center', elevation:3}}>
+      <View style={{flex:3, backgroundColor:'white', justifyContent:'center',alignItems:'center', elevation:3}}>
         <Text style={{fontFamily:'TitilliumWeb-Regular',textAlign:'center', width:200,fontSize:14,color:'#58595B'}}>I’m done viewing this dream. Delete this dream from my list.</Text>
         <View style={{borderWidth:3, borderColor:'#3393D0', height:40,width:150, marginTop:20}}>
           <TouchableOpacity onPress = {() => navigate('DeleteDream')}>

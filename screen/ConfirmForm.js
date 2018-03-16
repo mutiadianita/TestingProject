@@ -12,7 +12,7 @@ import {
   TouchableOpacity,
   Picker
 }  from 'react-native';
-
+import ProgressCircle from 'react-native-progress/Circle';
 const util = require('util');
 export default class ConfirmForm extends Component {
   render() {
@@ -22,7 +22,7 @@ export default class ConfirmForm extends Component {
         <Text style={styles.Title}>Please Confirm the following document based on the data that you have entered.</Text>
         <ScrollView>
           <View style={{flexDirection:'row'}}>
-            <Image source={require('./asset/ic_goal_dream.png')} style={{marginLeft:30,width: 30, height: 30}}/>
+            <Image source={require('./asset/ic_dream_small.png')} style={{marginLeft:30,width: 30, height: 30}}/>
             <Text style={styles.SubTitle}>Your dream </Text>
           </View>
           <Text style={styles.Label}>Dream Target Amount</Text>
@@ -50,21 +50,63 @@ export default class ConfirmForm extends Component {
           </Text>
           <View style={styles.LongLine}/>
           <View style={{marginLeft:30,flexDirection:'row'}}>
-            <Image source={require('./asset/ic_strategy_blue.png')} style={{width: 30, height: 30}}/>
+            <Image source={require('./asset/ic_percentage.png')} style={{width: 30, height: 30}}/>
             <Text style={styles.SubTitle}>Your portofolio</Text>
           </View>
           <View style={{width:320}}>
             <Text style={styles.Bank}>Maybank fixed income</Text>
+            <View style={{flexDirection:'row', marginLeft:65, marginRight:30}}>
+              <View style={{flexDirection:'column', alignItems:'center'}}>
+                <ProgressCircle showsText={true} borderWidth={6} borderColor={'rgba(216,216,216,0.30)'} direction="clockwise" color={'#3393D0'} unfilledColor={'rgba(216,216,216,0.10)'}thickness={6} progress={0.25} size={80} style={{marginRight:10}}/>
+                <Text style={styles.ChartText}>Funds</Text>
+              </View>
+              <View style={{flexDirection:'column', alignItems:'center'}}>
+                <ProgressCircle showsText={true} borderWidth={6} borderColor={'rgba(216,216,216,0.30)'} direction="counter-clockwise" color={'#3393D0'} unfilledColor={'rgba(216,216,216,0.10)'}thickness={6} progress={0.5} size={80} style={{marginRight:10}}/>
+                <Text style={styles.ChartText}>Bonds </Text>
+              </View>
+              <View style={{flexDirection:'column', alignItems:'center'}}>
+                <ProgressCircle showsText={true} borderWidth={6} borderColor={'rgba(216,216,216,0.30)'} direction="clockwise" color={'#3393D0'} unfilledColor={'rgba(216,216,216,0.10)'}thickness={6} progress={0.25} size={80} style={{marginRight:10}}/>
+                <Text style={styles.ChartText}>Shares</Text>
+              </View>
+            </View>
             <Text style={styles.More}>View Detail ></Text>
           </View>
           <View style={styles.Line}/>
           <View style={{width:320}}>
             <Text style={styles.Bank}>BCA fixed income</Text>
+            <View style={{flexDirection:'row', marginLeft:65, marginRight:30}}>
+              <View style={{flexDirection:'column', alignItems:'center'}}>
+                <ProgressCircle showsText={true} borderWidth={6} borderColor={'rgba(216,216,216,0.30)'} direction="clockwise" color={'#3393D0'} unfilledColor={'rgba(216,216,216,0.10)'}thickness={6} progress={0.25} size={80} style={{marginRight:10}}/>
+                <Text style={styles.ChartText}>Funds</Text>
+              </View>
+              <View style={{flexDirection:'column', alignItems:'center'}}>
+                <ProgressCircle showsText={true} borderWidth={6} borderColor={'rgba(216,216,216,0.30)'} direction="counter-clockwise" color={'#3393D0'} unfilledColor={'rgba(216,216,216,0.10)'}thickness={6} progress={0.5} size={80} style={{marginRight:10}}/>
+                <Text style={styles.ChartText}>Bonds </Text>
+              </View>
+              <View style={{flexDirection:'column', alignItems:'center'}}>
+                <ProgressCircle showsText={true} borderWidth={6} borderColor={'rgba(216,216,216,0.30)'} direction="clockwise" color={'#3393D0'} unfilledColor={'rgba(216,216,216,0.10)'}thickness={6} progress={0.25} size={80} style={{marginRight:10}}/>
+                <Text style={styles.ChartText}>Shares</Text>
+              </View>
+            </View>
             <Text style={styles.More}>View Detail ></Text>
           </View>
           <View style={styles.Line}/>
           <View style={{width:320}}>
             <Text style={styles.Bank}>BCA fixed income</Text>
+            <View style={{flexDirection:'row', marginLeft:65, marginRight:30}}>
+              <View style={{flexDirection:'column', alignItems:'center'}}>
+                <ProgressCircle showsText={true} borderWidth={6} borderColor={'rgba(216,216,216,0.30)'} direction="clockwise" color={'#3393D0'} unfilledColor={'rgba(216,216,216,0.10)'}thickness={6} progress={0.25} size={80} style={{marginRight:10}}/>
+                <Text style={styles.ChartText}>Funds</Text>
+              </View>
+              <View style={{flexDirection:'column', alignItems:'center'}}>
+                <ProgressCircle showsText={true} borderWidth={6} borderColor={'rgba(216,216,216,0.30)'} direction="counter-clockwise" color={'#3393D0'} unfilledColor={'rgba(216,216,216,0.10)'}thickness={6} progress={0.5} size={80} style={{marginRight:10}}/>
+                <Text style={styles.ChartText}>Bonds </Text>
+              </View>
+              <View style={{flexDirection:'column', alignItems:'center'}}>
+                <ProgressCircle showsText={true} borderWidth={6} borderColor={'rgba(216,216,216,0.30)'} direction="clockwise" color={'#3393D0'} unfilledColor={'rgba(216,216,216,0.10)'}thickness={6} progress={0.25} size={80} style={{marginRight:10}}/>
+                <Text style={styles.ChartText}>Shares</Text>
+              </View>
+            </View>
             <Text style={styles.More}>View Detail ></Text>
           </View>
           <View style={styles.Line}/>
@@ -73,6 +115,14 @@ export default class ConfirmForm extends Component {
             <View style={{marginRight:20, width:280, height:50}}>
             <Text style={{textAlign: 'left',color: '#58595B',fontSize:12, marginLeft: 5, fontFamily:'SourceSansPro-Regular'}}>
               I agree to allow XDANA to automatically take money every month from my bank account to reach my dream on time.
+            </Text>
+            </View>
+          </View>
+          <View style={{ flexDirection: 'row', marginLeft:30}}>
+            <CheckBox title='Click Here'/>
+            <View style={{marginRight:20, width:280, height:50}}>
+            <Text style={{alignItems:'flex-end', justifyContent:'flex-end', textAlign: 'left',color: '#58595B',fontSize:12, marginLeft: 5, fontFamily:'SourceSansPro-Regular'}}>
+              I agree and have read the prospectus documents of Fund A, Fund B, and Fund C
             </Text>
             </View>
           </View>
@@ -147,7 +197,7 @@ const styles = StyleSheet.create({
     textAlign:'center',
     fontSize:12,
     color:'#3393D0',
-    marginTop: 100,
+    marginTop: 16,
     marginBottom:20,
     fontFamily:'TitilliumWeb-SemiBold'
   },
@@ -175,12 +225,19 @@ const styles = StyleSheet.create({
     backgroundColor:'#3393D0',
     height:48,
     width:300,
-    justifyContent:'center'
+    justifyContent:'center',
+    borderRadius:2
   },
   ButtonText: {
     color:'#FFFFFF',
     fontSize:16,
     textAlign:'center',
     fontFamily:'TitilliumWeb-SemiBold'
+  },
+  ChartText: {
+    fontSize:14,
+    fontFamily:'Roboto-Medium',
+    color:'#58595B',
+    marginTop:24
   }
 });

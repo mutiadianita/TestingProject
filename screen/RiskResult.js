@@ -9,6 +9,7 @@ import {
   ViewPagerAndroid,
   TouchableOpacity
 }  from 'react-native';
+import ProgressCircle from 'react-native-progress/Circle';
 import LinearGradient from 'react-native-linear-gradient';
 const util = require('util');
 export default class RiskResult extends Component {
@@ -24,6 +25,20 @@ export default class RiskResult extends Component {
           <Text style={styles.Recommended}>RECOMMENDED</Text>
           </View>
           <Text style={styles.Type}>Conservative</Text>
+          <View style={{flexDirection:'row', marginTop:32}}>
+            <View style={{flexDirection:'column', alignItems:'center'}}>
+              <ProgressCircle showsText={true} borderWidth={6} borderColor={'rgba(216,216,216,0.30)'} direction="clockwise" color={'#3393D0'} unfilledColor={'rgba(216,216,216,0.10)'}thickness={6} progress={0.25} size={80} style={{marginRight:10}}/>
+              <Text style={styles.ChartText}>Funds</Text>
+            </View>
+            <View style={{flexDirection:'column', alignItems:'center'}}>
+              <ProgressCircle showsText={true} borderWidth={6} borderColor={'rgba(216,216,216,0.30)'} direction="counter-clockwise" color={'#3393D0'} unfilledColor={'rgba(216,216,216,0.10)'}thickness={6} progress={0.5} size={80} style={{marginRight:10}}/>
+              <Text style={styles.ChartText}>Bonds </Text>
+            </View>
+            <View style={{flexDirection:'column', alignItems:'center'}}>
+              <ProgressCircle showsText={true} borderWidth={6} borderColor={'rgba(216,216,216,0.30)'} direction="clockwise" color={'#3393D0'} unfilledColor={'rgba(216,216,216,0.10)'}thickness={6} progress={0.25} size={80} style={{marginRight:10}}/>
+              <Text style={styles.ChartText}>Shares</Text>
+            </View>
+          </View>
           <Text style={styles.Detail}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus a porta mi, ac gravida elit. Nam commodo nisi ex, vitae maximus nisl laoreet in.</Text>
           <TouchableOpacity style={styles.Button} onPress = {() => navigate('Success')}>
               <Text style={styles.TextButton}> Use This Strategy </Text>
@@ -35,6 +50,20 @@ export default class RiskResult extends Component {
           <Text style={styles.Recommended}>RECOMMENDED</Text>
           </View>
           <Text style={styles.Type}>Moderate Conservative</Text>
+          <View style={{flexDirection:'row', marginTop:32}}>
+            <View style={{flexDirection:'column', alignItems:'center'}}>
+              <ProgressCircle showsText={true} borderWidth={6} borderColor={'rgba(216,216,216,0.30)'} direction="clockwise" color={'#3393D0'} unfilledColor={'rgba(216,216,216,0.10)'}thickness={6} progress={0.25} size={80} style={{marginRight:10}}/>
+              <Text style={styles.ChartText}>Funds</Text>
+            </View>
+            <View style={{flexDirection:'column', alignItems:'center'}}>
+              <ProgressCircle showsText={true} borderWidth={6} borderColor={'rgba(216,216,216,0.30)'} direction="counter-clockwise" color={'#3393D0'} unfilledColor={'rgba(216,216,216,0.10)'}thickness={6} progress={0.5} size={80} style={{marginRight:10}}/>
+              <Text style={styles.ChartText}>Bonds </Text>
+            </View>
+            <View style={{flexDirection:'column', alignItems:'center'}}>
+              <ProgressCircle showsText={true} borderWidth={6} borderColor={'rgba(216,216,216,0.30)'} direction="clockwise" color={'#3393D0'} unfilledColor={'rgba(216,216,216,0.10)'}thickness={6} progress={0.25} size={80} style={{marginRight:10}}/>
+              <Text style={styles.ChartText}>Shares</Text>
+            </View>
+          </View>
           <Text style={styles.Detail}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus a porta mi, ac gravida elit. Nam commodo nisi ex, vitae maximus nisl laoreet in.</Text>
           <TouchableOpacity style={styles.Button} onPress = {() => navigate('Success')}>
               <Text style={styles.TextButton}> Use This Strategy </Text>
@@ -45,6 +74,20 @@ export default class RiskResult extends Component {
           <Text style={styles.Risk}>Normal risk</Text>
           </View>
           <Text style={styles.Type}>Moderate</Text>
+          <View style={{flexDirection:'row', marginTop:32}}>
+            <View style={{flexDirection:'column', alignItems:'center'}}>
+              <ProgressCircle showsText={true} borderWidth={6} borderColor={'rgba(216,216,216,0.30)'} direction="clockwise" color={'#3393D0'} unfilledColor={'rgba(216,216,216,0.10)'}thickness={6} progress={0.25} size={80} style={{marginRight:10}}/>
+              <Text style={styles.ChartText}>Funds</Text>
+            </View>
+            <View style={{flexDirection:'column', alignItems:'center'}}>
+              <ProgressCircle showsText={true} borderWidth={6} borderColor={'rgba(216,216,216,0.30)'} direction="counter-clockwise" color={'#3393D0'} unfilledColor={'rgba(216,216,216,0.10)'}thickness={6} progress={0.5} size={80} style={{marginRight:10}}/>
+              <Text style={styles.ChartText}>Bonds </Text>
+            </View>
+            <View style={{flexDirection:'column', alignItems:'center'}}>
+              <ProgressCircle showsText={true} borderWidth={6} borderColor={'rgba(216,216,216,0.30)'} direction="clockwise" color={'#3393D0'} unfilledColor={'rgba(216,216,216,0.10)'}thickness={6} progress={0.25} size={80} style={{marginRight:10}}/>
+              <Text style={styles.ChartText}>Shares</Text>
+            </View>
+          </View>
           <Text style={styles.Detail}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus a porta mi, ac gravida elit. Nam commodo nisi ex, vitae maximus nisl laoreet in.</Text>
           <TouchableOpacity style={styles.Button} onPress = {() => navigate('Success')}>
               <Text style={styles.TextButton}> Use This Strategy </Text>
@@ -55,6 +98,20 @@ export default class RiskResult extends Component {
           <Text style={styles.Risk}>High risk</Text>
           </View>
           <Text style={styles.Type}>Aggresive</Text>
+          <View style={{flexDirection:'row', marginTop:32}}>
+            <View style={{flexDirection:'column', alignItems:'center'}}>
+              <ProgressCircle showsText={true} borderWidth={6} borderColor={'rgba(216,216,216,0.30)'} direction="clockwise" color={'#3393D0'} unfilledColor={'rgba(216,216,216,0.10)'}thickness={6} progress={0.25} size={80} style={{marginRight:10}}/>
+              <Text style={styles.ChartText}>Funds</Text>
+            </View>
+            <View style={{flexDirection:'column', alignItems:'center'}}>
+              <ProgressCircle showsText={true} borderWidth={6} borderColor={'rgba(216,216,216,0.30)'} direction="counter-clockwise" color={'#3393D0'} unfilledColor={'rgba(216,216,216,0.10)'}thickness={6} progress={0.5} size={80} style={{marginRight:10}}/>
+              <Text style={styles.ChartText}>Bonds </Text>
+            </View>
+            <View style={{flexDirection:'column', alignItems:'center'}}>
+              <ProgressCircle showsText={true} borderWidth={6} borderColor={'rgba(216,216,216,0.30)'} direction="clockwise" color={'#3393D0'} unfilledColor={'rgba(216,216,216,0.10)'}thickness={6} progress={0.25} size={80} style={{marginRight:10}}/>
+              <Text style={styles.ChartText}>Shares</Text>
+            </View>
+          </View>
           <Text style={styles.Detail}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus a porta mi, ac gravida elit. Nam commodo nisi ex, vitae maximus nisl laoreet in.</Text>
           <TouchableOpacity style={styles.Button} onPress = {() => navigate('Success')}>
               <Text style={styles.TextButton}> Use This Strategy </Text>
@@ -65,6 +122,20 @@ export default class RiskResult extends Component {
           <Text style={styles.Risk}>High risk</Text>
           </View>
           <Text style={styles.Type}>Moderate Aggresive</Text>
+          <View style={{flexDirection:'row', marginTop:32}}>
+            <View style={{flexDirection:'column', alignItems:'center'}}>
+              <ProgressCircle showsText={true} borderWidth={6} borderColor={'rgba(216,216,216,0.30)'} direction="clockwise" color={'#3393D0'} unfilledColor={'rgba(216,216,216,0.10)'}thickness={6} progress={0.25} size={80} style={{marginRight:10}}/>
+              <Text style={styles.ChartText}>Funds</Text>
+            </View>
+            <View style={{flexDirection:'column', alignItems:'center'}}>
+              <ProgressCircle showsText={true} borderWidth={6} borderColor={'rgba(216,216,216,0.30)'} direction="counter-clockwise" color={'#3393D0'} unfilledColor={'rgba(216,216,216,0.10)'}thickness={6} progress={0.5} size={80} style={{marginRight:10}}/>
+              <Text style={styles.ChartText}>Bonds </Text>
+            </View>
+            <View style={{flexDirection:'column', alignItems:'center'}}>
+              <ProgressCircle showsText={true} borderWidth={6} borderColor={'rgba(216,216,216,0.30)'} direction="clockwise" color={'#3393D0'} unfilledColor={'rgba(216,216,216,0.10)'}thickness={6} progress={0.25} size={80} style={{marginRight:10}}/>
+              <Text style={styles.ChartText}>Shares</Text>
+            </View>
+          </View>
           <Text style={styles.Detail}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus a porta mi, ac gravida elit. Nam commodo nisi ex, vitae maximus nisl laoreet in.</Text>
           <TouchableOpacity style={styles.Button} onPress = {() => navigate('Success')}>
               <Text style={styles.TextButton}> Use This Strategy </Text>
@@ -111,7 +182,7 @@ const styles = StyleSheet.create({
   Detail: {
     fontSize: 16,
     color: '#58595B',
-    marginTop: 150,
+    marginTop: 32,
     fontFamily:'SourceSansPro-Regular'
   },
   TextButton: {
@@ -129,5 +200,11 @@ const styles = StyleSheet.create({
     height:48,
     marginBottom: 30,
     marginTop:30
+  },
+  ChartText: {
+    fontSize:14,
+    fontFamily:'Roboto-Medium',
+    color:'#58595B',
+    marginTop:24
   }
 })

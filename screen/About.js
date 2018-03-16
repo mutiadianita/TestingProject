@@ -24,10 +24,10 @@ export default class About extends Component {
           <Image source={require('./asset/ic_logo_white.png')} style={{marginBottom:20,width: 100, height: 100}}/>
         </View>
         <View style={{flexDirection:'row', marginTop:10}}>
-          <Text style={styles.Details}>Version</Text>
+          <Text style={styles.Detail}>Version</Text>
           <Text style={styles.Details}>1.01</Text>
         </View>
-        <Text style={styles.Label}>
+        <Text style={styles.Check}>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus a porta mi, ac gravida elit. Nam commodo nisi ex, vitae maximus nisl laoreet in.
         </Text>
         <Text style={styles.Label}>Email : cs@xdana.com</Text>
@@ -64,27 +64,26 @@ const styles = StyleSheet.create({
     color:'#FFFFFF',
     fontSize:16,
     marginTop:32,
-    fontFamily:'SourceSansPro-Regular'
+    fontFamily:'TitilliumWeb-Regular'
+  },
+  Detail: {
+    textAlign: 'left',
+    color: '#FFFFFF',
+    marginRight:200,
+    fontSize:16,
+    fontFamily:'TitilliumWeb-Bold'
   },
   Details: {
     textAlign: 'left',
     color: '#FFFFFF',
-    marginRight:175,
-    fontSize:20
-  },
-  check: {
-    textAlign: 'left',
-    color: 'rgba(88,89,91,0.60)',
     fontSize:14,
-    marginLeft: 65,
-    width:230
+    fontFamily:'TitilliumWeb-Regular'
   },
-  Sublabel:{
-    textAlign: 'left',
-    color: 'rgba(0,0,0,0.60)',
-    marginTop: 10,
-    marginLeft: 65,
-    fontSize:28
+  Check: {
+    color:'#FFFFFF',
+    fontSize:14,
+    marginTop:32,
+    fontFamily:'SourceSansPro-Regular'
   },
   Line: {
     width: 280,

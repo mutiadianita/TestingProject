@@ -22,21 +22,21 @@ export default class TopUp_Payment extends Component {
         <View style={{flexDirection:'column', flex: 3}}>
           <Text style={styles.ContentTitle}>Bank transfer</Text>
         </View>
-        <Image source={require('./asset/ic_next_black.png')} style={{alignItems:'center',marginTop:20, marginLeft:40, marginBottom:20, width: 40, height: 40}}/>
+        <Image source={require('./asset/ic_next_black.png')} style={styles.NextIcon}/>
       </TouchableOpacity>
       <TouchableOpacity style={styles.ContentBox} onPress = {() => navigate('TopUp_Process')} >
         <View style={styles.Flag}/>
         <View style={{flexDirection:'column', flex: 3}}>
           <Text style={styles.ContentTitle}>BCA Klikpay</Text>
         </View>
-        <Image source={require('./asset/ic_next_black.png')} style={{alignItems:'center',marginTop:20, marginLeft:40, marginBottom:20, width: 40, height: 40}}/>
+        <Image source={require('./asset/ic_next_black.png')}  style={styles.NextIcon}/>
       </TouchableOpacity>
       <TouchableOpacity style={styles.ContentBox} onPress = {() => navigate('TopUp_Process')} >
         <View style={styles.Flag}/>
         <View style={{flexDirection:'column', flex: 3}}>
           <Text style={styles.ContentTitle}>Credit Card</Text>
         </View>
-        <Image source={require('./asset/ic_next_black.png')} style={{alignItems:'center',marginTop:20, marginLeft:40, marginBottom:20, width: 40, height: 40}}/>
+        <Image source={require('./asset/ic_next_black.png')} style={styles.NextIcon}/>
       </TouchableOpacity>
     </View>
     );
@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
     marginBottom:10,
     backgroundColor: 'white',
     flexDirection:'row',
-    borderRadius:3
+    borderRadius:10
   },
   ContentText: {
     fontSize:14,
@@ -76,7 +76,16 @@ const styles = StyleSheet.create({
     height:80,
     width: 10,
     backgroundColor: '#58595B',
-    borderTopLeftRadius:3,
-    borderBottomLeftRadius:3
-   }
+    borderTopLeftRadius:10,
+    borderBottomLeftRadius:10
+  },
+  NextIcon: {
+    alignItems:'center',
+    marginTop:28,
+    marginLeft:40,
+    marginBottom:28,
+    width: 24,
+    height: 24,
+    marginRight:8
+  }
 })

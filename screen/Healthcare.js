@@ -25,7 +25,7 @@ export default class Success extends Component {
       <View style={styles.Container}>
       <View>
       <ImageBackground source={require('./images/watch.jpg')} style={{alignItems:'flex-start',width: 360, height: 230}}>
-      <Image  source={require('./asset/ic_back_black.png')} style={{alignItems:'flex-start',marginTop:42, marginLeft:20, marginBottom:20, width: 40, height: 40}}/>
+      <Image  source={require('./asset/ic_back_white.png')} style={{alignItems:'flex-start',marginTop:42, marginLeft:20, marginBottom:20, width: 24, height: 24}}/>
       </ImageBackground>
       </View>
       <ScrollView showsVerticalScrollIndicator={false}>

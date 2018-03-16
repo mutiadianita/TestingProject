@@ -70,11 +70,11 @@ export default class YourMailingAddress extends Component {
         underlineColorAndroid='black'
         />
       </ScrollView>
-      <View style={{alignItems:'flex-end'}}>
+      <View style={{alignItems:'flex-end', alignItems:'flex-end', marginBottom:30, marginRight:25}}>
       <TouchableOpacity
-      style={{width: 60, height: 60, borderRadius:30, marginTop: 5, marginBottom: 30, marginRight: 30, elevation:5, backgroundColor:'#3393D0'}}
+      style={styles.RoundButton}
         onPress = {() => navigate('AddInfo')}>
-        <Text style={{color:'white', fontSize:24, fontWeight:'bold', marginTop:10, marginLeft:25}}>></Text>
+        <Image source={require('./asset/ic_next_white.png')} style={{width: 46, height: 46}}/>
       </TouchableOpacity>
       </View>
     </View>
@@ -102,7 +102,6 @@ const styles = StyleSheet.create({
   Title : {
     fontSize:16,
     color:'#3393D0',
-    marginTop: 5,
     marginLeft: 5,
     marginBottom:20,
     fontFamily:'TitilliumWeb-Bold'
@@ -115,11 +114,14 @@ const styles = StyleSheet.create({
     fontSize:14,
     fontFamily:'Roboto-Light'
   },
-  Check: {
-    textAlign: 'left',
-    color: 'black',
-    marginTop: 5,
-    marginLeft: 5,
-    fontSize:12
+  RoundButton: {
+    width: 60,
+    height: 60,
+    borderRadius:30,
+    marginTop: 20,
+    backgroundColor:'#3393D0',
+    elevation:5,
+    justifyContent:'center',
+    alignItems:'center'
   }
 });

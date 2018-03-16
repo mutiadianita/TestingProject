@@ -12,7 +12,7 @@ import {
   ImageBackground,
   Image
 }  from 'react-native';
-
+import ProgressBar from 'react-native-progress/Bar';
 const util = require('util');
 export default class WhyInvest extends Component {
   render() {
@@ -21,7 +21,7 @@ export default class WhyInvest extends Component {
       <View style={styles.Container}>
       <View>
       <ImageBackground source={require('./images/chess.jpg')} style={styles.HeaderImage}>
-      <Image  source={require('./asset/ic_back_black.png')} style={styles.BackButton}/>
+      <Image  source={require('./asset/ic_back_white.png')} style={{alignItems:'flex-start',marginTop:42, marginLeft:20, marginBottom:20, width: 24, height: 24}}/>
       <Text style={styles.HeaderTitle}>Why Invest?</Text>
       <Text style={styles.HeaderDetail}>Xdana is the first independent online investment adviser in Indonesia.</Text>
       </ImageBackground>
@@ -36,22 +36,37 @@ export default class WhyInvest extends Component {
               <Text style={{color:'#FFFFFF', marginRight:50, fontFamily:'Roboto-Regular'}}>Monthly Investment</Text>
               <Text style={{color:'#FFFFFF', fontWeight:'bold', fontFamily:'Roboto-Medium'}}>Rp100.000,00</Text>
             </View>
+            <View style={{marginTop:8}}>
+              <ProgressBar progress={0.05} width={280} height={8} color={'#FFFFFF'} borderColor={'transparent'} unfilledColor={'rgba(0,0,0,0.20)'}/>
+            </View>
           </View>
-          <View style={{flexDirection:'row', padding:16}}>
+          <View style={{flexDirection:'row', paddingLeft:16, paddingTop:8, paddingBottom:8}}>
             <Text style={styles.Year}>In 1 year</Text>
             <Text style={styles.Money}>Rp1.000.000,00</Text>
+          </View>
+          <View style={{marginLeft:16}}>
+            <ProgressBar progress={0.05} width={280} height={8} color={'#5DC6C9'} borderColor={'transparent'} unfilledColor={'rgba(179,184,195,0.50)'}/>
           </View>
           <View style={{flexDirection:'row', padding:16}}>
             <Text style={styles.Year}>In 5 year</Text>
             <Text style={{color:'#58595B', fontWeight:'bold'}}>Rp3.300.000,00</Text>
           </View>
-          <View style={{flexDirection:'row', padding:16}}>
+          <View style={{marginLeft:16, paddingBottom:8}}>
+            <ProgressBar progress={0.165} width={280} height={8} color={'#5DC6C9'} borderColor={'transparent'} unfilledColor={'rgba(179,184,195,0.50)'}/>
+          </View>
+          <View style={{flexDirection:'row', paddingLeft:16, paddingTop:8, paddingBottom:8}}>
             <Text style={styles.Year}>In 5 year</Text>
             <Text style={{color:'#58595B', fontWeight:'bold'}}>Rp6.000.000,00</Text>
           </View>
-          <View style={{flexDirection:'row', padding:16}}>
+          <View style={{marginLeft:16, paddingBottom:8}}>
+            <ProgressBar progress={0.3} width={280} height={8} color={'#5DC6C9'} borderColor={'transparent'} unfilledColor={'rgba(179,184,195,0.50)'}/>
+          </View>
+          <View style={{flexDirection:'row', paddingLeft:16, paddingTop:8, paddingBottom:8}}>
             <Text style={styles.Year}>In 10 year</Text>
             <Text style={{color:'#58595B', fontWeight:'bold'}}>Rp14.000.000,00</Text>
+          </View>
+          <View style={{marginLeft:16, paddingBottom:8}}>
+            <ProgressBar progress={0.7} width={280} height={8} color={'#5DC6C9'} borderColor={'transparent'} unfilledColor={'rgba(179,184,195,0.50)'}/>
           </View>
         </View>
       </View>

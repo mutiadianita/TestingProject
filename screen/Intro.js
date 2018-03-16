@@ -9,7 +9,8 @@ import {
   StyleSheet,
   TouchableOpacity,
   ViewPagerAndroid,
-  Image
+  Image,
+  ImageBackground
 }  from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 const util = require('util');
@@ -21,34 +22,40 @@ export default class Intro extends Component {
       <View style={styles.Container}>
         <ViewPagerAndroid style={styles.Pager} initialPage={0}>
         <View>
-          <LinearGradient start={{x: 0.0, y: 0.025}} end={{x: 1.0, y: 1.0}} colors={['#5DC6C9', '#3393D0', '#135788']} style={styles.Pager}>
+          <LinearGradient start={{x: 0.0, y: 0.025}} end={{x: 1.0, y: 1.0}} colors={['#5DC6C9', '#3393D0', '#135788']} style={{flex:1}}>
+          <ImageBackground source={require('./asset/bg_xdana_logo.png')} style={styles.Pager}>
             <Text style={styles.Title}>Welcome to XDANA </Text>
             <Image source={require('./asset/ic_retirement.png')} style={{marginTop:120, width: 50, height: 50}}/>
             <Text style={styles.Subtitle}>Retirement </Text>
             <Text style={styles.Details}>In order to finish your goal creation, you need to connect to your bank to set up auto saving every month. </Text>
+            </ImageBackground>
           </LinearGradient>
         </View>
         <View>
-          <LinearGradient start={{x: 0.0, y: 0.025}} end={{x: 1.0, y: 1.0}} colors={['#8FC196', '#00A99E']} style={styles.Pager}>
+          <LinearGradient start={{x: 0.0, y: 0.025}} end={{x: 1.0, y: 1.0}} colors={['#8FC196', '#00A99E']} style={{flex:1}}>
+          <ImageBackground source={require('./asset/bg_xdana_logo.png')} style={styles.Pager}>
             <Text style={styles.Title}>Welcome to XDANA </Text>
-            <Image source={require('./asset/ic_asset.png')} style={{marginTop:120, width: 50, height: 50}}/>
+            <Image source={require('./asset/ic_life.png')} style={{marginTop:120, width: 50, height: 50}}/>
             <Text style={styles.Subtitle}>Life Improvement</Text>
             <Text style={styles.Details}>In order to finish your goal creation, you need to connect to your bank to set up auto saving every month. </Text>
+            </ImageBackground>
           </LinearGradient>
         </View>
         <View>
-          <LinearGradient start={{x: 0.0, y: 0.025}} end={{x: 1.0, y: 1.0}} colors={['#F5841F', '#DE6157']} style={styles.Pager}>
+          <LinearGradient start={{x: 0.0, y: 0.025}} end={{x: 1.0, y: 1.0}} colors={['#F5841F', '#DE6157']} style={{flex:1}}>
+          <ImageBackground source={require('./asset/bg_xdana_logo.png')} style={styles.Pager}>
             <Text style={styles.Title}>Welcome to XDANA </Text>
             <Image source={require('./asset/ic_asset.png')} style={{marginTop:120, width: 50, height: 50}}/>
             <Text style={styles.Subtitle}>Asset investment </Text>
             <Text style={styles.Details}>In order to finish your goal creation, you need to connect to your bank to set up auto saving every month. </Text>
+            </ImageBackground>
           </LinearGradient>
         </View>
         </ViewPagerAndroid>
         <View style={{justifyContent:'center', alignItems:'center', zIndex:2, position:'absolute', marginBottom:20, marginLeft:30, marginRight:30, height:300}}>
         <TouchableOpacity
         style={{width: 300, height:50, backgroundColor:'white', alignItems:'center', justifyContent:'center', elevation:3 , borderRadius:2}}
-        onPress = {() => navigate('GoalAhead')}>
+        onPress = {() => navigate('Question1')}>
           <Text style={{fontFamily:'TitilliumWeb-SemiBold',color:'#3393D0', fontSize:18, textAlign:'center'}}>Login</Text>
         </TouchableOpacity>
         <TouchableOpacity
@@ -57,6 +64,7 @@ export default class Intro extends Component {
           <Text style={{fontFamily:'TitilliumWeb-SemiBold',color:'white', fontSize:18, textAlign:'center'}}>Register</Text>
         </TouchableOpacity>
         </View>
+
       </View>
     );
   }
@@ -87,7 +95,7 @@ const styles = StyleSheet.create({
   Subtitle: {
     fontSize: 22,
     color: 'white',
-    marginTop: 20,
+    marginTop: 10,
     fontFamily:'TitilliumWeb-Bold'
   },
   Details: {

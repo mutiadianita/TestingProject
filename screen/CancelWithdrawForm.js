@@ -23,7 +23,7 @@ export default class CancelWithdrawForm extends Component {
         <Text style={styles.Detail}>Please confirm the following information based on the data you have entered</Text>
         <ScrollView>
         <View style={{flexDirection:'row'}}>
-        <Image source={require('./asset/ic_more_blue.png')} style={{marginLeft:30,width: 30, height: 30}}/>
+        <Image source={require('./asset/ic_dream_small.png')} style={{marginLeft:30,width: 30, height: 30}}/>
         <Text style={styles.Title}>Your dream
         </Text>
         </View>

@@ -20,7 +20,7 @@ export default class Option2 extends Component {
       <View style={{flexDirection:'row', paddingTop:35, paddingLeft:30, paddingRight:30}}>
       <Image source={require('./asset/ic_close_white.png')} style={{height: 24, width:24}}/>
       <Text style={{fontSize:20, fontFamily:'TitilliumWeb-Bold', color:'#FFFFFF', marginLeft:25}}>Life Improvement</Text>
-      <Image source={require('./asset/ic_retirement.png')} style={{height: 50, width:50, marginLeft:50}}/>
+      <Image source={require('./asset/ic_life.png')} style={{height: 50, width:50, marginLeft:50}}/>
       </View>
       </LinearGradient>
       <View style={styles.Container}>

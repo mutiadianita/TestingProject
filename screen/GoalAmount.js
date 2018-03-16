@@ -25,8 +25,8 @@ export default class GoalAmount extends Component {
         <Text style={styles.Title}>Enter your target amount and target year</Text>
         <ScrollView>
           <View style={{flexDirection:'row'}}>
-          <Image source={require('./asset/ic_more_blue.png')} style={{width: 30, height: 30}}/>
-          <Text style={{fontSize:16, color:'#3393D0', marginTop: 5, marginLeft: 5, marginBottom:20, fontFamily:'TitilliumWeb-Bold'}}>Dream Information</Text>
+          <Image source={require('./asset/ic_dream_small.png')} style={{width: 30, height: 30}}/>
+          <Text style={{fontSize:16, color:'#3393D0', marginLeft: 5, marginBottom:20, fontFamily:'TitilliumWeb-Bold'}}>Dream Information</Text>
           </View>
           <Text style={styles.Label}>IDR Amount</Text>
           <TextInput
@@ -47,7 +47,7 @@ export default class GoalAmount extends Component {
           <TouchableOpacity
           style={styles.Button}
             onPress = {() => navigate('Strategy')}>
-            <Text style={styles.ButtonText}>></Text>
+            <Image source={require('./asset/ic_next_white.png')} style={{width: 46, height: 46}}/>
           </TouchableOpacity>
         </View>
       </View>
@@ -89,7 +89,9 @@ const styles = StyleSheet.create({
     height: 60,
     borderRadius:30,
     backgroundColor:'#3393D0',
-    elevation:5
+    elevation:5,
+    justifyContent:'center',
+    alignItems:'center'
   },
   ButtonText: {
     color:'white',

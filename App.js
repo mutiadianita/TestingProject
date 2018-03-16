@@ -39,7 +39,6 @@ import Confirm from './screen/Confirm';
 import ConfirmForm from './screen/ConfirmForm';
 import LearnMore from './screen/LearnMore';
 import Bank from './screen/Bank';
-import HowToPay from './screen/HowToPay';
 import ChooseBank from './screen/ChooseBank';
 import BankAccount from './screen/BankAccount';
 import Done from './screen/Done';
@@ -47,6 +46,7 @@ import Done from './screen/Done';
 import HomeStatus from './screen/HomeStatus';
 //05
 import GoalAhead from './screen/GoalAhead';
+import GoalBehind from './screen/GoalBehind';
 import GoalComplete from './screen/GoalComplete';
 import DeleteDream from './screen/DeleteDream';
 //06
@@ -59,6 +59,7 @@ import TopUp_Payment from './screen/TopUp_Payment';
 import TopUp_Process from './screen/TopUp_Process';
 import TopUp_Done from './screen/TopUp_Done';
 //08
+import Product from './screen/Product';
 import Profile from './screen/Profile';
 import EditProfile from './screen/EditProfile';
 import ChangeEmail from './screen/ChangeEmail';
@@ -224,7 +225,9 @@ const Navigation = StackNavigator({
         elevation:0
       },
       title:'Register',
-      headerTitleStyle: {fontFamily:'TitilliumWeb-Bold'}
+      headerTitleStyle: {fontFamily:'TitilliumWeb-Bold'},
+      headerRight:
+      <Text style={{fontFamily:'Roboto-Light', fontSize:16}}> 1/5 </Text>
     }
   },
   Question2: {
@@ -439,15 +442,6 @@ const Navigation = StackNavigator({
       },
     }
   },
-  HowToPay: {
-    screen: HowToPay,
-    navigationOptions:
-    {
-      headerStyle: {
-        elevation:0
-      },
-    }
-  },
   ChooseBank: {
     screen: ChooseBank,
     navigationOptions:
@@ -499,7 +493,29 @@ const Navigation = StackNavigator({
         left:0,
         right:0
       },
-      title:'Goal Detail',
+      headerRight: (
+          <Image source={require('./screen/asset/ic_retirement.png')} style={{width: 40, height: 40, marginRight:20}}/>
+      ),
+      headerTintColor: 'white',
+      headerTitleStyle: {fontWeight: "normal",color:'white',fontFamily:'TitilliumWeb-Bold'}
+    }
+  },
+  GoalBehind: {
+    screen: GoalBehind,
+    navigationOptions:
+    {
+      headerStyle: {
+        backgroundColor: 'rgba(0,0,0,0)',
+        position:'absolute',
+        zIndex:100,
+        elevation:0,
+        top:0,
+        left:0,
+        right:0
+      },
+      headerRight: (
+          <Image source={require('./screen/asset/ic_asset.png')} style={{width: 40, height: 40, marginRight:20}}/>
+      ),
       headerTintColor: 'white',
       headerTitleStyle: {fontWeight: "normal",color:'white',fontFamily:'TitilliumWeb-Bold'}
     }
@@ -606,6 +622,13 @@ const Navigation = StackNavigator({
     }
   },
 //08
+  Product: {
+    screen: Product,
+    navigationOptions:
+    {
+      header:null
+    }
+  },
   Profile: {
     screen: Profile,
     navigationOptions:

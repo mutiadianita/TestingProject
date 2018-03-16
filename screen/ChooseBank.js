@@ -18,7 +18,7 @@ export default class ChooseBank extends Component {
     <View style={styles.Container}>
       <Text style={{color:'#58595B', fontSize:14, marginBottom:20, fontFamily:'Roboto-Light'}}>Please choose your bank</Text>
       <TouchableOpacity style={styles.ContentBox} onPress = {() => navigate('BankAccount')} >
-        <View style={{height:80, width: 10, backgroundColor: '#135788'}}>
+        <View style={styles.Flag}>
         </View>
         <View style={{flexDirection:'column', flex: 3}}>
         <Image source={require('./asset/Mandiri.png')} style={{alignItems:'center',marginTop:20, marginLeft:20, marginBottom:20, width: 130, height: 40}}/>
@@ -26,7 +26,7 @@ export default class ChooseBank extends Component {
         <Image source={require('./asset/ic_back_blue.png')} style={{alignItems:'center',marginTop:20, marginLeft:40, marginBottom:20, width: 40, height: 40}}/>
       </TouchableOpacity>
       <TouchableOpacity style={styles.ContentBox}>
-        <View style={{height:80, width: 10, backgroundColor: '#135788'}}>
+        <View style={styles.Flag}>
         </View>
         <View style={{flexDirection:'column', flex: 3}}>
           <Image source={require('./asset/BCA.png')} style={{alignItems:'center',marginTop:20, marginLeft:20, marginBottom:20, width: 130, height: 40}}/>
@@ -51,6 +51,13 @@ const styles = StyleSheet.create({
     marginBottom:10,
     backgroundColor: 'white',
     flexDirection:'row',
-    borderRadius:3
+    borderRadius:10
+  },
+  Flag: {
+    height:80,
+    width: 10,
+    backgroundColor: '#135788',
+    borderTopLeftRadius:10,
+    borderBottomLeftRadius:10
   }
 })

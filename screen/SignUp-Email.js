@@ -16,14 +16,12 @@ export default class SignUp_Email extends Component {
     var { navigate } = this.props.navigation;
     return (
       <View style={styles.Container}>
-
         <Text style={styles.Title}>
           Please fill in the data below to create an Xdana account.
         </Text>
         <View style={{flexDirection:'row'}}>
-        <Image source={require('./asset/ic_newprofile_blue.png')} style={{width: 30, height: 30}}/>
-        <Text style={{fontSize:16, fontWeight:'bold', color:'#3393D0', marginTop: 5, marginLeft: 5, marginBottom:20, fontFamily:'TitilliumWeb-Bold'}}>Account
-        </Text>
+          <Image source={require('./asset/ic_newprofile_blue.png')} style={{width: 32, height: 32}}/>
+          <Text style={{fontSize:16, fontWeight:'bold', color:'#3393D0', marginTop: 5, marginLeft: 5, marginBottom:20, fontFamily:'TitilliumWeb-Bold'}}>Account</Text>
         </View>
         <Text style={styles.Label}>Name
         </Text>
@@ -46,7 +44,7 @@ export default class SignUp_Email extends Component {
           <TouchableOpacity
           style={styles.RoundButton}
             onPress = {() => navigate('SignUp_Phone')}>
-            <Text style={{color:'white', fontSize:24, fontWeight:'bold', marginTop:10, marginLeft:25}}>></Text>
+            <Image source={require('./asset/ic_next_white.png')} style={{width: 46, height: 46}}/>
           </TouchableOpacity>
         </View>
       </View>
@@ -58,15 +56,13 @@ const styles = StyleSheet.create({
   Container: {
     flex: 1,
     justifyContent: 'flex-start',
-    paddingTop: 30,
-    paddingLeft: 25,
-    paddingRight:30,
+    padding:25,
     backgroundColor:'white'
   },
   Title: {
     fontSize: 16,
     textAlign: 'left',
-    marginBottom: 20,
+    marginBottom: 16,
     marginLeft:5,
     color: '#58595B',
     fontFamily: 'Roboto-Light'
@@ -85,11 +81,13 @@ const styles = StyleSheet.create({
     borderRadius:30,
     marginTop: 20,
     backgroundColor:'#3393D0',
-    elevation:5
+    elevation:5,
+    justifyContent:'center',
+    alignItems:'center'
   },
   TextInput: {
     width: 280,
-    marginLeft:25,
+    marginLeft:30,
     color:'#58595B',
     fontSize:16,
     fontFamily:'Roboto-Regular'

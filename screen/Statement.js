@@ -28,12 +28,12 @@ export default class Statement extends Component {
            </View>
     </View>
 
-    <View style={{flexDirection: 'row', backgroundColor: 'white', paddingBottom: 30}}>
+    <View style={{flexDirection: 'row', backgroundColor: 'white'}}>
     <View style={{flex:1,alignItems:'flex-end', justifyContent:'flex-end',paddingRight:30, paddingBottom:40, backgroundColor:'#FFFFFF'}}>
       <TouchableOpacity
       style={styles.RoundButton}
         onPress = {() => navigate('RiskResult')}>
-        <Text style={{color:'white', fontSize:24, fontWeight:'bold', marginTop:10, marginLeft:25}}>></Text>
+        <Image source={require('./asset/ic_next_white.png')} style={{width: 46, height: 46}}/>
       </TouchableOpacity>
     </View>
     </View>
@@ -63,6 +63,8 @@ const styles = StyleSheet.create({
     height: 60,
     borderRadius:30,
     backgroundColor:'#3393D0',
-    elevation:5
+    elevation:5,
+    justifyContent:'center',
+    alignItems:'center'
   }
 })

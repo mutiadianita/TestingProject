@@ -104,7 +104,7 @@ export default class YourInformation extends Component {
           <TouchableOpacity
           style={styles.RoundButton}
             onPress = {() => navigate('YourMailingAddress')}>
-            <Text style={{color:'white', fontSize:24, fontWeight:'bold', marginTop:10, marginLeft:25}}>></Text>
+            <Image source={require('./asset/ic_next_white.png')} style={{width: 46, height: 46}}/>
           </TouchableOpacity>
         </View>
       </View>
@@ -160,7 +160,9 @@ const styles = StyleSheet.create({
     backgroundColor:'#3393D0',
     elevation:5,
     marginRight:30,
-    marginBottom:30
+    marginBottom:30,
+    justifyContent:'center',
+    alignItems:'center'
   },
   TextInput: {
     marginLeft:30,

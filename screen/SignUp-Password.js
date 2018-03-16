@@ -21,7 +21,7 @@ export default class SignUp_Password extends Component {
           Please fill in the data below to create an Xdana account.
         </Text>
         <View style={{flexDirection:'row'}}>
-        <Image source={require('./asset/ic_newprofile_blue.png')} style={{width: 30, height: 30}}/>
+        <Image source={require('./asset/ic_pass_blue.png')} style={{width: 30, height: 30}}/>
         <Text style={{fontSize:16, color:'#3393D0', marginTop: 5, marginLeft: 5, marginBottom:20, fontFamily:'TitilliumWeb-Bold'}}>Your password
         </Text>
         </View>
@@ -46,7 +46,7 @@ export default class SignUp_Password extends Component {
           <TouchableOpacity
           style={styles.RoundButton}
             onPress = {() => navigate('Step1')}>
-            <Text style={{color:'white', fontSize:24, fontWeight:'bold', marginTop:10, marginLeft:25}}>></Text>
+            <Image source={require('./asset/ic_next_white.png')} style={{width: 46, height: 46}}/>
           </TouchableOpacity>
         </View>
       </View>
@@ -58,9 +58,7 @@ const styles = StyleSheet.create({
   Container: {
     flex: 1,
     justifyContent: 'flex-start',
-    paddingTop: 30,
-    paddingLeft: 25,
-    paddingRight:30,
+    padding:25,
     backgroundColor:'white'
   },
   Title: {
@@ -84,7 +82,9 @@ const styles = StyleSheet.create({
     borderRadius:30,
     marginTop: 20,
     backgroundColor:'#3393D0',
-    elevation:5
+    elevation:5,
+    justifyContent:'center',
+    alignItems:'center'
   },
   TextInput: {
     width: 280,

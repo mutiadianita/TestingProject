@@ -36,9 +36,9 @@ export default class TopUp_Amount extends Component {
         </ScrollView>
         <View style={{marginBottom:40,marginRight:30,justifyContent:'flex-end', alignItems:'flex-end'}}>
           <TouchableOpacity
-          style={{width: 60, height: 60, borderRadius:30,backgroundColor:'#3393D0', elevation:5}}
+          style={styles.RoundButton}
             onPress = {() => navigate('TopUp_Payment')}>
-            <Text style={{color:'white', fontSize:24, fontWeight:'bold', marginTop:10, marginLeft:25}}>></Text>
+            <Image source={require('./asset/ic_next_white.png')} style={{width: 46, height: 46}}/>
           </TouchableOpacity>
         </View>
       </View>
@@ -77,5 +77,14 @@ const styles = StyleSheet.create({
     marginLeft: 65,
     fontSize:12,
     fontFamily:'Roboto-Light'
+  },
+  RoundButton: {
+    width: 60,
+    height: 60,
+    borderRadius:30,
+    backgroundColor:'#3393D0',
+    elevation:5,
+    justifyContent:'center',
+    alignItems:'center'
   }
 });

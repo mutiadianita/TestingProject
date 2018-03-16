@@ -17,7 +17,7 @@ export default class DeleteDream extends Component {
 
     return (
     <View style={styles.Container}>
-      <Image source={require('./asset/ic_close_blue.png')} style={{width: 30, height: 30}}/>
+      <Image source={require('./asset/ic_close_blue.png')} style={{width: 24, height: 24}}/>
       <Text style={{fontSize:24, fontFamily:'TitilliumWeb-Bold',textAlign:'left', color:'#58595B', marginTop:20}}>Delete Completed Dream</Text>
       <Text style={{fontSize:16, fontFamily:'SourceSansPro-Regular', textAlign:'left', color:'#333333', marginTop:150}}>Are you sure you want to delete the completed dream? This action cannot be undone.</Text>
       <View style={{height:50, width:250, marginTop:30, backgroundColor:'#3393D0', borderRadius:2, elevation:2, justifyContent:'center', alignItems:'center'}}>

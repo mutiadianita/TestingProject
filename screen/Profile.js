@@ -27,7 +27,7 @@ export default class Home extends Component {
           </View>
         </TouchableOpacity>
         <View style={{flex: 1, zIndex:2}}>
-          <LinearGradient start={{x: 0.0, y: 0.025}} end={{x: 1.0, y: 1.0}} colors={['#5DC6C9', '#3393D0', '#135788']} style={{paddingTop:80,flexDirection:'row',backgroundColor:'#3393D0', height:200,padding: 20}}>
+          <LinearGradient start={{x: 0.0, y: 0.025}} end={{x: 1.0, y: 1.0}} colors={['#5DC6C9', '#3393D0', '#135788']} style={{paddingTop:80,flexDirection:'row',backgroundColor:'#3393D0', height:180,padding: 20}}>
             <View style={{height:40, width:40, borderRadius:20, backgroundColor:'grey'}}>
             </View>
             <View style={{marginLeft:16, width:240}}>
@@ -43,7 +43,12 @@ export default class Home extends Component {
           <TouchableOpacity onPress = {() => navigate('MyBank')} style={styles.Button}>
             <Image source={require('./asset/ic_bank.png')} style={{width: 24, height: 24}}/>
             <Text style={styles.ButtonText}>Bank Account</Text>
-            </TouchableOpacity>
+          </TouchableOpacity>
+          <View style={styles.Line}/>
+          <TouchableOpacity onPress = {() => navigate('Intro')} style={styles.Button}>
+            <Image source={require('./asset/ic_dream_big.png')} style={{width: 24, height: 24}}/>
+            <Text style={styles.ButtonText}>Archived Dreams</Text>
+          </TouchableOpacity>
           <View style={styles.Line}/>
           <TouchableOpacity onPress = {() => navigate('About')} style={styles.Button}>
             <Image source={require('./asset/ic_about.png')} style={{width: 24, height: 24}}/>
@@ -64,7 +69,7 @@ export default class Home extends Component {
             <Image source={require('./asset/ic_logout.png')} style={{width: 24, height: 24}}/>
             <Text style={styles.ButtonText}>Log Out</Text>
           </TouchableOpacity>
-          <View style={{height:1, width:288, marginLeft: 36,backgroundColor:'#D8D8D8'}}/>
+          <View style={styles.Line}/>
           <View style={{flex:1, flexDirection:'row', alignItems:'center'}}></View>
         </View>
       </View>
@@ -82,12 +87,12 @@ const styles = StyleSheet.create({
   Box: {
     flexDirection:'row',
     position: 'absolute',
-    marginTop:160,
+    marginTop:140,
     zIndex:3,
     height: 70,
     width:320,
     marginLeft:20,
-    borderRadius:3,
+    borderRadius:10,
     backgroundColor:'white',
     elevation:5,
     padding:10

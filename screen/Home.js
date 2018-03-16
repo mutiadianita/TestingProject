@@ -17,19 +17,7 @@ export default class Home extends Component {
     var { navigate } = this.props.navigation;
     return (
       <View style={styles.Container}>
-        <View style={styles.Box}>
-          <View>
-            <Text style={styles.Title}>Create a New Dream</Text>
-            <Text style={styles.Subtitle}>Tap here to create a new Dream</Text>
-          </View>
-          <TouchableOpacity
-            style={styles.Button}
-            onPress = {() => navigate('MainMenu')}>
-            <Text style={styles.ButtonText}>+</Text>
-          </TouchableOpacity>
-        </View>
-        <View style={{flex: 1, zIndex:2}}>
-        <LinearGradient start={{x: 0.0, y: 0.025}} end={{x: 1.0, y: 1.0}} colors={['#5DC6C9', '#3393D0', '#135788']}>
+        <LinearGradient start={{x: 0.0, y: 0.025}} end={{x: 1.0, y: 1.0}} colors={['#5DC6C9', '#3393D0', '#135788']} style={{flex:6}}>
           <View style={styles.Header}>
             <TouchableOpacity onPress = {() => navigate('Profile')}>
               <Image source={require('./asset/ic_account.png')} style={{width: 30, height: 30}}/>
@@ -39,17 +27,28 @@ export default class Home extends Component {
               <Image source={require('./asset/ic_notif_white.png')} style={{marginLeft:180,width: 30, height: 30}}/>
             </TouchableOpacity>
           </View>
-          <View style={{backgroundColor:'#3393D0', padding: 20}}>
-            <Text style={{fontSize:24, color:'white', fontFamily:'SourceSansPro-Bold'}}>Hi Stanley,</Text>
-            <Text style={{fontSize:16, color:'#FEFEFE', fontFamily:'Roboto-Light'}}>Welcome to XDANA.</Text>
-            <Text style={{fontSize:16, color:'#FEFEFE', marginBottom:30, marginTop:10, fontFamily: 'Roboto-Light'}}>Start investing now and reaching your dream.</Text>
+          <View style={{padding: 20}}>
+            <Text style={{fontSize:36, color:'white', fontFamily:'TitilliumWeb-SemiBold'}}>Hi Stanley,</Text>
+            <Text style={{fontSize:16, color:'#FEFEFE',marginTop:10, fontFamily: 'Roboto-Regular'}}>Start investing now and reach your dream.</Text>
+          </View>
+          <View style={styles.Box}>
+            <View>
+              <Text style={styles.Title}>Create a New Dream</Text>
+              <Text style={styles.Subtitle}>Tap here to create a new Dream</Text>
+            </View>
+          <View style={{justifyContent:'center', alignItems:'center'}}>
+            <TouchableOpacity
+              style={styles.Button}
+              onPress = {() => navigate('MainMenu')}>
+              <Image source={require('./asset/ic_add_white.png')} style={{width: 30, height: 30}}/>
+            </TouchableOpacity>
+            </View>
           </View>
           </LinearGradient>
-        </View>
-        <View style={{zIndex:2, height:500, backgroundColor:'white', paddingTop:50, paddingLeft:20}}>
+        <View style={{flex:7, backgroundColor:'white', paddingTop:24, paddingLeft:20}}>
           <Text style={{fontSize:18, color:'#4D4D4C', fontFamily:'TitilliumWeb-SemiBold'}}>Knowledge Center</Text>
           <View style={{flexDirection:'row', flex:1}}>
-          <ScrollView horizontal={true}>
+          <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
             <TouchableOpacity onPress = {() => navigate('WhyInvest')}>
               <View style={styles.ContentBox}>
                 <View style={styles.ImageBox}>
@@ -80,20 +79,15 @@ export default class Home extends Component {
 
 const styles = StyleSheet.create({
   Container: {
-    zIndex:0,
     flex: 1,
-    backgroundColor:'white',
-     position: 'absolute'
+    backgroundColor:'white'
   },
   Box: {
     flexDirection:'row',
-    position: 'absolute',
-    marginTop:190,
-    zIndex:3,
     height: 70,
     width:320,
     marginLeft:20,
-    borderRadius:3,
+    borderRadius:10,
     backgroundColor:'white',
     elevation:5,
     padding:10
@@ -110,22 +104,19 @@ const styles = StyleSheet.create({
   },
   Button:{
     marginLeft:20,
-    width: 50,
-    height: 50,
-    borderRadius:25,
+    width: 40,
+    height: 40,
+    borderRadius:20,
     backgroundColor:'#00A99E',
-    elevation:5
-  },
-  ButtonText: {
-    color:'white',
-    fontSize:36,
-    marginLeft:15
+    elevation:5,
+    justifyContent:'center',
+    alignItems:'center'
   },
   Header: {
-    padding:20,
-    flexDirection:'row',
-    backgroundColor:'#3393D0',
-    zIndex:2
+    paddingLeft: 20,
+    paddingTop:20,
+    paddingRight:20,
+    flexDirection:'row'
   },
   HeaderText: {
     marginLeft:20,
@@ -139,11 +130,14 @@ const styles = StyleSheet.create({
     width:200,
     height:250,
     elevation:5,
-    backgroundColor:'white'
+    backgroundColor:'white',
+    borderRadius:10
   },
   ImageBox: {
     width:200,
     height:180,
-    backgroundColor:'grey'
+    backgroundColor:'grey',
+    borderTopLeftRadius:10,
+    borderTopRightRadius:10
   }
 });

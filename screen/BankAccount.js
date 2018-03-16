@@ -21,7 +21,7 @@ export default class BankAccount extends Component {
         <Text style={styles.Title}>Please enter your bank account information</Text>
         <ScrollView>
           <View style={{flexDirection:'row'}}>
-          <Image source={require('./asset/ic_more_blue.png')} style={{width: 30, height: 30}}/>
+          <Image source={require('./asset/ic_bank.png')} style={{width: 30, height: 30}}/>
           <Text style={{fontSize:16,  color:'#3393D0', marginTop: 5, marginLeft: 5, marginBottom:20, fontFamily:'TitilliumWeb-Bold'}}>Your Bank Account</Text>
           </View>
           <Text style={styles.Label}>Account number</Text>
@@ -39,8 +39,8 @@ export default class BankAccount extends Component {
           />
         </ScrollView>
         <View style={{flex:1, justifyContent:'center', alignItems:'flex-end'}}>
-          <TouchableOpacity style={styles.Button} onPress = {() => navigate('Done')}>
-            <Text style={styles.ButtonText}>></Text>
+          <TouchableOpacity style={styles.RoundButton} onPress = {() => navigate('Done')}>
+            <Image source={require('./asset/ic_next_white.png')} style={{width: 46, height: 46}}/>
           </TouchableOpacity>
         </View>
       </View>
@@ -77,20 +77,15 @@ const styles = StyleSheet.create({
     marginLeft:27,
     width:280
   },
-  Button:{
+  RoundButton:{
     width: 60,
     height: 60,
     borderRadius:30,
     marginBottom: 40,
     marginRight:30,
     backgroundColor:'#3393D0',
-    elevation:5
-  },
-  ButtonText: {
-    color:'white',
-    fontSize:24,
-    fontWeight:'bold',
-    marginTop:10,
-    marginLeft:25
+    elevation:5,
+    justifyContent:'center',
+    alignItems:'center'
   }
 });

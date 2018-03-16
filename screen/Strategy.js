@@ -10,6 +10,7 @@ import {
   TouchableOpacity,
   ScrollView
 }  from 'react-native';
+import ProgressCircle from 'react-native-progress/Circle';
 import LinearGradient from 'react-native-linear-gradient';
 const util = require('util');
 export default class Strategy extends Component {
@@ -17,7 +18,7 @@ export default class Strategy extends Component {
     var {navigate} = this.props.navigation;
     return (
     <View style={{flex:1}}>
-      <LinearGradient start={{x: 0.0, y: 0.025}} end={{x: 1.0, y: 1.0}} colors={['#5DC6C9', '#3393D0', '#135788']} style={{flex:1, paddingTop:50}}>
+      <LinearGradient start={{x: 0.0, y: 0.025}} end={{x: 1.0, y: 1.0}} colors={['#5DC6C9', '#3393D0', '#135788']} style={{flex:1, paddingTop:40}}>
       <ViewPagerAndroid pageMargin={10} style={{flex: 1, margin:20}} initialPage={0}>
         <View style={styles.Pager}>
           <View style={{marginLeft:20,flexDirection:'row'}}>
@@ -34,6 +35,20 @@ export default class Strategy extends Component {
           </View>
           <View style={{width:320}}>
           <Text style={styles.Income}>Maybank fixed income</Text>
+          <View style={{flexDirection:'row', marginTop:5, marginLeft:30}}>
+            <View style={{flexDirection:'column', alignItems:'center'}}>
+              <ProgressCircle showsText={true} borderWidth={6} borderColor={'rgba(216,216,216,0.30)'} direction="clockwise" color={'#3393D0'} unfilledColor={'rgba(216,216,216,0.10)'}thickness={6} progress={0.25} size={80} style={{marginRight:10}}/>
+              <Text style={styles.ChartText}>Funds</Text>
+            </View>
+            <View style={{flexDirection:'column', alignItems:'center'}}>
+              <ProgressCircle showsText={true} borderWidth={6} borderColor={'rgba(216,216,216,0.30)'} direction="counter-clockwise" color={'#3393D0'} unfilledColor={'rgba(216,216,216,0.10)'}thickness={6} progress={0.5} size={80} style={{marginRight:10}}/>
+              <Text style={styles.ChartText}>Bonds </Text>
+            </View>
+            <View style={{flexDirection:'column', alignItems:'center'}}>
+              <ProgressCircle showsText={true} borderWidth={6} borderColor={'rgba(216,216,216,0.30)'} direction="clockwise" color={'#3393D0'} unfilledColor={'rgba(216,216,216,0.10)'}thickness={6} progress={0.25} size={80} style={{marginRight:10}}/>
+              <Text style={styles.ChartText}>Shares</Text>
+            </View>
+          </View>
           <Text style={styles.More}>View details ></Text>
           </View>
           </ScrollView>
@@ -58,6 +73,20 @@ export default class Strategy extends Component {
           </View>
           <View style={{width:320}}>
           <Text style={styles.Income}>Maybank fixed income</Text>
+          <View style={{flexDirection:'row', marginTop:5, marginLeft:30}}>
+            <View style={{flexDirection:'column', alignItems:'center'}}>
+              <ProgressCircle showsText={true} borderWidth={6} borderColor={'rgba(216,216,216,0.30)'} direction="clockwise" color={'#3393D0'} unfilledColor={'rgba(216,216,216,0.10)'}thickness={6} progress={0.25} size={80} style={{marginRight:10}}/>
+              <Text style={styles.ChartText}>Funds</Text>
+            </View>
+            <View style={{flexDirection:'column', alignItems:'center'}}>
+              <ProgressCircle showsText={true} borderWidth={6} borderColor={'rgba(216,216,216,0.30)'} direction="counter-clockwise" color={'#3393D0'} unfilledColor={'rgba(216,216,216,0.10)'}thickness={6} progress={0.5} size={80} style={{marginRight:10}}/>
+              <Text style={styles.ChartText}>Bonds </Text>
+            </View>
+            <View style={{flexDirection:'column', alignItems:'center'}}>
+              <ProgressCircle showsText={true} borderWidth={6} borderColor={'rgba(216,216,216,0.30)'} direction="clockwise" color={'#3393D0'} unfilledColor={'rgba(216,216,216,0.10)'}thickness={6} progress={0.25} size={80} style={{marginRight:10}}/>
+              <Text style={styles.ChartText}>Shares</Text>
+            </View>
+          </View>
           <Text style={styles.More}>View details ></Text>
           </View>
           </ScrollView>
@@ -81,6 +110,20 @@ export default class Strategy extends Component {
           </View>
           <View style={{width:320}}>
           <Text style={styles.Income}>Maybank fixed income</Text>
+          <View style={{flexDirection:'row', marginTop:5, marginLeft:30}}>
+            <View style={{flexDirection:'column', alignItems:'center'}}>
+              <ProgressCircle showsText={true} borderWidth={6} borderColor={'rgba(216,216,216,0.30)'} direction="clockwise" color={'#3393D0'} unfilledColor={'rgba(216,216,216,0.10)'}thickness={6} progress={0.25} size={80} style={{marginRight:10}}/>
+              <Text style={styles.ChartText}>Funds</Text>
+            </View>
+            <View style={{flexDirection:'column', alignItems:'center'}}>
+              <ProgressCircle showsText={true} borderWidth={6} borderColor={'rgba(216,216,216,0.30)'} direction="counter-clockwise" color={'#3393D0'} unfilledColor={'rgba(216,216,216,0.10)'}thickness={6} progress={0.5} size={80} style={{marginRight:10}}/>
+              <Text style={styles.ChartText}>Bonds </Text>
+            </View>
+            <View style={{flexDirection:'column', alignItems:'center'}}>
+              <ProgressCircle showsText={true} borderWidth={6} borderColor={'rgba(216,216,216,0.30)'} direction="clockwise" color={'#3393D0'} unfilledColor={'rgba(216,216,216,0.10)'}thickness={6} progress={0.25} size={80} style={{marginRight:10}}/>
+              <Text style={styles.ChartText}>Shares</Text>
+            </View>
+          </View>
           <Text style={styles.More}>View details ></Text>
           </View>
           </ScrollView>
@@ -104,6 +147,20 @@ export default class Strategy extends Component {
           </View>
           <View style={{width:320}}>
           <Text style={styles.Income}>Maybank fixed income</Text>
+          <View style={{flexDirection:'row', marginTop:5, marginLeft:30}}>
+            <View style={{flexDirection:'column', alignItems:'center'}}>
+              <ProgressCircle showsText={true} borderWidth={6} borderColor={'rgba(216,216,216,0.30)'} direction="clockwise" color={'#3393D0'} unfilledColor={'rgba(216,216,216,0.10)'}thickness={6} progress={0.25} size={80} style={{marginRight:10}}/>
+              <Text style={styles.ChartText}>Funds</Text>
+            </View>
+            <View style={{flexDirection:'column', alignItems:'center'}}>
+              <ProgressCircle showsText={true} borderWidth={6} borderColor={'rgba(216,216,216,0.30)'} direction="counter-clockwise" color={'#3393D0'} unfilledColor={'rgba(216,216,216,0.10)'}thickness={6} progress={0.5} size={80} style={{marginRight:10}}/>
+              <Text style={styles.ChartText}>Bonds </Text>
+            </View>
+            <View style={{flexDirection:'column', alignItems:'center'}}>
+              <ProgressCircle showsText={true} borderWidth={6} borderColor={'rgba(216,216,216,0.30)'} direction="clockwise" color={'#3393D0'} unfilledColor={'rgba(216,216,216,0.10)'}thickness={6} progress={0.25} size={80} style={{marginRight:10}}/>
+              <Text style={styles.ChartText}>Shares</Text>
+            </View>
+          </View>
           <Text style={styles.More}>View details ></Text>
           </View>
           </ScrollView>
@@ -127,6 +184,20 @@ export default class Strategy extends Component {
           </View>
           <View style={{width:320}}>
           <Text style={styles.Income}>Maybank fixed income</Text>
+          <View style={{flexDirection:'row', marginTop:5, marginLeft:30}}>
+            <View style={{flexDirection:'column', alignItems:'center'}}>
+              <ProgressCircle showsText={true} borderWidth={6} borderColor={'rgba(216,216,216,0.30)'} direction="clockwise" color={'#3393D0'} unfilledColor={'rgba(216,216,216,0.10)'}thickness={6} progress={0.25} size={80} style={{marginRight:10}}/>
+              <Text style={styles.ChartText}>Funds</Text>
+            </View>
+            <View style={{flexDirection:'column', alignItems:'center'}}>
+              <ProgressCircle showsText={true} borderWidth={6} borderColor={'rgba(216,216,216,0.30)'} direction="counter-clockwise" color={'#3393D0'} unfilledColor={'rgba(216,216,216,0.10)'}thickness={6} progress={0.5} size={80} style={{marginRight:10}}/>
+              <Text style={styles.ChartText}>Bonds </Text>
+            </View>
+            <View style={{flexDirection:'column', alignItems:'center'}}>
+              <ProgressCircle showsText={true} borderWidth={6} borderColor={'rgba(216,216,216,0.30)'} direction="clockwise" color={'#3393D0'} unfilledColor={'rgba(216,216,216,0.10)'}thickness={6} progress={0.25} size={80} style={{marginRight:10}}/>
+              <Text style={styles.ChartText}>Shares</Text>
+            </View>
+          </View>
           <Text style={styles.More}>View details ></Text>
           </View>
           </ScrollView>
@@ -137,7 +208,7 @@ export default class Strategy extends Component {
           </View>
         </View>
       </ViewPagerAndroid>
-      <View style={{justifyContent:'center', alignItems:'center', width: 320, height: 50,marginLeft:20, marginBottom: 10}}>
+      <View style={{justifyContent:'center', alignItems:'center', width: 320, height: 20,marginLeft:20, marginBottom: 10}}>
         <Text style={{color:'white'}}> Swipe to see other Investment Strategies</Text>
       </View>
       </LinearGradient>
@@ -152,9 +223,9 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
     backgroundColor:'white',
-    borderRadius:3,
-    paddingTop:20,
-    height:600,
+    borderRadius:10,
+    paddingTop:15,
+    height:650,
     marginRight: 10
   },
   Risk: {
@@ -205,9 +276,8 @@ const styles = StyleSheet.create({
     fontSize:12,
     fontFamily:'TitilliumWeb-SemiBold',
     color:'#3393D0',
-    marginTop: 70,
-    marginLeft: 5,
-    marginBottom:20
+    marginTop: 10,
+    marginLeft: 5
   },
   Line: {
     width: 360,
@@ -221,10 +291,16 @@ const styles = StyleSheet.create({
     marginBottom:20,
     marginTop:10,
     backgroundColor:'#3393D0',
-    borderRadius:2,
+    borderRadius:3,
     width: 260,
     height:56,
     alignItems:'center',
     justifyContent:'center'
+  },
+  ChartText: {
+    fontSize:14,
+    fontFamily:'Roboto-Medium',
+    color:'#58595B',
+    marginTop:24
   }
 })

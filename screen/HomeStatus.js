@@ -15,7 +15,9 @@ import {
 }  from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 const util = require('util');
-export default class Home extends Component {
+const Dimensions = require('Dimensions');
+const window = Dimensions.get('window');
+export default class HomeStatus extends Component {
   heightmargin = 40;
   render() {
     var { navigate } = this.props.navigation;
@@ -28,21 +30,31 @@ export default class Home extends Component {
         <Image source={require('./asset/ic_account.png')} style={{width: 30, height: 30}}/>
       </TouchableOpacity>
       <TouchableOpacity onPress = {() => navigate('Notification')}>
-        <Image source={require('./asset/ic_notif_white.png')} style={{marginLeft:250,width: 30, height: 30}}/>
+        <Image source={require('./asset/ic_notif_white.png')} style={{ marginLeft:window.width-100 ,width: 30, height: 30}}/>
       </TouchableOpacity>
       </View>
         <View style={{flex: 1, zIndex:2}}>
-
           <View style={{padding: 20, height: 475}}>
-          <Text style={{fontSize:30, color:'#FFFFFF', marginBottom:10}}>My Dreams </Text>
+          <View style={{width: (window.width)-40, flexDirection:'row', marginBottom:10}}>
+            <View style={{flex:4}}>
+            <Text style={{fontSize:36, color:'#FFFFFF', fontFamily:'TitilliumWeb-SemiBold'}}>My Dreams </Text>
+            </View>
+            <View style={{flex:1, justifyContent:'center', alignItems:'flex-end'}}>
+              <TouchableOpacity
+                style={styles.RoundButton}
+                onPress = {() => navigate('MainMenu')}>
+                <Image source={require('./asset/ic_add_blue.png')} style={{width: 24, height: 24}}/>
+              </TouchableOpacity>
+              </View>
+          </View>
             <ViewPagerAndroid pageMargin={10} peekEnabled={true} style={{padding: 20, height: 348, elevation:10}}>
-              <View key='1' style={{flex: 1,justifyContent: 'flex-start',alignItems: 'flex-start',backgroundColor:'#FFFFFF',marginLeft:20,  borderRadius:10}}>
+              <View key='1' style={styles.PagerLeft}>
                 <View style={{flexDirection:'row',padding:20}}>
                   <View style={{flexDirection:'column', width:200}}>
                   <Text style={{fontSize:14, color:'#58595B'}}>Dream for</Text>
                   <Text style={{fontSize:20, fontWeight:'bold',color:'#58595B'}}>New House</Text>
                   </View>
-                  <Image source={require('./asset/ic_about.png')} style={{width: 30, height: 30, marginLeft:50}}>
+                  <Image source={require('./asset/ic_info_blue.png')} style={{width: 24, height: 24, marginLeft:50}}>
                   </Image>
                 </View>
                 <Text style={{fontSize:14, color:'#58595B',paddingLeft:20}}>You have achieved</Text>
@@ -65,13 +77,13 @@ export default class Home extends Component {
                   </TouchableOpacity>
                 </View>
               </View>
-              <View key='2' style={{flex: 1,justifyContent: 'flex-start',alignItems: 'flex-start',backgroundColor:'#FFFFFF',marginLeft:20,  borderRadius:10}}>
+              <View key='2' style={styles.PagerLeft}>
                 <View style={{flexDirection:'row',padding:20}}>
                   <View style={{flexDirection:'column', width:200}}>
                   <Text style={{fontSize:14, color:'#58595B'}}>Dream for</Text>
                   <Text style={{fontSize:20, fontWeight:'bold',color:'#58595B'}}>New House</Text>
                   </View>
-                  <Image source={require('./asset/ic_about.png')} style={{width: 30, height: 30, marginLeft:50}}>
+                  <Image source={require('./asset/ic_info_blue.png')} style={{width: 24, height: 24, marginLeft:50}}>
                   </Image>
                 </View>
                 <Text style={{fontSize:14, color:'#58595B',paddingLeft:20}}>You have achieved</Text>
@@ -94,13 +106,13 @@ export default class Home extends Component {
                   </TouchableOpacity>
                 </View>
               </View>
-              <View key='3' style={{flex: 1,justifyContent: 'flex-start',alignItems: 'flex-start',backgroundColor:'#FFFFFF',marginLeft:20,  borderRadius:10}}>
+              <View key='3' style={styles.PagerLeft}>
                 <View style={{flexDirection:'row',padding:20}}>
                   <View style={{flexDirection:'column', width:200}}>
                   <Text style={{fontSize:14, color:'#58595B'}}>Dream for</Text>
                   <Text style={{fontSize:20, fontWeight:'bold',color:'#58595B'}}>New House</Text>
                   </View>
-                  <Image source={require('./asset/ic_about.png')} style={{width: 30, height: 30, marginLeft:50}}>
+                  <Image source={require('./asset/ic_info_blue.png')} style={{width: 24, height: 24, marginLeft:50}}>
                   </Image>
                 </View>
                 <Text style={{fontSize:14, color:'#58595B',paddingLeft:20}}>You have achieved</Text>
@@ -123,12 +135,12 @@ export default class Home extends Component {
                   </TouchableOpacity>
                 </View>
               </View>
-              <View key='4' style={{flex: 1,justifyContent: 'flex-start',alignItems: 'center',backgroundColor:'#FFFFFF',borderRadius:10}}>
+              <View key='4' style={styles.PagerCenter}>
                 <View style={{flexDirection:'row',padding:20}}>
-                  <View style={{flexDirection:'column', width:200, height:75}}>
+                  <View style={{width:200, height:75,marginLeft:50, justifyContent:'center', alignItems:'center'}}>
+                  <Image source={require('./asset/graphic_congratulate_color.png')} style={{width: 76, height: 76}}/>
                   </View>
-                  <Image source={require('./asset/ic_about.png')} style={{width: 30, height: 30, marginLeft:50}}>
-                  </Image>
+                  <Image source={require('./asset/ic_info_blue.png')} style={{width: 24, height: 24}}/>
                 </View>
                 <Text style={{fontSize:24, color:'#58595B',textAlign:'center', fontWeight:'bold'}}>Congratulation!</Text>
                 <Text style={{fontSize:14, fontWeight:'bold', color:'#58595B',textAlign:'center'}}>You have achieved your dream for:</Text>
@@ -209,22 +221,13 @@ const styles = StyleSheet.create({
     fontSize:16,
     color:'#58595B'
   },
-  Button:{
-    marginLeft:20,
-    width: 50,
-    height: 50,
-    borderRadius:25,
-    backgroundColor:'#00A99E'
-  },
-  ButtonText: {
-    color:'white',
-    fontSize:36,
-    marginLeft:15
-  },
   Header: {
-    padding:20,
+    paddingTop:20,
+    paddingLeft:20,
+    paddingRight:20,
     flexDirection:'row',
-    zIndex:2
+    zIndex:2,
+    width: window.width
   },
   ContentBox: {
     marginRight:20,
@@ -232,11 +235,39 @@ const styles = StyleSheet.create({
     width:200,
     height:250,
     elevation:5,
-    backgroundColor:'white'
+    backgroundColor:'white',
+    borderRadius:10,
   },
   ImageBox: {
     width:200,
     height:180,
-    backgroundColor:'grey'
+    backgroundColor:'grey',
+    borderTopLeftRadius:10,
+    borderTopRightRadius:10
+  },
+  PagerLeft: {
+    flex: 1,
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
+    backgroundColor:'#FFFFFF',
+    marginLeft:20,
+    borderRadius:10
+  },
+  RoundButton:{
+    marginLeft:20,
+    width: 32,
+    height: 32,
+    borderRadius:16,
+    backgroundColor:'#FFFFFF',
+    elevation:5,
+    justifyContent:'center',
+    alignItems:'center'
+  },
+  PagerCenter: {
+    flex: 1,
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    backgroundColor:'#FFFFFF',
+    borderRadius:10
   }
 });

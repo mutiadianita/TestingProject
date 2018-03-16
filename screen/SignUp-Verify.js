@@ -6,7 +6,8 @@ import {
   View,
   Button,
   TouchableOpacity,
-  StyleSheet
+  StyleSheet,
+  Image
 }  from 'react-native';
 import CodeInput from 'react-native-confirmation-code-input';
 const util = require('util');
@@ -23,7 +24,6 @@ export default class SignUp_Verify extends Component {
           <View>
             <CodeInput
               ref='codeInputRef'
-              secureTextEntry
               activeColor='#3393D0'
               inactiveColor='rgba(88,89,91,0.40)'
               autoFocus={true}
@@ -47,7 +47,7 @@ export default class SignUp_Verify extends Component {
             <TouchableOpacity
             style={styles.RoundButton}
               onPress = {() => navigate('SignUp_Password')}>
-              <Text style={{color:'white', fontSize:24, fontWeight:'bold', marginTop:10, marginLeft:25}}>></Text>
+              <Image source={require('./asset/ic_next_white.png')} style={{width: 46, height: 46}}/>
             </TouchableOpacity>
           </View>
         </View>
@@ -60,9 +60,7 @@ const styles = StyleSheet.create({
   Container: {
     flex: 1,
     justifyContent: 'flex-start',
-    paddingTop: 10,
-    paddingLeft: 30,
-    paddingRight:30,
+    padding: 25,
     backgroundColor:'white'
   },
   Title: {
@@ -86,6 +84,8 @@ const styles = StyleSheet.create({
     borderRadius:30,
     marginTop: 20,
     backgroundColor:'#3393D0',
-    elevation:5
+    elevation:5,
+    justifyContent:'center',
+    alignItems:'center'
   }
 });
