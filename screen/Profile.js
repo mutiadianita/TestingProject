@@ -12,12 +12,12 @@ import {
 }  from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 const util = require('util');
-export default class Home extends Component {
+export default class Profile extends Component {
   render() {
     var { navigate } = this.props.navigation;
     return (
       <View style={styles.Container}>
-        <TouchableOpacity onPress = {() => navigate('Strategy')} style={styles.Box}>
+        <TouchableOpacity onPress = {() => navigate('RiskResult')} style={styles.Box}>
         <View style={{width:280}}>
           <Text style={styles.Title}>Low risk</Text>
           <Text style={styles.Subtitle}>Change your investment strategy</Text>
@@ -45,7 +45,7 @@ export default class Home extends Component {
             <Text style={styles.ButtonText}>Bank Account</Text>
           </TouchableOpacity>
           <View style={styles.Line}/>
-          <TouchableOpacity onPress = {() => navigate('Intro')} style={styles.Button}>
+          <TouchableOpacity onPress = {() => navigate('HomeStatus')} style={styles.Button}>
             <Image source={require('./asset/ic_dream_big.png')} style={{width: 24, height: 24}}/>
             <Text style={styles.ButtonText}>Archived Dreams</Text>
           </TouchableOpacity>

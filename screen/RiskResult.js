@@ -20,9 +20,9 @@ export default class RiskResult extends Component {
     <LinearGradient start={{x: 0.0, y: 0.025}} end={{x: 1.0, y: 1.0}} colors={['#5DC6C9', '#3393D0', '#135788']} style={{flex:1, paddingTop:30}}>
       <ViewPagerAndroid pageMargin={10} style={{flex: 1, margin:30}} initialPage={0}>
         <View style={styles.Pager}>
-          <View style={{flexDirection:'row'}}>
-          <Text style={styles.Risk}>Low risk</Text>
-          <Text style={styles.Recommended}>RECOMMENDED</Text>
+          <View style={{flexDirection:'row', justifyContent:'space-between'}}>
+          <View style={{flex:2}}> <Text style={styles.Risk}>Low risk</Text> </View>
+          <View style={{flex:1}}> <Text style={styles.Recommended}>RECOMMENDED</Text> </View>
           </View>
           <Text style={styles.Type}>Conservative</Text>
           <View style={{flexDirection:'row', marginTop:32}}>
@@ -157,21 +157,20 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
     backgroundColor:'white',
-    marginLeft:20,
+    marginLeft:Size.PADDING_MID,
     borderRadius:3,
-    padding:20
+    padding:Size.PADDING_MID
   },
   Risk:{
-    fontSize: 24,
+    fontSize: Size.TEXT_TITLEM,
     color: '#58595B',
     fontFamily:'TitilliumWeb-Bold'
   },
   Recommended: {
-    fontSize: 12,
+    fontSize: Size.TEXT_DETAILM,
     color: '#DE6157',
     textAlign:'right',
     marginTop:10,
-    marginLeft:80,
     fontFamily:'Roboto-Black'
   },
   Type: {

@@ -21,8 +21,8 @@ export default class SignUp_Password extends Component {
           Please fill in the data below to create an Xdana account.
         </Text>
         <View style={{flexDirection:'row'}}>
-        <Image source={require('./asset/ic_pass_blue.png')} style={{width: 30, height: 30}}/>
-        <Text style={{fontSize:16, color:'#3393D0', marginTop: 5, marginLeft: 5, marginBottom:20, fontFamily:'TitilliumWeb-Bold'}}>Your password
+        <Image source={require('./asset/ic_pass_blue.png')} style={{width: Size.PADDING, height: Size.PADDING}}/>
+        <Text style={{fontSize:Size.TEXT_LABELS, fontWeight:'bold', color:'#3393D0', marginBottom:Size.PADDING_MID, fontFamily:'TitilliumWeb-Bold', marginTop:Size.PADDING/6}}>Your password
         </Text>
         </View>
         <Text style={styles.Label}>Password
@@ -42,11 +42,11 @@ export default class SignUp_Password extends Component {
         placeholderTextColor='#58595B'
         underlineColorAndroid='#58595B'
         />
-        <View style={{flex:1, justifyContent:'flex-end', alignItems:'flex-end', marginBottom:30}}>
+        <View style={styles.ButtonView}>
           <TouchableOpacity
           style={styles.RoundButton}
             onPress = {() => navigate('Step1')}>
-            <Image source={require('./asset/ic_next_white.png')} style={{width: 46, height: 46}}/>
+            <Image source={require('./asset/ic_next_white.png')} style={styles.ButtonIcon}/>
           </TouchableOpacity>
         </View>
       </View>
@@ -58,39 +58,51 @@ const styles = StyleSheet.create({
   Container: {
     flex: 1,
     justifyContent: 'flex-start',
-    padding:25,
+    paddingLeft: Size.PADDING,
+    paddingRight: Size.PADDING,
+    paddingTop: Size.PADDING_SMALL,
     backgroundColor:'white'
   },
   Title: {
-    fontSize: 16,
+    fontSize: Size.TEXT_LABELS,
     textAlign: 'left',
-    marginBottom: 20,
+    marginBottom: Size.PADDING_MID,
     color: '#58595B',
-    fontFamily:'Roboto-Light'
+    fontFamily: 'Roboto-Light'
   },
   Label: {
     textAlign: 'left',
     color: '#58595B',
-    marginTop: 10,
-    marginLeft: 35,
-    fontSize:14,
+    marginTop: Size.PADDING_SMALL,
+    marginLeft: Size.PADDING,
+    fontSize:Size.TEXT_DETAILL,
     fontFamily:'Roboto-Light'
   },
   RoundButton: {
-    width: 60,
-    height: 60,
-    borderRadius:30,
-    marginTop: 20,
+    width: Size.BUTTON_ROUND,
+    height: Size.BUTTON_ROUND,
+    borderRadius:Size.BUTTON_ROUND/2,
+    marginTop: Size.PADDING_MID,
     backgroundColor:'#3393D0',
-    elevation:5,
+    elevation:Size.ELEVATION,
     justifyContent:'center',
     alignItems:'center'
   },
   TextInput: {
-    width: 280,
-    marginLeft:30,
+    width: Size.TI_WIDTH,
+    marginLeft:Size.PADDING_TI,
     color:'#58595B',
-    fontSize:16,
+    fontSize:Size.TEXT_LABELS,
     fontFamily:'Roboto-Regular'
-  }
+  },
+  ButtonView: {
+    flex:1,
+    justifyContent:'flex-end',
+    alignItems:'flex-end',
+    marginBottom:Size.PADDING_LONG
+  },
+  ButtonIcon: {
+    width: Size.BUTTON_ICON,
+    height: Size.BUTTON_ICON
+  },
 });

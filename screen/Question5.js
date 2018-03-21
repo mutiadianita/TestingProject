@@ -21,7 +21,7 @@ export default class Question5 extends Component {
         <Text style={styles.Title}>
         How much do you know about mutual fund?
         </Text>
-        <View style={{alignItems:'flex-start', justifyContent:'flex-start', paddingRight:30}}>
+        <View style={{alignItems:'flex-start', justifyContent:'flex-start', paddingRight:Size.PADDING}}>
         <RadioForm style={{alignItems:'flex-start', justifyContent:'flex-start'}}
           radio_props={ [
           {label: 'Do not know at all', value: 1 },
@@ -30,21 +30,21 @@ export default class Question5 extends Component {
           {label: 'Have good knowledge and i have used Mutual Friend', value: 4 },
           {label: 'Really understand about mutual fund and its invesment strategy', value: 5 }
           ]}
-          buttonSize={8}
-          buttonOuterSize={20}
+          buttonSize={Size.TEXT_LABELS/2}
+          buttonOuterSize={Size.PADDING_MID}
           initial={0}
-          radioStyle={{paddingTop: 20}}
-          labelStyle={{fontSize:16, fontFamily:'Roboto-Regular', color:'rgba(0,0,0,0.60)'}}
+          radioStyle={{paddingTop: Size.PADDING}}
+          labelStyle={{fontSize:Size.TEXT_LABELS, fontFamily:'Roboto-Regular', color:'rgba(0,0,0,0.60)'}}
           buttonInnerColor={'#3393D0'}
           buttonOuterColor={'#3393D0'}
           onPress={(value) => {this.setState({value:value})}}
         />
         </View>
-        <View style={{flex:1, alignItems:'flex-end', justifyContent:'flex-end', paddingRight:30,paddingBottom:40, backgroundColor:'#FFFFFF'}}>
+        <View style={{flex:1, alignItems:'flex-end', justifyContent:'flex-end', paddingRight:Size.PADDING, paddingBottom:Size.PADDING_LONG, backgroundColor:'#FFFFFF'}}>
           <TouchableOpacity
           style={styles.RoundButton}
             onPress = {() => navigate('Statement')}>
-            <Image source={require('./asset/ic_next_white.png')} style={{width: 46, height: 46}}/>
+            <Image source={require('./asset/ic_next_white.png')} style={{width: Size.BUTTON_ICON, height:Size.BUTTON_ICON}}/>
           </TouchableOpacity>
         </View>
       </View>
@@ -55,27 +55,23 @@ export default class Question5 extends Component {
 const styles = StyleSheet.create({
   Container: {
     flex: 1,
-    paddingTop: 20,
-    paddingLeft: 30,
+    paddingTop: Size.PADDING_MID,
+    paddingLeft: Size.PADDING,
     backgroundColor:'white'
   },
   Title: {
-    fontSize: 16,
+    fontSize: Size.TEXT_LABELS,
     textAlign: 'left',
-    marginTop: 5,
-    marginBottom: 5,
-    marginLeft: 5,
     fontWeight:'bold',
     color: '#58595B',
-    fontFamily:'Roboto-Bold',
-    marginRight:30
+    fontFamily:'Roboto-Bold'
   },
   RoundButton: {
-    width: 60,
-    height: 60,
-    borderRadius:30,
+    width: Size.BUTTON_ROUND,
+    height: Size.BUTTON_ROUND,
+    borderRadius:Size.BUTTON_ROUND/2,
     backgroundColor:'#3393D0',
-    elevation:5,
+    elevation:Size.ELEVATION,
     justifyContent:'center',
     alignItems:'center'
   }

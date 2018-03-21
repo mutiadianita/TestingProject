@@ -24,7 +24,7 @@ export default class Request extends Component {
     <View style={{justifyContent:'flex-end', alignItems:'flex-end', paddingBottom:40, paddingRight:30, backgroundColor:'#FFFFFF'}}>
       <TouchableOpacity
       style={styles.RoundButton}
-        onPress = {() => navigate('TopUp_Amount')}>
+        onPress = {() => navigate('HomeStatus')}>
         <Image source={require('./asset/ic_next_white.png')} style={{width: 46, height: 46}}/>
       </TouchableOpacity>
     </View>

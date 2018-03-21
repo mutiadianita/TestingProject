@@ -23,21 +23,20 @@ export default class ReviewID extends Component {
         <Image source={require('./images/idcard.png')} />
         <Text style={styles.Label}>Your ID Card Number</Text>
         <TextInput
-        style={{width: 300, fontSize: 20, color:'black', fontFamily:'Roboto-Medium'}}
+        style={{width: Size.BUTTON_WIDTH, fontSize: Size.TEXT_LABELL, color:'black', fontFamily:'Roboto-Medium'}}
         placeholderTextColor='black'
         underlineColorAndroid='black'
-        autoFocus={true}
         secureTextEntry={true}
         />
         <Text style={styles.Details}>
         * You can correct your ID Card number
         </Text>
         </ScrollView>
-        <View style={{flex:1, justifyContent:'flex-end', alignItems:'flex-end', marginBottom:40, marginRight:30}}>
+        <View style={{flex:1, justifyContent:'flex-end', alignItems:'flex-end', marginBottom:Size.PADDING_LONG, marginRight:Size.PADDING}}>
           <TouchableOpacity
           style={styles.RoundButton}
             onPress = {() => navigate('YourInformation')}>
-          <Image source={require('./asset/ic_next_white.png')} style={{width: 46, height: 46}}/>
+          <Image source={require('./asset/ic_next_white.png')} style={{width: Size.BUTTON_ICON, height:Size.BUTTON_ICON}}/>
           </TouchableOpacity>
         </View>
       </View>
@@ -49,42 +48,36 @@ const styles = StyleSheet.create({
   Container: {
     flex: 1,
     justifyContent: 'flex-start',
-    paddingTop: 10,
-    paddingLeft: 30,
+    paddingTop: Size.PADDING_SMALL,
+    paddingLeft: Size.PADDING,
     backgroundColor:'white'
   },
   Title: {
-    fontSize: 16,
+    fontSize: Size.TEXT_LABELS,
     textAlign: 'left',
-    marginTop: 5,
-    marginBottom: 5,
-    marginLeft: 5,
     color: '#58595B',
     fontFamily:'Roboto-Light'
   },
   Label: {
     textAlign: 'left',
     color: '#333333',
-    marginTop: 30,
-    marginLeft: 5,
-    fontSize: 14,
+    marginTop: Size.PADDING,
+    fontSize: Size.TEXT_DETAILL,
     fontFamily:'Roboto-Regular'
   },
   Details: {
     textAlign: 'left',
     color: '#58595B',
-    marginTop: 5,
-    marginLeft: 5,
-    fontSize:10,
+    fontSize:Size.TEXT_DETAILS,
     fontFamily:'Roboto-Italic'
   },
   RoundButton: {
-    width: 60,
-    height: 60,
-    borderRadius:30,
-    marginTop: 20,
+    width: Size.BUTTON_ROUND,
+    height: Size.BUTTON_ROUND,
+    borderRadius:Size.BUTTON_ROUND/2,
+    marginTop: Size.PADDING_MID,
     backgroundColor:'#3393D0',
-    elevation:5,
+    elevation:Size.ELEVATION,
     justifyContent:'center',
     alignItems:'center'
   }

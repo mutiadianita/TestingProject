@@ -26,7 +26,7 @@ export default class Done extends Component {
           <View style={styles.SubContainer2}>
             <TouchableOpacity
             style={styles.Button}
-              onPress = {() => navigate('Home')}>
+              onPress = {() => navigate('HomeStatus')}>
               <Image source={require('./asset/ic_done.png')} style={{width: 46, height: 46}}/>
             </TouchableOpacity>
           </View>

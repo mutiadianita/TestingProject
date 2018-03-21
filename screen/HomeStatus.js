@@ -10,16 +10,24 @@ import {
   TouchableOpacity,
   ViewPagerAndroid,
   ScrollView,
-  Slider,
   ImageBackground
 }  from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
+import { StackedBarChart } from 'react-native-svg-charts';
 const util = require('util');
 const Dimensions = require('Dimensions');
 const window = Dimensions.get('window');
 export default class HomeStatus extends Component {
   heightmargin = 40;
   render() {
+    const data = [
+            {
+                plan:100000000,
+                gap:10000000,
+                goal:90000000,
+            }
+          ];
+    const keys   = [ 'plan', 'gap', 'goal'];
     var { navigate } = this.props.navigation;
     return (
       <View>
@@ -42,7 +50,7 @@ export default class HomeStatus extends Component {
             <View style={{flex:1, justifyContent:'center', alignItems:'flex-end'}}>
               <TouchableOpacity
                 style={styles.RoundButton}
-                onPress = {() => navigate('MainMenu')}>
+                onPress = {() => navigate('GoalAhead')}>
                 <Image source={require('./asset/ic_add_blue.png')} style={{width: 24, height: 24}}/>
               </TouchableOpacity>
               </View>
@@ -60,12 +68,14 @@ export default class HomeStatus extends Component {
                 <Text style={{fontSize:14, color:'#58595B',paddingLeft:20}}>You have achieved</Text>
                 <Text style={{fontSize:24, fontWeight:'bold', color:'#58595B',paddingLeft:20}}>Rp110.000.000,00</Text>
                 <Text style={{fontSize:14, color:'#58595B',paddingLeft:20}}>out of Rp200.000.000,00</Text>
-                <Slider style={{ width: 300 }}
-                   step={1}
-                   minimumValue={0}
-                   maximumValue={200000000}
-                   thumbTintColor={'#F5841F'}
-                   minimumTrackTintColor={'#3393D0'}
+                <StackedBarChart
+                      style={ { height: 10, width:280, marginLeft:20, marginTop:10,marginBottom:10 } }
+                      keys={ keys }
+                      colors={ [ '#3393D0', '#F5841F', 'rgba(0,0,0,0.20)'] }
+                      data={ data }
+                      svg={{ rx:5,ry:5 }}
+                      showGrid={ false }
+                      horizontal={true}
                   />
                 <Text style={{fontSize:12, color:'#58595B',paddingLeft:20}}>You are behind of your plan to reach your dream by Rp3.000.000,00.</Text>
                 <View style={{backgroundColor:'rgba(0,0,0,0.1)',height:120, width:320, borderBottomLeftRadius: 10,borderBottomRightRadius:10, marginTop:10, alignItems:'center'}}>
@@ -89,12 +99,13 @@ export default class HomeStatus extends Component {
                 <Text style={{fontSize:14, color:'#58595B',paddingLeft:20}}>You have achieved</Text>
                 <Text style={{fontSize:24, fontWeight:'bold', color:'#58595B',paddingLeft:20}}>Rp110.000.000,00</Text>
                 <Text style={{fontSize:14, color:'#58595B',paddingLeft:20}}>out of Rp200.000.000,00</Text>
-                <Slider style={{ width: 300 }}
-                   step={1}
-                   minimumValue={0}
-                   maximumValue={200000000}
-                   thumbTintColor={'#5DC6C9'}
-                   minimumTrackTintColor={'#3393D0'}
+                <StackedBarChart
+                      style={ { height: 10, width:280, marginLeft:20, marginTop:10,marginBottom:10 } }
+                      keys={ keys }
+                      colors={[ '#3393D0', '#5DC6C9', 'rgba(0,0,0,0.20)']}
+                      data={ data }
+                      showGrid={ false }
+                      horizontal={true}
                   />
                 <Text style={{fontSize:12, color:'#58595B',paddingLeft:20}}>You are ahead of your plan to reach your dream by Rp3.000.000,00.</Text>
                 <View style={{backgroundColor:'rgba(0,0,0,0.1)',height:120, width:320, borderBottomLeftRadius: 10,borderBottomRightRadius:10, marginTop:10, alignItems:'center'}}>
@@ -118,12 +129,13 @@ export default class HomeStatus extends Component {
                 <Text style={{fontSize:14, color:'#58595B',paddingLeft:20}}>You have achieved</Text>
                 <Text style={{fontSize:24, fontWeight:'bold', color:'#58595B',paddingLeft:20}}>Rp110.000.000,00</Text>
                 <Text style={{fontSize:14, color:'#58595B',paddingLeft:20}}>out of Rp200.000.000,00</Text>
-                <Slider style={{ width: 300 }}
-                   step={1}
-                   minimumValue={0}
-                   maximumValue={200000000}
-                   thumbTintColor={'#5DC6C9'}
-                   minimumTrackTintColor={'#3393D0'}
+                <StackedBarChart
+                      style={ { height: 10, width:280, marginLeft:20, marginTop:10,marginBottom:10 } }
+                      keys={ keys }
+                      colors={[ '#3393D0', '#5DC6C9', 'rgba(0,0,0,0.20)']}
+                      data={ data }
+                      showGrid={ false }
+                      horizontal={true}
                   />
                 <Text style={{fontSize:12, color:'#58595B',paddingLeft:20}}>You are ahead of your plan to reach your dream by Rp3.000.000,00.</Text>
                 <View style={{backgroundColor:'rgba(0,0,0,0.1)',height:120, width:320, borderBottomLeftRadius: 10,borderBottomRightRadius:10, marginTop:10, alignItems:'center'}}>
@@ -198,19 +210,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor:'white',
      position: 'absolute'
-  },
-  Box: {
-    flexDirection:'row',
-    position: 'absolute',
-    marginTop:440,
-    zIndex:3,
-    height: 70,
-    width:320,
-    marginLeft:20,
-    borderRadius:3,
-    backgroundColor:'white',
-    elevation:5,
-    padding:10
   },
   Title: {
     fontWeight:'bold',

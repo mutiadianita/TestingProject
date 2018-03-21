@@ -49,7 +49,9 @@ export default class Strategy extends Component {
               <Text style={styles.ChartText}>Shares</Text>
             </View>
           </View>
-          <Text style={styles.More}>View details ></Text>
+          <TouchableOpacity onPress = {() => navigate('Product')}>
+            <Text style={styles.More}>View Detail ></Text>
+          </TouchableOpacity>
           </View>
           </ScrollView>
           <View>

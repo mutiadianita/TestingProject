@@ -19,21 +19,21 @@ export default class Statement extends Component {
   <View style={{flex:1}}>
 
     <View style={styles.Container}>
-      <Text style={{fontSize: 16, color: '#58595B', fontFamily:'SourceSansPro-Regular'}}>1. I am fully aware and understand about my investment risk profile</Text>
-      <Text style={{fontSize: 16, color: '#58595B', textAlign:'left', marginTop:20, fontFamily:'SourceSansPro-Regular'}}>2. The purchase of mutual fund i do solely is my own decision and desire without
+      <Text style={{fontSize: Size.TEXT_LABELS, color: '#58595B', fontFamily:'SourceSansPro-Regular'}}>1. I am fully aware and understand about my investment risk profile</Text>
+      <Text style={{fontSize: Size.TEXT_LABELS, color: '#58595B', textAlign:'left', marginTop:Size.PADDING_MID, fontFamily:'SourceSansPro-Regular'}}>2. The purchase of mutual fund i do solely is my own decision and desire without
            any coercion from other parties</Text>
-           <View style={{ flexDirection: 'row', height: 40, width:270, marginTop:30}}>
+           <View style={{ flexDirection: 'row', height: Size.PADDING_LONG, width:Size.PICKER_WIDTH, marginTop:Size.PADDING}}>
              <CheckBox title='Click Here'/>
              <Text style={styles.Check}>I Agree</Text>
            </View>
     </View>
 
     <View style={{flexDirection: 'row', backgroundColor: 'white'}}>
-    <View style={{flex:1,alignItems:'flex-end', justifyContent:'flex-end',paddingRight:30, paddingBottom:40, backgroundColor:'#FFFFFF'}}>
+    <View style={{flex:1,alignItems:'flex-end', justifyContent:'flex-end',paddingRight:Size.PADDING, paddingBottom:Size.PADDING_LONG, backgroundColor:'#FFFFFF'}}>
       <TouchableOpacity
       style={styles.RoundButton}
         onPress = {() => navigate('RiskResult')}>
-        <Image source={require('./asset/ic_next_white.png')} style={{width: 46, height: 46}}/>
+        <Image source={require('./asset/ic_next_white.png')} style={{width: Size.BUTTON_ICON, height: Size.BUTTON_ICON}}/>
       </TouchableOpacity>
     </View>
     </View>
@@ -47,23 +47,21 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
-    padding:40
+    padding:Size.PADDING_LONG
   },
   Check: {
     textAlign: 'left',
     color: '#58595B',
-    marginLeft: 5,
-    marginTop:7,
-    fontSize:14,
-    width:230,
+    fontSize:Size.TEXT_DETAILL,
+    width:Size.CHECK,
     fontFamily:'Roboto-Regular'
   },
   RoundButton: {
-    width: 60,
-    height: 60,
-    borderRadius:30,
+    width: Size.BUTTON_ROUND,
+    height: Size.BUTTON_ROUND,
+    borderRadius:Size.BUTTON_ROUND/2,
     backgroundColor:'#3393D0',
-    elevation:5,
+    elevation:Size.ELEVATION,
     justifyContent:'center',
     alignItems:'center'
   }

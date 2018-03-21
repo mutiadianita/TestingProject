@@ -16,21 +16,21 @@ export default class MainMenu extends Component {
     var {navigate} = this.props.navigation;
     return (
     <View style={styles.Container}>
-      <TouchableOpacity style={styles.ContentBox} onPress = {() => navigate('Option1')} >
+      <TouchableOpacity style={styles.ContentBox} onPress = {() => navigate('GoalAmount')} >
         <LinearGradient start={{x: 0.0, y: 0.025}} end={{x: 1.0, y: 1.0}} colors={['#5DC6C9', '#3393D0', '#135788']} style={styles.ContentHeader}>
           <Text style={styles.ContentTitle}>Retirement</Text>
           <Image source={require('./asset/ic_retirement.png')} style={{flex:1,width: 45, height: 45}}/>
         </LinearGradient>
         <Text style={styles.ContentText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus a porta mi, ac </Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.ContentBox} onPress = {() => navigate('Option2')} >
+      <TouchableOpacity style={styles.ContentBox} onPress = {() => navigate('GoalAmount')} >
         <LinearGradient start={{x: 0.0, y: 0.025}} end={{x: 1.0, y: 1.0}} colors={['#8FC196', '#00A99E']} style={styles.ContentHeader}>
           <Text style={styles.ContentTitle}>Life Improvement</Text>
           <Image source={require('./asset/ic_life.png')} style={{flex:1,width: 45, height: 45}}/>
         </LinearGradient>
         <Text style={styles.ContentText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus a porta mi, ac </Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.ContentBox} onPress = {() => navigate('Option3')} >
+      <TouchableOpacity style={styles.ContentBox} onPress = {() => navigate('Option')} >
         <LinearGradient start={{x: 0.0, y: 0.025}} end={{x: 1.0, y: 1.0}} colors={['#F5841F', '#DE6157']} style={styles.ContentHeader}>
           <Text style={styles.ContentTitle}>Asset Improvement</Text>
           <Image source={require('./asset/ic_asset.png')} style={{flex:1,width: 45, height: 45}}/>

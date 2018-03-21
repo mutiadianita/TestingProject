@@ -16,10 +16,27 @@ import {
 }  from 'react-native';
 import ProgressCircle from 'react-native-progress/Circle';
 import LinearGradient from 'react-native-linear-gradient';
+import { LineChart, YAxis, XAxis } from 'react-native-svg-charts';
 const util = require('util');
 const percentage= 0.25;
 export default class GoalAhead extends Component {
   render() {
+    const data = [  {
+                value: 5000, date:19
+            },
+            {
+                value: 5500, date: 20
+            },
+            {
+                value: 5200, date: 21
+            },
+            {
+                value: 5300, date:22
+            },
+            {
+                value: 5500, date: 23
+            }];
+    const contentInset = { top: 20, bottom: 20 };
     var { navigate } = this.props.navigation;
     return (
       <View style={styles.Container}>
@@ -35,7 +52,34 @@ export default class GoalAhead extends Component {
             </TouchableOpacity>
           </View>
           <Text style={{fontFamily:'TitilliumWeb-Bold',fontSize:24,color:'#FFFFFF', marginLeft:16}}> Maybank Fixed income</Text>
-          <View style={{height:100, marginTop:200, alignItems:'flex-start', flexDirection:'row'}}>
+          <View style={ { height: 200, flexDirection:'row'} }>
+          <LineChart
+              style={ {flex:1} }
+              data={ data }
+              yAccessor={({ item }) => item.value}
+              xAccessor={({ item }) => item.date}
+              svg={{ stroke: '#FFFFFF', strokeWidth:3 }}
+              numberOfTicks={2}
+              contentInset={contentInset}
+          />
+          <YAxis
+            data={data}
+            contentInset={ contentInset }
+            svg={{fill: '#FFFFFF', fontSize: 10,}}
+            yAccessor={({ item }) => item.value}
+            numberOfTicks={3}
+            formatLabel={ value => `${value}` }
+          />
+          </View>
+          <XAxis
+              style={{marginRight:30}}
+              data={ data }
+              numberOfTicks={5}
+              xAccessor={({ item }) => item.date}
+              contentInset={{ left: 5, right: 5 }}
+              svg={{ fill: '#FFFFFF',fontSize: 10 }}
+          />
+          <View style={{height:100, marginTop:10, alignItems:'flex-start', flexDirection:'row'}}>
           <View style={{height:72, width:125, padding:8, backgroundColor:'rgba(0,0,0,0.2)', marginLeft:8}}>
             <Text style={{fontSize:12, fontFamily:'Roboto-Regular',color:'#FFFFFF'}}>Current NAV:</Text>
             <Text style={{fontSize:20, fontFamily:'Roboto-Bold',color:'#FFFFFF'}}>Rp5.359,21</Text>

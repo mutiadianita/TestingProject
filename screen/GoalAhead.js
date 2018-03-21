@@ -12,14 +12,22 @@ import {
   TouchableOpacity,
   Picker,
   ImageBackground,
-  Slider
 }  from 'react-native';
 import ProgressCircle from 'react-native-progress/Circle';
 import LinearGradient from 'react-native-linear-gradient';
+import { StackedBarChart } from 'react-native-svg-charts';
 const util = require('util');
-const percentage= 0.25;
 export default class GoalAhead extends Component {
   render() {
+    const data = [
+            {
+                plan:100000000,
+                gap:10000000,
+                goal:90000000,
+            }
+          ];
+    const colors = [ '#3393D0', '#5DC6C9', 'rgba(0,0,0,0.20)'];
+    const keys   = [ 'plan', 'gap', 'goal'];
     var { navigate } = this.props.navigation;
     return (
       <View style={styles.Container}>
@@ -31,12 +39,13 @@ export default class GoalAhead extends Component {
           <Text style={{fontSize:14, color:'#58595B', marginTop:20,paddingLeft:30, fontFamily:'Roboto-Regular'}}>You have achieved </Text>
           <Text style={{fontSize:24, color:'#58595B',paddingLeft:30, fontFamily:'Roboto-Bold'}}>Rp110.000.000,00</Text>
           <Text style={{fontSize:14, color:'#58595B',paddingLeft:30, fontFamily:'Roboto-Bold'}}>out of Rp200.000.000,00</Text>
-          <Slider style={{ width: 300, marginLeft:20}}
-             step={1}
-             minimumValue={0}
-             maximumValue={200000000}
-             thumbTintColor={'#5DC6C9'}
-             minimumTrackTintColor={'#3393D0'}
+          <StackedBarChart
+                style={ { height: 10, width:300, marginLeft:30, marginTop:10,marginBottom:10 } }
+                keys={ keys }
+                colors={ colors }
+                data={ data }
+                showGrid={ false }
+                horizontal={true}
             />
           <Text style={{fontSize:12, color:'#000000',paddingLeft:30, marginBottom:20, fontFamily:'Roboto-Regular'}}>You are ahead of your plan to reach your dream by Rp3.000.000,00.</Text>
           <View style={{backgroundColor:'rgba(0,0,0,0.2)',height:100, marginTop:10, alignItems:'center'}}>
@@ -76,7 +85,9 @@ export default class GoalAhead extends Component {
               <Text style={styles.ChartText}>Shares</Text>
             </View>
           </View>
-          <Text style={styles.More}>View Detail ></Text>
+          <TouchableOpacity onPress = {() => navigate('Product')}>
+            <Text style={styles.More}>View Detail ></Text>
+          </TouchableOpacity>
         </View>
         <View style={styles.Line}/>
         <View style={{width:320}}>
@@ -95,7 +106,9 @@ export default class GoalAhead extends Component {
               <Text style={styles.ChartText}>Shares</Text>
             </View>
           </View>
-          <Text style={styles.More}>View Detail ></Text>
+          <TouchableOpacity onPress = {() => navigate('Product')}>
+            <Text style={styles.More}>View Detail ></Text>
+          </TouchableOpacity>
         </View>
         <View style={styles.Line}/>
         <View style={{width:320}}>
@@ -114,7 +127,9 @@ export default class GoalAhead extends Component {
               <Text style={styles.ChartText}>Shares</Text>
             </View>
           </View>
-          <Text style={styles.More}>View Detail ></Text>
+          <TouchableOpacity onPress = {() => navigate('Product')}>
+            <Text style={styles.More}>View Detail ></Text>
+          </TouchableOpacity>
         </View>
         <View style={styles.Line}/>
         <View style={{flexDirection:'row', marginTop:20}}>
@@ -136,14 +151,18 @@ export default class GoalAhead extends Component {
           <Text style={styles.HistoryAmount}>+Rp1000.000,00</Text>
         </View>
         <Text style={styles.HistoryDate}>12 Sept 2017</Text>
-        <Text style={{textAlign:'center',fontSize:12, fontFamily:'TitilliumWeb-SemiBold', color:'#3393D0', marginTop: 20,  marginBottom:20}}>View all transaction ></Text>
+        <TouchableOpacity onPress = {() => navigate('Transaction')}>
+          <Text style={{textAlign:'center',fontSize:12, fontFamily:'TitilliumWeb-SemiBold', color:'#3393D0', marginTop: 20,  marginBottom:20}}>
+            View all transaction >
+          </Text>
+        </TouchableOpacity>
         <View style={{alignItems:'center', flexDirection: 'column', backgroundColor:'#EDF0F2', paddingTop:20, paddingBottom:20}}>
           <Text style={{textAlign: 'center',color: '#58595B',fontSize:14, fontFamily:'TitilliumWeb-Regular'}}>Change your mind?</Text>
           <Text style={{textAlign: 'center',color: '#58595B',fontSize:14, fontFamily:'TitilliumWeb-Regular'}}>Change your dream to something else.</Text>
-          <TouchableOpacity  onPress = {() => navigate('GoalBehind')}>
+          <TouchableOpacity  onPress = {() => navigate('CancelWithdraw')}>
             <Text style={{textAlign:'center',fontFamily:'TitilliumWeb-SemiBold', color:'#3393D0', fontSize:18, marginTop:14}}>Switch Dream </Text>
           </TouchableOpacity>
-          <TouchableOpacity  onPress = {() => navigate('DeleteDream')}>
+          <TouchableOpacity  onPress = {() => navigate('CancelWithdraw')}>
           <Text style={{textAlign: 'center',color: '#58595B',fontSize:14, fontFamily:'TitilliumWeb-Regular', marginTop:36}}>or, you can delete this dream</Text>
           </TouchableOpacity>
         </View>

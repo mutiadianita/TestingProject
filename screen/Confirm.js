@@ -23,7 +23,7 @@ export default class Confirm extends Component {
         </Text>
         <View style={{flex:1}}>
           <TouchableOpacity
-            onPress = {() => navigate('MainMenu')}>
+            onPress = {() => navigate('GoalAmount')}>
             <Text style={{color:'#2775C0', fontSize:16, marginTop:100, textAlign:'center', fontFamily:'TitilliumWeb-SemiBold'}}>Change My Dream Information</Text>
           </TouchableOpacity>
           <TouchableOpacity

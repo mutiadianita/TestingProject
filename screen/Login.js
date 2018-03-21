@@ -9,7 +9,7 @@ import {
   TouchableOpacity,
   Image
 }  from 'react-native';
-
+import Size from "../style/Size";
 const util = require('util');
 export default class Login extends Component {
   render() {
@@ -20,8 +20,8 @@ export default class Login extends Component {
           Please fill in the data below to Login to your Xdana account.
         </Text>
         <View style={{flexDirection:'row'}}>
-        <Image source={require('./asset/ic_profile_blue.png')} style={{width: 32, height:32}}/>
-        <Text style={{fontSize:16,  color:'#3393D0', marginLeft: 5, marginTop:5,marginBottom:20, fontFamily:'TitilliumWeb-Bold'}}>Account info
+        <Image source={require('./asset/ic_profile_blue.png')} style={{width: Size.PADDING, height:Size.PADDING}}/>
+        <Text style={{fontSize:Size.TEXT_LABELS,  color:'#3393D0',marginBottom:Size.PADDING_MID, fontFamily:'TitilliumWeb-Bold',marginTop:Size.PADDING/6}}>Account info
         </Text>
         </View>
         <Text style={styles.Label}>Name
@@ -29,7 +29,6 @@ export default class Login extends Component {
         <TextInput style={styles.TextInput}
         placeholderTextColor='#58595B'
         underlineColorAndroid='#58595B'
-        autoFocus={true}
         />
         <Text style={styles.Label}>Password
         </Text>
@@ -39,11 +38,11 @@ export default class Login extends Component {
         placeholderTextColor='#58595B'
         underlineColorAndroid='#58595B'
         />
-        <View style={{flex:1, justifyContent:'flex-end', alignItems:'flex-end', marginBottom:30}}>
+        <View style={styles.ButtonView}>
           <TouchableOpacity
           style={styles.RoundButton}
-            onPress = {() => navigate('Home')}>
-            <Image source={require('./asset/ic_next_white.png')} style={{width: 46, height: 46}}/>
+            onPress = {() => navigate('HomeStatus')}>
+            <Image source={require('./asset/ic_next_white.png')} style={styles.ButtonIcon}/>
           </TouchableOpacity>
         </View>
       </View>
@@ -55,41 +54,49 @@ const styles = StyleSheet.create({
   Container: {
     flex: 1,
     justifyContent: 'flex-start',
-    paddingTop: 30,
-    paddingLeft: 30,
-    paddingRight:30,
+    padding: Size.PADDING,
     backgroundColor:'white'
   },
   Title: {
-    fontSize: 16,
+    fontSize: Size.TEXT_LABELS,
     textAlign: 'left',
-    marginBottom: 20,
+    marginBottom: Size.PADDING_MID,
     color: '#58595B',
     fontFamily: 'Roboto-Light'
   },
   Label: {
     textAlign: 'left',
     color: '#58595B',
-    marginTop: 10,
-    marginLeft: 35,
-    fontSize:14,
+    marginTop: Size.PADDING_SMALL,
+    marginLeft: Size.PADDING,
+    fontSize:Size.TEXT_DETAILL,
     fontFamily:'Roboto-Light'
   },
   TextInput: {
-    width: 280,
-    marginLeft:30,
+    width: Size.TI_WIDTH,
+    marginLeft:Size.PADDING_TI,
     color:'#58595B',
-    fontSize:16,
+    fontSize:Size.TEXT_LABELS,
     fontFamily:'Roboto-Regular'
   },
   RoundButton: {
-    width: 60,
-    height: 60,
-    borderRadius:30,
-    marginTop: 20,
+    width: Size.BUTTON_ROUND,
+    height: Size.BUTTON_ROUND,
+    borderRadius:Size.BUTTON_ROUND/2,
+    marginTop: Size.PADDING_MID,
     backgroundColor:'#3393D0',
-    elevation:5,
+    elevation:Size.ELEVATION,
     justifyContent:'center',
     alignItems:'center'
+  },
+  ButtonIcon: {
+    width: Size.BUTTON_ICON,
+    height: Size.BUTTON_ICON
+  },
+  ButtonView: {
+    flex:1,
+    justifyContent:'flex-end',
+    alignItems:'flex-end',
+    marginBottom:Size.PADDING_SMALL
   }
 });

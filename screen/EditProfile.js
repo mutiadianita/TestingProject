@@ -14,7 +14,7 @@ import {
 }  from 'react-native';
 
 const util = require('util');
-export default class YourInformation extends Component {
+export default class EditProfile extends Component {
   state = {province: ''}
    updateProvince = (province) => {
       this.setState({ province: province })

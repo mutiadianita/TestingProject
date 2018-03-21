@@ -34,7 +34,7 @@ export default class YourInformation extends Component {
         <ScrollView>
         <Text style={styles.Detail}>Please confirm the data below as it is on your KTP</Text>
         <View style={{flexDirection:'row'}}>
-        <Image source={require('./asset/ic_profile_blue.png')} style={{width: 30, height: 30}}/>
+        <Image source={require('./asset/ic_profile_blue.png')} style={{width: Size.PADDING, height: Size.PADDING}}/>
         <Text style={styles.Title}>Profile
         </Text>
         </View>
@@ -57,7 +57,7 @@ export default class YourInformation extends Component {
         underlineColorAndroid='black'
         />
         <View style={{flexDirection:'row'}}>
-        <Image source={require('./asset/ic_loc_blue.png')} style={{width: 30, height: 30}}/>
+        <Image source={require('./asset/ic_loc_blue.png')} style={{width: Size.PADDING, height: Size.PADDING}}/>
         <Text style={styles.Title}>Mailing Address</Text>
         </View>
         <Text style={styles.Label}>Address</Text>
@@ -67,14 +67,14 @@ export default class YourInformation extends Component {
         underlineColorAndroid='black'
         />
         <Text style={styles.Label}>Province</Text>
-        <Picker style={{marginLeft:30, width:280}} selectedValue = {this.state.province} onValueChange = {this.updateProvince} mode='dropdown' >
+        <Picker style={{marginLeft:Size.PADDING_TI, width:Size.PICKER_WIDTH}} selectedValue = {this.state.province} onValueChange = {this.updateProvince} mode='dropdown' >
            <Picker.Item label = 'Banten' value = '1' />
            <Picker.Item label = 'DKI Jakarta' value = '2' />
            <Picker.Item label = 'Jawa Barat' value = '3' />
            <Picker.Item label = 'Jawa Tengah' value = '4' />
         </Picker>
         <Text style={styles.Label}>Kabupaten/Kota</Text>
-        <Picker style={{marginLeft:30, width:280}} selectedValue = {this.state.kabupaten} onValueChange = {this.updateKabupaten} mode='dropdown' >
+        <Picker style={{marginLeft:Size.PADDING_TI, width:Size.PICKER_WIDTH}} selectedValue = {this.state.kabupaten} onValueChange = {this.updateKabupaten} mode='dropdown' >
            <Picker.Item label = 'Jakarta Barat' value = '1' />
            <Picker.Item label = 'Jakarta Pusat' value = '2' />
            <Picker.Item label = 'Jakarta Selatan' value = '3' />
@@ -82,7 +82,7 @@ export default class YourInformation extends Component {
            <Picker.Item label = 'Jakarta Utara' value = '5' />
         </Picker>
         <Text style={styles.Label}>Kelurahan</Text>
-        <Picker style={{marginLeft:30, width:280}} selectedValue = {this.state.kelurahan} onValueChange = {this.updateKelurahan} mode='dropdown' >
+        <Picker style={{marginLeft:Size.PADDING_TI, width:Size.PICKER_WIDTH}} selectedValue = {this.state.kelurahan} onValueChange = {this.updateKelurahan} mode='dropdown' >
            <Picker.Item label = 'Jakarta Barat' value = '1' />
            <Picker.Item label = 'Jakarta Pusat' value = '2' />
            <Picker.Item label = 'Jakarta Selatan' value = '3' />
@@ -95,7 +95,7 @@ export default class YourInformation extends Component {
         placeholderTextColor='black'
         underlineColorAndroid='black'
         />
-        <View style={{ flexDirection: 'row', height: 40, width:270, marginLeft:30}}>
+        <View style={{ flexDirection: 'row', height:Size.PADDING_LONG, width:Size.PICKER_WIDTH, marginLeft:Size.PADDING}}>
           <CheckBox title='Click Here'/>
           <Text style={styles.Check}>My mailing address is the same as my address as on KTP</Text>
         </View>
@@ -104,7 +104,7 @@ export default class YourInformation extends Component {
           <TouchableOpacity
           style={styles.RoundButton}
             onPress = {() => navigate('YourMailingAddress')}>
-            <Image source={require('./asset/ic_next_white.png')} style={{width: 46, height: 46}}/>
+            <Image source={require('./asset/ic_next_white.png')} style={{width: Size.BUTTON_ICON, height: Size.BUTTON_ICON}}/>
           </TouchableOpacity>
         </View>
       </View>
@@ -116,57 +116,53 @@ const styles = StyleSheet.create({
   Container: {
     flex: 1,
     justifyContent: 'flex-start',
-    paddingTop: 30,
-    paddingLeft: 30,
+    paddingTop: Size.PADDING_SMALL,
+    paddingLeft:Size.PADDING,
     backgroundColor:'white'
   },
   Detail: {
-    fontSize: 16,
+    fontSize: Size.TEXT_LABELS,
     textAlign: 'left',
-    marginBottom: 30,
-    marginRight:30,
+    marginBottom: Size.PADDING,
+    marginRight:Size.PADDING,
     color: '#58595B',
     fontFamily:'Roboto-Light'
   },
   Title: {
-    fontSize:16,
+    fontSize:Size.TEXT_LABELS,
     fontFamily:'TitilliumWeb-Bold',
     color:'#3393D0',
-    marginTop: 5,
-    marginLeft: 5,
-    marginBottom:20
+    marginBottom:Size.PADDING_MID
   },
   Label: {
     textAlign: 'left',
     color: '#58595B',
-    marginTop: 10,
-    marginLeft: 35,
-    fontSize:14,
+    marginTop: Size.PADDING_SMALL,
+    marginLeft: Size.PADDING,
+    fontSize:Size.TEXT_DETAILL,
     fontFamily:'Roboto-Light'
   },
   Check: {
     textAlign: 'left',
     color: '#58595B',
-    marginLeft: 5,
-    fontSize:14,
-    width:230,
+    fontSize:Size.TEXT_DETAILL,
+    width:Size.CHECK,
     fontFamily:'Roboto-Regular'
   },
   RoundButton: {
-    width: 60,
-    height: 60,
-    borderRadius:30,
-    marginTop: 5,
+    width: Size.BUTTON_ROUND,
+    height: Size.BUTTON_ROUND,
+    borderRadius:Size.BUTTON_ROUND/2,
     backgroundColor:'#3393D0',
-    elevation:5,
-    marginRight:30,
-    marginBottom:30,
+    elevation:Size.ELEVATION,
+    marginRight:Size.PADDING,
+    marginBottom:Size.PADDING_LONG,
     justifyContent:'center',
     alignItems:'center'
   },
   TextInput: {
-    marginLeft:30,
-    width: 280,
+    marginLeft:Size.PADDING_TI,
+    width: Size.PICKER_WIDTH,
     color:'black',
     fontFamily:'Roboto-Light'}
 });

@@ -19,22 +19,21 @@ export default class SignUp_Phone extends Component {
           Enter your Mobile number.
         </Text>
         <View style={{flexDirection: 'row'}}>
-          <View style={{width:30, paddingTop:13}}>
+          <View style={{width:Size.PADDING, paddingTop:Size.PADDING/2}}>
             <Text style={styles.Label}>+62</Text>
           </View>
           <TextInput
-          style={{width: 275, color:'#58595B', fontFamily:'Roboto-Bold', fontSize:16}}
+          style={{width: Size.TI_WIDTH, color:'#58595B', fontFamily:'Roboto-Bold', fontSize:16}}
           placeholderTextColor='#58595B'
           underlineColorAndroid='#58595B'
-          autoFocus={true}
           keyboardType='numeric'
           />
         </View>
-        <View style={{flex:1, justifyContent:'center', alignItems:'flex-end', marginBottom:30}}>
+        <View style={{flex:1, justifyContent:'center', alignItems:'flex-end', marginBottom:Size.PADDING_LONG}}>
           <TouchableOpacity
           style={styles.RoundButton}
             onPress = {() => navigate('SignUp_Verify')}>
-            <Image source={require('./asset/ic_next_white.png')} style={{width: 46, height: 46}}/>
+            <Image source={require('./asset/ic_next_white.png')} style={{width: Size.BUTTON_ICON, height: Size.BUTTON_ICON}}/>
           </TouchableOpacity>
         </View>
       </View>
@@ -46,31 +45,31 @@ const styles = StyleSheet.create({
   Container: {
     flex: 1,
     justifyContent: 'flex-start',
-    paddingTop: 30,
-    paddingLeft: 30,
-    paddingRight:30,
+    paddingLeft: Size.PADDING,
+    paddingRight: Size.PADDING,
+    paddingTop: Size.PADDING_SMALL,
     backgroundColor:'white'
   },
   Title: {
-    fontSize: 16,
+    fontSize: Size.TEXT_LABELS,
     textAlign: 'left',
-    marginBottom: 30,
+    marginBottom: Size.PADDING,
     color: '#58595B',
     fontFamily:'Roboto-Light'
   },
   RoundButton: {
-    width: 60,
-    height: 60,
-    borderRadius:30,
-    marginTop: 20,
+    width: Size.BUTTON_ROUND,
+    height: Size.BUTTON_ROUND,
+    borderRadius:Size.BUTTON_ROUND/2,
+    marginTop: Size.PADDING_MID,
     backgroundColor:'#3393D0',
-    elevation:5,
+    elevation:Size.ELEVATION,
     justifyContent:'center',
     alignItems:'center'
   },
   Label: {
     color:'#3393D0',
-    fontSize:16,
+    fontSize:Size.TEXT_LABELS,
     fontFamily:'Roboto-Bold'
   }
 });

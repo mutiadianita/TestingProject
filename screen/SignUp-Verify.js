@@ -29,13 +29,13 @@ export default class SignUp_Verify extends Component {
               autoFocus={true}
               ignoreCase={true}
               inputPosition='left'
-              size={50}
-              space={10}
+              size={Size.BUTTON_HEIGHT}
+              space={Size.PADDING_SMALL}
               codeLength={4}
               keyboardType='numeric'
               onFulfill={() => navigate('SignUp_Password')}
-              containerStyle={{ marginTop: 30, marginBottom:30 }}
-              codeInputStyle={{ borderWidth: 1.5, fontSize: 32 }}
+              containerStyle={{ marginTop: Size.PADDING, marginBottom:Size.PADDING }}
+              codeInputStyle={{ borderWidth: 1.5, fontSize: Size.TEXT_TITLE}}
             />
           </View>
           <View>
@@ -43,11 +43,11 @@ export default class SignUp_Verify extends Component {
               Resend code in 00:25
             </Text>
           </View>
-          <View style={{flex:1, justifyContent:'center', alignItems:'flex-end', marginBottom:30}}>
+          <View style={{flex:1, justifyContent:'center', alignItems:'flex-end', marginBottom:Size.PADDING_SMALL}}>
             <TouchableOpacity
             style={styles.RoundButton}
               onPress = {() => navigate('SignUp_Password')}>
-              <Image source={require('./asset/ic_next_white.png')} style={{width: 46, height: 46}}/>
+              <Image source={require('./asset/ic_next_white.png')} style={{width: Size.BUTTON_ICON, height: Size.BUTTON_ICON}}/>
             </TouchableOpacity>
           </View>
         </View>
@@ -60,31 +60,30 @@ const styles = StyleSheet.create({
   Container: {
     flex: 1,
     justifyContent: 'flex-start',
-    padding: 25,
+    paddingLeft: Size.PADDING,
+    paddingTop: Size.PADDING_SMALL,
+    paddingRight: Size.PADDING,
     backgroundColor:'white'
   },
   Title: {
-    fontSize: 16,
+    fontSize: Size.TEXT_LABELS,
     textAlign: 'left',
-    marginTop: 5,
-    marginBottom: 5,
     color: '#58595B',
     fontFamily: 'Roboto-Light'
   },
   Details: {
     textAlign: 'left',
     color: '#58595B',
-    marginTop: 30,
-    marginLeft: 5,
+    marginTop: Size.PADDING,
     fontFamily: 'Roboto-Light'
   },
   RoundButton: {
-    width: 60,
-    height: 60,
-    borderRadius:30,
-    marginTop: 20,
+    width: Size.BUTTON_ROUND,
+    height: Size.BUTTON_ROUND,
+    borderRadius:Size.PADDING,
+    marginTop: Size.PADDING_MID,
     backgroundColor:'#3393D0',
-    elevation:5,
+    elevation:Size.ELEVATION,
     justifyContent:'center',
     alignItems:'center'
   }

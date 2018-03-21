@@ -31,9 +31,7 @@ import Login from './screen/Login';
 import Home from './screen/Home';
 import MainMenu from './screen/MainMenu';
 import Step2 from './screen/Step2';
-import Option1 from './screen/Option1';
-import Option2 from './screen/Option2';
-import Option3 from './screen/Option3';
+import Option from './screen/Option';
 import GoalAmount from './screen/GoalAmount';
 import Confirm from './screen/Confirm';
 import ConfirmForm from './screen/ConfirmForm';
@@ -85,6 +83,7 @@ const Navigation = StackNavigator({
       header:null
     }
   },
+
 //  Camera: {
 //    screen: Camera,
 //    navigationOptions:
@@ -100,6 +99,8 @@ const Navigation = StackNavigator({
       headerStyle: {
         elevation:0
       },
+      portraitOnlyMode: true,
+      orientation:'portrait',
       title:'Register',
       headerTitleStyle: {fontWeight: "normal",fontFamily:'TitilliumWeb-Bold'}
     }
@@ -226,8 +227,9 @@ const Navigation = StackNavigator({
       },
       title:'Register',
       headerTitleStyle: {fontFamily:'TitilliumWeb-Bold'},
-      headerRight:
-      <Text style={{fontFamily:'Roboto-Light', fontSize:16}}> 1/5 </Text>
+      headerRight: (
+      <Text style={{fontFamily:'Roboto-Light', fontSize:16, marginRight:20}}> 1/5 </Text>
+      )
     }
   },
   Question2: {
@@ -238,7 +240,10 @@ const Navigation = StackNavigator({
         elevation:0
       },
       title:'Register',
-      headerTitleStyle: {fontFamily:'TitilliumWeb-Bold'}
+      headerTitleStyle: {fontFamily:'TitilliumWeb-Bold'},
+      headerRight: (
+      <Text style={{fontFamily:'Roboto-Light', fontSize:16, marginRight:20}}> 2/5 </Text>
+      )
     }
   },
   Question3: {
@@ -249,7 +254,10 @@ const Navigation = StackNavigator({
         elevation:0
       },
       title:'Register',
-      headerTitleStyle: {fontFamily:'TitilliumWeb-Bold'}
+      headerTitleStyle: {fontFamily:'TitilliumWeb-Bold'},
+      headerRight: (
+      <Text style={{fontFamily:'Roboto-Light', fontSize:16, marginRight:20}}> 3/5 </Text>
+      )
     }
   },
   Question4: {
@@ -260,7 +268,10 @@ const Navigation = StackNavigator({
         elevation:0
       },
       title:'Register',
-      headerTitleStyle: {fontFamily:'TitilliumWeb-Bold'}
+      headerTitleStyle: {fontFamily:'TitilliumWeb-Bold'},
+      headerRight: (
+      <Text style={{fontFamily:'Roboto-Light', fontSize:16, marginRight:20}}> 4/5 </Text>
+      )
     }
   },
   Question5: {
@@ -271,7 +282,10 @@ const Navigation = StackNavigator({
         elevation:0
       },
       title:'Register',
-      headerTitleStyle: {fontFamily:'TitilliumWeb-Bold'}
+      headerTitleStyle: {fontFamily:'TitilliumWeb-Bold'},
+      headerRight: (
+      <Text style={{fontFamily:'Roboto-Light', fontSize:16, marginRight:20}}> 5/5 </Text>
+      )
     }
   },
   Statement: {
@@ -359,22 +373,8 @@ const Navigation = StackNavigator({
       headerTitleStyle: {fontWeight: "normal",fontFamily:'TitilliumWeb-Bold'}
     }
   },
-  Option1: {
-    screen: Option1,
-    navigationOptions:
-    {
-      header:null
-    }
-  },
-  Option2: {
-    screen: Option2,
-    navigationOptions:
-    {
-      header:null
-    }
-  },
-  Option3: {
-    screen: Option3,
+  Option: {
+    screen: Option,
     navigationOptions:
     {
       header:null
@@ -426,9 +426,6 @@ const Navigation = StackNavigator({
         left:0,
         right:0
       },
-      headerLeft: (
-          <Image source={require('./screen/asset/ic_close_white.png')} style={{width: 20, height: 20, marginLeft:20}}/>
-      ),
       headerTintColor: 'white',
       headerTitleStyle: {fontWeight: "normal",color:'white',fontFamily:'TitilliumWeb-Bold'}
     }
@@ -765,5 +762,6 @@ const Navigation = StackNavigator({
       headerTitleStyle: {fontWeight: "normal",fontFamily:'TitilliumWeb-Bold'}
     }
   }
+
 });
 export default Navigation;

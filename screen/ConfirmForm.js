@@ -69,7 +69,9 @@ export default class ConfirmForm extends Component {
                 <Text style={styles.ChartText}>Shares</Text>
               </View>
             </View>
-            <Text style={styles.More}>View Detail ></Text>
+            <TouchableOpacity onPress = {() => navigate('Product')}>
+              <Text style={styles.More}>View Detail ></Text>
+            </TouchableOpacity>
           </View>
           <View style={styles.Line}/>
           <View style={{width:320}}>
@@ -88,7 +90,9 @@ export default class ConfirmForm extends Component {
                 <Text style={styles.ChartText}>Shares</Text>
               </View>
             </View>
-            <Text style={styles.More}>View Detail ></Text>
+            <TouchableOpacity onPress = {() => navigate('Product')}>
+              <Text style={styles.More}>View Detail ></Text>
+            </TouchableOpacity>
           </View>
           <View style={styles.Line}/>
           <View style={{width:320}}>
@@ -107,7 +111,9 @@ export default class ConfirmForm extends Component {
                 <Text style={styles.ChartText}>Shares</Text>
               </View>
             </View>
-            <Text style={styles.More}>View Detail ></Text>
+            <TouchableOpacity onPress = {() => navigate('Product')}>
+              <Text style={styles.More}>View Detail ></Text>
+            </TouchableOpacity>
           </View>
           <View style={styles.Line}/>
           <View style={{ flexDirection: 'row', marginLeft:30}}>
