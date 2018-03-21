@@ -16,13 +16,15 @@ export default Size = {
   PADDING_SMALL:x/36,
   //20
   PADDING_MID:x/18,
-  //35
+  //25
   PADDING_TI: r*25,
   //40
   PADDING_LONG:x/9,
   //120
   MARGIN_LONG:x/3,
 // BUTTON
+  //260
+  BUTTON_RISK: r*260,
   //300
   BUTTON_WIDTH: x*(5/6),
   //50
@@ -53,5 +55,9 @@ export default Size = {
 // Check
   CHECK:r*230,
 //ELEVATION
-  ELEVATION: r*5
+  ELEVATION: r*5,
+//Pager
+  PAGER_WIDTH:r*320,
+//PROGRESS
+  PROGRESS_BORDER:r*6,
 };

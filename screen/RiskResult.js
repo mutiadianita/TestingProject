@@ -17,25 +17,25 @@ export default class RiskResult extends Component {
     var {navigate} = this.props.navigation;
     return (
     <View style={{flex:1}}>
-    <LinearGradient start={{x: 0.0, y: 0.025}} end={{x: 1.0, y: 1.0}} colors={['#5DC6C9', '#3393D0', '#135788']} style={{flex:1, paddingTop:30}}>
-      <ViewPagerAndroid pageMargin={10} style={{flex: 1, margin:30}} initialPage={0}>
+    <LinearGradient start={{x: 0.0, y: 0.025}} end={{x: 1.0, y: 1.0}} colors={['#5DC6C9', '#3393D0', '#135788']} style={{flex:1, paddingTop:Size.PADDING}}>
+      <ViewPagerAndroid pageMargin={Size.PADDING_SMALL} style={{flex: 1, margin:Size.PADDING}} initialPage={0}>
         <View style={styles.Pager}>
-          <View style={{flexDirection:'row', justifyContent:'space-between'}}>
-          <View style={{flex:2}}> <Text style={styles.Risk}>Low risk</Text> </View>
-          <View style={{flex:1}}> <Text style={styles.Recommended}>RECOMMENDED</Text> </View>
+          <View style={{flexDirection:'row'}}>
+          <Text style={styles.Risk}>Low risk</Text>
+           <Text style={styles.Recommended}>RECOMMENDED</Text>
           </View>
           <Text style={styles.Type}>Conservative</Text>
-          <View style={{flexDirection:'row', marginTop:32}}>
+          <View style={{flexDirection:'row', marginTop:Size.PADDING}}>
             <View style={{flexDirection:'column', alignItems:'center'}}>
-              <ProgressCircle showsText={true} borderWidth={6} borderColor={'rgba(216,216,216,0.30)'} direction="clockwise" color={'#3393D0'} unfilledColor={'rgba(216,216,216,0.10)'}thickness={6} progress={0.25} size={80} style={{marginRight:10}}/>
+              <ProgressCircle showsText={true} borderWidth={Size.PROGRESS_BORDER} borderColor={'rgba(216,216,216,0.30)'} direction="clockwise" color={'#3393D0'} unfilledColor={'rgba(216,216,216,0.10)'}thickness={Size.PROGRESS_BORDER} progress={0.25} size={Size.PADDING_LONG*2} style={{marginRight:Size.PADDING_SMALL}}/>
               <Text style={styles.ChartText}>Funds</Text>
             </View>
             <View style={{flexDirection:'column', alignItems:'center'}}>
-              <ProgressCircle showsText={true} borderWidth={6} borderColor={'rgba(216,216,216,0.30)'} direction="counter-clockwise" color={'#3393D0'} unfilledColor={'rgba(216,216,216,0.10)'}thickness={6} progress={0.5} size={80} style={{marginRight:10}}/>
+              <ProgressCircle showsText={true} borderWidth={Size.PROGRESS_BORDER} borderColor={'rgba(216,216,216,0.30)'} direction="counter-clockwise" color={'#3393D0'} unfilledColor={'rgba(216,216,216,0.10)'}thickness={Size.PROGRESS_BORDER} progress={0.5} size={Size.PADDING_LONG*2} style={{marginRight:Size.PADDING_SMALL}}/>
               <Text style={styles.ChartText}>Bonds </Text>
             </View>
             <View style={{flexDirection:'column', alignItems:'center'}}>
-              <ProgressCircle showsText={true} borderWidth={6} borderColor={'rgba(216,216,216,0.30)'} direction="clockwise" color={'#3393D0'} unfilledColor={'rgba(216,216,216,0.10)'}thickness={6} progress={0.25} size={80} style={{marginRight:10}}/>
+              <ProgressCircle showsText={true} borderWidth={Size.PROGRESS_BORDER} borderColor={'rgba(216,216,216,0.30)'} direction="clockwise" color={'#3393D0'} unfilledColor={'rgba(216,216,216,0.10)'}thickness={Size.PROGRESS_BORDER} progress={0.25} size={Size.PADDING_LONG*2} style={{marginRight:Size.PADDING_SMALL}}/>
               <Text style={styles.ChartText}>Shares</Text>
             </View>
           </View>
@@ -50,17 +50,17 @@ export default class RiskResult extends Component {
           <Text style={styles.Recommended}>RECOMMENDED</Text>
           </View>
           <Text style={styles.Type}>Moderate Conservative</Text>
-          <View style={{flexDirection:'row', marginTop:32}}>
+          <View style={{flexDirection:'row', marginTop:Size.PADDING}}>
             <View style={{flexDirection:'column', alignItems:'center'}}>
-              <ProgressCircle showsText={true} borderWidth={6} borderColor={'rgba(216,216,216,0.30)'} direction="clockwise" color={'#3393D0'} unfilledColor={'rgba(216,216,216,0.10)'}thickness={6} progress={0.25} size={80} style={{marginRight:10}}/>
+              <ProgressCircle showsText={true} borderWidth={Size.PROGRESS_BORDER} borderColor={'rgba(216,216,216,0.30)'} direction="clockwise" color={'#3393D0'} unfilledColor={'rgba(216,216,216,0.10)'}thickness={Size.PROGRESS_BORDER} progress={0.25} size={Size.PADDING_LONG*2} style={{marginRight:Size.PADDING_SMALL}}/>
               <Text style={styles.ChartText}>Funds</Text>
             </View>
             <View style={{flexDirection:'column', alignItems:'center'}}>
-              <ProgressCircle showsText={true} borderWidth={6} borderColor={'rgba(216,216,216,0.30)'} direction="counter-clockwise" color={'#3393D0'} unfilledColor={'rgba(216,216,216,0.10)'}thickness={6} progress={0.5} size={80} style={{marginRight:10}}/>
+              <ProgressCircle showsText={true} borderWidth={Size.PROGRESS_BORDER} borderColor={'rgba(216,216,216,0.30)'} direction="counter-clockwise" color={'#3393D0'} unfilledColor={'rgba(216,216,216,0.10)'}thickness={Size.PROGRESS_BORDER} progress={0.5} size={Size.PADDING_LONG*2} style={{marginRight:Size.PADDING_SMALL}}/>
               <Text style={styles.ChartText}>Bonds </Text>
             </View>
             <View style={{flexDirection:'column', alignItems:'center'}}>
-              <ProgressCircle showsText={true} borderWidth={6} borderColor={'rgba(216,216,216,0.30)'} direction="clockwise" color={'#3393D0'} unfilledColor={'rgba(216,216,216,0.10)'}thickness={6} progress={0.25} size={80} style={{marginRight:10}}/>
+              <ProgressCircle showsText={true} borderWidth={Size.PROGRESS_BORDER} borderColor={'rgba(216,216,216,0.30)'} direction="clockwise" color={'#3393D0'} unfilledColor={'rgba(216,216,216,0.10)'}thickness={Size.PROGRESS_BORDER} progress={0.25} size={Size.PADDING_LONG*2} style={{marginRight:Size.PADDING_SMALL}}/>
               <Text style={styles.ChartText}>Shares</Text>
             </View>
           </View>
@@ -74,17 +74,17 @@ export default class RiskResult extends Component {
           <Text style={styles.Risk}>Normal risk</Text>
           </View>
           <Text style={styles.Type}>Moderate</Text>
-          <View style={{flexDirection:'row', marginTop:32}}>
+          <View style={{flexDirection:'row', marginTop:Size.PADDING}}>
             <View style={{flexDirection:'column', alignItems:'center'}}>
-              <ProgressCircle showsText={true} borderWidth={6} borderColor={'rgba(216,216,216,0.30)'} direction="clockwise" color={'#3393D0'} unfilledColor={'rgba(216,216,216,0.10)'}thickness={6} progress={0.25} size={80} style={{marginRight:10}}/>
+              <ProgressCircle showsText={true} borderWidth={Size.PROGRESS_BORDER} borderColor={'rgba(216,216,216,0.30)'} direction="clockwise" color={'#3393D0'} unfilledColor={'rgba(216,216,216,0.10)'}thickness={Size.PROGRESS_BORDER} progress={0.25} size={Size.PADDING_LONG*2} style={{marginRight:Size.PADDING_SMALL}}/>
               <Text style={styles.ChartText}>Funds</Text>
             </View>
             <View style={{flexDirection:'column', alignItems:'center'}}>
-              <ProgressCircle showsText={true} borderWidth={6} borderColor={'rgba(216,216,216,0.30)'} direction="counter-clockwise" color={'#3393D0'} unfilledColor={'rgba(216,216,216,0.10)'}thickness={6} progress={0.5} size={80} style={{marginRight:10}}/>
+              <ProgressCircle showsText={true} borderWidth={Size.PROGRESS_BORDER} borderColor={'rgba(216,216,216,0.30)'} direction="counter-clockwise" color={'#3393D0'} unfilledColor={'rgba(216,216,216,0.10)'}thickness={Size.PROGRESS_BORDER} progress={0.5} size={Size.PADDING_LONG*2} style={{marginRight:Size.PADDING_SMALL}}/>
               <Text style={styles.ChartText}>Bonds </Text>
             </View>
             <View style={{flexDirection:'column', alignItems:'center'}}>
-              <ProgressCircle showsText={true} borderWidth={6} borderColor={'rgba(216,216,216,0.30)'} direction="clockwise" color={'#3393D0'} unfilledColor={'rgba(216,216,216,0.10)'}thickness={6} progress={0.25} size={80} style={{marginRight:10}}/>
+              <ProgressCircle showsText={true} borderWidth={Size.PROGRESS_BORDER} borderColor={'rgba(216,216,216,0.30)'} direction="clockwise" color={'#3393D0'} unfilledColor={'rgba(216,216,216,0.10)'}thickness={Size.PROGRESS_BORDER} progress={0.25} size={Size.PADDING_LONG*2} style={{marginRight:Size.PADDING_SMALL}}/>
               <Text style={styles.ChartText}>Shares</Text>
             </View>
           </View>
@@ -98,17 +98,17 @@ export default class RiskResult extends Component {
           <Text style={styles.Risk}>High risk</Text>
           </View>
           <Text style={styles.Type}>Aggresive</Text>
-          <View style={{flexDirection:'row', marginTop:32}}>
+          <View style={{flexDirection:'row', marginTop:Size.PADDING}}>
             <View style={{flexDirection:'column', alignItems:'center'}}>
-              <ProgressCircle showsText={true} borderWidth={6} borderColor={'rgba(216,216,216,0.30)'} direction="clockwise" color={'#3393D0'} unfilledColor={'rgba(216,216,216,0.10)'}thickness={6} progress={0.25} size={80} style={{marginRight:10}}/>
+              <ProgressCircle showsText={true} borderWidth={Size.PROGRESS_BORDER} borderColor={'rgba(216,216,216,0.30)'} direction="clockwise" color={'#3393D0'} unfilledColor={'rgba(216,216,216,0.10)'}thickness={Size.PROGRESS_BORDER} progress={0.25} size={Size.PADDING_LONG*2} style={{marginRight:Size.PADDING_SMALL}}/>
               <Text style={styles.ChartText}>Funds</Text>
             </View>
             <View style={{flexDirection:'column', alignItems:'center'}}>
-              <ProgressCircle showsText={true} borderWidth={6} borderColor={'rgba(216,216,216,0.30)'} direction="counter-clockwise" color={'#3393D0'} unfilledColor={'rgba(216,216,216,0.10)'}thickness={6} progress={0.5} size={80} style={{marginRight:10}}/>
+              <ProgressCircle showsText={true} borderWidth={Size.PROGRESS_BORDER} borderColor={'rgba(216,216,216,0.30)'} direction="counter-clockwise" color={'#3393D0'} unfilledColor={'rgba(216,216,216,0.10)'}thickness={Size.PROGRESS_BORDER} progress={0.5} size={Size.PADDING_LONG*2} style={{marginRight:Size.PADDING_SMALL}}/>
               <Text style={styles.ChartText}>Bonds </Text>
             </View>
             <View style={{flexDirection:'column', alignItems:'center'}}>
-              <ProgressCircle showsText={true} borderWidth={6} borderColor={'rgba(216,216,216,0.30)'} direction="clockwise" color={'#3393D0'} unfilledColor={'rgba(216,216,216,0.10)'}thickness={6} progress={0.25} size={80} style={{marginRight:10}}/>
+              <ProgressCircle showsText={true} borderWidth={Size.PROGRESS_BORDER} borderColor={'rgba(216,216,216,0.30)'} direction="clockwise" color={'#3393D0'} unfilledColor={'rgba(216,216,216,0.10)'}thickness={Size.PROGRESS_BORDER} progress={0.25} size={Size.PADDING_LONG*2} style={{marginRight:Size.PADDING_SMALL}}/>
               <Text style={styles.ChartText}>Shares</Text>
             </View>
           </View>
@@ -122,17 +122,17 @@ export default class RiskResult extends Component {
           <Text style={styles.Risk}>High risk</Text>
           </View>
           <Text style={styles.Type}>Moderate Aggresive</Text>
-          <View style={{flexDirection:'row', marginTop:32}}>
+          <View style={{flexDirection:'row', marginTop:Size.PADDING}}>
             <View style={{flexDirection:'column', alignItems:'center'}}>
-              <ProgressCircle showsText={true} borderWidth={6} borderColor={'rgba(216,216,216,0.30)'} direction="clockwise" color={'#3393D0'} unfilledColor={'rgba(216,216,216,0.10)'}thickness={6} progress={0.25} size={80} style={{marginRight:10}}/>
+              <ProgressCircle showsText={true} borderWidth={Size.PROGRESS_BORDER} borderColor={'rgba(216,216,216,0.30)'} direction="clockwise" color={'#3393D0'} unfilledColor={'rgba(216,216,216,0.10)'}thickness={Size.PROGRESS_BORDER} progress={0.25} size={Size.PADDING_LONG*2} style={{marginRight:Size.PADDING_SMALL}}/>
               <Text style={styles.ChartText}>Funds</Text>
             </View>
             <View style={{flexDirection:'column', alignItems:'center'}}>
-              <ProgressCircle showsText={true} borderWidth={6} borderColor={'rgba(216,216,216,0.30)'} direction="counter-clockwise" color={'#3393D0'} unfilledColor={'rgba(216,216,216,0.10)'}thickness={6} progress={0.5} size={80} style={{marginRight:10}}/>
+              <ProgressCircle showsText={true} borderWidth={Size.PROGRESS_BORDER} borderColor={'rgba(216,216,216,0.30)'} direction="counter-clockwise" color={'#3393D0'} unfilledColor={'rgba(216,216,216,0.10)'}thickness={Size.PROGRESS_BORDER} progress={0.5} size={Size.PADDING_LONG*2} style={{marginRight:Size.PADDING_SMALL}}/>
               <Text style={styles.ChartText}>Bonds </Text>
             </View>
             <View style={{flexDirection:'column', alignItems:'center'}}>
-              <ProgressCircle showsText={true} borderWidth={6} borderColor={'rgba(216,216,216,0.30)'} direction="clockwise" color={'#3393D0'} unfilledColor={'rgba(216,216,216,0.10)'}thickness={6} progress={0.25} size={80} style={{marginRight:10}}/>
+              <ProgressCircle showsText={true} borderWidth={Size.PROGRESS_BORDER} borderColor={'rgba(216,216,216,0.30)'} direction="clockwise" color={'#3393D0'} unfilledColor={'rgba(216,216,216,0.10)'}thickness={Size.PROGRESS_BORDER} progress={0.25} size={Size.PADDING_LONG*2} style={{marginRight:Size.PADDING_SMALL}}/>
               <Text style={styles.ChartText}>Shares</Text>
             </View>
           </View>
@@ -142,7 +142,7 @@ export default class RiskResult extends Component {
           </TouchableOpacity>
         </View>
       </ViewPagerAndroid>
-      <View style={{justifyContent:'center', alignItems:'center', width: 320, height: 50, padding:10, marginLeft:20, marginBottom: 30}}>
+      <View style={{justifyContent:'center', alignItems:'center', width: Size.PAGER_WIDTH, height: Size.BUTTON_HEIGHT, padding:Size.PADDING_SMALL, marginLeft:Size.PADDING_MID, marginBottom: Size.PADDING}}>
         <Text style={{color:'white', fontFamily:'Roboto-Regular'}}> Swipe to see other Investment Strategies</Text>
       </View>
       </LinearGradient>
@@ -170,23 +170,24 @@ const styles = StyleSheet.create({
     fontSize: Size.TEXT_DETAILM,
     color: '#DE6157',
     textAlign:'right',
-    marginTop:10,
+    marginTop:Size.PADDING_SMALL,
+    marginLeft:Size.PADDING_LONG*2,
     fontFamily:'Roboto-Black'
   },
   Type: {
-    fontSize: 16,
+    fontSize: Size.TEXT_LABELS,
     color: '#58595B',
     fontFamily:'Roboto-Light'
   },
   Detail: {
-    fontSize: 16,
+    fontSize: Size.TEXT_LABELS,
     color: '#58595B',
-    marginTop: 32,
+    marginTop: Size.PADDING,
     fontFamily:'SourceSansPro-Regular'
   },
   TextButton: {
     textAlign:'center',
-    fontSize:18,
+    fontSize:Size.TEXT_LABELM,
     color:'#FFFFFF',
     fontFamily:'TitilliumWeb-SemiBold'
   },
@@ -195,15 +196,15 @@ const styles = StyleSheet.create({
     alignItems:'center',
     justifyContent:'center',
     backgroundColor:'#3393D0',
-    width: 260,
-    height:48,
-    marginBottom: 30,
-    marginTop:30
+    width: Size.BUTTON_RISK,
+    height:Size.BUTTON_HEIGHT,
+    marginBottom: Size.PADDING,
+    marginTop:Size.PADDING_MID
   },
   ChartText: {
-    fontSize:14,
+    fontSize:Size.TEXT_DETAILL,
     fontFamily:'Roboto-Medium',
     color:'#58595B',
-    marginTop:24
+    marginTop:Size.PADDING_MID
   }
 })
