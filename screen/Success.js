@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
   },
   Label: {
     textAlign: 'left',
-    fontSize:16,
+    fontSize:Size.TEXT_LABELS,
     color: 'white',
     marginTop: Size.PADDING_MID,
     marginBottom:Size.PADDING,

@@ -16,16 +16,16 @@ export default class Request extends Component {
     return (
   <View style={{flex:1}}>
     <View style={styles.Container}>
-      <Image source={require('./asset/graphic_process.png')} style={{width: 180, height: 180}}/>
-      <Text style={{fontSize: 36, color: '#3393D0', fontFamily:'TitilliumWeb-Bold', marginTop:48}}>Request in Progress</Text>
-      <Text style={{fontSize: 16, color: '#58595B', marginLeft:20, marginRight:20, textAlign:'center', fontFamily:'Roboto-Light'}}>
+      <Image source={require('./asset/graphic_process.png')} style={{width: Size.IMAGE_STEP, height: Size.IMAGE_STEP}}/>
+      <Text style={{fontSize: Size.TEXT_TITLEL, color: '#3393D0', fontFamily:'TitilliumWeb-Bold', marginTop:Size.BUTTON_HEIGHT}}>Request in Progress</Text>
+      <Text style={{fontSize: Size.TEXT_LABELS, color: '#58595B', marginLeft:Size.PADDING_MID, marginRight:Size.PADDING_MID, textAlign:'center', fontFamily:'Roboto-Light'}}>
       Your dream has been cancelled and we are</Text>
     </View>
-    <View style={{justifyContent:'flex-end', alignItems:'flex-end', paddingBottom:40, paddingRight:30, backgroundColor:'#FFFFFF'}}>
+    <View style={{justifyContent:'flex-end', alignItems:'flex-end', paddingBottom:Size.PADDING_LONG, paddingRight:Size.PADDING, backgroundColor:'#FFFFFF'}}>
       <TouchableOpacity
       style={styles.RoundButton}
         onPress = {() => navigate('HomeStatus')}>
-        <Image source={require('./asset/ic_next_white.png')} style={{width: 46, height: 46}}/>
+        <Image source={require('./asset/ic_next_white.png')} style={{width: Size.BUTTON_ICON, height: Size.BUTTON_ICON}}/>
       </TouchableOpacity>
     </View>
   </View>
@@ -39,14 +39,13 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center'
   },
-
   RoundButton: {
-    width: 60,
-    height: 60,
-    borderRadius:30,
-    marginTop: 20,
+    width: Size.BUTTON_ROUND,
+    height: Size.BUTTON_ROUND,
+    borderRadius:Size.BUTTON_ROUND/2,
+    marginTop: Size.PADDING_MID,
     backgroundColor:'#3393D0',
-    elevation:5,
+    elevation:Size.ELEVATION,
     justifyContent:'center',
     alignItems:'center'
   }

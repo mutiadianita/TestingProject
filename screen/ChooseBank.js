@@ -16,22 +16,22 @@ export default class ChooseBank extends Component {
 
     return (
     <View style={styles.Container}>
-      <Text style={{color:'#58595B', fontSize:14, marginBottom:20, fontFamily:'Roboto-Light'}}>Please choose your bank</Text>
+      <Text style={{color:'#58595B', fontSize:Size.TEXT_DETAILL, marginBottom:Size.PADDING_MID, fontFamily:'Roboto-Light'}}>Please choose your bank</Text>
       <TouchableOpacity style={styles.ContentBox} onPress = {() => navigate('BankAccount')} >
         <View style={styles.Flag}>
         </View>
         <View style={{flexDirection:'column', flex: 3}}>
-        <Image source={require('./asset/Mandiri.png')} style={{alignItems:'center',marginTop:20, marginLeft:20, marginBottom:20, width: 130, height: 40}}/>
+        <Image source={require('./asset/Mandiri.png')} style={{alignItems:'center',marginTop:Size.PADDING_MID, marginLeft:Size.PADDING_MID, marginBottom:Size.PADDING_MID, width: Size.BANK_WIDTH, height: Size.PADDING_LONG}}/>
         </View>
-        <Image source={require('./asset/ic_back_blue.png')} style={{alignItems:'center',marginTop:20, marginLeft:40, marginBottom:20, width: 40, height: 40}}/>
+        <Image source={require('./asset/ic_back_blue.png')} style={{alignItems:'center',marginTop:Size.PADDING_MID, marginLeft:Size.PADDING_LONG, marginBottom:Size.PADDING_MID, width: Size.PADDING, height: Size.PADDING}}/>
       </TouchableOpacity>
       <TouchableOpacity style={styles.ContentBox}>
         <View style={styles.Flag}>
         </View>
         <View style={{flexDirection:'column', flex: 3}}>
-          <Image source={require('./asset/BCA.png')} style={{alignItems:'center',marginTop:20, marginLeft:20, marginBottom:20, width: 130, height: 40}}/>
+          <Image source={require('./asset/BCA.png')} style={{alignItems:'center',marginTop:Size.PADDING_MID, marginLeft:Size.PADDING_MID, marginBottom:Size.PADDING_MID, width: Size.BANK_WIDTH, height: Size.PADDING_LONG}}/>
         </View>
-        <Image source={require('./asset/ic_back_blue.png')} style={{alignItems:'center',marginTop:20, marginLeft:40, marginBottom:20, width: 40, height: 40}}/>
+        <Image source={require('./asset/ic_back_blue.png')} style={{alignItems:'center',marginTop:Size.PADDING_MID, marginLeft:Size.PADDING_LONG, marginBottom:Size.PADDING_MID, width: Size.PADDING, height: Size.PADDING}}/>
       </TouchableOpacity>
     </View>
     );
@@ -42,22 +42,22 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     flex: 1,
     flexDirection:'column',
-    padding:20
+    padding:Size.PADDING_MID
   },
   ContentBox:{
-    height:80,
-    width: 320,
+    height:Size.OPTION_HEIGHT,
+    width: Size.PAGER_WIDTH,
     elevation:3,
-    marginBottom:10,
+    marginBottom:Size.PADDING_SMALL,
     backgroundColor: 'white',
     flexDirection:'row',
-    borderRadius:10
+    borderRadius:Size.PADDING_SMALL
   },
   Flag: {
-    height:80,
-    width: 10,
+    height:Size.OPTION_HEIGHT,
+    width: Size.PADDING_SMALL,
     backgroundColor: '#135788',
-    borderTopLeftRadius:10,
-    borderBottomLeftRadius:10
+    borderTopLeftRadius:Size.PADDING_SMALL,
+    borderBottomLeftRadius:Size.PADDING_SMALL
   }
 })

@@ -23,21 +23,21 @@ export default class CancelWithdrawForm extends Component {
         <Text style={styles.Detail}>Please confirm the following information based on the data you have entered</Text>
         <ScrollView>
         <View style={{flexDirection:'row'}}>
-        <Image source={require('./asset/ic_dream_small.png')} style={{marginLeft:30,width: 30, height: 30}}/>
+        <Image source={require('./asset/ic_dream_small.png')} style={{marginLeft:Size.PADDING,width: Size.PADDING, height: Size.PADDING}}/>
         <Text style={styles.Title}>Your dream
         </Text>
         </View>
         <Text style={styles.Label}>The following amount</Text>
         <Text style={styles.Sublabel}>Rp145.000.000,00</Text>
         <Text style={styles.LabelBold}>Will be returned to your bank account:</Text>
-        <Image source={require('./asset/BCA.png')} style={{marginTop:10,marginBottom:10,marginLeft:60 ,width: 70, height: 25}}/>
+        <Image source={require('./asset/BCA.png')} style={{marginTop:Size.PADDING_SMALL,marginBottom:Size.PADDING_SMALL,marginLeft:Size.BUTTON_ROUND ,width: Size.BOX_HEIGHT, height: Size.PADDING_TI}}/>
         <Text style={styles.Details}>123-123-12345-1 </Text>
         <Text style={styles.Details}>a/n Stanley Santoso</Text>
-        <View style={{width: 300, height:1, marginLeft:60, backgroundColor:'rgba(216,216,216,0.60)', marginTop:20, marginBottom:20}}></View>
+        <View style={{width: Size.BUTTON_WIDTH, height:1, marginLeft:Size.BUTTON_ROUND, backgroundColor:'rgba(216,216,216,0.60)', marginTop:Size.PADDING_MID, marginBottom:Size.PADDING_MID}}></View>
         <Text style={styles.Check}>The process of returning your money may take up to 3 business days. we will notify you when transaction has been completed. </Text>
         </ScrollView>
-        <View style={{marginBottom:40,marginTop:20,justifyContent:'center', alignItems:'center'}}>
-          <View style={{width:300}}>
+        <View style={{marginBottom:Size.PADDING_LONG,marginTop:Size.PADDING_MID,justifyContent:'center', alignItems:'center'}}>
+          <View style={{width:Size.BUTTON_WIDTH}}>
           <TouchableOpacity style={styles.Button} onPress = {() => navigate('Request')}>
             <Text style={styles.ButtonText}>Continue</Text>
           </TouchableOpacity>
@@ -52,74 +52,74 @@ const styles = StyleSheet.create({
   Container: {
     flex: 1,
     justifyContent: 'flex-start',
-    paddingTop: 30,
+    paddingTop: Size.PADDING,
     backgroundColor:'white'
   },
   Detail: {
-    fontSize: 16,
+    fontSize: Size.TEXT_LABELS,
     textAlign: 'left',
-    marginBottom: 30,
-    marginRight:30,
-    marginLeft:30,
+    marginBottom: Size.PADDING,
+    marginRight:Size.PADDING,
+    marginLeft:Size.PADDING,
     color: '#58595B',
     fontFamily:'Roboto-Light'
   },
   Title: {
-    fontSize:16,
+    fontSize:Size.TEXT_LABELS,
     color:'#3393D0',
-    marginTop: 5,
-    marginLeft: 5,
-    marginBottom:20,
+    marginTop: Size.ELEVATION,
+    marginLeft: Size.ELEVATION,
+    marginBottom:Size.PADDING_MID,
     fontFamily:'TitilliumWeb-Bold'
   },
   Label: {
     textAlign: 'left',
     color: '#58595B',
-    marginTop: 10,
-    marginLeft: 65,
-    fontSize:12,
+    marginTop: Size.PADDING_SMALL,
+    marginLeft: Size.PADDING_CONFIRM,
+    fontSize:Size.TEXT_DETAILM,
     fontFamily:'Roboto-Light'
   },
   Details: {
     textAlign: 'left',
     color: '#58595B',
-    marginLeft: 65,
-    fontSize:16,
+    marginLeft: Size.PADDING_CONFIRM,
+    fontSize:Size.TEXT_LABELS,
     fontFamily:'Roboto-Light'
   },
   Check: {
     textAlign: 'left',
     color: 'rgba(88,89,91,0.60)',
-    fontSize:14,
-    marginLeft: 65,
-    width:230
+    fontSize:Size.TEXT_DETAILL,
+    marginLeft: Size.PADDING_CONFIRM,
+    width:Size.CHECK
   },
   Sublabel:{
     textAlign: 'left',
     color: 'rgba(0,0,0,0.60)',
-    marginTop: 10,
-    marginLeft: 65,
-    fontSize:28,
+    marginTop: Size.PADDING_SMALL,
+    marginLeft: Size.PADDING_CONFIRM,
+    fontSize:Size.TEXT_TITLEE,
     fontFamily:'TitilliumWeb-SemiBold'
   },
   LabelBold:{
     textAlign: 'left',
     color: '#58595B',
-    marginTop: 20,
-    marginLeft: 65,
-    fontSize:12,
+    marginTop: Size.PADDING_MID,
+    marginLeft: Size.PADDING_CONFIRM,
+    fontSize:Size.TEXT_DETAILM,
     fontFamily:'Roboto-Bold'
   },
   Button: {
     backgroundColor:'#3393D0',
-    width:300,
-    height:48,
+    width:Size.BUTTON_WIDTH,
+    height:Size.BUTTON_HEIGHT,
     alignItems:'center',
     justifyContent:'center',
-    borderRadius:2
+    borderRadius:Size.BORDER
   },
   ButtonText: {
-    fontSize:18,
+    fontSize:Size.TEXT_LABELM,
     fontFamily:'TitilliumWeb-SemiBold',
     color:'#FFFFFF'
   }

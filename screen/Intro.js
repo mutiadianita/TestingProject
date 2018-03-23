@@ -63,7 +63,7 @@ export default class Intro extends Component {
         <View style={{justifyContent:'flex-end', alignItems:'center', zIndex:2, position:'absolute',marginLeft:Size.PADDING, marginRight:Size.PADDING}}>
         <TouchableOpacity
         style={{width: Size.BUTTON_WIDTH, height:Size.BUTTON_HEIGHT, backgroundColor:'white', alignItems:'center', justifyContent:'center', elevation:3 , borderRadius:2}}
-        onPress = {() => navigate('RiskResult')}>
+        onPress = {() => navigate('Login')}>
           <Text style={{fontFamily:'TitilliumWeb-SemiBold',color:'#3393D0', fontSize:Size.TEXT_LABELM, textAlign:'center'}}>Login</Text>
         </TouchableOpacity>
         <TouchableOpacity

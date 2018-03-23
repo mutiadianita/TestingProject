@@ -16,7 +16,7 @@ export default class TopUp_Payment extends Component {
     var {navigate} = this.props.navigation;
     return (
     <View style={styles.Container}>
-      <Text style={{color:'#58595B', fontSize:14, marginBottom:20, fontFamily:'SourceSansPro-Light'}}>Choose top up method to reach your dream faster. </Text>
+      <Text style={{color:'#58595B', fontSize:Size.TEXT_DETAILL, marginBottom:Size.PADDING_MID, fontFamily:'SourceSansPro-Light'}}>Choose top up method to reach your dream faster. </Text>
       <TouchableOpacity style={styles.ContentBox} onPress = {() => navigate('TopUp_Process')} >
         <View style={styles.Flag}/>
         <View style={{flexDirection:'column', flex: 3}}>
@@ -47,45 +47,45 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     flex: 1,
     flexDirection:'column',
-    padding:20
+    padding:Size.PADDING_MID
   },
   ContentBox:{
-    height:80,
-    width: 320,
-    elevation:3,
-    marginBottom:10,
+    height:Size.OPTION_HEIGHT,
+    width: Size.PAGER_WIDTH,
+    elevation:Size.BORDER,
+    marginBottom:Size.PADDING_SMALL,
     backgroundColor: 'white',
     flexDirection:'row',
-    borderRadius:10
+    borderRadius:Size.PADDING_SMALL
   },
   ContentText: {
-    fontSize:14,
+    fontSize:Size.TEXT_DETAILL,
     color:'#58595B',
-    marginLeft:20,
-    marginBottom:20
+    marginLeft:Size.PADDING_MID,
+    marginBottom:Size.PADDING_MID
   },
   ContentTitle: {
     flex:4,
-    fontSize:22,
+    fontSize:Size.TEXT_TITLES,
     color:'#58595B',
     fontFamily:'TitilliumWeb-Bold',
-    marginLeft:20,
-    marginTop:20
+    marginLeft:Size.PADDING_MID,
+    marginTop:Size.PADDING_MID
   },
   Flag: {
-    height:80,
-    width: 10,
+    height:Size.OPTION_HEIGHT,
+    width: Size.PADDING_SMALL,
     backgroundColor: '#58595B',
-    borderTopLeftRadius:10,
-    borderBottomLeftRadius:10
+    borderTopLeftRadius:Size.PADDING_SMALL,
+    borderBottomLeftRadius:Size.PADDING_SMALL
   },
   NextIcon: {
     alignItems:'center',
-    marginTop:28,
-    marginLeft:40,
-    marginBottom:28,
-    width: 24,
-    height: 24,
-    marginRight:8
+    marginTop:Size.PADDING,
+    marginLeft:Size.PADDING_LONG,
+    marginBottom:Size.PADDING,
+    width: Size.TEXT_TITLEM,
+    height: Size.TEXT_TITLEM,
+    marginRight:Size.PADDING_SMALL
   }
 })

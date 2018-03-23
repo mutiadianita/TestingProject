@@ -16,15 +16,15 @@ export default class Bank extends Component {
     return (
   <View style={{flex:1}}>
     <View style={styles.Container}>
-      <Image source={require('./asset/graphic_register_2.png')} style={{width: 180, height: 180}}/>
-      <Text style={{fontSize: 36, color: '#3393D0',textAlign:'center', fontFamily: 'TitilliumWeb-Bold', marginTop:48}}>Connect Your Bank Account</Text>
-      <Text style={{fontSize: 16, color: '#58595B', marginLeft:20, marginRight:20, textAlign:'center', fontFamily:'Roboto-Light'}}>In order to finish your dream creation, you need to connect your bank first.</Text>
+      <Image source={require('./asset/graphic_register_2.png')} style={{width: Size.IMAGE_STEP, height: Size.IMAGE_STEP}}/>
+      <Text style={{fontSize: Size.TEXT_TITLEL, color: '#3393D0',textAlign:'center', fontFamily: 'TitilliumWeb-Bold', marginTop:Size.BUTTON_HEIGHT}}>Connect Your Bank Account</Text>
+      <Text style={{fontSize: Size.TEXT_LABELS, color: '#58595B', marginLeft:Size.PADDING_MID, marginRight:Size.PADDING_MID, textAlign:'center', fontFamily:'Roboto-Light'}}>In order to finish your dream creation, you need to connect your bank first.</Text>
     </View>
-    <View style={{alignItems:'flex-end', justifyContent:'flex-end',paddingRight:30, paddingBottom:30, backgroundColor:'#FFFFFF'}}>
+    <View style={{alignItems:'flex-end', justifyContent:'flex-end',paddingRight:Size.PADDING, paddingBottom:Size.PADDING_LONG, backgroundColor:'#FFFFFF'}}>
       <TouchableOpacity
       style={styles.RoundButton}
         onPress = {() => navigate('ChooseBank')}>
-        <Image source={require('./asset/ic_next_white.png')} style={{width: 46, height: 46}}/>
+        <Image source={require('./asset/ic_next_white.png')} style={{width: Size.BUTTON_ICON, height: Size.BUTTON_ICON}}/>
       </TouchableOpacity>
     </View>
   </View>
@@ -39,11 +39,12 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   RoundButton: {
-    width: 60,
-    height: 60,
-    borderRadius:30,
+    width: Size.BUTTON_ROUND,
+    height: Size.BUTTON_ROUND,
+    borderRadius:Size.BUTTON_ROUND/2,
+    marginTop: Size.PADDING_MID,
     backgroundColor:'#3393D0',
-    elevation:5,
+    elevation:Size.ELEVATION,
     justifyContent:'center',
     alignItems:'center'
   }

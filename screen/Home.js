@@ -20,16 +20,16 @@ export default class Home extends Component {
         <LinearGradient start={{x: 0.0, y: 0.025}} end={{x: 1.0, y: 1.0}} colors={['#5DC6C9', '#3393D0', '#135788']} style={{flex:6}}>
           <View style={styles.Header}>
             <TouchableOpacity onPress = {() => navigate('Profile')}>
-              <Image source={require('./asset/ic_account.png')} style={{width: 30, height: 30}}/>
+              <Image source={require('./asset/ic_account.png')} style={{width: Size.PADDING, height: Size.PADDING}}/>
             </TouchableOpacity>
               <Text style={styles.HeaderText}>Xdana</Text>
             <TouchableOpacity onPress = {() => navigate('Notification')}>
-              <Image source={require('./asset/ic_notif_white.png')} style={{marginLeft:180,width: 30, height: 30}}/>
+              <Image source={require('./asset/ic_notif_white.png')} style={{marginLeft:Size.IMAGE_STEP,width: Size.PADDING, height: Size.PADDING}}/>
             </TouchableOpacity>
           </View>
-          <View style={{padding: 20}}>
-            <Text style={{fontSize:36, color:'white', fontFamily:'TitilliumWeb-SemiBold'}}>Hi Stanley,</Text>
-            <Text style={{fontSize:16, color:'#FEFEFE',marginTop:10, fontFamily: 'Roboto-Regular'}}>Start investing now and reach your dream.</Text>
+          <View style={{padding: Size.PADDING_MID}}>
+            <Text style={{fontSize:Size.TEXT_TITLEL, color:'white', fontFamily:'TitilliumWeb-SemiBold'}}>Hi Stanley,</Text>
+            <Text style={{fontSize:Size.TEXT_LABELS, color:'#FEFEFE',marginTop:Size.PADDING_SMALL, fontFamily: 'Roboto-Regular'}}>Start investing now and reach your dream.</Text>
           </View>
           <View style={styles.Box}>
             <View>
@@ -40,27 +40,27 @@ export default class Home extends Component {
             <TouchableOpacity
               style={styles.Button}
               onPress = {() => navigate('MainMenu')}>
-              <Image source={require('./asset/ic_add_white.png')} style={{width: 30, height: 30}}/>
+              <Image source={require('./asset/ic_add_white.png')} style={{width: Size.PADDING, height: Size.PADDING}}/>
             </TouchableOpacity>
             </View>
           </View>
           </LinearGradient>
-        <View style={{flex:7, backgroundColor:'white', paddingTop:24, paddingLeft:20}}>
-          <Text style={{fontSize:18, color:'#4D4D4C', fontFamily:'TitilliumWeb-SemiBold'}}>Knowledge Center</Text>
+        <View style={{flex:7, backgroundColor:'white', paddingTop:Size.TEXT_TITLEM, paddingLeft:Size.PADDING_MID}}>
+          <Text style={{fontSize:Size.TEXT_LABELM, color:'#4D4D4C', fontFamily:'TitilliumWeb-SemiBold'}}>Knowledge Center</Text>
           <View style={{flexDirection:'row', flex:1}}>
           <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
             <TouchableOpacity onPress = {() => navigate('WhyInvest')}>
               <View style={styles.ContentBox}>
                 <View style={styles.ImageBox}>
                 </View>
-                <Text style={{fontSize:16, color:'#58595B', margin:10}}>Why is it better to start investing early?</Text>
+                <Text style={{fontSize:Size.TEXT_LABELS, color:'#58595B', margin:Size.PADDING_SMALL}}>Why is it better to start investing early?</Text>
               </View>
             </TouchableOpacity>
             <TouchableOpacity onPress = {() => navigate('Healthcare')}>
               <View style={styles.ContentBox}>
                 <View style={styles.ImageBox}>
                 </View>
-                <Text style={{fontSize:16, color:'#58595B', margin:10}}>Healthcare Costs Can Add Up in Retirement</Text>
+                <Text style={{fontSize:Size.TEXT_LABELS, color:'#58595B', margin:Size.PADDING_SMALL}}>Healthcare Costs Can Add Up in Retirement</Text>
               </View>
             </TouchableOpacity>
             <TouchableOpacity onPress = {() => navigate('Healthcare')}>
@@ -84,60 +84,60 @@ const styles = StyleSheet.create({
   },
   Box: {
     flexDirection:'row',
-    height: 70,
-    width:320,
-    marginLeft:20,
-    borderRadius:10,
+    height: Size.BOX_HEIGHT,
+    width:Size.PAGER_WIDTH,
+    marginLeft:Size.PADDING_MID,
+    borderRadius:Size.PADDING_SMALL,
     backgroundColor:'white',
-    elevation:5,
-    padding:10
+    elevation:Size.ELEVATION,
+    padding:Size.PADDING_SMALL
   },
   Title: {
-    fontSize:20,
+    fontSize:Size.TEXT_LABELL,
     color:'#58595B',
     fontFamily:'TitilliumWeb-Bold'
   },
   Subtitle: {
-    fontSize:16,
+    fontSize:Size.TEXT_LABELS,
     color:'#58595B',
     fontFamily:'Roboto-Regular'
   },
   Button:{
-    marginLeft:20,
-    width: 40,
-    height: 40,
-    borderRadius:20,
+    marginLeft:Size.PADDING_MID,
+    width: Size.PADDING_LONG,
+    height: Size.PADDING_LONG,
+    borderRadius:Size.PADDING_MID,
     backgroundColor:'#00A99E',
-    elevation:5,
+    elevation:Size.ELEVATION,
     justifyContent:'center',
     alignItems:'center'
   },
   Header: {
-    paddingLeft: 20,
-    paddingTop:20,
-    paddingRight:20,
+    paddingLeft: Size.PADDING_MID,
+    paddingTop:Size.PADDING_MID,
+    paddingRight:Size.PADDING_MID,
     flexDirection:'row'
   },
   HeaderText: {
-    marginLeft:20,
-    fontSize:20,
+    marginLeft:Size.PADDING_MID,
+    fontSize:Size.TEXT_LABELL,
     color:'white',
     fontFamily:'TitilliumWeb-Bold'
   },
   ContentBox: {
-    marginTop:20,
-    marginRight:20,
-    width:200,
-    height:250,
-    elevation:5,
+    marginTop:Size.PADDING_MID,
+    marginRight:Size.PADDING_MID,
+    width:Size.IMAGE_NW,
+    height:Size.CBOX_HEIGHT,
+    elevation:Size.ELEVATION,
     backgroundColor:'white',
-    borderRadius:10
+    borderRadius:Size.PADDING_SMALL
   },
   ImageBox: {
-    width:200,
-    height:180,
+    width:Size.IMAGE_NW,
+    height:Size.IMAGE_NH,
     backgroundColor:'grey',
-    borderTopLeftRadius:10,
-    borderTopRightRadius:10
+    borderTopLeftRadius:Size.PADDING_SMALL,
+    borderTopRightRadius:Size.PADDING_SMALL
   }
 });

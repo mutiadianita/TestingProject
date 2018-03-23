@@ -25,12 +25,12 @@ export default class GoalAmount extends Component {
         <Text style={styles.Title}>Enter your target amount and target year</Text>
         <ScrollView>
           <View style={{flexDirection:'row'}}>
-          <Image source={require('./asset/ic_dream_small.png')} style={{width: 30, height: 30}}/>
-          <Text style={{fontSize:16, color:'#3393D0', marginLeft: 5, marginBottom:20, fontFamily:'TitilliumWeb-Bold'}}>Dream Information</Text>
+          <Image source={require('./asset/ic_dream_small.png')} style={{width: Size.PADDING, height: Size.PADDING}}/>
+          <Text style={{fontSize:Size.TEXT_LABELS, color:'#3393D0', marginBottom:Size.PADDING_MID, fontFamily:'TitilliumWeb-Bold'}}>Dream Information</Text>
           </View>
           <Text style={styles.Label}>IDR Amount</Text>
           <TextInput
-          style={{marginLeft:30,width: 280, color:'black', fontFamily: 'TitilliumWeb-SemiBold'}}
+          style={{marginLeft:Size.PADDING,width: Size.TI_WIDTH, color:'black', fontFamily: 'TitilliumWeb-SemiBold'}}
           placeholderTextColor='black'
           underlineColorAndroid='black'
           />
@@ -43,11 +43,11 @@ export default class GoalAmount extends Component {
              <Picker.Item label = '5' value = '5' />
           </Picker>
         </ScrollView>
-        <View style={{flex:1, justifyContent:'flex-end', alignItems:'flex-end', marginBottom:40, marginRight:30}}>
+        <View style={{flex:1, justifyContent:'flex-end', alignItems:'flex-end', marginBottom:Size.PADDING_LONG, marginRight:Size.PADDING}}>
           <TouchableOpacity
           style={styles.Button}
             onPress = {() => navigate('Strategy')}>
-            <Image source={require('./asset/ic_next_white.png')} style={{width: 46, height: 46}}/>
+            <Image source={require('./asset/ic_next_white.png')} style={{width: Size.BUTTON_ICON, height: Size.BUTTON_ICON}}/>
           </TouchableOpacity>
         </View>
       </View>
@@ -59,45 +59,38 @@ const styles = StyleSheet.create({
   Container: {
     flex: 1,
     justifyContent: 'flex-start',
-    paddingTop: 10,
-    paddingLeft: 30,
+    paddingTop: Size.PADDING_SMALL,
+    paddingLeft: Size.PADDING,
     backgroundColor:'white'
   },
   Title: {
-    fontSize: 16,
+    fontSize: Size.TEXT_LABELS,
     textAlign: 'left',
-    marginBottom: 15,
-    marginTop:15,
-    marginRight: 30,
+    marginBottom: Size.PADDING/2,
+    marginTop:Size.PADDING/2,
+    marginRight: Size.PADDING,
     color: '#58595B',
     fontFamily:'Roboto-Light'
   },
   Label: {
     textAlign: 'left',
     color: '#58595B',
-    marginTop: 5,
-    marginLeft: 35,
-    fontSize:14,
+    marginTop: Size.PADDING_SMALL/2,
+    marginLeft: Size.PADDING,
+    fontSize:Size.TEXT_DETAILL,
     fontFamily:'Roboto-Light'
   },
   Picker: {
-    marginLeft:27,
-    width:280
+    marginLeft:Size.PADDING,
+    width:Size.PICKER_WIDTH
   },
   Button:{
-    width: 60,
-    height: 60,
-    borderRadius:30,
+    width: Size.BUTTON_ROUND,
+    height: Size.BUTTON_ROUND,
+    borderRadius:Size.BUTTON_ROUND/2,
     backgroundColor:'#3393D0',
-    elevation:5,
+    elevation:Size.ELEVATION,
     justifyContent:'center',
     alignItems:'center'
-  },
-  ButtonText: {
-    color:'white',
-    fontSize:24,
-    fontWeight:'bold',
-    marginTop:10,
-    marginLeft:25
   }
 });

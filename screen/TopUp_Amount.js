@@ -22,23 +22,23 @@ export default class TopUp_Amount extends Component {
         <Text style={styles.Detail}>Enter your one-time top up amount to reach your dream faster.</Text>
         <ScrollView>
         <View style={{flexDirection:'row'}}>
-        <Image source={require('./asset/ic_more_blue.png')} style={{marginLeft:30,width: 30, height: 30}}/>
+        <Image source={require('./asset/ic_more_blue.png')} style={{marginLeft:Size.PADDING,width: Size.PADDING, height: Size.PADDING}}/>
         <Text style={styles.Title}>Top up detail
         </Text>
         </View>
         <Text style={styles.Label}>IDR amount</Text>
         <TextInput
-        style={{marginLeft:65,width: 250, color:'black', fontSize:28, fontFamily:'TitilliumWeb-SemiBold'}}
+        style={{marginLeft:Size.PADDING_CONFIRM,width: Size.CBOX_HEIGHT, color:'black', fontSize:Size.TEXT_TITLEE, fontFamily:'TitilliumWeb-SemiBold'}}
         placeholderTextColor='black'
         underlineColorAndroid='black'
         keyboardType={'numeric'}
         />
         </ScrollView>
-        <View style={{marginBottom:40,marginRight:30,justifyContent:'flex-end', alignItems:'flex-end'}}>
+        <View style={{marginBottom:Size.PADDING_LONG,marginRight:Size.PADDING,justifyContent:'flex-end', alignItems:'flex-end'}}>
           <TouchableOpacity
           style={styles.RoundButton}
             onPress = {() => navigate('TopUp_Payment')}>
-            <Image source={require('./asset/ic_next_white.png')} style={{width: 46, height: 46}}/>
+            <Image source={require('./asset/ic_next_white.png')} style={{width: Size.BUTTON_ICON, height: Size.BUTTON_ICON}}/>
           </TouchableOpacity>
         </View>
       </View>
@@ -50,40 +50,40 @@ const styles = StyleSheet.create({
   Container: {
     flex: 1,
     justifyContent: 'flex-start',
-    paddingTop: 30,
+    paddingTop: Size.PADDING,
     backgroundColor:'white'
   },
   Detail: {
-    fontSize: 16,
+    fontSize: Size.TEXT_LABELS,
     textAlign: 'left',
-    marginBottom: 30,
-    marginRight:30,
-    marginLeft:30,
+    marginBottom: Size.PADDING,
+    marginRight:Size.PADDING,
+    marginLeft:Size.PADDING,
     color: '#58595B',
     fontFamily:'SourceSansPro-Light'
   },
   Title: {
-    fontSize:16,
+    fontSize:Size.TEXT_LABELS,
     fontFamily: 'TitilliumWeb-Bold',
     color:'#3393D0',
-    marginTop: 5,
-    marginLeft: 5,
-    marginBottom:20
+    marginTop: Size.ELEVATION,
+    marginLeft: Size.ELEVATION,
+    marginBottom:Size.PADDING_MID
   },
   Label: {
     textAlign: 'left',
     color: '#58595B',
-    marginTop: 10,
-    marginLeft: 65,
-    fontSize:12,
+    marginTop: Size.PADDING_SMALL,
+    marginLeft: Size.PADDING_CONFIRM,
+    fontSize:Size.TEXT_DETAILM,
     fontFamily:'Roboto-Light'
   },
   RoundButton: {
-    width: 60,
-    height: 60,
-    borderRadius:30,
+    width: Size.BUTTON_ROUND,
+    height: Size.BUTTON_ROUND,
+    borderRadius:Size.PADDING,
     backgroundColor:'#3393D0',
-    elevation:5,
+    elevation:Size.ELEVATION,
     justifyContent:'center',
     alignItems:'center'
   }

@@ -27,7 +27,7 @@ export default class Done extends Component {
             <TouchableOpacity
             style={styles.Button}
               onPress = {() => navigate('HomeStatus')}>
-              <Image source={require('./asset/ic_done.png')} style={{width: 46, height: 46}}/>
+              <Image source={require('./asset/ic_done.png')} style={{width: Size.BUTTON_ICON, height:Size.BUTTON_ICON}}/>
             </TouchableOpacity>
           </View>
         </ImageBackground>
@@ -40,9 +40,9 @@ const styles = StyleSheet.create({
   Container: {
     flex: 1,
     justifyContent: 'flex-end',
-    paddingTop: 10,
-    paddingLeft: 30,
-    paddingRight:30
+    paddingTop: Size.PADDING_SMALL,
+    paddingLeft: Size.PADDING,
+    paddingRight:Size.PADDING
   },
   SubContainer1: {
     flex:8,
@@ -53,40 +53,37 @@ const styles = StyleSheet.create({
     flex:1,
     alignItems:'flex-end',
     justifyContent:'flex-end',
-    paddingBottom:40
+    paddingBottom:Size.PADDING_LONG
   },
   Title: {
-    fontSize: 36,
+    fontSize: Size.TEXT_TITLEL,
     fontFamily: 'TitilliumWeb-Bold',
     textAlign: 'left',
-    marginTop: 300,
-    marginBottom: 5,
-    marginLeft: 5,
+    marginTop: Size.BUTTON_WIDTH,
     color: 'white'
   },
   Label: {
     textAlign: 'left',
-    fontSize:16,
+    fontSize:Size.TEXT_LABELS,
     color: 'white',
-    marginTop: 20,
-    marginLeft: 5,
-    marginBottom:30,
+    marginTop: Size.PADDING_MID,
+    marginBottom:Size.PADDING,
     fontFamily: 'Roboto-Light'
   },
   Button: {
-    width: 60,
-    height: 60,
-    borderRadius:30,
+    width: Size.BUTTON_ROUND,
+    height: Size.BUTTON_ROUND,
+    borderRadius:Size.BUTTON_ROUND/2,
     backgroundColor:'white',
-    elevation:5,
+    elevation:Size.ELEVATION,
     justifyContent:'center',
     alignItems:'center'
   },
   ButtonContent: {
     color:'#3393D0',
-    fontSize:24,
+    fontSize:Size.TEXT_TITLEM,
     fontWeight:'bold',
-    marginTop:10,
-    marginLeft:25
+    marginTop:Size.PADDING_SMALL,
+    marginLeft:Size.PADDING_TI
   }
 });
