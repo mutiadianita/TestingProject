@@ -20,7 +20,7 @@ export default class Login extends Component {
           Please fill in the data below to Login to your Xdana account.
         </Text>
         <View style={{flexDirection:'row'}}>
-        <Image source={require('./asset/ic_profile_blue.png')} style={{width: Size.PADDING, height:Size.PADDING}}/>
+        <Image source={{uri: 'ic_profile_blue'}} resizeMode="contain" style={{width: Size.PADDING, height:Size.PADDING}}/>
         <Text style={{fontSize:Size.TEXT_LABELS,  color:'#3393D0',marginBottom:Size.PADDING_MID, fontFamily:'TitilliumWeb-Bold',marginTop:Size.PADDING/6}}>Account info
         </Text>
         </View>
@@ -42,7 +42,7 @@ export default class Login extends Component {
           <TouchableOpacity
           style={styles.RoundButton}
             onPress = {() => navigate('HomeStatus')}>
-            <Image source={require('./asset/ic_next_white.png')} style={styles.ButtonIcon}/>
+            <Image source={{uri: 'ic_next_white'}} resizeMode="contain" style={styles.ButtonIcon}/>
           </TouchableOpacity>
         </View>
       </View>

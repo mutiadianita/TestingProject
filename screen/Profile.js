@@ -18,55 +18,54 @@ export default class Profile extends Component {
     return (
       <View style={styles.Container}>
         <TouchableOpacity onPress = {() => navigate('RiskResult')} style={styles.Box}>
-        <View style={{width:280}}>
+        <View style={{width:Size.PICKER_WIDTH}}>
           <Text style={styles.Title}>Low risk</Text>
           <Text style={styles.Subtitle}>Change your investment strategy</Text>
         </View>
           <View style={{justifyContent:'center',alignItems:'center'}}>
-            <Image source={require('./asset/ic_next_black.png')} style={{width: 30, height: 30}}/>
+            <Image source={{uri: 'ic_next_black'}} resizeMode="contain" style={{width: Size.PADDING, height: Size.PADDING}}/>
           </View>
         </TouchableOpacity>
         <View style={{flex: 1, zIndex:2}}>
-          <LinearGradient start={{x: 0.0, y: 0.025}} end={{x: 1.0, y: 1.0}} colors={['#5DC6C9', '#3393D0', '#135788']} style={{paddingTop:80,flexDirection:'row',backgroundColor:'#3393D0', height:180,padding: 20}}>
-            <View style={{height:40, width:40, borderRadius:20, backgroundColor:'grey'}}>
-            </View>
-            <View style={{marginLeft:16, width:240}}>
-              <Text style={{fontSize:14, color:'#FFFFFF', fontFamily:'SourceSansPro-Regular'}}>Good Evening,</Text>
-              <Text style={{ fontSize:20, color:'#FFFFFF', fontFamily:'SourceSansPro-Bold'}}>Stanley Santoso</Text>
+          <LinearGradient start={{x: 0.0, y: 0.025}} end={{x: 1.0, y: 1.0}} colors={['#5DC6C9', '#3393D0', '#135788']} style={{paddingTop:Size.OPTION_HEIGHT,flexDirection:'row',backgroundColor:'#3393D0', height:Size.IMAGE_NH,padding: Size.PADDING_MID}}>
+            <Image source={{uri:'bapak'}} resizeMode="cover" style={{height:Size.PADDING_LONG, width:Size.PADDING_LONG, borderRadius:Size.PADDING_LONG/2}}/>
+            <View style={{marginLeft:Size.TEXT_LABELS, width:Size.PROFILE_WIDTH}}>
+              <Text style={{fontSize:Size.TEXT_DETAILL, color:'#FFFFFF', fontFamily:'SourceSansPro-Regular'}}>Good Evening,</Text>
+              <Text style={{ fontSize:Size.TEXT_LABELL, color:'#FFFFFF', fontFamily:'SourceSansPro-Bold'}}>Stanley Santoso</Text>
             </View>
             <TouchableOpacity onPress = {() => navigate('EditProfile')}>
-            <Image source={require('./asset/ic_edit_white.png')} style={{width: 30, height: 30}}/>
+            <Image source={{uri: 'ic_edit_white'}} resizeMode="contain" style={{width: Size.PADDING_TI, height: Size.PADDING_TI}}/>
             </TouchableOpacity>
           </LinearGradient>
         </View>
-        <View style={{zIndex:2, height:500, backgroundColor:'white', paddingTop:30, paddingLeft:20}}>
+        <View style={{zIndex:2, height:Size.CBOX_HEIGHT*2, backgroundColor:'white', paddingTop:Size.PADDING, paddingLeft:Size.PADDING_MID}}>
           <TouchableOpacity onPress = {() => navigate('MyBank')} style={styles.Button}>
-            <Image source={require('./asset/ic_bank.png')} style={{width: 24, height: 24}}/>
+            <Image source={{uri: 'ic_bank'}} resizeMode="contain" style={{width: Size.IMAGE_ICON, height: Size.IMAGE_ICON}}/>
             <Text style={styles.ButtonText}>Bank Account</Text>
           </TouchableOpacity>
           <View style={styles.Line}/>
           <TouchableOpacity onPress = {() => navigate('HomeStatus')} style={styles.Button}>
-            <Image source={require('./asset/ic_dream_big.png')} style={{width: 24, height: 24}}/>
+            <Image source={{uri: 'ic_dream_big'}} resizeMode="contain" style={{width: Size.IMAGE_ICON, height: Size.IMAGE_ICON}}/>
             <Text style={styles.ButtonText}>Archived Dreams</Text>
           </TouchableOpacity>
           <View style={styles.Line}/>
           <TouchableOpacity onPress = {() => navigate('About')} style={styles.Button}>
-            <Image source={require('./asset/ic_about.png')} style={{width: 24, height: 24}}/>
+            <Image source={{uri: 'ic_about'}} resizeMode="contain" style={{width: Size.IMAGE_ICON, height: Size.IMAGE_ICON}}/>
             <Text style={styles.ButtonText}>About Us</Text>
             </TouchableOpacity>
           <View style={styles.Line}/>
           <TouchableOpacity onPress = {() => navigate('FAQ')} style={styles.Button}>
-            <Image source={require('./asset/ic_faq.png')} style={{width: 24, height: 24}}/>
+            <Image source={{uri: 'ic_faq'}} resizeMode="contain" style={{width: Size.IMAGE_ICON, height: Size.IMAGE_ICON}}/>
             <Text style={styles.ButtonText}>FAQ</Text>
           </TouchableOpacity>
           <View style={styles.Line}/>
           <TouchableOpacity onPress = {() => navigate('Feedback')} style={styles.Button}>
-            <Image source={require('./asset/ic_feedback.png')} style={{width: 24, height: 24}}/>
+            <Image source={{uri: 'ic_feedback'}} resizeMode="contain" style={{width: Size.IMAGE_ICON, height: Size.IMAGE_ICON}}/>
             <Text style={styles.ButtonText}>Live Chat</Text>
           </TouchableOpacity>
           <View style={styles.Line}/>
           <TouchableOpacity onPress = {() => navigate('Intro')} style={styles.Button}>
-            <Image source={require('./asset/ic_logout.png')} style={{width: 24, height: 24}}/>
+            <Image source={{uri: 'ic_logout'}} resizeMode="contain" style={{width: Size.IMAGE_ICON, height: Size.IMAGE_ICON}}/>
             <Text style={styles.ButtonText}>Log Out</Text>
           </TouchableOpacity>
           <View style={styles.Line}/>
@@ -87,24 +86,24 @@ const styles = StyleSheet.create({
   Box: {
     flexDirection:'row',
     position: 'absolute',
-    marginTop:140,
+    marginTop:Size.TEXT_DETAILL*10,
     zIndex:3,
-    height: 70,
-    width:320,
-    marginLeft:20,
-    borderRadius:10,
+    height: Size.BOX_HEIGHT,
+    width:Size.PAGER_WIDTH,
+    marginLeft:Size.PADDING_MID,
+    borderRadius:Size.PADDING_SMALL,
     backgroundColor:'white',
-    elevation:5,
-    padding:10
+    elevation:Size.ELEVATION,
+    padding:Size.PADDING_SMALL
   },
   Title: {
     fontFamily:'TitilliumWeb-Bold',
-    fontSize:20,
+    fontSize:Size.TEXT_LABELL,
     color:'#58595B'
   },
   Subtitle: {
     fontFamily:'Roboto-Regular',
-    fontSize:16,
+    fontSize:Size.TEXT_LABELS,
     color:'#58595B'
   },
   Button:{
@@ -113,15 +112,15 @@ const styles = StyleSheet.create({
     alignItems:'center'
   },
   ButtonText: {
-    marginLeft:10,
+    marginLeft:Size.PADDING_SMALL,
     color: 'rgba(0,0,0,0.60)',
-    fontSize:16,
+    fontSize:Size.TEXT_LABELS,
     fontFamily:'Roboto-Medium'
   },
   Line: {
     height:1,
-    width:288,
-    marginLeft: 36,
+    width:Size.PICKER_WIDTH,
+    marginLeft: Size.TEXT_TITLEL,
     backgroundColor:'#D8D8D8'
   }
 });

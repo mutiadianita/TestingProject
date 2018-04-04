@@ -17,7 +17,7 @@ export default class DeleteDream extends Component {
 
     return (
     <View style={styles.Container}>
-      <Image source={require('./asset/ic_close_blue.png')} style={{width: Size.TEXT_TITLEM, height: Size.TEXT_TITLEM}}/>
+      <Image source={{uri: 'ic_close_blue'}} resizeMode="contain" style={{width: Size.TEXT_TITLEM, height: Size.TEXT_TITLEM}}/>
       <Text style={{fontSize:Size.TEXT_TITLEM, fontFamily:'TitilliumWeb-Bold',textAlign:'left', color:'#58595B', marginTop:Size.PADDING_MID, marginRight:Size.PADDING}}>Delete Completed Dream</Text>
       <Text style={{fontSize:Size.TEXT_LABELS, fontFamily:'SourceSansPro-Regular', textAlign:'left', color:'#333333', marginTop:Size.DELETE_WIDTH*3}}>Are you sure you want to delete the completed dream? This action cannot be undone.</Text>
       <TouchableOpacity onPress = {() => navigate('GoalComplete')}>

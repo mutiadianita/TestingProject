@@ -20,7 +20,7 @@ export default class ReviewSelfie extends Component {
         <Text style={styles.Title}>Please Confirm the image you’ve taken</Text>
         <ScrollView>
         <View style={{marginTop:Size.PADDING_MID, alignItems:'center', justifyContent:'center'}}>
-        <Image style={{width:Size.IMAGE_IDW, height:Size.IMAGE_IDH, borderRadius:Size.PADDING_SMALL, borderWidth:1,borderColor:'#3393D0'}} source={require('./images/bapak.png')} />
+        <Image style={{width:Size.IMAGE_IDW, height:Size.IMAGE_IDH, borderRadius:Size.PADDING_SMALL, borderWidth:1,borderColor:'#3393D0'}} resizeMode="contain" source={{uri:'bapak'}} />
         </View>
         </ScrollView>
         <TouchableOpacity style={{backgroundColor:'#FFFFFF', width: Size.BUTTON_WIDTH, padding:Size.PADDING_SMALL, height:Size.BUTTON_HEIGHT}} onPress = {() => navigate('Step2')}>

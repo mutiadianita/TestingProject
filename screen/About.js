@@ -21,9 +21,9 @@ export default class About extends Component {
       <View style={{flex:1}}>
         <LinearGradient start={{x: 0.0, y: 0.025}} end={{x: 1.0, y: 1.0}} colors={['#5DC6C9', '#3393D0', '#135788']} style={styles.Container}>
         <View style={{justifyContent:'center', alignItems:'center'}}>
-          <Image source={require('./asset/ic_logo_white.png')} style={{marginBottom:20,width: 100, height: 100}}/>
+          <Image source={{uri:'ic_logo_white'}} resizeMode="contain" style={{marginBottom:Size.PADDING_MID,width: Size.DELETE_HEIGHT, height: Size.DELETE_HEIGHT}}/>
         </View>
-        <View style={{flexDirection:'row', marginTop:10}}>
+        <View style={{flexDirection:'row', marginTop:Size.PADDING_SMALL}}>
           <Text style={styles.Detail}>Version</Text>
           <Text style={styles.Details}>1.01</Text>
         </View>
@@ -46,49 +46,49 @@ const styles = StyleSheet.create({
   Container: {
     flex: 1,
     justifyContent: 'flex-start',
-    paddingLeft: 40,
-    paddingRight: 40,
-    paddingTop: 80,
-    paddingRight:24,
+    paddingLeft: Size.PADDING_LONG,
+    paddingRight: Size.PADDING_LONG,
+    paddingTop: Size.PADDING_LONG*2,
+    paddingRight:Size.PADDING,
     backgroundColor:'#3393D0'
   },
   title: {
-    fontSize: 16,
+    fontSize: Size.TEXT_LABELS,
     textAlign: 'left',
-    marginBottom: 30,
-    marginRight:30,
-    marginLeft:30,
+    marginBottom: Size.PADDING,
+    marginRight:Size.PADDING,
+    marginLeft:Size.PADDING,
     color: '#58595B'
   },
   Label: {
     color:'#FFFFFF',
-    fontSize:16,
-    marginTop:32,
+    fontSize:Size.TEXT_LABELS,
+    marginTop:Size.PADDING,
     fontFamily:'TitilliumWeb-Regular'
   },
   Detail: {
     textAlign: 'left',
     color: '#FFFFFF',
-    marginRight:200,
-    fontSize:16,
+    marginRight:Size.IMAGE_NW,
+    fontSize:Size.TEXT_LABELS,
     fontFamily:'TitilliumWeb-Bold'
   },
   Details: {
     textAlign: 'left',
     color: '#FFFFFF',
-    fontSize:14,
+    fontSize:Size.TEXT_DETAILL,
     fontFamily:'TitilliumWeb-Regular'
   },
   Check: {
     color:'#FFFFFF',
-    fontSize:14,
-    marginTop:32,
+    fontSize:Size.TEXT_DETAILL,
+    marginTop:Size.PADDING,
     fontFamily:'SourceSansPro-Regular'
   },
   Line: {
-    width: 280,
+    width: Size.PICKER_WIDTH,
     height:1,
     backgroundColor:'rgba(216,216,216,0.60)',
-    marginTop:8
+    marginTop:Size.PADDING_SMALL
   }
 });

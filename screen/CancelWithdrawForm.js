@@ -23,20 +23,20 @@ export default class CancelWithdrawForm extends Component {
         <Text style={styles.Detail}>Please confirm the following information based on the data you have entered</Text>
         <ScrollView>
         <View style={{flexDirection:'row'}}>
-        <Image source={require('./asset/ic_dream_small.png')} style={{marginLeft:Size.PADDING,width: Size.PADDING, height: Size.PADDING}}/>
+        <Image source={{uri: 'ic_dream_small'}} resizeMode="contain" style={{marginLeft:Size.PADDING,width: Size.PADDING, height: Size.PADDING}}/>
         <Text style={styles.Title}>Your dream
         </Text>
         </View>
         <Text style={styles.Label}>The following amount</Text>
         <Text style={styles.Sublabel}>Rp145.000.000,00</Text>
         <Text style={styles.LabelBold}>Will be returned to your bank account:</Text>
-        <Image source={require('./asset/BCA.png')} style={{marginTop:Size.PADDING_SMALL,marginBottom:Size.PADDING_SMALL,marginLeft:Size.BUTTON_ROUND ,width: Size.BOX_HEIGHT, height: Size.PADDING_TI}}/>
+        <Image source={{uri: 'bca'}} resizeMode="contain" style={{marginTop:Size.PADDING_SMALL,marginBottom:Size.PADDING_SMALL,marginLeft:Size.BUTTON_ROUND ,width: Size.BOX_HEIGHT, height: Size.PADDING_TI}}/>
         <Text style={styles.Details}>123-123-12345-1 </Text>
         <Text style={styles.Details}>a/n Stanley Santoso</Text>
-        <View style={{width: Size.BUTTON_WIDTH, height:1, marginLeft:Size.BUTTON_ROUND, backgroundColor:'rgba(216,216,216,0.60)', marginTop:Size.PADDING_MID, marginBottom:Size.PADDING_MID}}></View>
+        <View style={{width: Size.BUTTON_WIDTH, height:1, marginLeft:Size.BUTTON_ROUND, backgroundColor:'rgba(216,216,216,0.60)', marginTop:Size.PADDING_SMALL, marginBottom:Size.PADDING_SMALL}}/>
         <Text style={styles.Check}>The process of returning your money may take up to 3 business days. we will notify you when transaction has been completed. </Text>
         </ScrollView>
-        <View style={{marginBottom:Size.PADDING_LONG,marginTop:Size.PADDING_MID,justifyContent:'center', alignItems:'center'}}>
+        <View style={{marginBottom:Size.PADDING,marginTop:Size.PADDING_SMALL,justifyContent:'center', alignItems:'center'}}>
           <View style={{width:Size.BUTTON_WIDTH}}>
           <TouchableOpacity style={styles.Button} onPress = {() => navigate('Request')}>
             <Text style={styles.ButtonText}>Continue</Text>
@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
   Detail: {
     fontSize: Size.TEXT_LABELS,
     textAlign: 'left',
-    marginBottom: Size.PADDING,
+    marginBottom: Size.PADDING_SMALL,
     marginRight:Size.PADDING,
     marginLeft:Size.PADDING,
     color: '#58595B',

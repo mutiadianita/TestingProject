@@ -17,7 +17,6 @@ export default class Question2 extends Component {
     var { navigate } = this.props.navigation;
     return (
       <View style={styles.Container}>
-
         <Text style={styles.Title}>
         How long is your invesment period ?
         </Text>
@@ -44,8 +43,8 @@ export default class Question2 extends Component {
           <TouchableOpacity
           style={styles.RoundButton}
             onPress = {() => navigate('Question3')}>
-            <Image source={require('./asset/ic_next_white.png')} style={{width: Size.BUTTON_ICON, height:Size.BUTTON_ICON}}/>
-          </TouchableOpacity>
+            <Image source={{uri:'ic_next_white'}} resizeMode="contain" style={{width: Size.BUTTON_ICON, height:Size.BUTTON_ICON}}/>
+            </TouchableOpacity>
         </View>
       </View>
     );

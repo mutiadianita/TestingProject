@@ -30,7 +30,7 @@ export default class Strategy extends Component {
           <View style={styles.Line}/>
           <ScrollView>
           <View style={{marginLeft:Size.PADDING_MID,flexDirection:'row'}}>
-            <Image source={require('./asset/ic_strategy_blue.png')} style={{width: Size.PADDING, height: Size.PADDING}}/>
+            <Image source={{uri: 'ic_strategy_blue'}} resizeMode="contain" style={{width: Size.PADDING, height: Size.PADDING}}/>
             <Text style={styles.Title}>Your portofolio</Text>
           </View>
           <View style={{width:Size.PAGER_WIDTH}}>
@@ -70,7 +70,7 @@ export default class Strategy extends Component {
           <View style={styles.Line}/>
           <ScrollView>
           <View style={{marginLeft:Size.PADDING_MID,flexDirection:'row'}}>
-            <Image source={require('./asset/ic_strategy_blue.png')} style={{width: Size.PADDING, height: Size.PADDING}}/>
+            <Image source={{uri: 'ic_strategy_blue'}} resizeMode="contain" style={{width: Size.PADDING, height: Size.PADDING}}/>
             <Text style={styles.Title}>Your portofolio</Text>
           </View>
           <View style={{width:Size.PAGER_WIDTH}}>
@@ -107,7 +107,7 @@ export default class Strategy extends Component {
           <View style={styles.Line}/>
           <ScrollView>
           <View style={{marginLeft:Size.PADDING_MID,flexDirection:'row'}}>
-            <Image source={require('./asset/ic_strategy_blue.png')} style={{width: Size.PADDING, height: Size.PADDING}}/>
+            <Image source={{uri: 'ic_strategy_blue'}} resizeMode="contain" style={{width: Size.PADDING, height: Size.PADDING}}/>
             <Text style={styles.Title}>Your portofolio</Text>
           </View>
           <View style={{width:Size.PAGER_WIDTH}}>
@@ -144,7 +144,7 @@ export default class Strategy extends Component {
           <View style={styles.Line}/>
           <ScrollView>
           <View style={{marginLeft:Size.PADDING_MID,flexDirection:'row'}}>
-            <Image source={require('./asset/ic_strategy_blue.png')} style={{width: Size.PADDING, height: Size.PADDING}}/>
+            <Image source={{uri: 'ic_strategy_blue'}} resizeMode="contain" style={{width: Size.PADDING, height: Size.PADDING}}/>
             <Text style={styles.Title}>Your portofolio</Text>
           </View>
           <View style={{width:Size.PAGER_WIDTH}}>
@@ -181,7 +181,7 @@ export default class Strategy extends Component {
           <View style={styles.Line}/>
           <ScrollView>
           <View style={{marginLeft:Size.PADDING_MID,flexDirection:'row'}}>
-            <Image source={require('./asset/ic_strategy_blue.png')} style={{width: Size.PADDING, height: Size.PADDING}}/>
+            <Image source={{uri: 'ic_strategy_blue'}} resizeMode="contain" style={{width: Size.PADDING, height: Size.PADDING}}/>
             <Text style={styles.Title}>Your portofolio</Text>
           </View>
           <View style={{width:Size.PAGER_WIDTH}}>
@@ -205,7 +205,7 @@ export default class Strategy extends Component {
           </ScrollView>
           <View>
             <TouchableOpacity style={styles.Button} onPress = {() => navigate('Confirm')}>
-                <Text style={{fontFamily:'TitilliumWeb-SemiBold', color:'#FFFFFF', fontSize:18}}>Use this Investment Strategy</Text>
+                <Text style={{fontFamily:'TitilliumWeb-SemiBold', color:'#FFFFFF', fontSize:Size.TEXT_LABELM}}>Use this Investment Strategy</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -250,7 +250,7 @@ const styles = StyleSheet.create({
   },
   Detail: {
     marginLeft:Size.PADDING_MID,
-    marginRight:Size.PADDING_MID,
+    marginRight:Size.PADDING_SMALL,
     fontSize: Size.TEXT_LABELS,
     color: '#58595B',
     marginTop: Size.PADDING_SMALL,

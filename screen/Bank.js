@@ -16,7 +16,7 @@ export default class Bank extends Component {
     return (
   <View style={{flex:1}}>
     <View style={styles.Container}>
-      <Image source={require('./asset/graphic_register_2.png')} style={{width: Size.IMAGE_STEP, height: Size.IMAGE_STEP}}/>
+      <Image source={{uri: 'graphic_bank'}} resizeMode="contain" style={{width: Size.IMAGE_STEP, height: Size.IMAGE_STEP}}/>
       <Text style={{fontSize: Size.TEXT_TITLEL, color: '#3393D0',textAlign:'center', fontFamily: 'TitilliumWeb-Bold', marginTop:Size.BUTTON_HEIGHT}}>Connect Your Bank Account</Text>
       <Text style={{fontSize: Size.TEXT_LABELS, color: '#58595B', marginLeft:Size.PADDING_MID, marginRight:Size.PADDING_MID, textAlign:'center', fontFamily:'Roboto-Light'}}>In order to finish your dream creation, you need to connect your bank first.</Text>
     </View>
@@ -24,7 +24,7 @@ export default class Bank extends Component {
       <TouchableOpacity
       style={styles.RoundButton}
         onPress = {() => navigate('ChooseBank')}>
-        <Image source={require('./asset/ic_next_white.png')} style={{width: Size.BUTTON_ICON, height: Size.BUTTON_ICON}}/>
+        <Image source={{uri: 'ic_next_white'}} resizeMode="contain" style={{width: Size.BUTTON_ICON, height: Size.BUTTON_ICON}}/>
       </TouchableOpacity>
     </View>
   </View>

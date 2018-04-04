@@ -22,7 +22,7 @@ export default class ConfirmForm extends Component {
         <Text style={styles.Title}>Please Confirm the following document based on the data that you have entered.</Text>
         <ScrollView>
           <View style={{flexDirection:'row'}}>
-            <Image source={require('./asset/ic_dream_small.png')} style={{marginLeft:Size.PADDING,width: Size.PADDING, height: Size.PADDING}}/>
+            <Image source={{uri: 'ic_dream_small'}} resizeMode="contain" style={{marginLeft:Size.PADDING,width: Size.PADDING, height: Size.PADDING}}/>
             <Text style={styles.SubTitle}>Your dream </Text>
           </View>
           <Text style={styles.Label}>Dream Target Amount</Text>
@@ -38,7 +38,7 @@ export default class ConfirmForm extends Component {
           </TouchableOpacity>
           <View style={styles.LongLine}/>
           <View style={{flexDirection:'row'}}>
-            <Image source={require('./asset/ic_strategy_blue.png')} style={{marginLeft:Size.PADDING,width: Size.PADDING, height: Size.PADDING}}/>
+            <Image source={{uri: 'ic_strategy_blue'}} resizeMode="contain" style={{marginLeft:Size.PADDING,width: Size.PADDING, height: Size.PADDING}}/>
             <Text style={styles.SubTitle}>Your investment strategy</Text>
           </View>
           <View style={{flexDirection:'row'}}>
@@ -50,7 +50,7 @@ export default class ConfirmForm extends Component {
           </Text>
           <View style={styles.LongLine}/>
           <View style={{marginLeft:Size.PADDING,flexDirection:'row'}}>
-            <Image source={require('./asset/ic_percentage.png')} style={{width: Size.PADDING, height: Size.PADDING}}/>
+            <Image source={{uri: 'ic_percentage'}} resizeMode="contain" style={{width: Size.PADDING, height: Size.PADDING}}/>
             <Text style={styles.SubTitle}>Your portofolio</Text>
           </View>
           <View style={{width:Size.PAGER_WIDTH}}>
@@ -132,12 +132,12 @@ export default class ConfirmForm extends Component {
             </Text>
             </View>
           </View>
-        </ScrollView>
         <View style={{marginBottom:Size.PADDING_LONG,marginTop:Size.PADDING_MID,justifyContent:'center', alignItems:'center'}}>
           <TouchableOpacity style={styles.Button} onPress = {() => navigate('Bank')}>
             <Text style={styles.ButtonText}>Continue</Text>
           </TouchableOpacity>
         </View>
+      </ScrollView>
       </View>
     );
   }

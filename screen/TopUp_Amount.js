@@ -22,7 +22,7 @@ export default class TopUp_Amount extends Component {
         <Text style={styles.Detail}>Enter your one-time top up amount to reach your dream faster.</Text>
         <ScrollView>
         <View style={{flexDirection:'row'}}>
-        <Image source={require('./asset/ic_more_blue.png')} style={{marginLeft:Size.PADDING,width: Size.PADDING, height: Size.PADDING}}/>
+        <Image source={{uri: 'ic_more_blue'}} resizeMode="contain" style={{marginLeft:Size.PADDING,width: Size.PADDING, height: Size.PADDING}}/>
         <Text style={styles.Title}>Top up detail
         </Text>
         </View>
@@ -38,7 +38,7 @@ export default class TopUp_Amount extends Component {
           <TouchableOpacity
           style={styles.RoundButton}
             onPress = {() => navigate('TopUp_Payment')}>
-            <Image source={require('./asset/ic_next_white.png')} style={{width: Size.BUTTON_ICON, height: Size.BUTTON_ICON}}/>
+            <Image source={{uri: 'ic_next_white'}} resizeMode="contain" style={{width: Size.BUTTON_ICON, height: Size.BUTTON_ICON}}/>
           </TouchableOpacity>
         </View>
       </View>

@@ -22,21 +22,21 @@ export default class TopUp_Payment extends Component {
         <View style={{flexDirection:'column', flex: 3}}>
           <Text style={styles.ContentTitle}>Bank transfer</Text>
         </View>
-        <Image source={require('./asset/ic_next_black.png')} style={styles.NextIcon}/>
+        <Image source={{uri: 'ic_next_black'}} resizeMode="contain" style={styles.NextIcon}/>
       </TouchableOpacity>
       <TouchableOpacity style={styles.ContentBox} onPress = {() => navigate('TopUp_Process')} >
         <View style={styles.Flag}/>
         <View style={{flexDirection:'column', flex: 3}}>
           <Text style={styles.ContentTitle}>BCA Klikpay</Text>
         </View>
-        <Image source={require('./asset/ic_next_black.png')}  style={styles.NextIcon}/>
+        <Image source={{uri: 'ic_next_black'}} resizeMode="contain" style={styles.NextIcon}/>
       </TouchableOpacity>
       <TouchableOpacity style={styles.ContentBox} onPress = {() => navigate('TopUp_Process')} >
         <View style={styles.Flag}/>
         <View style={{flexDirection:'column', flex: 3}}>
           <Text style={styles.ContentTitle}>Credit Card</Text>
         </View>
-        <Image source={require('./asset/ic_next_black.png')} style={styles.NextIcon}/>
+        <Image source={{uri: 'ic_next_black'}} resizeMode="contain" style={styles.NextIcon}/>
       </TouchableOpacity>
     </View>
     );

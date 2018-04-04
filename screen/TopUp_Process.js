@@ -24,7 +24,7 @@ export default class TopUp_Process extends Component {
         <Text style={styles.Label}>Top up amount</Text>
         <Text style={styles.Sublabel}>Rp15.000.000,00</Text>
         <Text style={styles.LabelBold}>Need to be transfered to:</Text>
-        <Image source={require('./asset/BCA.png')} style={{marginTop:Size.PADDING_SMALL,marginBottom:Size.PADDING_SMALL,marginLeft:Size.PADDING ,width: Size.PADDING_CONFIRM, height: Size.PADDING_TI}}/>
+        <Image source={{uri: 'bca'}} resizeMode="contain" style={{marginTop:Size.PADDING_SMALL,marginBottom:Size.PADDING_SMALL,marginLeft:Size.PADDING ,width: Size.PADDING_CONFIRM, height: Size.PADDING_TI}}/>
         <Text style={styles.Details}>123-123-12345-1 </Text>
         <Text style={styles.Details}>a/n Stanley Santoso</Text>
         <Text style={styles.Check}>Please upload your proof of payment before Jan 21st, 2018 to confirm the top up.</Text>
@@ -53,13 +53,12 @@ const styles = StyleSheet.create({
   Container: {
     flex: 1,
     justifyContent: 'flex-start',
-    paddingTop: Size.PADDING,
+    paddingTop: Size.PADDING_SMALL,
     backgroundColor:'white'
   },
   Title: {
     fontSize: Size.TEXT_LABELS,
     textAlign: 'left',
-    marginBottom: Size.PADDING,
     marginRight:Size.PADDING,
     marginLeft:Size.PADDING,
     color: '#58595B',
@@ -83,7 +82,7 @@ const styles = StyleSheet.create({
   Check: {
     textAlign: 'left',
     color: 'rgba(88,89,91,0.60)',
-    fontSize:14,
+    fontSize:Size.TEXT_DETAILL,
     marginLeft: Size.PADDING,
     width:Size.CHECK,
     marginTop:Size.PADDING_MID,
@@ -94,7 +93,7 @@ const styles = StyleSheet.create({
     color: 'rgba(0,0,0,0.60)',
     marginTop: Size.PADDING_SMALL,
     marginLeft: Size.PADDING,
-    fontSize:28,
+    fontSize:Size.TEXT_TITLEE,
     fontFamily:'TitilliumWeb-SemiBold'
   },
   LabelBold:{
@@ -102,21 +101,21 @@ const styles = StyleSheet.create({
     color: '#58595B',
     marginTop: Size.PADDING_MID,
     marginLeft: Size.PADDING,
-    fontSize:14,
+    fontSize:Size.TEXT_DETAILL,
     fontFamily:'Roboto-Regular'
   },
   ButtonTextWhite:{
     color:'white',
-    fontSize:18,
+    fontSize:Size.TEXT_LABELM,
     textAlign:'center',
-    padding:5,
+    padding:Size.ELEVATION,
     fontFamily: 'TitilliumWeb-SemiBold'
   },
   ButtonTextBlue: {
     color:'#3393D0',
-    fontSize:18,
+    fontSize:Size.TEXT_LABELM,
     textAlign:'center',
-    padding:5,
+    padding:Size.ELEVATION,
     fontFamily:'TitilliumWeb-SemiBold'
   }
 });

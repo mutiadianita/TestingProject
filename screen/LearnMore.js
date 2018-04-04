@@ -3,7 +3,6 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  Image,
   View,
   Button,
   TouchableOpacity,

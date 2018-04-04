@@ -7,7 +7,6 @@ import {
   Button,
   ScrollView,
   StyleSheet,
-  Image,
   CheckBox,
   TouchableOpacity,
   Picker
@@ -21,15 +20,15 @@ export default class Notification extends Component {
       <View style={styles.Container}>
         <ScrollView>
         <View style={{flexDirection:'row'}}>
-          <View style={{width: 50, alignItems:'center'}}>
+          <View style={{width: Size.BUTTON_HEIGHT, alignItems:'center'}}>
             <View style={styles.NotifSign}/>
           </View>
-          <View style={{width:310}}>
+          <View style={{width:Size.PAGER_WIDTH}}>
             <View style={{flexDirection:'row'}}>
-            <View style={{width: 210}}>
+            <View style={{width: Size.IMAGE_NW}}>
               <Text style={styles.NotifTitle}>One Time Top up Received </Text>
             </View>
-            <View style={{alignItems:'flex-end', width:80, marginRight:20}}>
+            <View style={{alignItems:'flex-end', width:Size.OPTION_HEIGHT, marginRight:Size.PADDING_MID}}>
               <Text style={styles.NotifTime}>2 hr ago</Text>
             </View>
             </View>
@@ -38,36 +37,36 @@ export default class Notification extends Component {
         </View>
         <View style={styles.Line}/>
         <View style={{flexDirection:'row'}}>
-          <View style={{width: 50, alignItems:'center'}}>
+          <View style={{width: Size.BUTTON_HEIGHT, alignItems:'center'}}>
             <View style={styles.NotifSign}/>
           </View>
-          <View style={{width:310}}>
+          <View style={{width:Size.PAGER_WIDTH}}>
             <View style={{flexDirection:'row'}}>
-            <View style={{width: 210}}>
+            <View style={{width: Size.IMAGE_NW}}>
               <Text style={styles.NotifTitle}>One Time Top up Received </Text>
             </View>
-            <View style={{alignItems:'flex-end', width:80, marginRight:20}}>
+            <View style={{alignItems:'flex-end', width:Size.OPTION_HEIGHT, marginRight:Size.PADDING_MID}}>
               <Text style={styles.NotifTime}>2 hr ago</Text>
             </View>
             </View>
-            <Text style={{fontSize:16, color:'#58595B'}}>Your top up of Rp100.000,00 has been successfully received </Text>
+            <Text style={styles.NotifDetail}>Your top up of Rp100.000,00 has been successfully received </Text>
           </View>
         </View>
         <View style={styles.Line}/>
         <View style={{flexDirection:'row'}}>
-          <View style={{width: 50, alignItems:'center'}}>
-            <View style={{width:10, height:10, marginTop:10, borderRadius:5, backgroundColor:'#FFFFFF'}}/>
+          <View style={{width: Size.BUTTON_HEIGHT, alignItems:'center'}}>
+            <View style={{width:Size.PADDING_SMALL, height:Size.PADDING_SMALL, marginTop:Size.PADDING_SMALL, borderRadius:Size.PADDING_SMALL/2, backgroundColor:'#FFFFFF'}}/>
           </View>
-          <View style={{width:310}}>
+          <View style={{width:Size.PAGER_WIDTH}}>
             <View style={{flexDirection:'row'}}>
-            <View style={{width: 210}}>
+            <View style={{width: Size.IMAGE_NW}}>
               <Text style={styles.NotifTitle}>One Time Top up Received </Text>
             </View>
-            <View style={{alignItems:'flex-end', width:80, marginRight:20}}>
+            <View style={{alignItems:'flex-end', width:Size.OPTION_HEIGHT, marginRight:Size.PADDING_MID}}>
               <Text style={styles.NotifTime}>1 week ago</Text>
             </View>
             </View>
-            <Text style={{fontSize:16, color:'#58595B'}}>Your top up of Rp100.000,00 has been successfully received </Text>
+            <Text style={styles.NotifDetail}>Your top up of Rp100.000,00 has been successfully received </Text>
           </View>
         </View>
         <View style={styles.Line}/>
@@ -81,38 +80,38 @@ const styles = StyleSheet.create({
   Container: {
     flex: 1,
     justifyContent: 'flex-start',
-    paddingTop: 30,
+    paddingTop: Size.PADDING,
     backgroundColor:'white'
   },
   NotifTitle: {
-    fontSize:16,
+    fontSize:Size.TEXT_LABELS,
     color:'#58595B',
     fontFamily:'TitilliumWeb-SemiBold'
   },
   NotifTime: {
-    fontSize:14,
+    fontSize:Size.TEXT_DETAILL,
     color:'color: rgba(0,0,0,0.20)',
     textAlign:'right',
     fontFamily: 'Roboto-Light'
   },
   NotifDetail: {
-    fontSize:16,
+    fontSize:Size.TEXT_LABELS,
     color:'#58595B',
     fontFamily:'SourceSansPro-Light'
   },
   Line: {
-    width: 290,
+    width: Size.BUTTON_WIDTH,
     height:1,
-    marginLeft:50,
+    marginLeft:Size.BUTTON_HEIGHT,
     backgroundColor:'rgba(216,216,216,0.60)',
-    marginTop:20,
-    marginBottom:20
+    marginTop:Size.PADDING_MID,
+    marginBottom:Size.PADDING_MID
   },
   NotifSign: {
-    width:10,
-    height:10,
-    marginTop:10,
-    borderRadius:5,
+    width:Size.PADDING_SMALL,
+    height:Size.PADDING_SMALL,
+    marginTop:Size.PADDING_SMALL,
+    borderRadius:Size.PADDING_SMALL/2,
     backgroundColor:'#DE6157'
   }
 });

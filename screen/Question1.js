@@ -44,8 +44,8 @@ export default class Question1 extends Component {
           <TouchableOpacity
           style={styles.RoundButton}
             onPress = {() => navigate('Question2')}>
-            <Image source={require('./asset/ic_next_white.png')} style={{width: Size.BUTTON_ICON, height:Size.BUTTON_ICON}}/>
-          </TouchableOpacity>
+            <Image source={{uri:'ic_next_white'}} resizeMode="contain" style={{width: Size.BUTTON_ICON, height:Size.BUTTON_ICON}}/>
+            </TouchableOpacity>
         </View>
       </View>
     );

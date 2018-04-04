@@ -20,11 +20,11 @@ export default class Home extends Component {
         <LinearGradient start={{x: 0.0, y: 0.025}} end={{x: 1.0, y: 1.0}} colors={['#5DC6C9', '#3393D0', '#135788']} style={{flex:6}}>
           <View style={styles.Header}>
             <TouchableOpacity onPress = {() => navigate('Profile')}>
-              <Image source={require('./asset/ic_account.png')} style={{width: Size.PADDING, height: Size.PADDING}}/>
+              <Image source={{uri:'ic_account'}} resizeMode="contain" style={{width: Size.PADDING, height: Size.PADDING}}/>
             </TouchableOpacity>
               <Text style={styles.HeaderText}>Xdana</Text>
             <TouchableOpacity onPress = {() => navigate('Notification')}>
-              <Image source={require('./asset/ic_notif_white.png')} style={{marginLeft:Size.IMAGE_STEP,width: Size.PADDING, height: Size.PADDING}}/>
+              <Image source={{uri:'ic_notif_white'}} resizeMode="contain" style={{marginLeft:Size.IMAGE_STEP,width: Size.PADDING, height: Size.PADDING}}/>
             </TouchableOpacity>
           </View>
           <View style={{padding: Size.PADDING_MID}}>
@@ -40,7 +40,7 @@ export default class Home extends Component {
             <TouchableOpacity
               style={styles.Button}
               onPress = {() => navigate('MainMenu')}>
-              <Image source={require('./asset/ic_add_white.png')} style={{width: Size.PADDING, height: Size.PADDING}}/>
+              <Image source={{uri:'ic_add_white'}} resizeMode="contain" style={{width: Size.PADDING, height: Size.PADDING}}/>
             </TouchableOpacity>
             </View>
           </View>
@@ -51,23 +51,21 @@ export default class Home extends Component {
           <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
             <TouchableOpacity onPress = {() => navigate('WhyInvest')}>
               <View style={styles.ContentBox}>
-                <View style={styles.ImageBox}>
-                </View>
+                <Image source={{uri:'chess'}} resizeMode="cover" style={styles.ImageBox}/>
                 <Text style={{fontSize:Size.TEXT_LABELS, color:'#58595B', margin:Size.PADDING_SMALL}}>Why is it better to start investing early?</Text>
               </View>
             </TouchableOpacity>
             <TouchableOpacity onPress = {() => navigate('Healthcare')}>
               <View style={styles.ContentBox}>
-                <View style={styles.ImageBox}>
-                </View>
+                <Image source={{uri:'watch'}} resizeMode="cover" style={styles.ImageBox}/>
                 <Text style={{fontSize:Size.TEXT_LABELS, color:'#58595B', margin:Size.PADDING_SMALL}}>Healthcare Costs Can Add Up in Retirement</Text>
               </View>
             </TouchableOpacity>
             <TouchableOpacity onPress = {() => navigate('Healthcare')}>
-              <View style={styles.ContentBox}>
-                <View style={styles.ImageBox}>
-                </View>
-              </View>
+            <View style={styles.ContentBox}>
+              <Image source={{uri:'watch'}} resizeMode="cover" style={styles.ImageBox}/>
+              <Text style={{fontSize:Size.TEXT_LABELS, color:'#58595B', margin:Size.PADDING_SMALL}}>Healthcare Costs Can Add Up in Retirement</Text>
+            </View>
             </TouchableOpacity>
           </ScrollView>
           </View>
@@ -136,7 +134,6 @@ const styles = StyleSheet.create({
   ImageBox: {
     width:Size.IMAGE_NW,
     height:Size.IMAGE_NH,
-    backgroundColor:'grey',
     borderTopLeftRadius:Size.PADDING_SMALL,
     borderTopRightRadius:Size.PADDING_SMALL
   }

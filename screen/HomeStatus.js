@@ -35,35 +35,36 @@ export default class HomeStatus extends Component {
       <LinearGradient start={{x: 0.0, y: 0.025}} end={{x: 1.0, y: 1.0}} colors={['#5DC6C9', '#3393D0', '#135788']} style={{flex:1}}>
       <View style={styles.Header}>
       <TouchableOpacity onPress = {() => navigate('Profile')}>
-        <Image source={require('./asset/ic_account.png')} style={{width: Size.PADDING, height: Size.PADDING}}/>
+        <Image source={{uri:'ic_account'}} resizeMode="contain" style={{width: Size.PADDING, height: Size.PADDING}}/>
       </TouchableOpacity>
       <TouchableOpacity onPress = {() => navigate('Notification')}>
-        <Image source={require('./asset/ic_notif_white.png')} style={{ marginLeft:window.width-100 ,width: Size.PADDING, height: Size.PADDING}}/>
+        <Image source={{uri:'ic_notif_white'}} resizeMode="contain" style={{ marginLeft:Size.DEVICE_WIDTH-Size.WIDTH_MID ,width: Size.PADDING, height: Size.PADDING}}/>
       </TouchableOpacity>
       </View>
         <View style={{flex: 1, zIndex:2}}>
-          <View style={{padding: Size.PADDING_MID, height: 475}}>
-          <View style={{width: (window.width)-40, flexDirection:'row', marginBottom:Size.PADDING_SMALL}}>
+          <View style={{padding: Size.PADDING_MID, height: Size.HOME_CONTAINER}}>
+          <View style={{width: Size.DEVICE_WIDTH-Size.PADDING_LONG, flexDirection:'row', marginBottom:Size.PADDING_SMALL}}>
             <View style={{flex:4}}>
-            <Text style={{fontSize:36, color:'#FFFFFF', fontFamily:'TitilliumWeb-SemiBold'}}>My Dreams </Text>
+            <Text style={{fontSize:Size.TEXT_TITLEL, color:'#FFFFFF', fontFamily:'TitilliumWeb-SemiBold'}}>My Dreams </Text>
             </View>
             <View style={{flex:1, justifyContent:'center', alignItems:'flex-end'}}>
               <TouchableOpacity
                 style={styles.RoundButton}
-                onPress = {() => navigate('GoalAhead')}>
-                <Image source={require('./asset/ic_add_blue.png')} style={{width: Size.TEXT_TITLEM, height: Size.TEXT_TITLEM}}/>
+                onPress = {() => navigate('MainMenu')}>
+                <Image source={{uri:'ic_add_blue'}} resizeMode="contain" style={{width: Size.TEXT_TITLEM, height: Size.TEXT_TITLEM}}/>
               </TouchableOpacity>
               </View>
           </View>
-            <ViewPagerAndroid pageMargin={Size.PADDING_SMALL} peekEnabled={true} style={{padding: Size.PADDING_MID, height: 348, elevation:Size.PADDING_SMALL}}>
+            <ViewPagerAndroid pageMargin={Size.PADDING_SMALL} peekEnabled={true} style={{padding: Size.PADDING_MID, height: Size.PAGER_HOME, elevation:Size.PADDING_SMALL}}>
               <View key='1' style={styles.PagerLeft}>
                 <View style={{flexDirection:'row',padding:Size.PADDING_MID}}>
                   <View style={{flexDirection:'column', width:Size.IMAGE_NW}}>
                   <Text style={{fontSize:Size.TEXT_DETAILL, color:'#58595B'}}>Dream for</Text>
                   <Text style={{fontSize:Size.PADDING_MID, fontWeight:'bold',color:'#58595B'}}>New House</Text>
                   </View>
-                  <Image source={require('./asset/ic_info_blue.png')} style={{width: Size.TEXT_TITLEM, height: Size.TEXT_TITLEM, marginLeft:50}}>
-                  </Image>
+                  <TouchableOpacity onPress = {() => navigate('GoalAhead')}>
+                  <Image source={{uri:'ic_info_blue'}} resizeMode="contain" style={{width: Size.TEXT_TITLEM, height: Size.TEXT_TITLEM, marginLeft:Size.DELETE_WIDTH}}/>
+                  </TouchableOpacity>
                 </View>
                 <Text style={{fontSize:Size.TEXT_DETAILL, color:'#58595B',paddingLeft:Size.PADDING_MID}}>You have achieved</Text>
                 <Text style={{fontSize:Size.TEXT_TITLEM, fontWeight:'bold', color:'#58595B',paddingLeft:Size.PADDING_MID}}>Rp110.000.000,00</Text>
@@ -78,8 +79,8 @@ export default class HomeStatus extends Component {
                       horizontal={true}
                   />
                 <Text style={{fontSize:Size.TEXT_DETAILM, color:'#58595B',paddingLeft:Size.PADDING_MID}}>You are behind of your plan to reach your dream by Rp3.000.000,00.</Text>
-                <View style={{backgroundColor:'rgba(0,0,0,0.1)',height:120, width:320, borderBottomLeftRadius: Size.PADDING_SMALL,borderBottomRightRadius:Size.PADDING_SMALL, marginTop:Size.PADDING_SMALL, alignItems:'center'}}>
-                  <Text style={{color:'#58595B', fontSize:Size.TEXT_DETAILL, marginTop:15}}>Top up to reach your dream faster.</Text>
+                <View style={{backgroundColor:'rgba(0,0,0,0.1)',height:Size.MARGIN_LONG, width:Size.PAGER_WIDTH, borderBottomLeftRadius: Size.PADDING_SMALL,borderBottomRightRadius:Size.PADDING_SMALL, marginTop:Size.PADDING_SMALL, alignItems:'center'}}>
+                  <Text style={{color:'#58595B', fontSize:Size.TEXT_DETAILL, marginTop:Size.MID_WIDTH}}>Top up to reach your dream faster.</Text>
                   <TouchableOpacity
                   style={{backgroundColor:'#3393D0', borderRadius:Size.ELEVATION, width: Size.TI_WIDTH, height: Size.PADDING_LONG, marginTop:Size.PADDING_SMALL, alignItems:'center', justifyContent:'center'}}
                   onPress = {() => navigate('TopUp_Amount')}>
@@ -93,8 +94,9 @@ export default class HomeStatus extends Component {
                   <Text style={{fontSize:Size.TEXT_DETAILL, color:'#58595B'}}>Dream for</Text>
                   <Text style={{fontSize:Size.PADDING_MID, fontWeight:'bold',color:'#58595B'}}>New House</Text>
                   </View>
-                  <Image source={require('./asset/ic_info_blue.png')} style={{width: Size.TEXT_TITLEM, height: Size.TEXT_TITLEM, marginLeft:50}}>
-                  </Image>
+                  <TouchableOpacity onPress = {() => navigate('GoalBehind')}>
+                  <Image source={{uri:'ic_info_blue'}} resizeMode="contain" style={{width: Size.TEXT_TITLEM, height: Size.TEXT_TITLEM, marginLeft:Size.DELETE_WIDTH}}/>
+                  </TouchableOpacity>
                 </View>
                 <Text style={{fontSize:Size.TEXT_DETAILL, color:'#58595B',paddingLeft:Size.PADDING_MID}}>You have achieved</Text>
                 <Text style={{fontSize:Size.TEXT_TITLEM, fontWeight:'bold', color:'#58595B',paddingLeft:Size.PADDING_MID}}>Rp110.000.000,00</Text>
@@ -108,8 +110,8 @@ export default class HomeStatus extends Component {
                       horizontal={true}
                   />
                 <Text style={{fontSize:Size.TEXT_DETAILM, color:'#58595B',paddingLeft:Size.PADDING_MID}}>You are ahead of your plan to reach your dream by Rp3.000.000,00.</Text>
-                <View style={{backgroundColor:'rgba(0,0,0,0.1)',height:120, width:320, borderBottomLeftRadius: Size.PADDING_SMALL,borderBottomRightRadius:Size.PADDING_SMALL, marginTop:Size.PADDING_SMALL, alignItems:'center'}}>
-                  <Text style={{color:'#58595B', fontSize:Size.TEXT_DETAILL, marginTop:15}}>Top up to reach your dream faster.</Text>
+                <View style={{backgroundColor:'rgba(0,0,0,0.1)',height:Size.MARGIN_LONG, width:Size.PAGER_WIDTH, borderBottomLeftRadius: Size.PADDING_SMALL,borderBottomRightRadius:Size.PADDING_SMALL, marginTop:Size.PADDING_SMALL, alignItems:'center'}}>
+                  <Text style={{color:'#58595B', fontSize:Size.TEXT_DETAILL, marginTop:Size.MID_WIDTH}}>Top up to reach your dream faster.</Text>
                   <TouchableOpacity
                   style={{backgroundColor:'#3393D0', borderRadius:Size.ELEVATION, width: Size.TI_WIDTH, height: Size.PADDING_LONG, marginTop:Size.PADDING_SMALL, alignItems:'center', justifyContent:'center'}}
                   onPress = {() => navigate('TopUp_Amount')}>
@@ -123,8 +125,9 @@ export default class HomeStatus extends Component {
                   <Text style={{fontSize:Size.TEXT_DETAILL, color:'#58595B'}}>Dream for</Text>
                   <Text style={{fontSize:Size.PADDING_MID, fontWeight:'bold',color:'#58595B'}}>New House</Text>
                   </View>
-                  <Image source={require('./asset/ic_info_blue.png')} style={{width: Size.TEXT_TITLEM, height: Size.TEXT_TITLEM, marginLeft:50}}>
-                  </Image>
+                  <TouchableOpacity onPress = {() => navigate('GoalAhead')}>
+                  <Image source={{uri:'ic_info_blue'}} resizeMode="contain" style={{width: Size.TEXT_TITLEM, height: Size.TEXT_TITLEM, marginLeft:Size.DELETE_WIDTH}}/>
+                  </TouchableOpacity>
                 </View>
                 <Text style={{fontSize:Size.TEXT_DETAILL, color:'#58595B',paddingLeft:Size.PADDING_MID}}>You have achieved</Text>
                 <Text style={{fontSize:Size.TEXT_TITLEM, fontWeight:'bold', color:'#58595B',paddingLeft:Size.PADDING_MID}}>Rp110.000.000,00</Text>
@@ -138,8 +141,8 @@ export default class HomeStatus extends Component {
                       horizontal={true}
                   />
                 <Text style={{fontSize:Size.TEXT_DETAILM, color:'#58595B',paddingLeft:Size.PADDING_MID}}>You are ahead of your plan to reach your dream by Rp3.000.000,00.</Text>
-                <View style={{backgroundColor:'rgba(0,0,0,0.1)',height:120, width:320, borderBottomLeftRadius: Size.PADDING_SMALL,borderBottomRightRadius:Size.PADDING_SMALL, marginTop:Size.PADDING_SMALL, alignItems:'center'}}>
-                  <Text style={{color:'#58595B', fontSize:Size.TEXT_DETAILL, marginTop:15}}>Waiting for your proof of payment</Text>
+                <View style={{backgroundColor:'rgba(0,0,0,0.1)',height:Size.MARGIN_LONG, width:Size.PAGER_WIDTH, borderBottomLeftRadius: Size.PADDING_SMALL,borderBottomRightRadius:Size.PADDING_SMALL, marginTop:Size.PADDING_SMALL, alignItems:'center'}}>
+                  <Text style={{color:'#58595B', fontSize:Size.TEXT_DETAILL, marginTop:Size.MID_WIDTH}}>Waiting for your proof of payment</Text>
                   <TouchableOpacity
                   style={{backgroundColor:'#3393D0', borderRadius:Size.ELEVATION, width: Size.TI_WIDTH, height: Size.PADDING_LONG, marginTop:Size.PADDING_SMALL, alignItems:'center', justifyContent:'center'}}
                   onPress = {() => navigate('TopUp_Amount')}>
@@ -150,9 +153,11 @@ export default class HomeStatus extends Component {
               <View key='4' style={styles.PagerCenter}>
                 <View style={{flexDirection:'row',padding:Size.PADDING_MID}}>
                   <View style={{width:Size.IMAGE_NW, height:Size.PADDING_TI*3,marginLeft:Size.PADDING_TI*2, justifyContent:'center', alignItems:'center'}}>
-                  <Image source={require('./asset/graphic_congratulate_color.png')} style={{width: Size.PADDING_TI*3, height: Size.PADDING_TI*3}}/>
+                  <Image source={{uri:'graphic_congratulate_color'}} resizeMode="contain" style={{width: Size.PADDING_TI*3, height: Size.PADDING_TI*3}}/>
                   </View>
-                  <Image source={require('./asset/ic_info_blue.png')} style={{width: Size.TEXT_TITLEM, height: Size.TEXT_TITLEM}}/>
+                  <TouchableOpacity onPress = {() => navigate('GoalAhead')}>
+                  <Image source={{uri:'ic_info_blue'}} resizeMode="contain" style={{width: Size.TEXT_TITLEM, height: Size.TEXT_TITLEM}}/>
+                  </TouchableOpacity>
                 </View>
                 <Text style={{fontSize:Size.TEXT_TITLEM, color:'#58595B',textAlign:'center', fontWeight:'bold'}}>Congratulation!</Text>
                 <Text style={{fontSize:Size.TEXT_DETAILL, fontWeight:'bold', color:'#58595B',textAlign:'center'}}>You have achieved your dream for:</Text>
@@ -176,22 +181,20 @@ export default class HomeStatus extends Component {
           <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
             <TouchableOpacity onPress = {() => navigate('WhyInvest')}>
             <View style={styles.ContentBox}>
-              <View style={styles.ImageBox}>
-              </View>
+              <Image source={{uri:'chess'}} resizeMode="cover" style={styles.ImageBox}/>
               <Text style={{fontSize:Size.TEXT_LABELS, color:'#58595B', margin:Size.PADDING_SMALL}}>Why is it better to start investing early?</Text>
             </View>
             </TouchableOpacity>
             <TouchableOpacity onPress = {() => navigate('Healthcare')}>
             <View style={styles.ContentBox}>
-              <View style={styles.ImageBox}>
-              </View>
+              <Image source={{uri:'watch'}} resizeMode="cover" style={styles.ImageBox}/>
               <Text style={{fontSize:Size.TEXT_LABELS, color:'#58595B', margin:Size.PADDING_SMALL}}>Healthcare Costs Can Add Up in Retirement</Text>
             </View>
             </TouchableOpacity>
             <TouchableOpacity onPress = {() => navigate('Healthcare')}>
             <View style={styles.ContentBox}>
-              <View style={styles.ImageBox}>
-              </View>
+              <Image source={{uri:'watch'}} resizeMode="cover" style={styles.ImageBox}/>
+              <Text style={{fontSize:Size.TEXT_LABELS, color:'#58595B', margin:Size.PADDING_SMALL}}>Healthcare Costs Can Add Up in Retirement</Text>
             </View>
             </TouchableOpacity>
             </ScrollView>
@@ -240,7 +243,6 @@ const styles = StyleSheet.create({
   ImageBox: {
     width:Size.IMAGE_NW,
     height:Size.IMAGE_NH,
-    backgroundColor:'grey',
     borderTopLeftRadius:Size.PADDING_SMALL,
     borderTopRightRadius:Size.PADDING_SMALL
   },

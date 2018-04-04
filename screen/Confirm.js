@@ -7,7 +7,6 @@ import {
   Button,
   StyleSheet,
   TouchableOpacity,
-  Image,
 }  from 'react-native';
 
 const util = require('util');
@@ -21,7 +20,7 @@ export default class Confirm extends Component {
         </Text>
         <Text style={styles.Label}>IDR200,000.00
         </Text>
-        <View style={{flex:1}}>
+        <View>
           <TouchableOpacity
             onPress = {() => navigate('GoalAmount')}>
             <Text style={{color:'#2775C0', fontSize:Size.TEXT_LABELS, marginTop:Size.MARGIN_LONG, textAlign:'center', fontFamily:'TitilliumWeb-SemiBold'}}>Change My Dream Information</Text>
@@ -59,7 +58,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     textAlign: 'center',
     color: '#58595B',
-    marginTop: Size.MARGIN_LONG,
+    marginTop: Size.DELETE_HEIGHT,
     fontSize:Size.TEXT_TITLEM,
     fontFamily:'TitilliumWeb-SemiBold'
   }

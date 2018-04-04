@@ -33,7 +33,7 @@ export default class YourMailingAddress extends Component {
         <ScrollView>
         <Text style={styles.Detail}>Please provide some additional information about you</Text>
         <View style={{flexDirection:'row'}}>
-        <Image source={require('./asset/ic_loc_blue.png')} style={{width: Size.PADDING, height: Size.PADDING}}/>
+        <Image source={{uri:'ic_more_blue'}} resizeMode="contain" style={{width: Size.PADDING, height: Size.PADDING}}/>
         <Text style={styles.Title}>Information</Text>
         </View>
         <Text style={styles.Label}>Last Education</Text>
@@ -56,7 +56,7 @@ export default class YourMailingAddress extends Component {
         <TouchableOpacity
         style={styles.RoundButton}
           onPress = {() => navigate('Step2')}>
-          <Image source={require('./asset/ic_next_white.png')} style={{width: Size.BUTTON_ICON, height: Size.BUTTON_ICON}}/>
+          <Image source={{uri:'ic_next_white'}} resizeMode="contain" style={{width: Size.BUTTON_ICON, height: Size.BUTTON_ICON}}/>
         </TouchableOpacity>
       </View>
     </View>

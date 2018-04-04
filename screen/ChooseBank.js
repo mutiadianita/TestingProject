@@ -21,17 +21,17 @@ export default class ChooseBank extends Component {
         <View style={styles.Flag}>
         </View>
         <View style={{flexDirection:'column', flex: 3}}>
-        <Image source={require('./asset/Mandiri.png')} style={{alignItems:'center',marginTop:Size.PADDING_MID, marginLeft:Size.PADDING_MID, marginBottom:Size.PADDING_MID, width: Size.BANK_WIDTH, height: Size.PADDING_LONG}}/>
+        <Image source={{uri: 'mandiri'}} style={{alignItems:'center',marginTop:Size.PADDING_MID, marginLeft:Size.PADDING_MID, marginBottom:Size.PADDING_MID, width: Size.BANK_WIDTH, height: Size.PADDING_LONG}}/>
         </View>
-        <Image source={require('./asset/ic_back_blue.png')} style={{alignItems:'center',marginTop:Size.PADDING_MID, marginLeft:Size.PADDING_LONG, marginBottom:Size.PADDING_MID, width: Size.PADDING, height: Size.PADDING}}/>
+        <Image source={{uri: 'ic_back_blue'}} resizeMode="contain" style={{alignItems:'center',marginTop:Size.PADDING_MID, marginLeft:Size.PADDING_LONG, marginBottom:Size.PADDING_MID, width: Size.PADDING, height: Size.PADDING}}/>
       </TouchableOpacity>
       <TouchableOpacity style={styles.ContentBox}>
         <View style={styles.Flag}>
         </View>
         <View style={{flexDirection:'column', flex: 3}}>
-          <Image source={require('./asset/BCA.png')} style={{alignItems:'center',marginTop:Size.PADDING_MID, marginLeft:Size.PADDING_MID, marginBottom:Size.PADDING_MID, width: Size.BANK_WIDTH, height: Size.PADDING_LONG}}/>
+          <Image source={{uri: 'bca'}} style={{alignItems:'center',marginTop:Size.PADDING_MID, marginLeft:Size.PADDING_MID, marginBottom:Size.PADDING_MID, width: Size.BANK_WIDTH, height: Size.PADDING_LONG}}/>
         </View>
-        <Image source={require('./asset/ic_back_blue.png')} style={{alignItems:'center',marginTop:Size.PADDING_MID, marginLeft:Size.PADDING_LONG, marginBottom:Size.PADDING_MID, width: Size.PADDING, height: Size.PADDING}}/>
+        <Image source={{uri: 'ic_back_blue'}} resizeMode="contain" style={{alignItems:'center',marginTop:Size.PADDING_MID, marginLeft:Size.PADDING_LONG, marginBottom:Size.PADDING_MID, width: Size.PADDING, height: Size.PADDING}}/>
       </TouchableOpacity>
     </View>
     );

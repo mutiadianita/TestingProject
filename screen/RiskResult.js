@@ -3,7 +3,6 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  Image,
   View,
   Button,
   ViewPagerAndroid,
@@ -18,7 +17,7 @@ export default class RiskResult extends Component {
     return (
     <View style={{flex:1}}>
     <LinearGradient start={{x: 0.0, y: 0.025}} end={{x: 1.0, y: 1.0}} colors={['#5DC6C9', '#3393D0', '#135788']} style={{flex:1, paddingTop:Size.PADDING}}>
-      <ViewPagerAndroid pageMargin={Size.PADDING_SMALL} style={{flex: 1, margin:Size.PADDING}} initialPage={0}>
+      <ViewPagerAndroid pageMargin={Size.PADDING_SMALL} style={{flex: 12, margin:Size.PADDING}} initialPage={0}>
         <View style={styles.Pager}>
           <View style={{flexDirection:'row'}}>
           <Text style={styles.Risk}>Low risk</Text>
@@ -142,7 +141,7 @@ export default class RiskResult extends Component {
           </TouchableOpacity>
         </View>
       </ViewPagerAndroid>
-      <View style={{justifyContent:'center', alignItems:'center', width: Size.PAGER_WIDTH, height: Size.BUTTON_HEIGHT, padding:Size.PADDING_SMALL, marginLeft:Size.PADDING_MID, marginBottom: Size.PADDING}}>
+      <View style={{justifyContent:'center', alignItems:'center',flex:1, padding:Size.PADDING_SMALL, marginLeft:Size.PADDING_MID, marginBottom: Size.PADDING}}>
         <Text style={{color:'white', fontFamily:'Roboto-Regular'}}> Swipe to see other Investment Strategies</Text>
       </View>
       </LinearGradient>
@@ -159,7 +158,8 @@ const styles = StyleSheet.create({
     backgroundColor:'white',
     marginLeft:Size.PADDING_MID,
     borderRadius:3,
-    padding:Size.PADDING_MID
+    padding:Size.PADDING_MID,
+    height:Size.PAGER_HEIGHT
   },
   Risk:{
     fontSize: Size.TEXT_TITLEM,
@@ -205,6 +205,6 @@ const styles = StyleSheet.create({
     fontSize:Size.TEXT_DETAILL,
     fontFamily:'Roboto-Medium',
     color:'#58595B',
-    marginTop:Size.PADDING_MID
+    marginTop:Size.PADDING_SMALL
   }
 })

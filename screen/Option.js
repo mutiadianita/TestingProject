@@ -18,9 +18,9 @@ export default class Option3 extends Component {
       <View style={{flex:1}}>
       <LinearGradient start={{x: 0.0, y: 0.025}} end={{x: 1.0, y: 1.0}} colors={['#F5841F', '#DE6157']} style={{flex:1}}>
       <View style={{flexDirection:'row', paddingTop:Size.PADDING, paddingLeft:Size.PADDING_SMALL, paddingRight:Size.PADDING}}>
-      <Image source={require('./asset/ic_close_white.png')} style={{height: Size.PADDING_TI, width:Size.PADDING_TI}}/>
+      <Image source={{uri: 'ic_close_white'}} resizeMode="contain" style={{height: Size.PADDING_TI, width:Size.PADDING_TI}}/>
       <Text style={{fontSize:Size.TEXT_LABELL, fontFamily:'TitilliumWeb-Bold', color:'#FFFFFF', marginLeft:Size.PADDING_TI}}>Asset Improvement</Text>
-      <Image source={require('./asset/ic_asset.png')} style={{height: Size.BUTTON_HEIGHT, width:Size.BUTTON_HEIGHT, marginLeft:Size.BUTTON_ROUND}}/>
+      <Image source={{uri: 'ic_asset'}} resizeMode="contain" style={{height: Size.PADDING_LONG, width:Size.PADDING_LONG, marginLeft:Size.BUTTON_ROUND}}/>
       </View>
       </LinearGradient>
       <View style={styles.Container}>
@@ -31,7 +31,7 @@ export default class Option3 extends Component {
           <Text style={styles.ContentTitle}>Cars </Text>
           <Text style={styles.ContentText}>Lorem ipsum dolor sit amet</Text>
         </View>
-        <Image source={require('./asset/ic_back_orange.png')} style={styles.BackIcon}/>
+        <Image source={{uri: 'ic_back_orange'}} resizeMode="contain" style={styles.BackIcon}/>
       </TouchableOpacity>
       <TouchableOpacity style={styles.ContentBox} onPress = {() => navigate('GoalAmount')} >
         <View style={styles.Flag}/>
@@ -39,7 +39,7 @@ export default class Option3 extends Component {
           <Text style={styles.ContentTitle}>House </Text>
           <Text style={styles.ContentText}>Lorem ipsum dolor sit amet</Text>
         </View>
-        <Image source={require('./asset/ic_back_orange.png')} style={styles.BackIcon}/>
+        <Image source={{uri: 'ic_back_orange'}} resizeMode="contain" style={styles.BackIcon}/>
       </TouchableOpacity>
       <TouchableOpacity style={styles.ContentBox} onPress = {() => navigate('GoalAmount')}>
         <View style={styles.Flag}/>
@@ -47,7 +47,7 @@ export default class Option3 extends Component {
           <Text style={styles.ContentTitle}>Phone</Text>
           <Text style={styles.ContentText}>Lorem ipsum dolor sit amet</Text>
         </View>
-        <Image source={require('./asset/ic_back_orange.png')} style={styles.BackIcon}/>
+        <Image source={{uri: 'ic_back_orange'}} resizeMode="contain" style={styles.BackIcon}/>
       </TouchableOpacity>
       <TouchableOpacity style={styles.ContentBox} onPress = {() => navigate('GoalAmount')} >
         <View style={styles.Flag}/>
@@ -55,7 +55,7 @@ export default class Option3 extends Component {
           <Text style={styles.ContentTitle}>Other</Text>
           <Text style={styles.ContentText}>Lorem ipsum dolor sit amet</Text>
         </View>
-        <Image source={require('./asset/ic_back_orange.png')} style={styles.BackIcon}/>
+        <Image source={{uri: 'ic_back_orange'}} resizeMode="contain" style={styles.BackIcon}/>
       </TouchableOpacity>
       </View>
     </View>
@@ -102,10 +102,9 @@ const styles = StyleSheet.create({
   },
   BackIcon: {
     alignItems:'center',
-    marginTop:Size.PADDING_MID,
-    marginLeft:Size.PADDING_LONG,
+    marginTop:Size.PADDING,
     marginBottom:Size.PADDING_MID,
-    width: Size.PADDING_LONG,
-    height: Size.PADDING_LONG
+    width: Size.PADDING_TI,
+    height: Size.PADDING_TI
   }
 })

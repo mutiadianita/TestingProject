@@ -19,21 +19,21 @@ export default class MainMenu extends Component {
       <TouchableOpacity style={styles.ContentBox} onPress = {() => navigate('GoalAmount')} >
         <LinearGradient start={{x: 0.0, y: 0.025}} end={{x: 1.0, y: 1.0}} colors={['#5DC6C9', '#3393D0', '#135788']} style={styles.ContentHeader}>
           <Text style={styles.ContentTitle}>Retirement</Text>
-          <Image source={require('./asset/ic_retirement.png')} style={{flex:1,width: Size.BUTTON_ICON, height: Size.BUTTON_ICON}}/>
+          <Image source={{uri:'ic_retirement'}} resizeMode="contain" style={styles.Image}/>
         </LinearGradient>
         <Text style={styles.ContentText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus a porta mi, ac </Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.ContentBox} onPress = {() => navigate('GoalAmount')} >
         <LinearGradient start={{x: 0.0, y: 0.025}} end={{x: 1.0, y: 1.0}} colors={['#8FC196', '#00A99E']} style={styles.ContentHeader}>
           <Text style={styles.ContentTitle}>Life Improvement</Text>
-          <Image source={require('./asset/ic_life.png')} style={{flex:1,width: Size.BUTTON_ICON, height: Size.BUTTON_ICON}}/>
+          <Image source={{uri:'ic_life'}} resizeMode="contain" style={styles.Image}/>
         </LinearGradient>
         <Text style={styles.ContentText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus a porta mi, ac </Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.ContentBox} onPress = {() => navigate('Option')} >
         <LinearGradient start={{x: 0.0, y: 0.025}} end={{x: 1.0, y: 1.0}} colors={['#F5841F', '#DE6157']} style={styles.ContentHeader}>
           <Text style={styles.ContentTitle}>Asset Improvement</Text>
-          <Image source={require('./asset/ic_asset.png')} style={{flex:1,width: Size.BUTTON_ICON, height: Size.BUTTON_ICON}}/>
+          <Image source={{uri:'ic_asset'}} resizeMode="contain" style={styles.Image}/>
         </LinearGradient>
         <Text style={styles.ContentText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus a porta mi, ac </Text>
       </TouchableOpacity>
@@ -74,5 +74,10 @@ const styles = StyleSheet.create({
     fontSize:Size.TEXT_LABELL,
     color:'white',
     fontFamily:'TitilliumWeb-Bold'
+  },
+  Image: {
+    flex:1,
+    width: Size.PADDING_LONG,
+    height: Size.PADDING_LONG
   }
 })

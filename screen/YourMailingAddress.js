@@ -33,7 +33,7 @@ export default class YourMailingAddress extends Component {
         <ScrollView>
         <Text style={styles.Detail}>Please enter your current mailing address</Text>
         <View style={{flexDirection:'row'}}>
-        <Image source={require('./asset/ic_loc_blue.png')} style={{width: Size.PADDING, height: Size.PADDING}}/>
+        <Image source={{uri:'ic_loc_blue'}} resizeMode="contain" style={{width: Size.PADDING, height: Size.PADDING}}/>
         <Text style={styles.Title}>Mailing Address</Text>
         </View>
         <Text style={styles.Label}>Address</Text>
@@ -74,7 +74,7 @@ export default class YourMailingAddress extends Component {
       <TouchableOpacity
       style={styles.RoundButton}
         onPress = {() => navigate('AddInfo')}>
-        <Image source={require('./asset/ic_next_white.png')} style={{width: Size.BUTTON_ICON, height: Size.BUTTON_ICON}}/>
+        <Image source={{uri:'ic_next_white'}} resizeMode="contain" style={{width: Size.BUTTON_ICON, height: Size.BUTTON_ICON}}/>
       </TouchableOpacity>
       </View>
     </View>

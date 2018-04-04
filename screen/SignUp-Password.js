@@ -21,7 +21,7 @@ export default class SignUp_Password extends Component {
           Please fill in the data below to create an Xdana account.
         </Text>
         <View style={{flexDirection:'row'}}>
-        <Image source={require('./asset/ic_pass_blue.png')} style={{width: Size.PADDING, height: Size.PADDING}}/>
+        <Image source={{uri:'ic_pass_blue'}} resizeMode="contain" style={{width: Size.PADDING, height: Size.PADDING}}/>
         <Text style={{fontSize:Size.TEXT_LABELS, fontWeight:'bold', color:'#3393D0', marginBottom:Size.PADDING_MID, fontFamily:'TitilliumWeb-Bold', marginTop:Size.PADDING/6}}>Your password
         </Text>
         </View>
@@ -46,7 +46,7 @@ export default class SignUp_Password extends Component {
           <TouchableOpacity
           style={styles.RoundButton}
             onPress = {() => navigate('Step1')}>
-            <Image source={require('./asset/ic_next_white.png')} style={styles.ButtonIcon}/>
+            <Image source={{uri:'ic_next_white'}} resizeMode="contain" style={styles.ButtonIcon}/>
           </TouchableOpacity>
         </View>
       </View>

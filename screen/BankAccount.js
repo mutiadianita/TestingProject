@@ -21,7 +21,7 @@ export default class BankAccount extends Component {
         <Text style={styles.Title}>Please enter your bank account information</Text>
         <ScrollView>
           <View style={{flexDirection:'row'}}>
-          <Image source={require('./asset/ic_bank.png')} style={{width: Size.PADDING, height: Size.PADDING}}/>
+          <Image source={{uri: 'ic_bank'}} resizeMode="contain" style={{width: Size.PADDING, height: Size.PADDING}}/>
           <Text style={{fontSize:Size.TEXT_LABELS,  color:'#3393D0', marginTop: Size.ELEVATION, marginLeft: Size.ELEVATION, marginBottom:Size.PADDING_MID, fontFamily:'TitilliumWeb-Bold'}}>Your Bank Account</Text>
           </View>
           <Text style={styles.Label}>Account number</Text>
@@ -40,7 +40,7 @@ export default class BankAccount extends Component {
         </ScrollView>
         <View style={{flex:1, justifyContent:'center', alignItems:'flex-end'}}>
           <TouchableOpacity style={styles.RoundButton} onPress = {() => navigate('Done')}>
-            <Image source={require('./asset/ic_next_white.png')} style={{width: Size.BUTTON_ICON, height: Size.BUTTON_ICON}}/>
+            <Image source={{uri: 'ic_next_white'}} resizeMode="contain" style={{width: Size.BUTTON_ICON, height: Size.BUTTON_ICON}}/>
           </TouchableOpacity>
         </View>
       </View>

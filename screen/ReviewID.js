@@ -20,7 +20,7 @@ export default class ReviewID extends Component {
 
         <Text style={styles.Title}>Please confirm your card and the ID Card number below.</Text>
         <ScrollView>
-        <Image source={require('./images/idcard.png')} />
+        <Image source={{uri:'idcard'}} resizeMode="contain" style={{width:Size.IMAGE_IDW, height:Size.IMAGE_NW, borderRadius:Size.PADDING_SMALL}}/>
         <Text style={styles.Label}>Your ID Card Number</Text>
         <TextInput
         style={{width: Size.BUTTON_WIDTH, fontSize: Size.TEXT_LABELL, color:'black', fontFamily:'Roboto-Medium'}}
@@ -36,7 +36,7 @@ export default class ReviewID extends Component {
           <TouchableOpacity
           style={styles.RoundButton}
             onPress = {() => navigate('YourInformation')}>
-          <Image source={require('./asset/ic_next_white.png')} style={{width: Size.BUTTON_ICON, height:Size.BUTTON_ICON}}/>
+          <Image source={{uri:'ic_next_white'}} resizeMode="contain" style={{width: Size.BUTTON_ICON, height:Size.BUTTON_ICON}}/>
           </TouchableOpacity>
         </View>
       </View>

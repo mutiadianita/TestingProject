@@ -25,7 +25,7 @@ export default class GoalAmount extends Component {
         <Text style={styles.Title}>Enter your target amount and target year</Text>
         <ScrollView>
           <View style={{flexDirection:'row'}}>
-          <Image source={require('./asset/ic_dream_small.png')} style={{width: Size.PADDING, height: Size.PADDING}}/>
+          <Image source={{uri: 'ic_dream_small'}} resizeMode="contain" style={{width: Size.PADDING, height: Size.PADDING}}/>
           <Text style={{fontSize:Size.TEXT_LABELS, color:'#3393D0', marginBottom:Size.PADDING_MID, fontFamily:'TitilliumWeb-Bold'}}>Dream Information</Text>
           </View>
           <Text style={styles.Label}>IDR Amount</Text>
@@ -47,7 +47,7 @@ export default class GoalAmount extends Component {
           <TouchableOpacity
           style={styles.Button}
             onPress = {() => navigate('Strategy')}>
-            <Image source={require('./asset/ic_next_white.png')} style={{width: Size.BUTTON_ICON, height: Size.BUTTON_ICON}}/>
+            <Image source={{uri: 'ic_next_white'}} resizeMode="contain"  style={{width: Size.BUTTON_ICON, height: Size.BUTTON_ICON}}/>
           </TouchableOpacity>
         </View>
       </View>

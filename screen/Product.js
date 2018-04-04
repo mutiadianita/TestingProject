@@ -17,6 +17,7 @@ import {
 import ProgressCircle from 'react-native-progress/Circle';
 import LinearGradient from 'react-native-linear-gradient';
 import { LineChart, YAxis, XAxis } from 'react-native-svg-charts';
+import ModalDropdown from 'react-native-modal-dropdown';
 const util = require('util');
 const percentage= 0.25;
 export default class GoalAhead extends Component {
@@ -36,7 +37,7 @@ export default class GoalAhead extends Component {
             {
                 value: 5500, date: 23
             }];
-    const contentInset = { top: 20, bottom: 20 };
+    const contentInset = { top: Size.PADDING_MID, bottom: Size.PADDING_MID };
     var { navigate } = this.props.navigation;
     return (
       <View style={styles.Container}>
@@ -45,78 +46,82 @@ export default class GoalAhead extends Component {
           <LinearGradient start={{x: 0.0, y: 0.025}} end={{x: 1.0, y: 1.0}} colors={['#5DC6C9', '#3393D0', '#135788']}>
           <View style={styles.Header}>
             <TouchableOpacity onPress = {() => navigate('Profile')}>
-              <Image source={require('./asset/ic_close_white.png')} style={{width: 24, height: 24}}/>
+              <Image source={{uri: 'ic_close_white'}} resizeMode="contain" style={{width: Size.IMAGE_ICON, height: Size.IMAGE_ICON}}/>
             </TouchableOpacity>
-            <TouchableOpacity onPress = {() => navigate('Notification')}>
-              <Image source={require('./asset/ic_more_white.png')} style={{marginLeft:280,width: 24, height: 24}}/>
-            </TouchableOpacity>
+            <ModalDropdown
+              options={['Prospectus', 'Fund Fact Sheet']}
+              style={{flex: 1,marginLeft:Size.PICKER_WIDTH, borderRadius:Size.PADDING_SMALL}}
+              textStyle={{fontSize:Size.TEXT_LABELS, fontFamily:'Roboto-Regular', color:'black'}}
+              dropdownStyle={{ width: Size.MARGIN_LONG, height: Size.TEXT_TITLEL*2, elevation:Size.ELEVATION}}>
+              <Image source={{uri: 'ic_more_white'}} resizeMode="contain" style={{width: Size.IMAGE_ICON, height: Size.IMAGE_ICON}}/>
+            </ModalDropdown>
           </View>
-          <Text style={{fontFamily:'TitilliumWeb-Bold',fontSize:24,color:'#FFFFFF', marginLeft:16}}> Maybank Fixed income</Text>
-          <View style={ { height: 200, flexDirection:'row'} }>
+          <Text style={{fontFamily:'TitilliumWeb-Bold',fontSize:Size.TEXT_TITLEM,color:'#FFFFFF', marginLeft:Size.TEXT_LABELS}}> Maybank Fixed income</Text>
+          <View style={ { height: Size.IMAGE_NW, flexDirection:'row'} }>
           <LineChart
               style={ {flex:1} }
               data={ data }
               yAccessor={({ item }) => item.value}
               xAccessor={({ item }) => item.date}
-              svg={{ stroke: '#FFFFFF', strokeWidth:3 }}
+              svg={{ stroke: '#FFFFFF', strokeWidth:Size.BORDER }}
               numberOfTicks={2}
               contentInset={contentInset}
           />
           <YAxis
             data={data}
             contentInset={ contentInset }
-            svg={{fill: '#FFFFFF', fontSize: 10,}}
+            svg={{fill: '#FFFFFF', fontSize: Size.TEXT_DETAILS,}}
             yAccessor={({ item }) => item.value}
             numberOfTicks={3}
             formatLabel={ value => `${value}` }
           />
           </View>
           <XAxis
-              style={{marginRight:30}}
+              style={{marginRight:Size.PADDING}}
               data={ data }
               numberOfTicks={5}
               xAccessor={({ item }) => item.date}
               contentInset={{ left: 5, right: 5 }}
-              svg={{ fill: '#FFFFFF',fontSize: 10 }}
+              svg={{ fill: '#FFFFFF',fontSize: Size.TEXT_DETAILS }}
           />
-          <View style={{height:100, marginTop:10, alignItems:'flex-start', flexDirection:'row'}}>
-          <View style={{height:72, width:125, padding:8, backgroundColor:'rgba(0,0,0,0.2)', marginLeft:8}}>
-            <Text style={{fontSize:12, fontFamily:'Roboto-Regular',color:'#FFFFFF'}}>Current NAV:</Text>
-            <Text style={{fontSize:20, fontFamily:'Roboto-Bold',color:'#FFFFFF'}}>Rp5.359,21</Text>
-            <Text style={{fontSize:12, fontFamily:'Roboto-Regular',color:'#FFFFFF'}}>as of 17 Nov 2017</Text>
+          <View style={{height:Size.DELETE_HEIGHT, marginTop:Size.PADDING_SMALL, alignItems:'flex-start', flexDirection:'row'}}>
+          <View style={{height:Size.PADDING_CONFIRML, width:Size.BANK_WIDTH, padding:Size.ELEVATION, backgroundColor:'rgba(0,0,0,0.2)', marginLeft:8}}>
+            <Text style={{fontSize:Size.TEXT_DETAILM, fontFamily:'Roboto-Regular',color:'#FFFFFF'}}>Current NAV:</Text>
+            <Text style={{fontSize:Size.TEXT_LABELL, fontFamily:'Roboto-Bold',color:'#FFFFFF'}}>Rp5.359,21</Text>
+            <Text style={{fontSize:Size.TEXT_DETAILM, fontFamily:'Roboto-Regular',color:'#FFFFFF'}}>as of 17 Nov 2017</Text>
           </View>
-          <View style={{height:72, width:72, padding:8, backgroundColor:'rgba(0,0,0,0.2)', marginLeft:8}}>
+          <View style={{height:Size.PADDING_CONFIRML, width:Size.PADDING_CONFIRML, padding:Size.ELEVATION, backgroundColor:'rgba(0,0,0,0.2)', marginLeft:Size.PADDING_SMALL}}>
             <View style={styles.Triangle}/>
-            <Text style={{color:'#FFFFFF', fontSize:14, fontFamily:'Roboto-Medium'}}>+ 20%</Text>
-            <Text style={{color:'#FFFFFF', fontSize:14, fontFamily:'Roboto-Medium'}}>+ 268.21</Text>
+            <Text style={{color:'#FFFFFF', fontSize:Size.TEXT_DETAILL, fontFamily:'Roboto-Medium'}}>+ 20%</Text>
+            <Text style={{color:'#FFFFFF', fontSize:Size.TEXT_DETAILL, fontFamily:'Roboto-Medium'}}>+ 268.21</Text>
           </View>
           </View>
           </LinearGradient>
         </View>
-        <View style={{flexDirection:'row', marginTop:20}}>
-          <Image source={require('./asset/ic_percentage.png')} style={{marginLeft:30,width: 30, height: 30}}/>
+        <View style={{flexDirection:'row', marginTop:Size.PADDING_MID}}>
+          <Image source={{uri: 'ic_percentage'}} resizeMode="contain" style={{marginLeft:Size.PADDING,width: Size.PADDING, height: Size.PADDING}}/>
           <Text style={styles.Title}>Funds Distribution</Text>
         </View>
-        <View style={{flexDirection:'row', marginLeft:65, marginRight:30}}>
+        <View style={{flexDirection:'row', marginLeft:Size.PADDING_CONFIRM, marginRight:Size.PADDING}}>
           <View style={{flexDirection:'column', alignItems:'center'}}>
-            <ProgressCircle showsText={true} borderWidth={6} borderColor={'rgba(216,216,216,0.30)'} direction="clockwise" color={'#3393D0'} unfilledColor={'rgba(216,216,216,0.10)'}thickness={6} progress={0.25} size={80} style={{marginRight:10}}/>
+            <ProgressCircle showsText={true} borderWidth={Size.PROGRESS_BORDER} borderColor={'rgba(216,216,216,0.30)'} direction="clockwise" color={'#3393D0'} unfilledColor={'rgba(216,216,216,0.10)'}thickness={Size.PROGRESS_BORDER} progress={0.25} size={Size.OPTION_HEIGHT} style={{marginRight:Size.PADDING_SMALL}}/>
             <Text style={styles.ChartText}>Funds</Text>
           </View>
           <View style={{flexDirection:'column', alignItems:'center'}}>
-            <ProgressCircle showsText={true} borderWidth={6} borderColor={'rgba(216,216,216,0.30)'} direction="counter-clockwise" color={'#3393D0'} unfilledColor={'rgba(216,216,216,0.10)'}thickness={6} progress={0.5} size={80} style={{marginRight:10}}/>
+            <ProgressCircle showsText={true} borderWidth={Size.PROGRESS_BORDER} borderColor={'rgba(216,216,216,0.30)'} direction="counter-clockwise" color={'#3393D0'} unfilledColor={'rgba(216,216,216,0.10)'}thickness={Size.PROGRESS_BORDER} progress={0.5} size={Size.OPTION_HEIGHT} style={{marginRight:Size.PADDING_SMALL}}/>
             <Text style={styles.ChartText}>Bonds </Text>
           </View>
           <View style={{flexDirection:'column', alignItems:'center'}}>
-            <ProgressCircle showsText={true} borderWidth={6} borderColor={'rgba(216,216,216,0.30)'} direction="clockwise" color={'#3393D0'} unfilledColor={'rgba(216,216,216,0.10)'}thickness={6} progress={0.25} size={80} style={{marginRight:10}}/>
+            <ProgressCircle showsText={true} borderWidth={Size.PROGRESS_BORDER} borderColor={'rgba(216,216,216,0.30)'} direction="clockwise" color={'#3393D0'} unfilledColor={'rgba(216,216,216,0.10)'}thickness={Size.PROGRESS_BORDER} progress={0.25} size={Size.OPTION_HEIGHT} style={{marginRight:Size.PADDING_SMALL}}/>
             <Text style={styles.ChartText}>Shares</Text>
           </View>
         </View>
         <View style={styles.LongLine}/>
-        <View style={{marginLeft:30,flexDirection:'row'}}>
-          <Image source={require('./asset/ic_top5.png')} style={{width: 30, height: 30}}/>
+        <View style={{marginLeft:Size.PADDING,flexDirection:'row'}}>
+          <Image source={{uri: 'ic_top5'}} resizeMode="contain" style={{width: Size.PADDING, height: Size.PADDING}}/>
           <Text style={styles.Title}>Top 5</Text>
         </View>
-        <View style={{width:320, marginBottom:20}}>
+        <View style={{width:Size.PAGER_WIDTH, marginBottom:Size.PADDING_MID}}>
           <Text style={styles.Company}>Arwana Citramulia Tbk, PT</Text>
           <Text style={styles.Company}>Puradelta lestari Tbk, PT</Text>
           <Text style={styles.Company}>SBSN PBS012</Text>
@@ -124,8 +129,8 @@ export default class GoalAhead extends Component {
           <Text style={styles.Company}>Unilever Indonesia Tbk, PT</Text>
         </View>
         <View style={styles.LongLine}/>
-        <View style={{flexDirection:'row', marginTop:20}}>
-          <Image source={require('./asset/ic_doc.png')} style={{marginLeft:30,width: 30, height: 30}}/>
+        <View style={{flexDirection:'row', marginTop:Size.PADDING_MID}}>
+          <Image source={{uri: 'ic_doc'}} resizeMode="contain" style={{marginLeft:Size.PADDING,width: Size.PADDING, height: Size.PADDING}}/>
           <Text style={styles.Title}>About</Text>
         </View>
         <Text style={styles.AboutTitle}>Fund Type</Text>
@@ -161,78 +166,78 @@ const styles = StyleSheet.create({
     backgroundColor:'white',
   },
   Title: {
-    fontSize:16,
+    fontSize:Size.TEXT_LABELS,
     color:'#3393D0',
-    marginTop: 5,
-    marginLeft: 5,
-    marginBottom:20,
+    marginTop: Size.ELEVATION,
+    marginLeft: Size.ELEVATION,
+    marginBottom:Size.PADDING_MID,
     fontFamily:'TitilliumWeb-SemiBold'
   },
   Header: {
-    paddingLeft: 20,
-    paddingTop:20,
-    paddingRight:20,
+    paddingLeft: Size.PADDING_MID,
+    paddingTop:Size.PADDING_MID,
+    paddingRight:Size.PADDING_MID,
     flexDirection:'row'
   },
   LongLine: {
-    width: 360,
+    width: Size.DEVICE_WIDTH,
     height:1,
     backgroundColor:'#D8D8D8',
-    marginTop:20,
-    marginBottom:20
+    marginTop:Size.PADDING_MID,
+    marginBottom:Size.PADDING_MID
   },
   Line: {
-    width: 288,
+    width: Size.PICKER_WIDTH,
     height:1,
-    marginLeft:56,
+    marginLeft:Size.BUTTON_ROUND,
     backgroundColor:'#D8D8D8',
-    marginBottom:20,
-    marginRight:20
+    marginBottom:Size.PADDING_MID,
+    marginRight:Size.PADDING_MID
   },
   Company: {
-    marginLeft:65,
-    fontSize:16,
+    marginLeft:Size.PADDING_CONFIRM,
+    fontSize:Size.TEXT_LABELS,
     color:'#58595B',
     fontFamily:'Roboto-Regular'
   },
   AboutDetails: {
     fontFamily:'Roboto-Regular',
     fontSize:16,
-    marginLeft:65,
+    marginLeft:Size.PADDING_CONFIRM,
     color:'rgba(0,0,0,0.60)'
   },
   AboutTitle: {
     fontFamily:'Roboto-Light',
-    fontSize:14,
-    marginLeft:65,
+    fontSize:Size.DETAILL,
+    marginLeft:Size.PADDING_CONFIRM,
     color:'rgba(88,89,91,0.80)'
   },
   ButtonConfirm: {
     backgroundColor:'#3393D0',
-    borderRadius:4,
-    width: 280,
-    height: 40,
-    marginTop:10,
+    borderRadius:Size.BORDER,
+    width: Size.PICKER_WIDTH,
+    height: Size.PADDING_LONG,
+    marginTop:Size.PADDING_SMALL,
     alignItems:'center',
     justifyContent:'center'
   },
   ChartText: {
-    fontSize:14,
+    fontSize:Size.DETAILL,
     fontFamily:'Roboto-Medium',
     color:'#58595B',
-    marginTop:24
+    marginTop:Size.IMAGE_ICON
   },
   Triangle: {
   width: 0,
   height: 0,
-  borderLeftWidth: 12,
-  borderRightWidth: 12,
-  borderBottomWidth: 15,
+  borderLeftWidth: Size.TEXT_DETAILM,
+  borderRightWidth: Size.TEXT_DETAILM,
+  borderBottomWidth: Size.MID_WIDTH,
   borderStyle: 'solid',
   backgroundColor: 'transparent',
   borderLeftColor: 'transparent',
   borderRightColor: 'transparent',
   borderBottomColor: '#5DC6C9',
-  marginBottom:4
+  marginBottom:Size.ELEVATION
 }
 });

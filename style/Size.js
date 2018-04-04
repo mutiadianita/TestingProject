@@ -12,7 +12,7 @@ export default Size = {
   DEVICE_WIDTH: x,
   DEVICE_HEIGHT: y,
   //30
-  PADDING: x/12,
+  PADDING: s*30,
   //10
   PADDING_SMALL:x/36,
   //20
@@ -26,7 +26,7 @@ export default Size = {
   //75
   PADDING_CONFIRML:r*75,
   //120
-  MARGIN_LONG:x/3,
+  MARGIN_LONG:s*120,
 // BUTTON
   //260
   BUTTON_RISK: r*260,
@@ -62,6 +62,7 @@ export default Size = {
   IMAGE_IDH: x*(9/10),
   IMAGE_NW: r*200,
   IMAGE_NH: s*180,
+  IMAGE_ICON: r*24,
 //PICKER
   PICKER_WIDTH:r*280,
 // Check
@@ -82,8 +83,14 @@ export default Size = {
 //BORDER
   BORDER: r*3,
 //BANK WIDTH
-  BANK_WIDTH:r*130,
+  v:r*130,
 //DELETE
   DELETE_WIDTH:r*50,
-  DELETE_HEIGHT:s*100
+  DELETE_HEIGHT:s*100,
+  MID_WIDTH:r*15,
+  PROFILE_WIDTH:r*240,
+  HEADER_HEIGHT:s*300,
+  HOME_CONTAINER:s*475,
+  WIDTH_MID:r*100,
+  PAGER_HOME:s*348
   };

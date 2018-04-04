@@ -17,7 +17,7 @@ export default class TopUp_Done extends Component {
     var { navigate } = this.props.navigation;
     return (
       <View style={{flex:1}}>
-        <ImageBackground source={require('./asset/bg_success.png')} style={styles.Container}>
+        <ImageBackground source={{uri: 'bg_success'}} resizeMode="cover" style={styles.Container}>
           <View style={styles.SubContainer1}>
             <Text style={styles.Title}>Success !</Text>
             <Text style={styles.Label}>Congratulation! You have successfully made a one-time top up.</Text>
@@ -26,7 +26,7 @@ export default class TopUp_Done extends Component {
             <TouchableOpacity
             style={styles.Button}
               onPress = {() => navigate('Home')}>
-              <Image source={require('./asset/ic_done.png')} style={{width: Size.BUTTON_ICON, height:Size.BUTTON_ICON}}/>
+              <Image source={{uri: 'ic_done'}} resizeMode="contain" style={{width: Size.BUTTON_ICON, height:Size.BUTTON_ICON}}/>
             </TouchableOpacity>
           </View>
         </ImageBackground>

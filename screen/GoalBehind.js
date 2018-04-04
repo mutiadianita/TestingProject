@@ -10,8 +10,7 @@ import {
   Image,
   CheckBox,
   TouchableOpacity,
-  Picker,
-  ImageBackground,
+  Picker
 }  from 'react-native';
 import ProgressCircle from 'react-native-progress/Circle';
 import LinearGradient from 'react-native-linear-gradient';
@@ -32,7 +31,18 @@ export default class GoalBehind extends Component {
     return (
       <View style={styles.Container}>
       <ScrollView>
-          <LinearGradient start={{x: 0.0, y: 0.025}} end={{x: 1.0, y: 1.0}} colors={['#F5841F', '#DE6157']} style={{paddingTop:Size.DELETE_WIDTH}}>
+        <LinearGradient start={{x: 0.0, y: 0.025}} end={{x: 1.0, y: 1.0}} colors={['#F5841F', '#DE6157']} style={{paddingTop:Size.PADDING_SMALL}}>
+          <View style={{width:Size.DEVICE_WIDTH,justifyContent:'space-between', flexDirection:'row'}}>
+            <Image source={{uri: 'ic_back_white'}} style={{height:Size.PADDING, width:Size.PADDING, marginLeft:Size.PADDING_MID}}/>
+            <Image
+              source={{uri: 'ic_asset'}} resizeMode="contain"
+              style={{
+                width: Size.PADDING_LONG,
+                height: Size.PADDING_LONG,
+                marginRight: Size.PADDING_MID
+              }}
+            />
+          </View>
           <Text style={{fontSize:Size.TEXT_TITLEL, color:'#FFFFFF',paddingLeft:Size.PADDING, marginBottom:Size.TEXT_LABELS,  fontFamily:'TitilliumWeb-SemiBold'}}>New House</Text>
           </LinearGradient>
           <View style={{backgroundColor:'#FFFFFF', flex: 1}}>
@@ -56,7 +66,7 @@ export default class GoalBehind extends Component {
           </View>
         </View>
         <View style={{flexDirection:'row', marginTop:Size.PADDING_MID}}>
-          <Image source={require('./asset/ic_strategy_blue.png')} style={{marginLeft:Size.PADDING,width: Size.PADDING, height: Size.PADDING}}/>
+          <Image source={{uri: 'ic_strategy_blue'}} resizeMode="contain" style={{marginLeft:Size.PADDING,width: Size.PADDING, height: Size.PADDING}}/>
           <Text style={styles.Title}>Your investment strategy</Text>
         </View>
         <View style={{flexDirection:'row'}}>
@@ -66,7 +76,7 @@ export default class GoalBehind extends Component {
         <Text style={{fontSize:Size.TEXT_LABELS, color:'#58595B', marginLeft:Size.PADDING_CONFIRM, marginTop:Size.PADDING_SMALL, marginRight:Size.PADDING, fontFamily:'Roboto-Regular'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus a porta mi, ac gravida elit. Nam commodo nisi ex, vitae maximus nisl laoreet in.</Text>
         <View style={styles.LongLine}></View>
         <View style={{marginLeft:Size.PADDING,flexDirection:'row'}}>
-          <Image source={require('./asset/ic_strategy_blue.png')} style={{width: Size.PADDING, height: Size.PADDING}}/>
+          <Image source={{uri: 'ic_strategy_blue'}} resizeMode="contain" style={{width: Size.PADDING, height: Size.PADDING}}/>
           <Text style={styles.Title}>Your portofolio</Text>
         </View>
         <View style={{width:Size.PAGER_WIDTH}}>
@@ -133,7 +143,7 @@ export default class GoalBehind extends Component {
         </View>
         <View style={styles.Line}/>
         <View style={{flexDirection:'row', marginTop:Size.PADDING_MID}}>
-          <Image source={require('./asset/ic_strategy_blue.png')} style={{marginLeft:Size.PADDING,width: Size.PADDING, height: Size.PADDING}}/>
+          <Image source={{uri: 'ic_strategy_blue'}} resizeMode="contain" style={{marginLeft:Size.PADDING,width: Size.PADDING, height: Size.PADDING}}/>
           <Text style={styles.Title}>Your transaction history</Text>
         </View>
         <View style={{flexDirection:'row'}}>

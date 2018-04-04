@@ -31,9 +31,9 @@ export default class Intro extends Component {
         <ViewPagerAndroid style={styles.Pager} initialPage={0}>
         <View>
           <LinearGradient start={{x: 0.0, y: 0.025}} end={{x: 1.0, y: 1.0}} colors={['#5DC6C9', '#3393D0', '#135788']} style={{flex:1}}>
-          <ImageBackground source={require('./asset/bg_xdana_logo.png')} style={styles.Pager}>
+          <ImageBackground source={{uri: 'bg_xdana_logo'}} style={styles.Pager}>
             <Text style={styles.Title}>Welcome to XDANA </Text>
-            <Image source={require('./asset/ic_retirement.png')} style={{marginTop:Size.MARGIN_LONG, width:Size.BUTTON_HEIGHT, height:Size.BUTTON_HEIGHT}}/>
+            <Image source={{uri: 'ic_retirement'}} resizeMode="contain" style={styles.IconImage}/>
             <Text style={styles.Subtitle}>Retirement </Text>
             <Text style={styles.Details}>In order to finish your goal creation, you need to connect to your bank to set up auto saving every month. </Text>
             </ImageBackground>
@@ -41,9 +41,9 @@ export default class Intro extends Component {
         </View>
         <View>
           <LinearGradient start={{x: 0.0, y: 0.025}} end={{x: 1.0, y: 1.0}} colors={['#8FC196', '#00A99E']} style={{flex:1}}>
-          <ImageBackground source={require('./asset/bg_xdana_logo.png')} style={styles.Pager}>
+          <ImageBackground source={{uri: 'bg_xdana_logo'}} style={styles.Pager}>
             <Text style={styles.Title}>Welcome to XDANA </Text>
-            <Image source={require('./asset/ic_life.png')} style={{marginTop:Size.MARGIN_LONG, width:Size.BUTTON_HEIGHT, height:Size.BUTTON_HEIGHT}}/>
+            <Image source={{uri: 'ic_life'}} resizeMode="contain" style={styles.IconImage}/>
             <Text style={styles.Subtitle}>Life Improvement</Text>
             <Text style={styles.Details}>In order to finish your goal creation, you need to connect to your bank to set up auto saving every month. </Text>
             </ImageBackground>
@@ -51,25 +51,25 @@ export default class Intro extends Component {
         </View>
         <View>
           <LinearGradient start={{x: 0.0, y: 0.025}} end={{x: 1.0, y: 1.0}} colors={['#F5841F', '#DE6157']} style={{flex:1}}>
-          <ImageBackground source={require('./asset/bg_xdana_logo.png')} style={styles.Pager}>
+          <ImageBackground source={{uri: 'bg_xdana_logo'}} style={styles.Pager}>
             <Text style={styles.Title}>Welcome to XDANA </Text>
-            <Image source={require('./asset/ic_asset.png')} style={{marginTop:Size.MARGIN_LONG, width:Size.BUTTON_HEIGHT, height:Size.BUTTON_HEIGHT}}/>
+            <Image source={{uri: 'ic_asset'}} resizeMode="contain" style={styles.IconImage}/>
             <Text style={styles.Subtitle}>Asset investment </Text>
             <Text style={styles.Details}>In order to finish your goal creation, you need to connect to your bank to set up auto saving every month. </Text>
             </ImageBackground>
           </LinearGradient>
         </View>
         </ViewPagerAndroid>
-        <View style={{justifyContent:'flex-end', alignItems:'center', zIndex:2, position:'absolute',marginLeft:Size.PADDING, marginRight:Size.PADDING}}>
+        <View style={styles.ButtonContainer}>
         <TouchableOpacity
-        style={{width: Size.BUTTON_WIDTH, height:Size.BUTTON_HEIGHT, backgroundColor:'white', alignItems:'center', justifyContent:'center', elevation:3 , borderRadius:2}}
+        style={styles.ButtonLogin}
         onPress = {() => navigate('Login')}>
-          <Text style={{fontFamily:'TitilliumWeb-SemiBold',color:'#3393D0', fontSize:Size.TEXT_LABELM, textAlign:'center'}}>Login</Text>
+          <Text style={styles.ButtonLogin_Text}>Login</Text>
         </TouchableOpacity>
         <TouchableOpacity
-        style={{width: Size.BUTTON_WIDTH, height:Size.BUTTON_HEIGHT, marginBottom:Size.PADDING_LONG, marginTop:Size.PADDING_SMALL, backgroundColor:'rgba(0,0,0,0)', alignItems:'center', justifyContent:'center', elevation:3 }}
+        style={styles.ButtonRegister}
         onPress = {() => navigate('SignUp_Email')}>
-          <Text style={{fontFamily:'TitilliumWeb-SemiBold',color:'white', fontSize:Size.TEXT_LABELM, textAlign:'center'}}>Register</Text>
+          <Text style={styles.ButtonRegister_Text}>Register</Text>
         </TouchableOpacity>
         </View>
       </View>
@@ -110,5 +110,49 @@ const styles = StyleSheet.create({
     color: 'white',
     marginTop: Size.PADDING_MID,
     fontFamily:'Roboto-Light'
+  },
+  IconImage: {
+    marginTop:Size.MARGIN_LONG,
+    width:Size.BUTTON_HEIGHT,
+    height:Size.BUTTON_HEIGHT
+  },
+  ButtonContainer: {
+    justifyContent:'flex-end',
+    alignItems:'center',
+    zIndex:2,
+    position:'absolute',
+    marginLeft:Size.PADDING,
+    marginRight:Size.PADDING
+  },
+  ButtonLogin: {
+    width: Size.BUTTON_WIDTH,
+    height:Size.BUTTON_HEIGHT,
+    backgroundColor:'white',
+    alignItems:'center',
+    justifyContent:'center',
+    elevation:3 ,
+    borderRadius:2
+  },
+  ButtonLogin_Text: {
+    fontFamily:'TitilliumWeb-SemiBold',
+    color:'#3393D0',
+    fontSize:Size.TEXT_LABELM,
+    textAlign:'center'
+  },
+  ButtonRegister: {
+    width: Size.BUTTON_WIDTH,
+    height:Size.BUTTON_HEIGHT,
+    marginBottom:Size.PADDING_LONG,
+    marginTop:Size.PADDING_SMALL,
+    backgroundColor:'rgba(0,0,0,0)',
+    alignItems:'center',
+    justifyContent:'center',
+    elevation:3
+  },
+  ButtonRegister_Text: {
+    fontFamily:'TitilliumWeb-SemiBold',
+    color:'white',
+    fontSize:Size.TEXT_LABELM,
+    textAlign:'center'
   }
 });
