@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
   RoundButton: {
     width: Size.BUTTON_ROUND,
     height: Size.BUTTON_ROUND,
-    borderRadius:Size.PADDING,
+    borderRadius:Size.BUTTON_ROUND/2,
     marginTop: Size.PADDING_MID,
     backgroundColor:'#3393D0',
     elevation:Size.ELEVATION,

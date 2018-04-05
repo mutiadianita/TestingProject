@@ -17,7 +17,7 @@ export default class RiskResult extends Component {
     return (
     <View style={{flex:1}}>
     <LinearGradient start={{x: 0.0, y: 0.025}} end={{x: 1.0, y: 1.0}} colors={['#5DC6C9', '#3393D0', '#135788']} style={{flex:1, paddingTop:Size.PADDING}}>
-      <ViewPagerAndroid pageMargin={Size.PADDING_SMALL} style={{flex: 12, margin:Size.PADDING}} initialPage={0}>
+      <ViewPagerAndroid pageMargin={Size.PADDING_SMALL} style={{flex:5, margin:Size.PADDING}} initialPage={0}>
         <View style={styles.Pager}>
           <View style={{flexDirection:'row'}}>
           <Text style={styles.Risk}>Low risk</Text>
@@ -141,7 +141,7 @@ export default class RiskResult extends Component {
           </TouchableOpacity>
         </View>
       </ViewPagerAndroid>
-      <View style={{justifyContent:'center', alignItems:'center',flex:1, padding:Size.PADDING_SMALL, marginLeft:Size.PADDING_MID, marginBottom: Size.PADDING}}>
+      <View style={{justifyContent:'center', alignItems:'center', padding:Size.PADDING_SMALL, marginBottom: Size.PADDING_SMALL}}>
         <Text style={{color:'white', fontFamily:'Roboto-Regular'}}> Swipe to see other Investment Strategies</Text>
       </View>
       </LinearGradient>
@@ -199,7 +199,7 @@ const styles = StyleSheet.create({
     width: Size.BUTTON_RISK,
     height:Size.BUTTON_HEIGHT,
     marginBottom: Size.PADDING,
-    marginTop:Size.PADDING_MID
+    marginTop:Size.PADDING
   },
   ChartText: {
     fontSize:Size.TEXT_DETAILL,

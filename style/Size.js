@@ -40,6 +40,7 @@ export default Size = {
   BUTTON_ROUND:x/6,
 //TEXT INPUT
   TI_WIDTH:x*(7/9),
+  TI_PHONE: r*260,
 //Text
   TEXT_DETAILS: r*10,
   TEXT_DETAILM: r*12,

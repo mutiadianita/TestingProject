@@ -19,11 +19,11 @@ export default class SignUp_Phone extends Component {
           Enter your Mobile number.
         </Text>
         <View style={{flexDirection: 'row'}}>
-          <View style={{width:Size.PADDING, paddingTop:Size.PADDING/2}}>
+          <View style={{width:Size.PADDING_LONG, paddingTop:Size.PADDING/2}}>
             <Text style={styles.Label}>+62</Text>
           </View>
           <TextInput
-          style={{width: Size.TI_WIDTH, color:'#58595B', fontFamily:'Roboto-Bold', fontSize:16}}
+          style={{width: Size.TI_PHONE, color:'#58595B', fontFamily:'Roboto-Bold', fontSize:Size.TEXT_LABELS}}
           placeholderTextColor='#58595B'
           underlineColorAndroid='#58595B'
           keyboardType='numeric'

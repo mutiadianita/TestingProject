@@ -27,9 +27,10 @@ export default class LearnMore extends Component {
       underlineColorAndroid='#58595B'
       editable={true}
       />
-      <View style={{alignItems:'center', justifyContent:'center',marginLeft:Size.PADDING_SMALL,height: Size.BUTTON_HEIGHT, width:Size.BUTTON_HEIGHT, borderRadius:Size.PADDING_TI, backgroundColor:'#3393D0'}}/>
-        <Text style={{color:'#FFFFFF',textAlign:'center'}}>></Text>
+      <View style={{backgroundColor:'#3393D0',elevation:Size.ELEVATION,justifyContent:'center', alignItems:'center',height: Size.BUTTON_HEIGHT, width:Size.BUTTON_HEIGHT, borderRadius:Size.BUTTON_HEIGHT/2}}>
+        <Image source={{uri:'ic_next_white'}} resizeMode='contain' style={{height:Size.PADDING, width:Size.PADDING}}/>
       </View>
+    </View>
     </View>
     );
   }
