@@ -23,7 +23,7 @@ export default class Step2 extends Component {
         <View style={{alignItems:'flex-end', justifyContent:'flex-end',paddingBottom:Size.PADDING_LONG, paddingRight:Size.PADDING, backgroundColor:'#FFFFFF'}}>
           <TouchableOpacity
           style={styles.RoundButton}
-            onPress = {() => navigate('ReviewSelfie')}>
+            onPress = {() => navigate('SelfiePhoto')}>
             <Image source={{uri:'ic_next_white'}} resizeMode="contain" style={{width: Size.BUTTON_ICON, height: Size.BUTTON_ICON}}/>
           </TouchableOpacity>
       </View>

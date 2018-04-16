@@ -8,8 +8,15 @@ import {
   Button,
   TouchableOpacity
 }  from 'react-native';
+import Orientation from 'react-native-orientation';
 const util = require('util');
 export default class Step1 extends Component {
+  componentDidMount () {
+    Orientation.lockToPortrait();
+  }
+  componentWillUnmount () {
+    Orientation.lockToLandscape();
+  }
   render() {
     var {navigate} = this.props.navigation;
 
@@ -23,7 +30,7 @@ export default class Step1 extends Component {
     <View style={{justifyContent:'flex-end', alignItems:'flex-end', paddingBottom:Size.PADDING_LONG, paddingRight:Size.PADDING, backgroundColor:'#FFFFFF'}}>
       <TouchableOpacity
       style={styles.RoundButton}
-        onPress = {() => navigate('ReviewID')}>
+        onPress = {() => navigate('ScanKTP')}>
         <Image source={{uri:'ic_next_white'}} resizeMode="contain" style={{width: Size.BUTTON_ICON, height: Size.BUTTON_ICON}}/>
       </TouchableOpacity>
     </View>

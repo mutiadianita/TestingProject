@@ -9,10 +9,13 @@ import SignUp_Phone from "./screen/SignUp-Phone";
 import SignUp_Verify from "./screen/SignUp-Verify";
 import SignUp_Password from "./screen/SignUp-Password";
 import Step1 from "./screen/Step1";
+import ScanKTP from "./screen/ScanKTP";
+import ScanResi from "./screen/ScanResi";
 import ReviewID from "./screen/ReviewID";
 import YourInformation from "./screen/YourInformation";
 import YourMailingAddress from "./screen/YourMailingAddress";
 import AddInfo from "./screen/AddInfo";
+import SelfiePhoto from "./screen/SelfiePhoto";
 import ReviewSelfie from "./screen/ReviewSelfie";
 import Step3 from "./screen/Step3";
 import Question1 from "./screen/Question1";
@@ -72,12 +75,13 @@ import Notification from "./screen/Notification";
 
 const Navigation = StackNavigator({
   //00
+
   Intro: {
-    screen: Intro,
-    navigationOptions: {
-      header: null
-    }
-  },
+      screen: Intro,
+      navigationOptions: {
+        header: null
+      }
+    },
 
   //  Camera: {
   //    screen: Camera,
@@ -153,12 +157,16 @@ const Navigation = StackNavigator({
       }
     }
   },
-  Step2: {
-    screen: Step2,
+  ScanKTP: {
+    screen: ScanKTP,
     navigationOptions: {
-      headerStyle: {
-        elevation: 0
-      }
+      header: null
+    }
+  },
+  ScanResi: {
+    screen: ScanResi,
+    navigationOptions: {
+      header: null
     }
   },
   ReviewID: {
@@ -173,6 +181,20 @@ const Navigation = StackNavigator({
         fontFamily: "TitilliumWeb-Bold",
         fontSize: Size.TEXT_LABELL
       }
+    }
+  },
+  Step2: {
+    screen: Step2,
+    navigationOptions: {
+      headerStyle: {
+        elevation: 0
+      }
+    }
+  },
+  SelfiePhoto: {
+    screen: SelfiePhoto,
+    navigationOptions: {
+      header: null
     }
   },
   YourInformation: {
