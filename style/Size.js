@@ -60,7 +60,7 @@ export default Size = {
   //300
   IMAGE_IDW: x*(5/6),
   //324
-  IMAGE_IDH: x*(9/10),
+  IMAGE_IDH: s*400,
   IMAGE_NW: r*200,
   IMAGE_NH: s*180,
   IMAGE_ICON: r*24,

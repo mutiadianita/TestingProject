@@ -19,6 +19,9 @@ export default class Intro extends Component {
   componentDidMount () {
     Orientation.lockToPortrait();
   }
+  componentWillMount () {
+    Orientation.lockToPortrait();
+  }
 
   componentWillUnmount () {
     Orientation.lockToPortrait();

@@ -14,18 +14,20 @@ import Orientation from 'react-native-orientation';
 const util = require('util');
 export default class ReviewID extends Component {
   componentDidMount () {
+
     Orientation.lockToPortrait();
   }
   componentWillUnmount () {
     Orientation.lockToPortrait();
   }
   render() {
-    var { navigate } = this.props.navigation;
+    const {params} = this.props.navigation.state;
+    var {navigate} = this.props.navigation;
     return (
       <View style={styles.Container}>
         <Text style={styles.Title}>Please confirm your card and the ID Card number below.</Text>
         <ScrollView>
-        <Image source={{uri:'idcard'}} resizeMode="contain" style={{width:Size.IMAGE_IDW, height:Size.IMAGE_NW, borderRadius:Size.PADDING_SMALL}}/>
+        <Image source={{uri:params.imageUri}} resizeMode="contain" style={{width:Size.IMAGE_IDW, height:Size.IMAGE_NW, borderRadius:Size.PADDING_SMALL}}/>
         <Text style={styles.Label}>Your ID Card Number</Text>
         <TextInput
         style={{width: Size.BUTTON_WIDTH, fontSize: Size.TEXT_LABELL, color:'black', fontFamily:'Roboto-Medium'}}

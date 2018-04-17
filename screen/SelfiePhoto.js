@@ -7,16 +7,20 @@ import {
   View,
   Button,
   TouchableOpacity,
-  ScrollView
+  ScrollView,
+  ImageBackground
 }  from 'react-native';
 import { RNCamera } from 'react-native-camera';
 const util = require('util');
 export default class Step1 extends Component {
-  state = {
-   ratio: '16:9',
-   ratios: [],
-   path: null,
- };
+  constructor(props) {
+    super(props);
+    this.state = {
+      path: null,
+      ratio: '16:9',
+      ratios: [],
+    };
+  }
  onBackButtonPressed() {
     return true;
   }
@@ -30,32 +34,22 @@ export default class Step1 extends Component {
    });
  }
  takePicture = async () => {
-   try {
-     const data = await this.camera.takePictureAsync();
-     this.setState({ path: data.uri });
-     // this.props.updateImage(data.uri);
-     // console.log('Path to image: ' + data.uri);
-   } catch (err) {
-     console.log('err: ', err);
-   }
- };
- render() {
+  const { uri } = await this.camera.takePictureAsync();
+  this.setState({ imageUri: uri });
+}
+render() {
+  var {navigate} = this.props.navigation;
+  const { imageUri } = this.state;
+  if (imageUri) {
     return (
-      <View style={styles.container}>
-        {this.state.path ? this.renderImage() : this.renderCamera()}
-      </View>
-    );
-  }
- renderImage() {
-    return (
-      <View style={styles.Container}>
+      <View style={styles.ImageContainer}>
         <Text style={styles.Title}>Please Confirm the image you’ve taken</Text>
         <ScrollView>
         <View style={{marginTop:Size.PADDING_MID, alignItems:'center', justifyContent:'center'}}>
-        <Image style={{width:Size.IMAGE_IDW, height:Size.IMAGE_IDH, borderRadius:Size.PADDING_SMALL, borderWidth:1,borderColor:'#3393D0'}} resizeMode="contain" source={{ uri: this.state.path }} />
+        <Image style={{width:Size.IMAGE_IDW, height:Size.IMAGE_IDH, borderRadius:Size.PADDING_SMALL, borderWidth:1,borderColor:'#3393D0'}} source={{uri:imageUri}} />
         </View>
         </ScrollView>
-        <TouchableOpacity style={{backgroundColor:'#FFFFFF', width: Size.BUTTON_WIDTH, padding:Size.PADDING_SMALL, height:Size.BUTTON_HEIGHT}} onPress={() => this.setState({ path: null })}>
+        <TouchableOpacity style={{backgroundColor:'#FFFFFF', width: Size.BUTTON_WIDTH, padding:Size.PADDING_SMALL, height:Size.BUTTON_HEIGHT}} onPress onPress={() => this.setState({ imageUri: null })}>
           <Text style={{textAlign:'center', fontSize:Size.TEXT_LABELS, color:'#2775C0', fontFamily:'TitilliumWeb-SemiBold'}}>
             Retake Image
           </Text>
@@ -65,11 +59,8 @@ export default class Step1 extends Component {
             Confirm
           </Text>
         </TouchableOpacity>
-      </View>
-    );
-  }
-  renderCamera() {
-    var {navigate} = this.props.navigation;
+      </View> );
+    }
     return (
   <View style={{flex:1}}>
     <View style={{zIndex:100, height:Size.DEVICE_HEIGHT, width:Size.DEVICE_WIDTH, position:'absolute'}}>
@@ -91,7 +82,7 @@ export default class Step1 extends Component {
         <View style={{height:Size.SIDE_KTP_H, width:Size.SIDE_KTP_W, backgroundColor:'rgba(0,0,0,0.8)'}}/>
       </View>
       <View style={{height:Size.FOOTER_SELFIE_H, width:Size.DEVICE_WIDTH, backgroundColor:'rgba(0,0,0,0.8)'}}>
-      <TouchableOpacity onPress = {() => navigate('ReviewSelfie')} style={{justifyContent:'center', alignItems:'center', marginTop:Size.PADDING}}>
+      <TouchableOpacity  onPress={this.takePicture.bind(this)} style={{justifyContent:'center', alignItems:'center', marginTop:Size.PADDING}}>
         <View style={{justifyContent:'center', alignSelf:'center',height:Size.PADDING_CONFIRM, width:Size.PADDING_CONFIRM, borderRadius:Size.PADDING_CONFIRM/2, backgroundColor:'white'}}>
         <View style={{justifyContent:'center', alignSelf:'center',height:Size.BUTTON_ROUND, width:Size.BUTTON_ROUND, borderRadius:Size.BUTTON_ROUND/2, borderColor:'black', borderWidth:2, backgroundColor:'white'}}/>
         </View>
@@ -119,8 +110,22 @@ const styles = StyleSheet.create({
   Container:{
     flex: 1
   },
+  ImageContainer: {
+    flex: 1,
+    justifyContent: 'flex-start',
+    paddingTop: Size.PADDING_SMALL,
+    paddingLeft: Size.PADDING,
+    paddingRight: Size.PADDING,
+    backgroundColor:'white'
+  },
   preview: {
     height:Size.DEVICE_HEIGHT,
     width:Size.DEVICE_WIDTH
+  },
+  Title: {
+    fontSize: Size.TEXT_LABELS,
+    textAlign: 'left',
+    color: '#58595B',
+    fontFamily:'Roboto-Light'
   }
 })

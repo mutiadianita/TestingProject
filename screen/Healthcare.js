@@ -63,14 +63,14 @@ export default class App extends Component {
       extrapolate: 'clamp',
     });
 
-    const titleScale = scrollY.interpolate({
+    const titleOpacity = scrollY.interpolate({
       inputRange: [0, HEADER_SCROLL_DISTANCE / 2, HEADER_SCROLL_DISTANCE],
-      outputRange: [1, 0.5, 0],
+      outputRange: [1, 0, 0],
       extrapolate: 'clamp',
     });
     const titleTranslate = scrollY.interpolate({
-      inputRange: [0, HEADER_SCROLL_DISTANCE / 2, HEADER_SCROLL_DISTANCE],
-      outputRange: [1, 0.8, 0],
+      inputRange: [0, HEADER_SCROLL_DISTANCE],
+      outputRange: [0, 100],
       extrapolate: 'clamp',
     });
 
@@ -131,9 +131,8 @@ export default class App extends Component {
           style={[
             styles.bar,
             {
-              transform: [
-                { scale: titleScale },
-                { translateY: titleTranslate },
+              opacity: titleOpacity,
+              transform: [{ translateY: titleTranslate },
               ],
             },
           ]}
