@@ -103,7 +103,7 @@ export default Size = {
   TEXT_CAMERA_W: r*560,
   //SelfiePhoto
   HEADER_SELFIE_H: s*40,
-  TITLE_SELFIE_H: s*97,
+  TITLE_SELFIE_H: s*81,
   PADDING_CAMERA: r*50,
   SIDE_SELFIE_H: s*208,
   SIDE_SELFIE_W: r*100,

@@ -17,8 +17,7 @@ var path = RNFS.DocumentDirectoryPath ;
 export default class Step1 extends Component {
   state = {
    ratio: '16:9',
-   ratios: [],
-   imageUri:null
+   ratios: []
  };
  componentDidMount () {
    Orientation.lockToLandscape();
@@ -43,23 +42,21 @@ export default class Step1 extends Component {
  takePicture = async () => {
     const { uri } = await this.camera.takePictureAsync();
     this.setState({ imageUri: uri });
+    this.camera.takePictureAsync({
+                fixOrientation: false,
+                skipProcessing: true
+            })
  }
 
   render() {
-    return (
-      <View style={styles.container}>
-        {this.state.imageUri ? this.renderImage() : this.renderCamera()}
-      </View>
-    );
-  }
-  renderImage() {
+
     const { imageUri } = this.state;
     var {navigate} = this.props.navigation;
-    return(
-    this.props.navigation.navigate('ReviewID',{imageUri})
-    );
-  }
-  renderCamera() {
+    if (imageUri) {
+      return (
+      this.props.navigation.navigate('ReviewID',{image: imageUri})
+      );
+    }
     return (
     <View style={{flex:1}}>
       <View style={styles.Shade}>
@@ -84,13 +81,7 @@ export default class Step1 extends Component {
           </TouchableOpacity>
           </View>
         </View>
-        <View style={styles.Footer}>
-        <TouchableOpacity onPress = {() => navigate('ScanResi')}>
-          <View style={styles.Button}>
-            <Text style={styles.TextButton}>I’m still waiting for my KTP</Text>
-          </View>
-        </TouchableOpacity>
-        </View>
+        <View style={styles.Footer}/>
       </View>
       <View style={styles.Camera}>
         <RNCamera

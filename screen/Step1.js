@@ -14,9 +14,6 @@ export default class Step1 extends Component {
   componentDidMount () {
     Orientation.lockToPortrait();
   }
-  componentWillUnmount () {
-    Orientation.lockToLandscape();
-  }
   render() {
     var {navigate} = this.props.navigation;
 

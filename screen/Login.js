@@ -11,6 +11,14 @@ import {
 }  from 'react-native';
 import Size from "../style/Size";
 const util = require('util');
+var soap = require('soap-everywhere');
+  var url = 'http://http://demordo.praisindo.com/devxdana_rdows/SecuritySvc.asmx?wsdl';
+  var args = {name: 'value'};
+  soap.createClient(url, function(err, client) {
+      client.MyFunction(args, function(err, result) {
+          console.log(result);
+      });
+  });
 export default class Login extends Component {
   render() {
     var { navigate } = this.props.navigation;
@@ -20,9 +28,9 @@ export default class Login extends Component {
           Please fill in the data below to Login to your Xdana account.
         </Text>
         <View style={{flexDirection:'row'}}>
-        <Image source={{uri: 'ic_profile_blue'}} resizeMode="contain" style={{width: Size.PADDING, height:Size.PADDING}}/>
-        <Text style={{fontSize:Size.TEXT_LABELS,  color:'#3393D0',marginBottom:Size.PADDING_MID, fontFamily:'TitilliumWeb-Bold',marginTop:Size.PADDING/6}}>Account info
-        </Text>
+          <Image source={{uri: 'ic_profile_blue'}} resizeMode="contain" style={{width: Size.PADDING, height:Size.PADDING}}/>
+          <Text style={{fontSize:Size.TEXT_LABELS,  color:'#3393D0',marginBottom:Size.PADDING_MID, fontFamily:'TitilliumWeb-Bold',marginTop:Size.PADDING/6}}>Account info
+          </Text>
         </View>
         <Text style={styles.Label}>Name
         </Text>

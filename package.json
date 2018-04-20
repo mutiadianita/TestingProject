@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "i": "^0.3.6",
-    "npm": "^5.7.1",
+    "npm": "^5.8.0",
     "react": "16.2.0",
     "react-native": "0.53.0",
     "react-native-camera": "^1.0.3",
@@ -34,6 +34,7 @@
     "react-native-viewpager": "^0.2.13",
     "react-navigation": "^1.2.0",
     "rn-viewpager": "^1.2.9",
+    "soap-everywhere": "^1.0.7",
     "util": "*"
   },
   "devDependencies": {

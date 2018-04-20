@@ -12,9 +12,9 @@ import {
 }  from 'react-native';
 import Orientation from 'react-native-orientation';
 const util = require('util');
+console.disableYellowBox = true;
 export default class ReviewID extends Component {
   componentDidMount () {
-
     Orientation.lockToPortrait();
   }
   componentWillUnmount () {
@@ -27,7 +27,7 @@ export default class ReviewID extends Component {
       <View style={styles.Container}>
         <Text style={styles.Title}>Please confirm your card and the ID Card number below.</Text>
         <ScrollView>
-        <Image source={{uri:params.imageUri}} resizeMode="contain" style={{width:Size.IMAGE_IDW, height:Size.IMAGE_NW, borderRadius:Size.PADDING_SMALL}}/>
+        <Image source={{uri:params.image}} resizeMode="contain" style={{width:Size.IMAGE_IDW, height:Size.IMAGE_NW, borderRadius:Size.PADDING_SMALL}}/>
         <Text style={styles.Label}>Your ID Card Number</Text>
         <TextInput
         style={{width: Size.BUTTON_WIDTH, fontSize: Size.TEXT_LABELL, color:'black', fontFamily:'Roboto-Medium'}}
